@@ -69,7 +69,12 @@
     justify-content: center;
   }
 
-
+  .responsive-video {
+    width: 100%;   /* Das Video füllt die gesamte Breite des Containers */
+    height: auto;  /* Höhe wird proportional zur Breite angepasst, um Verzerrungen zu vermeiden */
+    display: block; /* Verhindert, dass das Video als Inline-Element agiert */
+  }
+  
   .img-container {
     padding: 0;
   }
