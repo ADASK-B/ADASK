@@ -1,27 +1,192 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f2f2f2;
     margin: 0;
-    padding: 50px;
+    font-family: 'Arial', sans-serif;
+    background-color: #F3F3F3;
+    color: #2F3030;
 }
 
-h1 {
-    color: #333;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #F3F3F3;
 }
 
-#greeting {
-    font-size: 1.5em;
-    color: #555;
+header h1 {
+    font-size: 24px;
+    margin: 0;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 1em;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2F3030;
+    font-size: 16px;
+    padding: 10px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    border-bottom: 2px solid #2F3030;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #F3F3F3;
+    text-align: center;
+    position: relative;
+}
+
+.hero-text {
+    max-width: 90%;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.scroll-down {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.scroll-down span {
+    font-size: 14px;
+}
+
+.hero-image {
+    max-width: 100%;
     margin-top: 20px;
-    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
-button:hover {
-    background-color: #ddd;
+.hero-image img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+}
+
+.social-icons {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Media Queries for responsiveness */
+@media (min-width: 1200px) {
+    .hero-section {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .hero-text {
+        max-width: 50%;
+    }
+
+    .hero-text h1 {
+        font-size: 48px;
+    }
+
+    .hero-image img {
+        max-width: 400px;
+    }
+
+    .social-icons {
+        right: -50px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .hero-section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .hero-image img {
+        max-width: 350px;
+    }
+
+    .social-icons {
+        position: absolute;
+        right: -30px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .hero-section {
+        flex-direction: column;
+    }
+
+    .social-icons {
+        position: static;
+        justify-content: center;
+        flex-direction: row;
+        margin-top: 20px;
+    }
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .hero-image img {
+        max-width: 300px;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2F3030;
+    color: #F3F3F3;
 }
