@@ -668,10 +668,13 @@ a:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
 }
 
 .info_section .info_top .info_logo img {
-  width: 65px;
+  width: 55px;
+  text-align: center;
+  margin-right: 5px;
 }
 
 .info_section .info_top .info_logo span {
