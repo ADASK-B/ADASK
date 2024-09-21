@@ -505,6 +505,13 @@ a:focus {
   margin-top: 15px;
 }
 
+.responsive_videoTest {
+  width: 50%;  /* Ändere die Breite, wie du möchtest */
+  height: auto;  /* Höhe wird proportional zur Breite angepasst, um Verzerrungen zu vermeiden */
+  display: block; /* Verhindert, dass das Video als Inline-Element agiert */
+  margin: 0 auto;  /* Zentriert das Video horizontal */
+}
+
 .about_section .detail-box a {
   display: inline-block;
   padding: 10px 45px;

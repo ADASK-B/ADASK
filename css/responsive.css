@@ -186,6 +186,39 @@
     font-size: 22px;
   }
 }
+@media (min-width: 1200px) {
+  /* Reduziere den Abstand der h3-Überschrift */
+  .freelance_section .tab_container .t-link-box .detail-box h3 {
+    margin-left: 0px; /* Beispielwert, um den Text näher nach rechts zu schieben */
+  }
+
+  /* Reduziere den Abstand der img-box */
+  .freelance_section .tab_container .t-link-box .img-box {
+    margin-right: 10px; /* Beispielwert, um das Bild näher zum Text zu schieben */
+  }
+
+  /* Passe auch andere Abstände an, falls notwendig */
+  .freelance_section .tab_container .t-link-box {
+    margin-bottom: 10px; /* Reduziere den Abstand zwischen den Boxen */
+  }
+
+  /* Für die Überschrift "Work Freelancer Has Done" */
+  .freelance_section .detail-box .heading_container h2 {
+    margin-left: 100px; /* Beispielwert, um die Überschrift näher zu verschieben */
+  }
+
+  /* Optional: Weitere Anpassungen für die img-box im rechten Abschnitt */
+  .freelance_section .img-box {
+    margin-left: 270px; /* Beispielwert, um das Bild auf großen Bildschirmen zu verschieben */
+  }
+}
+
+/* Abstand vom Rand für große Bildschirme */
+@media (min-width: 1200px) {
+  .freelance_section .img-box {
+    margin: 0 100px; /* Beispiel: 50px Abstand links und rechts */
+  }
+}
 
 @media (max-width: 360px) {}
 
