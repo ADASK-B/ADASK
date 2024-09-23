@@ -5236,50 +5236,6 @@ a.badge-dark:focus, a.badge-dark.focus {
   color: #040505;
 }
 
-button {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
-  outline: none; /* Entfernt den Fokusrahmen beim Klicken */
-}
-.t-link-box {
-  display: flex;
-  align-items: center; /* Vertikale Zentrierung des Inhalts */
-  justify-content: flex-start; /* Text und Bild linksbündig */
-  background: none;
-  border: none;
-  padding: 10px; /* Etwas Platz um den Inhalt */
-  margin: 10px 0; /* Abstand zwischen den Buttons */
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
-  outline: none;
-  width: 100%; /* Volle Breite */
-  text-align: left; /* Text linksbündig */
-}
-
-.t-link-box .img-box {
-  margin-right: 15px; /* Abstand zwischen Bild und Text */
-}
-
-.t-link-box img {
-  max-width: 50px; /* Größe der Bilder anpassen */
-  height: auto;
-}
-
-.t-link-box .detail-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-button:focus {
-  outline: none; /* Entfernt den Fokusrahmen beim Fokus */
-}
 @-webkit-keyframes progress-bar-stripes {
   from {
     background-position: 1rem 0;
@@ -10072,5 +10028,50 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none; /* Entfernt den Fokusrahmen beim Klicken */
+}
+.t-link-box {
+  display: flex;
+  align-items: center; /* Vertikale Zentrierung des Inhalts */
+  justify-content: flex-start; /* Text und Bild linksbündig */
+  background: none;
+  border: none;
+  padding: 10px; /* Etwas Platz um den Inhalt */
+  margin: 10px 0; /* Abstand zwischen den Buttons */
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  width: 100%; /* Volle Breite */
+  text-align: left; /* Text linksbündig */
+}
+
+.t-link-box .img-box {
+  margin-right: 15px; /* Abstand zwischen Bild und Text */
+}
+
+.t-link-box img {
+  max-width: 50px; /* Größe der Bilder anpassen */
+  height: auto;
+}
+
+.t-link-box .detail-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button:focus {
+  outline: none; /* Entfernt den Fokusrahmen beim Fokus */
 }
 /*# sourceMappingURL=bootstrap.css.map */
