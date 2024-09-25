@@ -1,8 +1,28 @@
-body {
+/*body {
   font-family: 'Poppins', sans-serif;
   color: #2F3030;
   background-color: #F3F3F3;
+}*/
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../resource/poppins-v21-latin-regular.woff2') format('woff2'),
+       url('../resource/poppins-v21-latin-regular.woff') format('woff');
+  font-display: swap;
 }
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../resource/poppins-v21-latin-700.woff2') format('woff2'),
+       url('../resource/poppins-v21-latin-700.woff') format('woff');
+  font-display: swap;
+}
+
+
 
 .layout_padding {
   padding-top: 90px;
