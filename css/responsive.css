@@ -122,15 +122,11 @@
     align-items: center;
     text-align: center;
     margin-bottom: 25px;
-
   }
 
   .info_section .info_contact .link-box {
     margin: 0;
   }
-
-
-
 }
 
 @media (max-width: 576px) {
