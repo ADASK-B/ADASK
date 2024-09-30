@@ -25,6 +25,15 @@ body {
   font-display: swap;
 }
 
+.styled-subheading {
+  font-size: 20px; /* Größe wie eine Überschrift */
+  font-weight: bold; /* Fettgedruckt */
+  color: #EF5045; /* Die gewünschte Farbe für deine Überschrift */
+  margin-top: 9px; /* Abstand nach oben */
+  line-height: 0; /* Zeilenhöhe, damit es wie eine Überschrift aussieht */
+}
+
+
 .layout_padding {
   padding-top: 90px;
   padding-bottom: 90px;
