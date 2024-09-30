@@ -294,6 +294,8 @@ a:focus {
   transition: all 0.3s;
   border: 1px solid transparent;
   border-radius: 0;
+  font-weight: bolder;
+  letter-spacing: 0.5px;
 }
 
 .slider_section .detail-box .btn-box .btn-1:hover {
@@ -311,6 +313,8 @@ a:focus {
   transition: all 0.3s;
   border: 1px solid transparent;
   border-radius: 0;
+  font-weight: bolder;
+  letter-spacing: 0.5px;
 }
 
 .slider_section .detail-box .btn-box .btn-2:hover {
@@ -430,6 +434,8 @@ a:focus {
   transition: all 0.3s;
   border: 1px solid transparent;
   border-radius: 0;
+  font-weight: bolder;
+  letter-spacing: 0.5px;
 }
 
 .experience_section .detail-box .btn-box .btn-1:hover {
@@ -447,6 +453,8 @@ a:focus {
   transition: all 0.3s;
   border: 1px solid transparent;
   border-radius: 0;
+  font-weight: bolder;
+  letter-spacing: 0.5px;
 }
 
 .experience_section .detail-box .btn-box .btn-2:hover {
@@ -461,7 +469,7 @@ a:focus {
 
 .category_section {
   background-color: #65B973;
-  color: #ffffff;
+  color: #F3F3F3;
   text-align: center;
 }
 
@@ -469,6 +477,7 @@ a:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+          
 }
 
 .category_section .heading_container h2 {
@@ -488,6 +497,7 @@ a:focus {
 }
 
 .category_section .category_container .box {
+  
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -552,6 +562,8 @@ a:focus {
   border: 1px solid transparent;
   border-radius: 0;
   margin-top: 25px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
 }
 
 .about_section .detail-box a:hover {
