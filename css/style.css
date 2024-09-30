@@ -1,4 +1,4 @@
-/*body {
+body {
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
   color: #2F3030;
   background-color: #F3F3F3;
@@ -23,7 +23,7 @@
   font-weight: 700;
   src: url('../resource/poppins-v21-latin-700.woff2') format('woff2');
   font-display: swap;
-}*/
+}
 
 .layout_padding {
   padding-top: 90px;

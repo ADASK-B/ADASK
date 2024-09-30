@@ -14,41 +14,12 @@
 
   <title>ADASK</title>
 
- <!-- Kritisches CSS inline für schnelleren First Paint -->
- <style>
- body {
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
-  color: #2F3030;
-  background-color: #F3F3F3;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: left;
-  margin: 0;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../resource/poppins-v21-latin-regular.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../resource/poppins-v21-latin-700.woff2') format('woff2');
-  font-display: swap;
-}
-</style>
- <!-- Kritisches CSS inline für schnelleren First Paint -->
-  
-<!-- Nicht-kritisches CSS asynchron laden -->
-<link rel="stylesheet" href="css/bootstrap.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="css/responsive.css" media="print" onload="this.media='all'">
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
 </head>
 
 <body>
