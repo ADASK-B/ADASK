@@ -26,11 +26,12 @@ body {
 }
 
 .styled-subheading {
-  font-size: 20px; /* Größe wie eine Überschrift */
+  font-size: 1.25rem;
   font-weight: bold; /* Fettgedruckt */
   color: #EF5045; /* Die gewünschte Farbe für deine Überschrift */
   margin-top: 9px; /* Abstand nach oben */
   line-height: 0; /* Zeilenhöhe, damit es wie eine Überschrift aussieht */
+  line-height: 1.2; /* Vermeidung von Zeilenüberlappungen */
 }
 
 
