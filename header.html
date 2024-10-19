@@ -60,6 +60,12 @@
           header.style.top = "0";
         }
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Negative Werte vermeiden
+
+         // Menü schließen, wenn es offen ist und gescrollt wird (nur bei kleinen Bildschirmen)
+         if (window.innerWidth < 992 && nav.hasClass("show")) {
+          nav.removeClass("show");
+          document.querySelector(".custom_menu-btn").classList.remove("menu_btn-style");
+        }
       });
 
       // JavaScript für das Navigationsmenü
@@ -73,3 +79,5 @@
     </script>
   </body>
 </html>
+
+

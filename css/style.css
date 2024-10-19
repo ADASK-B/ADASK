@@ -903,16 +903,22 @@ a:focus {
 }
 
 .menu_btn-style button .s-1 {
+  position: relative;
+  z-index: 2000; 
   -webkit-transform: rotate(45deg) translate(8px, 8px);
           transform: rotate(45deg) translate(8px, 8px);
 }
 
 .menu_btn-style button .s-2 {
+  position: relative;
+  z-index: 2000; 
   -webkit-transform: translateX(100px);
           transform: translateX(100px);
 }
 
 .menu_btn-style button .s-3 {
+  position: relative;
+  z-index: 2000; 
   -webkit-transform: rotate(-45deg) translate(8px, -8px);
           transform: rotate(-45deg) translate(8px, -8px);
 }
