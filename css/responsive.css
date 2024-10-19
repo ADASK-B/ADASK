@@ -1,4 +1,4 @@
-@media (max-width: 1120px) {}
+
 
 @media (max-width: 992px) {
   .hero_area {
@@ -60,6 +60,7 @@
   .slider_section {
     text-align: center;
     padding-bottom: 0;
+    position: relative;
   }
 
   .slider_section .detail-box {
@@ -140,7 +141,7 @@
   }
 }
 
-@media (max-width: 480px) {}
+
 
 @media (max-width: 420px) {
   .client_section .detail-box {
@@ -164,16 +165,10 @@
     right: 0;
   }
 
+
   .client_section .carousel-control-prev,
   .client_section .carousel-control-next {
-
     top: 95%;
-
-  }
-
-
-  .client_section .carousel-control-prev,
-  .client_section .carousel-control-next {
     width: 50px;
     height: 50px;
     background-size: 8px;
@@ -217,7 +212,6 @@
   }
 }
 
-@media (max-width: 360px) {}
 
 @media (min-width: 1200px) {
   .container {
