@@ -29,19 +29,31 @@
   <div class="hero_area">
     <!---------------------------------------- header section strats -------------------------------------------------------------------->
     <div id="header-section"></div>
-
     <script>
-      // Den Inhalt von header.html laden
       fetch('header.html')
         .then(response => response.text())
         .then(data => {
-          document.getElementById('header-section').innerHTML = data;
-          
-          // Nachdem der Header hinzugefügt wurde, sicherstellen, dass die in header.html enthaltenen Skripte ausgeführt werden
-          const scripts = document.getElementById('header-section').getElementsByTagName('script');
-          for (let i = 0; i < scripts.length; i++) {
-            eval(scripts[i].innerHTML);
-          }
+          const headerSection = document.getElementById('header-section');
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data;
+          const scripts = tempDiv.querySelectorAll('script');
+          scripts.forEach(script => {
+            script.parentNode.removeChild(script);
+          });
+          headerSection.innerHTML = tempDiv.innerHTML;
+          scripts.forEach(script => {
+            const newScript = document.createElement('script');
+            if (script.src) {
+              newScript.src = script.src;
+              newScript.async = false;
+            } else {
+              newScript.textContent = script.textContent;
+            }
+            document.head.appendChild(newScript);
+          });
+        })
+        .catch(error => {
+          console.error('Fehler beim Laden des Headers:', error);
         });
     </script>
         
@@ -74,7 +86,7 @@
                       Albert Einstein
                     </h1>
                     <p>
-                      Albert Einstein war neugierig, genial und unkonventionell – ein Denker, der die Grenzen der Wissenschaft und des Vorstellungsvermögens sprengte.
+                      Albert Einstein war neugierig, genial und unkonventionell – ein Denker, der die Grenzen der Wissenschaft sprengte.
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn-1">
@@ -504,7 +516,27 @@
     fetch('footer.html')
       .then(response => response.text())
       .then(data => {
-        document.getElementById('footer-section').innerHTML = data;
+        const footerSection = document.getElementById('footer-section');
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = data;
+        const scripts = tempDiv.querySelectorAll('script');
+        scripts.forEach(script => {
+          script.parentNode.removeChild(script);
+        });
+        footerSection.innerHTML = tempDiv.innerHTML;
+        scripts.forEach(script => {
+          const newScript = document.createElement('script');
+          if (script.src) {
+            newScript.src = script.src;
+            newScript.async = false;
+          } else {
+            newScript.textContent = script.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      })
+      .catch(error => {
+        console.error('Fehler beim Laden des Footers:', error);
       });
   </script>
   <!-- end  footer section -->
