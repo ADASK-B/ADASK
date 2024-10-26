@@ -337,6 +337,26 @@
   <!-- end about section -->
 
 <!---------------------------------------------------------- freelance section -->
+<style>
+  .personality-icon {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.3s ease;
+  }
+  
+  .t-link-box:hover .personality-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  /* Spezifische Icon-Farben */
+  .openness-icon { fill: #ffffff; }
+  .conscientiousness-icon { fill: #ffffff; }
+  .extraversion-icon { fill: #ffffff; }
+  .agreeableness-icon { fill: #ffffff; }
+  .neuroticism-icon { fill: #ffffff; }
+  </style>
+
+
 <section class="freelance_section ">
   <div id="accordion">
     <div class="container-fluid">
@@ -351,7 +371,9 @@
             <div class="tab_container">
               <button class="t-link-box" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 <div class="img-box">
-                  <img src="images/f1.png" alt="" loading="lazy">
+                  <svg class="personality-icon openness-icon" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-10v4h2v-4h2l-3-3-3 3h2z"/>
+                  </svg>
                 </div>
                 <div class="detail-box">
                   <h3 style="font-weight: bold;">
@@ -368,7 +390,9 @@
               </div>
               <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 <div class="img-box">
-                  <img src="images/f2.png" alt="" loading="lazy">
+                  <svg class="personality-icon conscientiousness-icon" viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                  </svg>
                 </div>
                 <div class="detail-box">
                   <h3 style="font-weight: bold;">
@@ -385,7 +409,9 @@
               </div>
               <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 <div class="img-box">
-                  <img src="images/f3.png" alt="" loading="lazy">
+                  <svg class="personality-icon extraversion-icon" viewBox="0 0 24 24">
+                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                  </svg>
                 </div>
                 <div class="detail-box">
                   <h3 style="font-weight: bold;">
@@ -402,7 +428,9 @@
               </div>
               <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                 <div class="img-box">
-                  <img src="images/f4.png" alt="" loading="lazy">
+                  <svg class="personality-icon agreeableness-icon" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
                 </div>
                 <div class="detail-box">
                   <h3 style="font-weight: bold;">
@@ -420,7 +448,9 @@
               <!-- New button for Neurotizismus -->
               <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                 <div class="img-box">
-                  <img src="images/f5.png" alt="" loading="lazy">
+                  <svg class="personality-icon neuroticism-icon" viewBox="0 0 24 24">
+                    <path d="M15.5 8.5c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-3 4c-2.33 0-7 1.17-7 3.5V18h14v-2c0-2.33-4.67-3.5-7-3.5zm0 1c1.97 0 4.5.91 4.5 2v1h-9v-1c0-1.09 2.53-2 4.5-2z"/>
+                  </svg>
                 </div>
                 <div class="detail-box">
                   <h3 style="font-weight: bold;">
