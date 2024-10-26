@@ -98,12 +98,73 @@
 
   <!-- about section -->
 
+  <style>
+    .scene {
+      width: 100%;
+      height: 400px;
+      perspective: 1000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    
+    .cube {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.1s ease;
+    }
+    
+    .cube-face {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      border: 2px solid #3498db;
+      background: rgba(52, 152, 219, 0.1);
+      backface-visibility: visible;
+    }
+    
+    .front  { transform: rotateY(0deg) translateZ(100px); }
+    .right  { transform: rotateY(90deg) translateZ(100px); }
+    .back   { transform: rotateY(180deg) translateZ(100px); }
+    .left   { transform: rotateY(-90deg) translateZ(100px); }
+    .top    { transform: rotateX(90deg) translateZ(100px); }
+    .bottom { transform: rotateX(-90deg) translateZ(100px); }
+    
+    .shadow {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: rgba(0, 0, 0, 0.2);
+      transform: translateY(150px) rotateX(90deg);
+      filter: blur(20px);
+    }
+    
+    </style>
+
+
   <section class="about_section layout_padding-bottom">
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-lg-9 mx-auto">
           <div class="img-box">
-            <img src="images/Base3.png" alt="">
+            <div class="scene">
+              <div class="shadow"></div>
+              <div class="cube">
+                <div class="cube-face front">ADASK</div>
+                <div class="cube-face back">ADASK</div>
+                <div class="cube-face right">ADASK</div>
+                <div class="cube-face left">ADASK</div>
+                <div class="cube-face top">ADASK</div>
+                <div class="cube-face bottom">ADASK</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -120,6 +181,38 @@
       </div>
     </div>
   </section>
+
+  
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cube = document.querySelector('.cube');
+    const scene = document.querySelector('.scene');
+    let bounds = scene.getBoundingClientRect();
+  
+    function updateBounds() {
+      bounds = scene.getBoundingClientRect();
+    }
+  
+    window.addEventListener('resize', updateBounds);
+    window.addEventListener('scroll', updateBounds);
+  
+    document.addEventListener('mousemove', function(e) {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+      
+      // Calculate mouse position relative to the scene center
+      const sceneX = bounds.left + bounds.width / 2;
+      const sceneY = bounds.top + bounds.height / 2;
+      
+      // Calculate rotation angles
+      const rotateY = (mouseX - sceneX) / 20;
+      const rotateX = (mouseY - sceneY) / 20;
+      
+      // Apply rotation with smooth transition
+      cube.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+  });
+  </script>
 
   <!-- end about section -->
 
