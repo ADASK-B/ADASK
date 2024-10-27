@@ -211,7 +211,7 @@
 
     function createPlayer() {
       const geometry = new THREE.BoxGeometry(2, 2, 2);
-      const material = new THREE.MeshPhongMaterial({ color: 0x00FF00  });
+      const material = new THREE.MeshPhongMaterial({ color: 0x00FFff  });
       player = new THREE.Mesh(geometry, material);
       player.position.set(0, 5, 0); // Ensure player starts at a higher position to be visible
       player.castShadow = true;
@@ -255,6 +255,7 @@
       const touch = event.touches[0];
       joystickStick.style.left = `${touch.clientX - joystickBase.getBoundingClientRect().left - joystickStick.offsetWidth / 2}px`;
       joystickStick.style.top = `${touch.clientY - joystickBase.getBoundingClientRect().top - joystickStick.offsetHeight / 2}px`;
+      moveDirection.set(0, 0, 0); // Reset direction
     }
 
     function handleJoystickMove(event) {
@@ -268,42 +269,15 @@
       const normalizedX = Math.max(-1, Math.min(1, deltaX / maxDistance));
       const normalizedY = Math.max(-1, Math.min(1, deltaY / maxDistance));
 
-      // Set movement based on normalized joystick values
-      if (Math.abs(normalizedX) > 0.2) {
-        if (normalizedX > 0) {
-          rotateRight = true;
-          rotateLeft = false;
-        } else {
-          rotateLeft = true;
-          rotateRight = false;
-        }
-      } else {
-        rotateLeft = false;
-        rotateRight = false;
-      }
-
-      if (Math.abs(normalizedY) > 0.2) {
-        if (normalizedY > 0) {
-          moveBackward = true;
-          moveForward = false;
-        } else {
-          moveForward = true;
-          moveBackward = false;
-        }
-      } else {
-        moveForward = false;
-        moveBackward = false;
-      }
+      // Update movement direction
+      moveDirection.set(normalizedX, 0, -normalizedY);
     }
 
     function handleJoystickEnd(event) {
       event.preventDefault();
-      rotateLeft = false;
-      rotateRight = false;
-      moveForward = false;
-      moveBackward = false;
       joystickStick.style.left = '50%';
       joystickStick.style.top = '50%';
+      moveDirection.set(0, 0, 0); // Stop movement
     }
 
     function onMouseMove(event) {
@@ -357,9 +331,9 @@
     function animate() {
       requestAnimationFrame(animate);
 
-      const direction = new THREE.Vector3();
       const delta = DELTA_TIME;
 
+      // Rotate player based on keyboard input
       if (rotateLeft) {
         targetRotationY += 1.5 * delta;
       }
@@ -367,21 +341,23 @@
         targetRotationY -= 1.5 * delta;
       }
 
-      // Get the direction in which the player is moving
-      if (moveForward) direction.z -= 1;
-      if (moveBackward) direction.z += 1;
+      player.rotation.y = targetRotationY;
 
-      direction.normalize();
+      // Update velocity based on joystick movement direction and keyboard input
+      velocity.x = moveDirection.x * MOVEMENT_SPEED;
+      velocity.z = moveDirection.z * MOVEMENT_SPEED;
 
-      // Calculate velocity based on the movement direction and speed
-      velocity.x = direction.x * MOVEMENT_SPEED;
-      velocity.z = direction.z * MOVEMENT_SPEED;
+      if (moveForward) {
+        velocity.z = -MOVEMENT_SPEED;
+      }
+      if (moveBackward) {
+        velocity.z = MOVEMENT_SPEED;
+      }
 
       if (!checkPlatformCollisions()) {
         velocity.y -= GRAVITY * delta;
       }
 
-      player.rotation.y = targetRotationY;
       player.translateX(velocity.x * delta);
       player.translateZ(velocity.z * delta);
       player.position.y += velocity.y * delta;
