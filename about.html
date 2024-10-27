@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <style>
     body { 
+
+      /*-----*/
+      body { 
       margin: 0;
       font-family: Arial, sans-serif;
       cursor: default;
       overflow: hidden;
+      touch-action: none;
     }
     
     .container {
@@ -24,14 +29,250 @@
       border-radius: 8px;
       color: white;
       z-index: 100;
+      font-size: 14px;
     }
 
     .virtual-joystick {
       position: absolute;
-      left: 0;
+      left: 40px;  /* Erhöht den Abstand vom linken Rand */
+      bottom: 140px;  /* Erhöht den Abstand vom unteren Rand */
+      z-index: 100;
+    }
+
+    .camera-control {
+      position: absolute;
+      right: 0;
       top: 0;
       width: 50%;
       height: 100%;
+      z-index: 90;  /* Niedrigerer z-index als Buttons */
+    }
+
+    .action-buttons {
+      position: absolute;
+      right: 40px;  /* Erhöht den Abstand vom rechten Rand */
+      bottom: 140px;  /* Erhöht den Abstand vom unteren Rand */
+      z-index: 100;
+    }
+
+    .jump-button {
+      background: rgba(255, 255, 255, 0.3);
+      border: 2px solid white;
+      color: white;
+      width: 100px;  /* Größerer Button */
+      height: 100px;  /* Größerer Button */
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 24px;  /* Größere Schrift */
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .game-canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    .joystick-base {
+      position: absolute;
+      width: 150px;  /* Größerer Joystick */
+      height: 150px;  /* Größerer Joystick */
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+    }
+
+    .joystick-stick {
+      position: absolute;
+      width: 70px;  /* Größerer Stick */
+      height: 70px;  /* Größerer Stick */
+      background: rgba(255, 255, 255, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Anpassungen für kleinere Bildschirme */
+    @media (max-height: 600px) {
+      .virtual-joystick {
+        bottom: 80px;
+      }
+      
+      .action-buttons {
+        bottom: 80px;
+      }
+      
+      .joystick-base {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .joystick-stick {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .jump-button {
+        width: 80px;
+        height: 80px;
+        font-size: 20px;
+      }
+    }
+    /* ----------*/
+
+      margin: 0;
+      font-family: Arial, sans-serif;
+      cursor: default;
+      overflow: hidden;
+      touch-action: none;
+    }
+    
+    .container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    .controls {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      border-radius: 8px;
+      color: white;
+      z-index: 100;
+      font-size: 14px;
+    }
+
+    .virtual-joystick {
+      position: absolute;
+      left: 40px;  /* Erhöht den Abstand vom linken Rand */
+      bottom: 140px;  /* Erhöht den Abstand vom unteren Rand */
+      z-index: 100;
+    }
+
+    .camera-control {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 90;  /* Niedrigerer z-index als Buttons */
+    }
+
+    .action-buttons {
+      position: absolute;
+      right: 40px;  /* Erhöht den Abstand vom rechten Rand */
+      bottom: 140px;  /* Erhöht den Abstand vom unteren Rand */
+      z-index: 100;
+    }
+
+    .jump-button {
+      background: rgba(255, 255, 255, 0.3);
+      border: 2px solid white;
+      color: white;
+      width: 100px;  /* Größerer Button */
+      height: 100px;  /* Größerer Button */
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 24px;  /* Größere Schrift */
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .game-canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    .joystick-base {
+      position: absolute;
+      width: 150px;  /* Größerer Joystick */
+      height: 150px;  /* Größerer Joystick */
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+    }
+
+    .joystick-stick {
+      position: absolute;
+      width: 70px;  /* Größerer Stick */
+      height: 70px;  /* Größerer Stick */
+      background: rgba(255, 255, 255, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Anpassungen für kleinere Bildschirme */
+    @media (max-height: 600px) {
+      .virtual-joystick {
+        bottom: 80px;
+      }
+      
+      .action-buttons {
+        bottom: 80px;
+      }
+      
+      .joystick-base {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .joystick-stick {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .jump-button {
+        width: 80px;
+        height: 80px;
+        font-size: 20px;
+      }
+    }
+    body { 
+      margin: 0;
+      font-family: Arial, sans-serif;
+      cursor: default;
+      overflow: hidden;
+      touch-action: none;
+    }
+    
+    .container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    .controls {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      border-radius: 8px;
+      color: white;
+      z-index: 100;
+      font-size: 14px;
+    }
+
+    .virtual-joystick {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
       z-index: 100;
     }
 
@@ -47,7 +288,7 @@
     .action-buttons {
       position: absolute;
       right: 20px;
-      bottom: 20px;
+      bottom: 40px;
       z-index: 100;
     }
 
@@ -55,14 +296,16 @@
       background: rgba(255, 255, 255, 0.3);
       border: 2px solid white;
       color: white;
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
+      font-size: 18px;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .game-canvas {
@@ -72,18 +315,19 @@
 
     .joystick-base {
       position: absolute;
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.4);
       border-radius: 50%;
-      display: none;
     }
 
     .joystick-stick {
       position: absolute;
-      width: 40px;
-      height: 40px;
+      width: 60px;
+      height: 60px;
       background: rgba(255, 255, 255, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.6);
       border-radius: 50%;
       top: 50%;
       left: 50%;
@@ -94,10 +338,10 @@
 <body>
   <div class="container">
     <div class="controls">
-      <h3>Steuerung:</h3>
-      <p>Linke Seite: Bewegungssteuerung</p>
-      <p>Rechte Seite: Kamerasteuerung</p>
-      <p>Sprung-Button: Springen</p>
+      <h3 style="margin: 0 0 10px 0">Steuerung:</h3>
+      <p style="margin: 5px 0">Links: Joystick für Bewegung</p>
+      <p style="margin: 5px 0">Rechts: Kamerasteuerung</p>
+      <p style="margin: 5px 0">Rechts unten: Springen</p>
     </div>
     <div class="virtual-joystick">
       <div class="joystick-base">
@@ -173,26 +417,13 @@
     }
 
     function createPlayer() {
-      // Erstelle eine Kugel statt eines Würfels
       const geometry = new THREE.SphereGeometry(1, 32, 32);
       const material = new THREE.MeshPhongMaterial({ color: 0xFF0000 });
       player = new THREE.Mesh(geometry, material);
       player.position.set(0, 2, 0);
       player.castShadow = true;
-      
-      // Text "ADASK" auf der Kugel
-      const textGeometry = new THREE.TextGeometry('ADASK', {
-        size: 0.5,
-        height: 0.1,
-      });
-      const textMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF });
-      const text = new THREE.Mesh(textGeometry, textMaterial);
-      text.position.set(-1, 0, 1);
-      player.add(text);
-      
       scene.add(player);
       
-      // Angepasste Bounding Box für die Kugel
       playerBoundingBox = new THREE.Box3(
         new THREE.Vector3(-1, -1, -1),
         new THREE.Vector3(1, 1, 1)
@@ -203,75 +434,88 @@
       joystickBase = document.querySelector('.joystick-base');
       joystickStick = document.querySelector('.joystick-stick');
       
-      // Joystick Events
-      const virtualJoystick = document.querySelector('.virtual-joystick');
-      virtualJoystick.addEventListener('mousedown', startJoystick);
-      document.addEventListener('mousemove', moveJoystick);
-      document.addEventListener('mouseup', endJoystick);
+      // Touch Events für Joystick
+      joystickBase.addEventListener('touchstart', handleJoystickStart);
+      document.addEventListener('touchmove', handleJoystickMove);
+      document.addEventListener('touchend', handleJoystickEnd);
       
-      // Kamera Events
+      // Mouse Events für Joystick
+      joystickBase.addEventListener('mousedown', handleJoystickStart);
+      document.addEventListener('mousemove', handleJoystickMove);
+      document.addEventListener('mouseup', handleJoystickEnd);
+      
+      // Kamera Touch Events
       const cameraControl = document.querySelector('.camera-control');
-      cameraControl.addEventListener('mousedown', startCameraMove);
-      cameraControl.addEventListener('mousemove', moveCameraView);
-      cameraControl.addEventListener('mouseup', endCameraMove);
+      cameraControl.addEventListener('touchstart', startCameraMove);
+      cameraControl.addEventListener('touchmove', moveCameraView);
+      cameraControl.addEventListener('touchend', endCameraMove);
       
       // Sprung-Button
       const jumpButton = document.querySelector('.jump-button');
-      jumpButton.addEventListener('click', () => {
-        if (canJump) {
-          velocity.y += JUMP_FORCE;
-          canJump = false;
-        }
-      });
+      jumpButton.addEventListener('touchstart', handleJump);
+      jumpButton.addEventListener('mousedown', handleJump);
     }
 
-    function startJoystick(event) {
+    function handleJoystickStart(event) {
       isJoystickActive = true;
-      joystickBase.style.display = 'block';
-      joystickBase.style.left = `${event.clientX - 50}px`;
-      joystickBase.style.top = `${event.clientY - 50}px`;
-      joystickStartPos.set(event.clientX, event.clientY);
+      const pos = event.type.includes('mouse') ? event : event.touches[0];
+      joystickStartPos.set(pos.clientX, pos.clientY);
       joystickCurrentPos.copy(joystickStartPos);
+      event.preventDefault();
     }
 
-    function moveJoystick(event) {
+    function handleJoystickMove(event) {
       if (!isJoystickActive) return;
       
-      joystickCurrentPos.set(event.clientX, event.clientY);
+      const pos = event.type.includes('mouse') ? event : event.touches[0];
+      joystickCurrentPos.set(pos.clientX, pos.clientY);
+      
       const deltaX = joystickCurrentPos.x - joystickStartPos.x;
       const deltaY = joystickCurrentPos.y - joystickStartPos.y;
       
-      const distance = Math.min(50, Math.sqrt(deltaX * deltaX + deltaY * deltaY));
+      const distance = Math.min(30, Math.sqrt(deltaX * deltaX + deltaY * deltaY));
       const angle = Math.atan2(deltaY, deltaX);
       
       const stickX = Math.cos(angle) * distance;
       const stickY = Math.sin(angle) * distance;
       
-      joystickStick.style.transform = `translate(${stickX}px, ${stickY}px)`;
+      joystickStick.style.transform = `translate(calc(-50% + ${stickX}px), calc(-50% + ${stickY}px))`;
       
-      // Bewegungsrichtung basierend auf Joystick
-      moveDirection.x = deltaX / 50;
-      moveDirection.z = deltaY / 50;
+      moveDirection.x = deltaX / 30;
+      moveDirection.z = deltaY / 30;
+      
+      event.preventDefault();
     }
 
-    function endJoystick() {
+    function handleJoystickEnd(event) {
+      if (!isJoystickActive) return;
       isJoystickActive = false;
-      joystickBase.style.display = 'none';
-      joystickStick.style.transform = 'translate(0px, 0px)';
+      joystickStick.style.transform = 'translate(-50%, -50%)';
       moveDirection.set(0, 0, 0);
+      event.preventDefault();
+    }
+
+    function handleJump(event) {
+      if (canJump) {
+        velocity.y += JUMP_FORCE;
+        canJump = false;
+      }
+      event.preventDefault();
     }
 
     function startCameraMove(event) {
       isCameraMoving = true;
-      lastCameraX = event.clientX;
+      const pos = event.type.includes('mouse') ? event : event.touches[0];
+      lastCameraX = pos.clientX;
     }
 
     function moveCameraView(event) {
       if (!isCameraMoving) return;
       
-      const deltaX = event.clientX - lastCameraX;
+      const pos = event.type.includes('mouse') ? event : event.touches[0];
+      const deltaX = pos.clientX - lastCameraX;
       cameraRotation += deltaX * 0.01;
-      lastCameraX = event.clientX;
+      lastCameraX = pos.clientX;
     }
 
     function endCameraMove() {
@@ -281,7 +525,7 @@
     function animate() {
       requestAnimationFrame(animate);
       
-      const delta = 0.016; // ca. 60 FPS
+      const delta = 0.016;
       
       velocity.x = moveDirection.x * MOVEMENT_SPEED;
       velocity.z = moveDirection.z * MOVEMENT_SPEED;
@@ -290,19 +534,16 @@
         velocity.y -= GRAVITY * delta;
       }
       
-      // Bewegung anwenden
       player.position.x += velocity.x * delta;
       player.position.z += velocity.z * delta;
       player.position.y += velocity.y * delta;
       
-      // Kamera folgt dem Spieler
       const cameraDistance = 20;
       camera.position.x = player.position.x + Math.sin(cameraRotation) * cameraDistance;
       camera.position.z = player.position.z + Math.cos(cameraRotation) * cameraDistance;
       camera.position.y = player.position.y + 15;
       camera.lookAt(player.position);
       
-      // Reset Position wenn zu tief gefallen
       if (player.position.y < -50) {
         player.position.set(0, 10, 0);
         velocity.set(0, 0, 0);
