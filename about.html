@@ -211,7 +211,7 @@
 
     function createPlayer() {
       const geometry = new THREE.BoxGeometry(2, 2, 2);
-      const material = new THREE.MeshPhongMaterial({ color: 0xFF0000 });
+      const material = new THREE.MeshPhongMaterial({ color: 0xFFFFFF });
       player = new THREE.Mesh(geometry, material);
       player.position.set(0, 5, 0); // Ensure player starts at a higher position to be visible
       player.castShadow = true;
