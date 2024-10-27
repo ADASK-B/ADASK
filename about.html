@@ -113,15 +113,29 @@
         font-size: 20px;
       }
     }
+
+    /* Steuerung für den PC */
+    @media (min-width: 768px) {
+      .controls {
+        display: block;
+      }
+      .virtual-joystick,
+      .action-buttons {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="controls">
       <h3 style="margin: 0 0 10px 0">Steuerung:</h3>
-      <p style="margin: 5px 0">Links: Joystick für Bewegung</p>
-      <p style="margin: 5px 0">Rechts: Kamerasteuerung</p>
-      <p style="margin: 5px 0">Unten: Springen</p>
+      <p style="margin: 5px 0"><span class="control-key">W</span> Vorwärts</p>
+      <p style="margin: 5px 0"><span class="control-key">S</span> Rückwärts</p>
+      <p style="margin: 5px 0"><span class="control-key">A</span> Links</p>
+      <p style="margin: 5px 0"><span class="control-key">D</span> Rechts</p>
+      <p style="margin: 5px 0"><span class="control-key">Space</span> Springen</p>
+      <p>Maus bewegen: Kamera steuern</p>
     </div>
     <div class="virtual-joystick">
       <div class="joystick-base">
@@ -146,22 +160,20 @@
     let canJump = false;
     let moveDirection = new THREE.Vector3();
     
-    // Joystick Variablen
-    let joystickBase;
-    let joystickStick;
-    let isJoystickActive = false;
-    let joystickStartPos = new THREE.Vector2();
-    let joystickCurrentPos = new THREE.Vector2();
-    
-    // Kamera Variablen
-    let cameraRotation = 0;
-    let isCameraMoving = false;
+    let moveForward = false;
+    let moveBackward = false;
+    let moveLeft = false;
+    let moveRight = false;
+    let targetRotationY = 0;
+    let isPointerLocked = false;
     let lastCameraX = 0;
-    
+    let cameraRotation = 0;
+
     const MOVEMENT_SPEED = 15.0;
-    const GRAVITY = 250.0;
-    const JUMP_FORCE = 100.0;
-    const COLLISION_THRESHOLD = 0.001;
+    const GRAVITY = 150.0;
+    const JUMP_FORCE = 70.0;
+    const COLLISION_THRESHOLD = 1.001;
+    const DELTA_TIME = 0.016;  // Fixed delta time for consistent movement
 
     init();
     animate();
@@ -191,16 +203,17 @@
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.shadowMap.enabled = true;
+      renderer.outputEncoding = THREE.sRGBEncoding;
 
       setupControls();
       window.addEventListener('resize', onWindowResize, false);
     }
 
     function createPlayer() {
-      const geometry = new THREE.SphereGeometry(1, 32, 32);
+      const geometry = new THREE.BoxGeometry(2, 2, 2);
       const material = new THREE.MeshPhongMaterial({ color: 0xFF0000 });
       player = new THREE.Mesh(geometry, material);
-      player.position.set(0, 2, 0);
+      player.position.set(0, 5, 0); // Ensure player starts at a higher position to be visible
       player.castShadow = true;
       scene.add(player);
       
@@ -208,129 +221,109 @@
     }
 
     function setupControls() {
-      joystickBase = document.querySelector('.joystick-base');
-      joystickStick = document.querySelector('.joystick-stick');
-      
-      // Touch Events für Joystick
-      joystickBase.addEventListener('touchstart', handleJoystickStart);
-      document.addEventListener('touchmove', handleJoystickMove);
-      document.addEventListener('touchend', handleJoystickEnd);
-      
-      // Mouse Events für Joystick
-      joystickBase.addEventListener('mousedown', handleJoystickStart);
-      document.addEventListener('mousemove', handleJoystickMove);
-      document.addEventListener('mouseup', handleJoystickEnd);
-      
-      // Kamera Touch Events
-      const cameraControl = document.querySelector('.camera-control');
-      cameraControl.addEventListener('touchstart', startCameraMove);
-      cameraControl.addEventListener('touchmove', moveCameraView);
-      cameraControl.addEventListener('touchend', endCameraMove);
-      
-      // Sprung-Button
-      const jumpButton = document.querySelector('.jump-button');
-      jumpButton.addEventListener('touchstart', handleJump);
-      jumpButton.addEventListener('mousedown', handleJump);
+      document.addEventListener('keydown', onKeyDown);
+      document.addEventListener('keyup', onKeyUp);
+      document.addEventListener('click', function() {
+        if (!isPointerLocked) {
+          document.querySelector('.game-canvas').requestPointerLock();
+        }
+      });
+      document.addEventListener('pointerlockchange', function() {
+        isPointerLocked = document.pointerLockElement === document.querySelector('.game-canvas');
+      });
+      document.addEventListener('mousemove', onMouseMove, false);
     }
 
-    function handleJoystickStart(event) {
-      isJoystickActive = true;
-      const pos = event.type.includes('mouse') ? event : event.touches[0];
-      joystickStartPos.set(pos.clientX, pos.clientY);
-      joystickCurrentPos.copy(joystickStartPos);
-      event.preventDefault();
-    }
-
-    function handleJoystickMove(event) {
-      if (!isJoystickActive) return;
-      
-      const pos = event.type.includes('mouse') ? event : event.touches[0];
-      joystickCurrentPos.set(pos.clientX, pos.clientY);
-      
-      const deltaX = joystickCurrentPos.x - joystickStartPos.x;
-      const deltaY = joystickCurrentPos.y - joystickStartPos.y;
-      
-      const distance = Math.min(30, Math.sqrt(deltaX * deltaX + deltaY * deltaY));
-      const angle = Math.atan2(deltaY, deltaX);
-      
-      const stickX = Math.cos(angle) * distance;
-      const stickY = Math.sin(angle) * distance;
-      
-      joystickStick.style.transform = `translate(calc(-50% + ${stickX}px), calc(-50% + ${stickY}px))`;
-      
-      moveDirection.x = deltaX / 30;
-      moveDirection.z = deltaY / 30;
-      
-      event.preventDefault();
-    }
-
-    function handleJoystickEnd(event) {
-      if (!isJoystickActive) return;
-      isJoystickActive = false;
-      joystickStick.style.transform = 'translate(-50%, -50%)';
-      moveDirection.set(0, 0, 0);
-      event.preventDefault();
-    }
-
-    function handleJump(event) {
-      if (canJump) {
-        velocity.y += JUMP_FORCE;
-        canJump = false;
+    function onMouseMove(event) {
+      if (isPointerLocked) {
+        const movementX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
+        targetRotationY -= movementX * 0.002;
+        player.rotation.y = targetRotationY;
       }
-      event.preventDefault();
     }
 
-    function startCameraMove(event) {
-      isCameraMoving = true;
-      const pos = event.type.includes('mouse') ? event : event.touches[0];
-      lastCameraX = pos.clientX;
+    function onKeyDown(event) {
+      switch (event.code) {
+        case 'KeyW':
+          moveForward = true;
+          break;
+        case 'KeyS':
+          moveBackward = true;
+          break;
+        case 'KeyA':
+          moveLeft = true;
+          break;
+        case 'KeyD':
+          moveRight = true;
+          break;
+        case 'Space':
+          if (canJump) {
+            velocity.y += JUMP_FORCE;
+            canJump = false;
+          }
+          break;
+      }
     }
 
-    function moveCameraView(event) {
-      if (!isCameraMoving) return;
-      
-      const pos = event.type.includes('mouse') ? event : event.touches[0];
-      const deltaX = pos.clientX - lastCameraX;
-      cameraRotation += deltaX * 0.01;
-      lastCameraX = pos.clientX;
-    }
-
-    function endCameraMove() {
-      isCameraMoving = false;
+    function onKeyUp(event) {
+      switch (event.code) {
+        case 'KeyW':
+          moveForward = false;
+          break;
+        case 'KeyS':
+          moveBackward = false;
+          break;
+        case 'KeyA':
+          moveLeft = false;
+          break;
+        case 'KeyD':
+          moveRight = false;
+          break;
+      }
     }
 
     function animate() {
       requestAnimationFrame(animate);
-      
-      const delta = 0.016;
-      
-      velocity.x = moveDirection.x * MOVEMENT_SPEED;
-      velocity.z = moveDirection.z * MOVEMENT_SPEED;
-      
+
+      const direction = new THREE.Vector3();
+      const delta = DELTA_TIME;
+
+      // Get the direction in which the player is moving
+      if (moveForward) direction.z -= 1;
+      if (moveBackward) direction.z += 1;
+      if (moveLeft) direction.x -= 1;
+      if (moveRight) direction.x += 1;
+
+      direction.normalize();
+
+      // Calculate velocity based on the movement direction and speed
+      velocity.x = direction.x * MOVEMENT_SPEED;
+      velocity.z = direction.z * MOVEMENT_SPEED;
+
       if (!checkPlatformCollisions()) {
         velocity.y -= GRAVITY * delta;
       }
-      
-      player.position.x += velocity.x * delta;
-      player.position.z += velocity.z * delta;
+
+      player.translateX(velocity.x * delta);
+      player.translateZ(velocity.z * delta);
       player.position.y += velocity.y * delta;
-      
-      const cameraDistance = 20;
-      camera.position.x = player.position.x + Math.sin(cameraRotation) * cameraDistance;
-      camera.position.z = player.position.z + Math.cos(cameraRotation) * cameraDistance;
-      camera.position.y = player.position.y + 15;
+
+      // Update camera position to follow the player
+      const cameraOffset = new THREE.Vector3(0, 15, 20).applyAxisAngle(new THREE.Vector3(0, 1, 0), targetRotationY);
+      camera.position.copy(player.position).add(cameraOffset);
       camera.lookAt(player.position);
-      
+
+      // Reset player position if they fall below a certain point
       if (player.position.y < -50) {
         player.position.set(0, 10, 0);
         velocity.set(0, 0, 0);
       }
-      
+
       renderer.render(scene, camera);
     }
 
     function createPlatforms() {
-      createPlatform(0, 0, 0, 30, 2, 30, 0x8B4513);
+      createPlatform(0, 0, 0, 150, 10, 150, 0x8B4513);
       createPlatform(25, 5, 0, 15, 2, 15, 0x228B22);
       createPlatform(50, 10, -10, 15, 2, 15, 0x4682B4);
       createPlatform(75, 15, 0, 15, 2, 15, 0xCD853F);
