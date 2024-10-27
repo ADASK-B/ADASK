@@ -38,6 +38,36 @@
       width: 100%;
       height: 100%;
     }
+  
+
+    .mobile-controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 101;
+    }
+
+    .mobile-button {
+      width: 60px;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 50%;
+      color: white;
+      text-align: center;
+      line-height: 60px;
+      font-size: 24px;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    @media (pointer: coarse) {
+      canvas {
+        touch-action: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -50,6 +80,13 @@
       <p><span class="control-key">D</span> Rechts</p>
       <p><span class="control-key">Space</span> Springen</p>
       <p>Maus bewegen: Kamera steuern</p>
+    </div>
+    <div class="mobile-controls">
+      <div class="mobile-button" id="rotateLeft">&larr;</div>
+      <div class="mobile-button" id="moveForward">&uarr;</div>
+      <div class="mobile-button" id="moveBackward">&darr;</div>
+      <div class="mobile-button" id="rotateRight">&rarr;</div>
+      <div class="mobile-button" id="jump">&#x25B2;</div>
     </div>
     <canvas class="game-canvas"></canvas>
   </div>
@@ -82,12 +119,16 @@
     const MOVEMENT_SPEED = 15.0;
     const GRAVITY = 250.0;
     const JUMP_FORCE = 100.0;
-    const COLLISION_THRESHOLD = 0.001; // Neue Konstante für Kollisionserkennung
+    const COLLISION_THRESHOLD = 0.01; // Neue Konstante für Kollisionserkennung
 
     init();
     animate();
 
     function init() {
+      if (isMobileDevice()) {
+        addMobileControls();
+        window.addEventListener('deviceorientation', handleOrientation, true);
+      }
       scene = new THREE.Scene();
       scene.background = new THREE.Color(0x87CEEB);
       scene.fog = new THREE.Fog(0x87CEEB, 0, 750);
@@ -121,6 +162,20 @@
       renderer.shadowMap.enabled = true;
 
       document.addEventListener('keydown', onKeyDown);
+      document.getElementById('moveForward').addEventListener('touchstart', () => moveForward = true);
+      document.getElementById('moveForward').addEventListener('touchend', () => moveForward = false);
+      document.getElementById('moveBackward').addEventListener('touchstart', () => moveBackward = true);
+      document.getElementById('moveBackward').addEventListener('touchend', () => moveBackward = false);
+      document.getElementById('rotateLeft').addEventListener('touchstart', () => targetRotationY += 0.05);
+      document.getElementById('rotateLeft').addEventListener('touchend', () => {});
+      document.getElementById('rotateRight').addEventListener('touchstart', () => targetRotationY -= 0.05);
+      document.getElementById('rotateRight').addEventListener('touchend', () => {});
+      document.getElementById('jump').addEventListener('touchstart', () => {
+  if (canJump) {
+    velocity.y += JUMP_FORCE;
+    canJump = false;
+  }
+});
       document.addEventListener('keyup', onKeyUp);
       window.addEventListener('resize', onWindowResize, false);
       
@@ -172,6 +227,10 @@
       const offset = cameraOffset.clone();
       offset.applyMatrix4(rotationMatrix);
       
+      if (isMobileDevice()) {
+        offset.x = 0; // Kamera horizontal drehen auf mobilen Geräten
+      }
+      
       camera.position.copy(player.position).add(offset);
       camera.lookAt(player.position);
     }
@@ -189,7 +248,7 @@
         velocity.y -= GRAVITY * delta;
       }
 
-      direction.z = Number(moveBackward) - Number(moveForward); // W vorwärts und S rückwärts
+      direction.z = Number(moveBackward) - Number(moveForward);
       direction.x = Number(moveRight) - Number(moveLeft);
       direction.normalize();
 
@@ -342,6 +401,15 @@
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+  
+    function isMobileDevice() {
+      return typeof window.orientation !== 'undefined' || navigator.userAgent.indexOf('IEMobile') !== -1;
+    }
+
+    function handleOrientation(event) {
+      const gamma = event.gamma; // left-right tilt in degrees
+      targetRotationY -= gamma * 0.001;
     }
   </script>
 </body>
