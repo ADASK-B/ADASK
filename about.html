@@ -32,7 +32,7 @@
     .virtual-joystick,
     .action-buttons {
       position: absolute;
-      bottom: 50px;
+      bottom: 80px;
       z-index: 100;
       display: flex;
       align-items: center;
@@ -94,14 +94,14 @@
 
     /* Anpassungen für kleinere Bildschirme */
     @media (max-height: 600px) {
-  .virtual-joystick,
-  .action-buttons {
-    bottom: 20px;
+      .virtual-joystick,
+      .action-buttons {
+        bottom: 20px;
       }
       
       .joystick-base {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
       }
       
       .joystick-stick {
@@ -110,8 +110,8 @@
       }
       
       .jump-button {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         font-size: 20px;
       }
     }
@@ -211,7 +211,7 @@
 
     function createPlayer() {
       const geometry = new THREE.BoxGeometry(2, 2, 2);
-      const material = new THREE.MeshPhongMaterial({ color: 0xFFFFFF });
+      const material = new THREE.MeshPhongMaterial({ color: 0x00FF00  });
       player = new THREE.Mesh(geometry, material);
       player.position.set(0, 5, 0); // Ensure player starts at a higher position to be visible
       player.castShadow = true;
@@ -239,6 +239,15 @@
       joystickBase.addEventListener('touchstart', handleJoystickStart);
       document.addEventListener('touchmove', handleJoystickMove);
       document.addEventListener('touchend', handleJoystickEnd);
+
+      // Jump button on mobile
+      const jumpButton = document.querySelector('.jump-button');
+      jumpButton.addEventListener('touchstart', function() {
+        if (canJump) {
+          velocity.y += JUMP_FORCE;
+          canJump = false;
+        }
+      });
     }
 
     function handleJoystickStart(event) {
