@@ -32,7 +32,7 @@
     .virtual-joystick,
     .action-buttons {
       position: absolute;
-      bottom: 80px;
+      bottom: 50px;
       z-index: 100;
       display: flex;
       align-items: center;
@@ -211,7 +211,7 @@
 
     function createPlayer() {
       const geometry = new THREE.BoxGeometry(2, 2, 2);
-      const material = new THREE.MeshPhongMaterial({ color: 0x00FF00  });
+      const material = new THREE.MeshPhongMaterial({ color: 0x00FFff  });
       player = new THREE.Mesh(geometry, material);
       player.position.set(0, 5, 0); // Ensure player starts at a higher position to be visible
       player.castShadow = true;
@@ -237,8 +237,8 @@
       const joystickBase = document.querySelector('.joystick-base');
       const joystickStick = document.querySelector('.joystick-stick');
       joystickBase.addEventListener('touchstart', handleJoystickStart);
-      document.addEventListener('touchmove', handleJoystickMove);
-      document.addEventListener('touchend', handleJoystickEnd);
+      joystickBase.addEventListener('touchmove', handleJoystickMove);
+      joystickBase.addEventListener('touchend', handleJoystickEnd);
 
       // Jump button on mobile
       const jumpButton = document.querySelector('.jump-button');
@@ -251,12 +251,14 @@
     }
 
     function handleJoystickStart(event) {
+      event.preventDefault();
       const touch = event.touches[0];
       joystickStick.style.left = `${touch.clientX - joystickBase.getBoundingClientRect().left - joystickStick.offsetWidth / 2}px`;
       joystickStick.style.top = `${touch.clientY - joystickBase.getBoundingClientRect().top - joystickStick.offsetHeight / 2}px`;
     }
 
     function handleJoystickMove(event) {
+      event.preventDefault();
       const touch = event.touches[0];
       const deltaX = touch.clientX - joystickBase.getBoundingClientRect().left - joystickBase.offsetWidth / 2;
       const deltaY = touch.clientY - joystickBase.getBoundingClientRect().top - joystickBase.offsetHeight / 2;
@@ -286,7 +288,8 @@
       }
     }
 
-    function handleJoystickEnd() {
+    function handleJoystickEnd(event) {
+      event.preventDefault();
       rotateLeft = false;
       rotateRight = false;
       moveForward = false;
