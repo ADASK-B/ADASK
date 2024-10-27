@@ -4,9 +4,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <style>
     body { 
-
-      /*-----*/
-      body { 
       margin: 0;
       font-family: Arial, sans-serif;
       cursor: default;
@@ -32,42 +29,37 @@
       font-size: 14px;
     }
 
-    .virtual-joystick {
+    .virtual-joystick,
+    .action-buttons {
       position: absolute;
-      left: 40px;  /* Erhöht den Abstand vom linken Rand */
-      bottom: 140px;  /* Erhöht den Abstand vom unteren Rand */
+      bottom: 5%;
       z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .camera-control {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 50%;
-      height: 100%;
-      z-index: 90;  /* Niedrigerer z-index als Buttons */
+    .virtual-joystick {
+      left: 5%;
     }
 
     .action-buttons {
-      position: absolute;
-      right: 40px;  /* Erhöht den Abstand vom rechten Rand */
-      bottom: 140px;  /* Erhöht den Abstand vom unteren Rand */
-      z-index: 100;
+      right: 5%;
     }
 
     .jump-button {
       background: rgba(255, 255, 255, 0.3);
       border: 2px solid white;
       color: white;
-      width: 100px;  /* Größerer Button */
-      height: 100px;  /* Größerer Button */
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
-      font-size: 24px;  /* Größere Schrift */
+      font-size: 24px;
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
     }
@@ -78,9 +70,9 @@
     }
 
     .joystick-base {
-      position: absolute;
-      width: 150px;  /* Größerer Joystick */
-      height: 150px;  /* Größerer Joystick */
+      position: relative;
+      width: 150px;
+      height: 150px;
       background: rgba(255, 255, 255, 0.2);
       border: 2px solid rgba(255, 255, 255, 0.4);
       border-radius: 50%;
@@ -88,8 +80,8 @@
 
     .joystick-stick {
       position: absolute;
-      width: 70px;  /* Größerer Stick */
-      height: 70px;  /* Größerer Stick */
+      width: 70px;
+      height: 70px;
       background: rgba(255, 255, 255, 0.5);
       border: 2px solid rgba(255, 255, 255, 0.6);
       border-radius: 50%;
@@ -100,12 +92,9 @@
 
     /* Anpassungen für kleinere Bildschirme */
     @media (max-height: 600px) {
-      .virtual-joystick {
-        bottom: 80px;
-      }
-      
+      .virtual-joystick,
       .action-buttons {
-        bottom: 80px;
+        bottom: 8%;
       }
       
       .joystick-base {
@@ -123,215 +112,6 @@
         height: 80px;
         font-size: 20px;
       }
-    }
-    /* ----------*/
-
-      margin: 0;
-      font-family: Arial, sans-serif;
-      cursor: default;
-      overflow: hidden;
-      touch-action: none;
-    }
-    
-    .container {
-      width: 100vw;
-      height: 100vh;
-      position: relative;
-    }
-
-    .controls {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 15px;
-      border-radius: 8px;
-      color: white;
-      z-index: 100;
-      font-size: 14px;
-    }
-
-    .virtual-joystick {
-      position: absolute;
-      left: 40px;  /* Erhöht den Abstand vom linken Rand */
-      bottom: 140px;  /* Erhöht den Abstand vom unteren Rand */
-      z-index: 100;
-    }
-
-    .camera-control {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 50%;
-      height: 100%;
-      z-index: 90;  /* Niedrigerer z-index als Buttons */
-    }
-
-    .action-buttons {
-      position: absolute;
-      right: 40px;  /* Erhöht den Abstand vom rechten Rand */
-      bottom: 140px;  /* Erhöht den Abstand vom unteren Rand */
-      z-index: 100;
-    }
-
-    .jump-button {
-      background: rgba(255, 255, 255, 0.3);
-      border: 2px solid white;
-      color: white;
-      width: 100px;  /* Größerer Button */
-      height: 100px;  /* Größerer Button */
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 24px;  /* Größere Schrift */
-      -webkit-tap-highlight-color: transparent;
-      touch-action: manipulation;
-    }
-
-    .game-canvas {
-      width: 100%;
-      height: 100%;
-    }
-
-    .joystick-base {
-      position: absolute;
-      width: 150px;  /* Größerer Joystick */
-      height: 150px;  /* Größerer Joystick */
-      background: rgba(255, 255, 255, 0.2);
-      border: 2px solid rgba(255, 255, 255, 0.4);
-      border-radius: 50%;
-    }
-
-    .joystick-stick {
-      position: absolute;
-      width: 70px;  /* Größerer Stick */
-      height: 70px;  /* Größerer Stick */
-      background: rgba(255, 255, 255, 0.5);
-      border: 2px solid rgba(255, 255, 255, 0.6);
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    /* Anpassungen für kleinere Bildschirme */
-    @media (max-height: 600px) {
-      .virtual-joystick {
-        bottom: 80px;
-      }
-      
-      .action-buttons {
-        bottom: 80px;
-      }
-      
-      .joystick-base {
-        width: 120px;
-        height: 120px;
-      }
-      
-      .joystick-stick {
-        width: 50px;
-        height: 50px;
-      }
-      
-      .jump-button {
-        width: 80px;
-        height: 80px;
-        font-size: 20px;
-      }
-    }
-    body { 
-      margin: 0;
-      font-family: Arial, sans-serif;
-      cursor: default;
-      overflow: hidden;
-      touch-action: none;
-    }
-    
-    .container {
-      width: 100vw;
-      height: 100vh;
-      position: relative;
-    }
-
-    .controls {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 15px;
-      border-radius: 8px;
-      color: white;
-      z-index: 100;
-      font-size: 14px;
-    }
-
-    .virtual-joystick {
-      position: absolute;
-      left: 20px;
-      bottom: 20px;
-      z-index: 100;
-    }
-
-    .camera-control {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 50%;
-      height: 100%;
-      z-index: 100;
-    }
-
-    .action-buttons {
-      position: absolute;
-      right: 20px;
-      bottom: 40px;
-      z-index: 100;
-    }
-
-    .jump-button {
-      background: rgba(255, 255, 255, 0.3);
-      border: 2px solid white;
-      color: white;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 18px;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .game-canvas {
-      width: 100%;
-      height: 100%;
-    }
-
-    .joystick-base {
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      background: rgba(255, 255, 255, 0.2);
-      border: 2px solid rgba(255, 255, 255, 0.4);
-      border-radius: 50%;
-    }
-
-    .joystick-stick {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      background: rgba(255, 255, 255, 0.5);
-      border: 2px solid rgba(255, 255, 255, 0.6);
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
     }
   </style>
 </head>
@@ -341,7 +121,7 @@
       <h3 style="margin: 0 0 10px 0">Steuerung:</h3>
       <p style="margin: 5px 0">Links: Joystick für Bewegung</p>
       <p style="margin: 5px 0">Rechts: Kamerasteuerung</p>
-      <p style="margin: 5px 0">Rechts unten: Springen</p>
+      <p style="margin: 5px 0">Unten: Springen</p>
     </div>
     <div class="virtual-joystick">
       <div class="joystick-base">
@@ -424,10 +204,7 @@
       player.castShadow = true;
       scene.add(player);
       
-      playerBoundingBox = new THREE.Box3(
-        new THREE.Vector3(-1, -1, -1),
-        new THREE.Vector3(1, 1, 1)
-      );
+      playerBoundingBox = new THREE.Box3().setFromObject(player);
     }
 
     function setupControls() {
