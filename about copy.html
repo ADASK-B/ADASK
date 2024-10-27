@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="Finden Sie" />
+  <meta name="description" content="Finden Sie" />
+  <meta name="author" content="ADASK" />
+
+  <title>ADASK</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+   <!---------------------------------------- header section strats -------------------------------------------------------------------->
+   <div id="header-section"></div>
+   <script>
+     fetch('header.html')
+       .then(response => response.text())
+       .then(data => {
+         const headerSection = document.getElementById('header-section');
+         const tempDiv = document.createElement('div');
+         tempDiv.innerHTML = data;
+         const scripts = tempDiv.querySelectorAll('script');
+         scripts.forEach(script => {
+           script.parentNode.removeChild(script);
+         });
+         headerSection.innerHTML = tempDiv.innerHTML;
+         scripts.forEach(script => {
+           const newScript = document.createElement('script');
+           if (script.src) {
+             newScript.src = script.src;
+             newScript.async = false;
+           } else {
+             newScript.textContent = script.textContent;
+           }
+           document.head.appendChild(newScript);
+         });
+       })
+       .catch(error => {
+         console.error('Fehler beim Laden des Headers:', error);
+       });
+   </script>
+       
+   <!-- ------------------------------------------------end header section -------------------------------------------->
+  </div>
+
+
+  <!-- experience section -->
+
+  <section class="experience_section layout_padding-top layout_padding2-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="img-box">
+            <img src="images/Base3.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Best Experinced Freelancer Here
+              </h2>
+            </div>
+            <p>
+              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+            </p>
+            <div class="btn-box">
+              <a href="" class="btn-1">
+                Read More
+              </a>
+              <a href="" class="btn-2">
+                Hire
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- end experience section -->
+
+
+  <!-- about section -->
+
+  <style>
+    .scene {
+      width: 100%;
+      height: 400px;
+      perspective: 1000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    
+    .cube {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.1s ease;
+    }
+    
+    .cube-face {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      border: 2px solid #3498db;
+      background: rgba(52, 152, 219, 0.1);
+      backface-visibility: visible;
+    }
+    
+    .front  { transform: rotateY(0deg) translateZ(100px); }
+    .right  { transform: rotateY(90deg) translateZ(100px); }
+    .back   { transform: rotateY(180deg) translateZ(100px); }
+    .left   { transform: rotateY(-90deg) translateZ(100px); }
+    .top    { transform: rotateX(90deg) translateZ(100px); }
+    .bottom { transform: rotateX(-90deg) translateZ(100px); }
+    
+    .shadow {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: rgba(0, 0, 0, 0.2);
+      transform: translateY(150px) rotateX(90deg);
+      filter: blur(20px);
+    }
+    
+    </style>
+
+
+  <section class="about_section layout_padding-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-lg-9 mx-auto">
+          <div class="img-box">
+            <div class="scene">
+              <div class="shadow"></div>
+              <div class="cube">
+                <div class="cube-face front">ADASK</div>
+                <div class="cube-face back">ADASK</div>
+                <div class="cube-face right">ADASK</div>
+                <div class="cube-face left">ADASK</div>
+                <div class="cube-face top">ADASK</div>
+                <div class="cube-face bottom">ADASK</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <h2>
+          About ADASK Company
+        </h2>
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If youThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you
+        </p>
+        <a href="">
+          Read More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cube = document.querySelector('.cube');
+    const scene = document.querySelector('.scene');
+    let bounds = scene.getBoundingClientRect();
+  
+    function updateBounds() {
+      bounds = scene.getBoundingClientRect();
+    }
+  
+    window.addEventListener('resize', updateBounds);
+    window.addEventListener('scroll', updateBounds);
+  
+    document.addEventListener('mousemove', function(e) {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+      
+      // Calculate mouse position relative to the scene center
+      const sceneX = bounds.left + bounds.width / 2;
+      const sceneY = bounds.top + bounds.height / 2;
+      
+      // Calculate rotation angles
+      const rotateY = (mouseX - sceneX) / 20;
+      const rotateX = (mouseY - sceneY) / 20;
+      
+      // Apply rotation with smooth transition
+      cube.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+  });
+  </script>
+
+  <!-- end about section -->
+
+  <!-- info section -->
+  <div id="footer-section"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        const footerSection = document.getElementById('footer-section');
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = data;
+        const scripts = tempDiv.querySelectorAll('script');
+        scripts.forEach(script => {
+          script.parentNode.removeChild(script);
+        });
+        footerSection.innerHTML = tempDiv.innerHTML;
+        scripts.forEach(script => {
+          const newScript = document.createElement('script');
+          if (script.src) {
+            newScript.src = script.src;
+            newScript.async = false;
+          } else {
+            newScript.textContent = script.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      })
+      .catch(error => {
+        console.error('Fehler beim Laden des Footers:', error);
+      });
+  </script>
+  <!-- end  footer section -->
+
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
+
+
+</body>
+</body>
+
+</html>
