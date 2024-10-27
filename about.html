@@ -32,7 +32,7 @@
     .virtual-joystick,
     .action-buttons {
       position: absolute;
-      bottom: 5%;
+      bottom: 50px;
       z-index: 100;
       display: flex;
       align-items: center;
@@ -45,14 +45,15 @@
 
     .action-buttons {
       right: 5%;
+      flex-direction: column;
     }
 
     .jump-button {
       background: rgba(255, 255, 255, 0.3);
       border: 2px solid white;
       color: white;
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       cursor: pointer;
       display: flex;
@@ -62,6 +63,7 @@
       font-size: 24px;
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
+      margin-bottom: 10px;
     }
 
     .game-canvas {
@@ -71,8 +73,8 @@
 
     .joystick-base {
       position: relative;
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
       background: rgba(255, 255, 255, 0.2);
       border: 2px solid rgba(255, 255, 255, 0.4);
       border-radius: 50%;
@@ -92,9 +94,9 @@
 
     /* Anpassungen für kleinere Bildschirme */
     @media (max-height: 600px) {
-      .virtual-joystick,
-      .action-buttons {
-        bottom: 8%;
+  .virtual-joystick,
+  .action-buttons {
+    bottom: 20px;
       }
       
       .joystick-base {
@@ -162,17 +164,15 @@
     
     let moveForward = false;
     let moveBackward = false;
-    let moveLeft = false;
-    let moveRight = false;
+    let rotateLeft = false;
+    let rotateRight = false;
     let targetRotationY = 0;
     let isPointerLocked = false;
-    let lastCameraX = 0;
-    let cameraRotation = 0;
 
     const MOVEMENT_SPEED = 15.0;
-    const GRAVITY = 150.0;
-    const JUMP_FORCE = 70.0;
-    const COLLISION_THRESHOLD = 1.001;
+    const GRAVITY = 250.0;
+    const JUMP_FORCE = 100.0;
+    const COLLISION_THRESHOLD = 0.001;
     const DELTA_TIME = 0.016;  // Fixed delta time for consistent movement
 
     init();
@@ -232,6 +232,58 @@
         isPointerLocked = document.pointerLockElement === document.querySelector('.game-canvas');
       });
       document.addEventListener('mousemove', onMouseMove, false);
+
+      // Mobile joystick controls
+      const joystickBase = document.querySelector('.joystick-base');
+      const joystickStick = document.querySelector('.joystick-stick');
+      joystickBase.addEventListener('touchstart', handleJoystickStart);
+      document.addEventListener('touchmove', handleJoystickMove);
+      document.addEventListener('touchend', handleJoystickEnd);
+    }
+
+    function handleJoystickStart(event) {
+      const touch = event.touches[0];
+      joystickStick.style.left = `${touch.clientX - joystickBase.getBoundingClientRect().left - joystickStick.offsetWidth / 2}px`;
+      joystickStick.style.top = `${touch.clientY - joystickBase.getBoundingClientRect().top - joystickStick.offsetHeight / 2}px`;
+    }
+
+    function handleJoystickMove(event) {
+      const touch = event.touches[0];
+      const deltaX = touch.clientX - joystickBase.getBoundingClientRect().left - joystickBase.offsetWidth / 2;
+      const deltaY = touch.clientY - joystickBase.getBoundingClientRect().top - joystickBase.offsetHeight / 2;
+
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX > 20) {
+          rotateRight = true;
+          rotateLeft = false;
+        } else if (deltaX < -20) {
+          rotateLeft = true;
+          rotateRight = false;
+        } else {
+          rotateLeft = false;
+          rotateRight = false;
+        }
+      } else {
+        if (deltaY > 20) {
+          moveBackward = true;
+          moveForward = false;
+        } else if (deltaY < -20) {
+          moveForward = true;
+          moveBackward = false;
+        } else {
+          moveForward = false;
+          moveBackward = false;
+        }
+      }
+    }
+
+    function handleJoystickEnd() {
+      rotateLeft = false;
+      rotateRight = false;
+      moveForward = false;
+      moveBackward = false;
+      joystickStick.style.left = '50%';
+      joystickStick.style.top = '50%';
     }
 
     function onMouseMove(event) {
@@ -251,10 +303,10 @@
           moveBackward = true;
           break;
         case 'KeyA':
-          moveLeft = true;
+          rotateLeft = true;
           break;
         case 'KeyD':
-          moveRight = true;
+          rotateRight = true;
           break;
         case 'Space':
           if (canJump) {
@@ -274,10 +326,10 @@
           moveBackward = false;
           break;
         case 'KeyA':
-          moveLeft = false;
+          rotateLeft = false;
           break;
         case 'KeyD':
-          moveRight = false;
+          rotateRight = false;
           break;
       }
     }
@@ -288,11 +340,16 @@
       const direction = new THREE.Vector3();
       const delta = DELTA_TIME;
 
+      if (rotateLeft) {
+        targetRotationY += 1.5 * delta;
+      }
+      if (rotateRight) {
+        targetRotationY -= 1.5 * delta;
+      }
+
       // Get the direction in which the player is moving
       if (moveForward) direction.z -= 1;
       if (moveBackward) direction.z += 1;
-      if (moveLeft) direction.x -= 1;
-      if (moveRight) direction.x += 1;
 
       direction.normalize();
 
@@ -304,6 +361,7 @@
         velocity.y -= GRAVITY * delta;
       }
 
+      player.rotation.y = targetRotationY;
       player.translateX(velocity.x * delta);
       player.translateZ(velocity.z * delta);
       player.position.y += velocity.y * delta;
