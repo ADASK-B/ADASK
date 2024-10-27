@@ -6,6 +6,7 @@
       margin: 0;
       font-family: Arial, sans-serif;
       cursor: default;
+      overflow: hidden;
     }
     
     .container {
@@ -25,18 +26,68 @@
       z-index: 100;
     }
 
-    .control-key {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.2);
-      padding: 5px 10px;
-      border-radius: 4px;
-      margin: 3px;
-      font-family: monospace;
+    .virtual-joystick {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 100;
+    }
+
+    .camera-control {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 100;
+    }
+
+    .action-buttons {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      z-index: 100;
+    }
+
+    .jump-button {
+      background: rgba(255, 255, 255, 0.3);
+      border: 2px solid white;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
     }
 
     .game-canvas {
       width: 100%;
       height: 100%;
+    }
+
+    .joystick-base {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: none;
+    }
+
+    .joystick-stick {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   </style>
 </head>
@@ -44,12 +95,18 @@
   <div class="container">
     <div class="controls">
       <h3>Steuerung:</h3>
-      <p><span class="control-key">W</span> Vorwärts</p>
-      <p><span class="control-key">S</span> Rückwärts</p>
-      <p><span class="control-key">A</span> Links</p>
-      <p><span class="control-key">D</span> Rechts</p>
-      <p><span class="control-key">Space</span> Springen</p>
-      <p>Maus bewegen: Kamera steuern</p>
+      <p>Linke Seite: Bewegungssteuerung</p>
+      <p>Rechte Seite: Kamerasteuerung</p>
+      <p>Sprung-Button: Springen</p>
+    </div>
+    <div class="virtual-joystick">
+      <div class="joystick-base">
+        <div class="joystick-stick"></div>
+      </div>
+    </div>
+    <div class="camera-control"></div>
+    <div class="action-buttons">
+      <button class="jump-button">JUMP</button>
     </div>
     <canvas class="game-canvas"></canvas>
   </div>
@@ -58,31 +115,29 @@
     import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
 
     let camera, scene, renderer;
-    let moveForward = false;
-    let moveBackward = false;
-    let moveLeft = false;
-    let moveRight = false;
-    let canJump = false;
-
+    let player;
     let platforms = [];
     let playerBoundingBox;
-    let player;
-    let playerDirection = new THREE.Vector3();
+    let velocity = new THREE.Vector3();
+    let canJump = false;
+    let moveDirection = new THREE.Vector3();
     
-    let mouseX = 0;
-    let mouseY = 0;
-    let targetRotationY = 0;
-    let isPointerLocked = false;
+    // Joystick Variablen
+    let joystickBase;
+    let joystickStick;
+    let isJoystickActive = false;
+    let joystickStartPos = new THREE.Vector2();
+    let joystickCurrentPos = new THREE.Vector2();
     
-    let prevTime = performance.now();
-    const velocity = new THREE.Vector3();
-    const direction = new THREE.Vector3();
-    const cameraOffset = new THREE.Vector3(0, 5, 10);
-
+    // Kamera Variablen
+    let cameraRotation = 0;
+    let isCameraMoving = false;
+    let lastCameraX = 0;
+    
     const MOVEMENT_SPEED = 15.0;
     const GRAVITY = 250.0;
     const JUMP_FORCE = 100.0;
-    const COLLISION_THRESHOLD = 0.001; // Neue Konstante für Kollisionserkennung
+    const COLLISION_THRESHOLD = 0.001;
 
     init();
     animate();
@@ -94,7 +149,6 @@
 
       camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
       camera.position.set(0, 15, 20);
-      camera.lookAt(0, 0, 0);
 
       const ambientLight = new THREE.AmbientLight(0x404040, 1.5);
       scene.add(ambientLight);
@@ -106,12 +160,6 @@
       createPlatforms();
       createPlayer();
 
-      // Vergrößerte Collision Box für bessere Kollisionserkennung
-      playerBoundingBox = new THREE.Box3(
-        new THREE.Vector3(-0.8, -2, -0.8),
-        new THREE.Vector3(0.8, 0.2, 0.8)
-      );
-
       renderer = new THREE.WebGLRenderer({
         canvas: document.querySelector('.game-canvas'),
         antialias: true
@@ -120,142 +168,155 @@
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.shadowMap.enabled = true;
 
-      document.addEventListener('keydown', onKeyDown);
-      document.addEventListener('keyup', onKeyUp);
+      setupControls();
       window.addEventListener('resize', onWindowResize, false);
-      
-      document.addEventListener('click', function() {
-        if (!isPointerLocked) {
-          document.querySelector('.game-canvas').requestPointerLock();
-        }
-      });
-
-      document.addEventListener('pointerlockchange', function() {
-        isPointerLocked = document.pointerLockElement === document.querySelector('.game-canvas');
-      });
-
-      document.addEventListener('mousemove', onMouseMove, false);
     }
 
     function createPlayer() {
-      const geometry = new THREE.BoxGeometry(2, 2, 2);
+      // Erstelle eine Kugel statt eines Würfels
+      const geometry = new THREE.SphereGeometry(1, 32, 32);
       const material = new THREE.MeshPhongMaterial({ color: 0xFF0000 });
       player = new THREE.Mesh(geometry, material);
       player.position.set(0, 2, 0);
       player.castShadow = true;
       
-      const noseGeometry = new THREE.BoxGeometry(0.5, 0.5, 1);
-      const noseMaterial = new THREE.MeshPhongMaterial({ color: 0x000000 });
-      const nose = new THREE.Mesh(noseGeometry, noseMaterial);
-      nose.position.z = 1;
-      player.add(nose);
+      // Text "ADASK" auf der Kugel
+      const textGeometry = new THREE.TextGeometry('ADASK', {
+        size: 0.5,
+        height: 0.1,
+      });
+      const textMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF });
+      const text = new THREE.Mesh(textGeometry, textMaterial);
+      text.position.set(-1, 0, 1);
+      player.add(text);
       
       scene.add(player);
+      
+      // Angepasste Bounding Box für die Kugel
+      playerBoundingBox = new THREE.Box3(
+        new THREE.Vector3(-1, -1, -1),
+        new THREE.Vector3(1, 1, 1)
+      );
     }
 
-    function onMouseMove(event) {
-      if (isPointerLocked) {
-        const movementX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
-        const movementY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
-
-        targetRotationY -= movementX * 0.002;
-        camera.rotation.x = Math.max(Math.min(camera.rotation.x - movementY * 0.002, Math.PI / 2), -Math.PI / 2);
-      }
+    function setupControls() {
+      joystickBase = document.querySelector('.joystick-base');
+      joystickStick = document.querySelector('.joystick-stick');
+      
+      // Joystick Events
+      const virtualJoystick = document.querySelector('.virtual-joystick');
+      virtualJoystick.addEventListener('mousedown', startJoystick);
+      document.addEventListener('mousemove', moveJoystick);
+      document.addEventListener('mouseup', endJoystick);
+      
+      // Kamera Events
+      const cameraControl = document.querySelector('.camera-control');
+      cameraControl.addEventListener('mousedown', startCameraMove);
+      cameraControl.addEventListener('mousemove', moveCameraView);
+      cameraControl.addEventListener('mouseup', endCameraMove);
+      
+      // Sprung-Button
+      const jumpButton = document.querySelector('.jump-button');
+      jumpButton.addEventListener('click', () => {
+        if (canJump) {
+          velocity.y += JUMP_FORCE;
+          canJump = false;
+        }
+      });
     }
 
-    function updateCamera() {
-      player.rotation.y = targetRotationY;
+    function startJoystick(event) {
+      isJoystickActive = true;
+      joystickBase.style.display = 'block';
+      joystickBase.style.left = `${event.clientX - 50}px`;
+      joystickBase.style.top = `${event.clientY - 50}px`;
+      joystickStartPos.set(event.clientX, event.clientY);
+      joystickCurrentPos.copy(joystickStartPos);
+    }
+
+    function moveJoystick(event) {
+      if (!isJoystickActive) return;
       
-      const rotationMatrix = new THREE.Matrix4();
-      rotationMatrix.makeRotationY(targetRotationY);
+      joystickCurrentPos.set(event.clientX, event.clientY);
+      const deltaX = joystickCurrentPos.x - joystickStartPos.x;
+      const deltaY = joystickCurrentPos.y - joystickStartPos.y;
       
-      const offset = cameraOffset.clone();
-      offset.applyMatrix4(rotationMatrix);
+      const distance = Math.min(50, Math.sqrt(deltaX * deltaX + deltaY * deltaY));
+      const angle = Math.atan2(deltaY, deltaX);
       
-      camera.position.copy(player.position).add(offset);
-      camera.lookAt(player.position);
+      const stickX = Math.cos(angle) * distance;
+      const stickY = Math.sin(angle) * distance;
+      
+      joystickStick.style.transform = `translate(${stickX}px, ${stickY}px)`;
+      
+      // Bewegungsrichtung basierend auf Joystick
+      moveDirection.x = deltaX / 50;
+      moveDirection.z = deltaY / 50;
+    }
+
+    function endJoystick() {
+      isJoystickActive = false;
+      joystickBase.style.display = 'none';
+      joystickStick.style.transform = 'translate(0px, 0px)';
+      moveDirection.set(0, 0, 0);
+    }
+
+    function startCameraMove(event) {
+      isCameraMoving = true;
+      lastCameraX = event.clientX;
+    }
+
+    function moveCameraView(event) {
+      if (!isCameraMoving) return;
+      
+      const deltaX = event.clientX - lastCameraX;
+      cameraRotation += deltaX * 0.01;
+      lastCameraX = event.clientX;
+    }
+
+    function endCameraMove() {
+      isCameraMoving = false;
     }
 
     function animate() {
       requestAnimationFrame(animate);
-
-      const time = performance.now();
-      const delta = (time - prevTime) / 1000;
-
-      velocity.x -= velocity.x * 10.0 * delta;
-      velocity.z -= velocity.z * 10.0 * delta;
-
+      
+      const delta = 0.016; // ca. 60 FPS
+      
+      velocity.x = moveDirection.x * MOVEMENT_SPEED;
+      velocity.z = moveDirection.z * MOVEMENT_SPEED;
+      
       if (!checkPlatformCollisions()) {
         velocity.y -= GRAVITY * delta;
       }
-
-      direction.z = Number(moveBackward) - Number(moveForward); // W vorwärts und S rückwärts
-      direction.x = Number(moveRight) - Number(moveLeft);
-      direction.normalize();
-
-      const moveRotationMatrix = new THREE.Matrix4();
-      moveRotationMatrix.makeRotationY(targetRotationY);
-      direction.applyEuler(player.rotation);
-
-      if (moveForward || moveBackward) {
-        velocity.z = direction.z * MOVEMENT_SPEED * delta;
-        velocity.x = direction.x * MOVEMENT_SPEED * delta;
-      }
-      if (moveLeft || moveRight) {
-        velocity.x = direction.x * MOVEMENT_SPEED * delta;
-        velocity.z = direction.z * MOVEMENT_SPEED * delta;
-      }
-
-      // Temporäre Position für Kollisionsprüfung
-      const tempPosition = player.position.clone();
-      tempPosition.x += velocity.x;
-      tempPosition.z += velocity.z;
-      tempPosition.y += velocity.y * delta;
-
-      // Kollisionsprüfung mit der temporären Position
-      const tempBox = playerBoundingBox.clone();
-      tempBox.min.add(tempPosition.sub(player.position));
-      tempBox.max.add(tempPosition.sub(player.position));
-
-      let canMove = true;
-      platforms.forEach(platform => {
-        if (tempBox.intersectsBox(platform.userData.boundingBox)) {
-          // Kollision erkannt, Bewegung nur erlauben, wenn der Spieler auf der Plattform steht
-          if (player.position.y > platform.position.y + (platform.geometry.parameters.height / 2)) {
-            canMove = true;
-          } else {
-            canMove = false;
-          }
-        }
-      });
-
-      if (canMove) {
-        player.position.x += velocity.x;
-        player.position.z += velocity.z;
-        player.position.y += velocity.y * delta;
-      }
-
+      
+      // Bewegung anwenden
+      player.position.x += velocity.x * delta;
+      player.position.z += velocity.z * delta;
+      player.position.y += velocity.y * delta;
+      
+      // Kamera folgt dem Spieler
+      const cameraDistance = 20;
+      camera.position.x = player.position.x + Math.sin(cameraRotation) * cameraDistance;
+      camera.position.z = player.position.z + Math.cos(cameraRotation) * cameraDistance;
+      camera.position.y = player.position.y + 15;
+      camera.lookAt(player.position);
+      
       // Reset Position wenn zu tief gefallen
       if (player.position.y < -50) {
         player.position.set(0, 10, 0);
         velocity.set(0, 0, 0);
       }
-
-      updateCamera();
-      prevTime = time;
+      
       renderer.render(scene, camera);
     }
 
     function createPlatforms() {
-      // Größere Startplattform
       createPlatform(0, 0, 0, 30, 2, 30, 0x8B4513);
-
-      // Plattform-Parcours mit breiteren Plattformen
       createPlatform(25, 5, 0, 15, 2, 15, 0x228B22);
       createPlatform(50, 10, -10, 15, 2, 15, 0x4682B4);
       createPlatform(75, 15, 0, 15, 2, 15, 0xCD853F);
       createPlatform(100, 20, 10, 15, 2, 15, 0x8B008B);
-      
       createPlatform(125, 25, 0, 15, 2, 15, 0xFFD700);
       createPlatform(125, 30, -20, 15, 2, 15, 0x00CED1);
       createPlatform(125, 35, -40, 15, 2, 15, 0xFF6347);
@@ -285,7 +346,6 @@
         if (playerBoundingBox.intersectsBox(platform.userData.boundingBox)) {
           const platformY = platform.position.y + (platform.geometry.parameters.height / 2);
           
-          // Verbesserte Kollisionserkennung mit Toleranzbereich
           if (player.position.y >= platformY - COLLISION_THRESHOLD && velocity.y <= 0) {
             player.position.y = platformY + 1;
             velocity.y = 0;
@@ -296,46 +356,6 @@
       });
 
       return onPlatform;
-    }
-
-    function onKeyDown(event) {
-      switch(event.code) {
-        case 'KeyW':
-          moveForward = true; // Geändert: W bewegt sich vorwärts
-          break;
-        case 'KeyS':
-          moveBackward = true; // Geändert: S bewegt sich rückwärts
-          break;
-        case 'KeyA':
-          moveLeft = true;
-          break;
-        case 'KeyD':
-          moveRight = true;
-          break;
-        case 'Space':
-          if(canJump) {
-            velocity.y += JUMP_FORCE;
-            canJump = false;
-          }
-          break;
-      }
-    }
-
-    function onKeyUp(event) {
-      switch(event.code) {
-        case 'KeyW':
-          moveForward = false; // Geändert: W stoppt die Vorwärtsbewegung
-          break;
-        case 'KeyS':
-          moveBackward = false; // Geändert: S stoppt die Rückwärtsbewegung
-          break;
-        case 'KeyA':
-          moveLeft = false;
-          break;
-        case 'KeyD':
-          moveRight = false;
-          break;
-      }
     }
 
     function onWindowResize() {
