@@ -37,20 +37,23 @@ body {
 
 .layout_padding {
   padding-top: 90px;
-  padding-bottom: 90px;
+  padding-bottom: 100px;
 }
 
 .layout_padding2 {
   padding: 45px 0;
 }
-
+.layout_padding3 {
+  padding-top: 100px;
+}
 .layout_padding2-top {
   padding-top: 45px;
   padding-bottom: 45px;
 }
 
 .layout_padding2-bottom {
-  padding-bottom: 45px;
+  padding-Top: 100px;
+  padding-bottom: 100px;
 }
 
 .layout_padding-top {

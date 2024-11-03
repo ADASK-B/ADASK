@@ -181,7 +181,7 @@
 @media (min-width: 1200px) {
   /* Reduziere den Abstand der h3-Überschrift */
   .freelance_section .tab_container .t-link-box .detail-box h3 {
-    margin-left: 0px; /* Beispielwert, um den Text näher nach rechts zu schieben */
+    margin-left: 10px; /* Beispielwert, um den Text näher nach rechts zu schieben */
   }
 
   /* Reduziere den Abstand der img-box */
