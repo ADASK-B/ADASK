@@ -6776,7 +6776,7 @@ button.bg-dark:focus {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .d-md-none {
     display: none !important;
   }
