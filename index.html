@@ -21,7 +21,7 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script> -->
   <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
   <script src="js/jquery-3.4.1.min.js"></script>
 
@@ -102,37 +102,10 @@
             </div>
             <div class="offset-md-1 col-md-4 img-container">
               <div class="img-box">
-                              <!-- HTML Teil -->
-                <div id="video-container">
-                  <!-- Posterbild wird zuerst angezeigt -->
-                  <img id="einstein-poster" src="images/Albert_Poster.webp" alt="Albert Einstein" style=" cursor: default;" />
-                </div>
-
-                <!-- JavaScript Teil -->
-                <script>
-                  window.addEventListener("load", function() {
-                      // Verwende das window.onload Event, um sicherzustellen, dass das Video erst nach dem Laden aller Ressourcen hinzugefügt wird
-                      setTimeout(function() {
-                          const videoContainer = document.getElementById('video-container');
-
-                          // Ersetze das Poster-Bild durch das Video nach einer Verzögerung von 1 Sekunde
-                          videoContainer.innerHTML = `
-                              <video id="einstein-video" class="responsive-video" preload="none" autoplay loop muted playsinline style="pointer-events: none; display: block;">
-                                  <source src="images/Albert_Alpha.webm" type="video/webm">
-                                  Your browser does not support the video tag.
-                              </video>
-                          `;
-
-                          // Starte das Video automatisch
-                          const video = document.getElementById('einstein-video');
-                          video.play().then(() => {
-                              console.log("Video erfolgreich abgespielt.");
-                          }).catch(error => {
-                              console.log("Autoplay-Problem: " + error);
-                          });
-                      }, 2000); // 1 Sekunde Verzögerung nach vollständigem Laden der Seite
-                  });
-                </script>
+                <video class="responsive-video" autoplay loop muted playsinline style="pointer-events: none;" poster="images/Albert_Poster.webp">
+                  <source src="images/Albert_Alpha.webm" type="video/webm">
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>
