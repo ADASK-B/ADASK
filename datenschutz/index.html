@@ -27,7 +27,7 @@
     <!-- header section strats -->
     <div id="header-section"></div>
     <script>
-      fetch('../header/header.html')
+      fetch('../header.html')
         .then(response => response.text())
         .then(data => {
           const headerSection = document.getElementById('header-section');
@@ -174,16 +174,37 @@
   </section>
   <!-- end experience section -->
 
-  <!-- info section -->
-  <div id="footer-section"></div>
-  <script>
-    fetch('../footer/footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer-section').innerHTML = data;
-      });
-  </script>
-  <!-- end  footer section -->
+    <!-- info section -->
+    <div id="footer-section"></div>
+    <script>
+      fetch('../footer.html')
+        .then(response => response.text())
+        .then(data => {
+          const footerSection = document.getElementById('footer-section');
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data;
+          const scripts = tempDiv.querySelectorAll('script');
+          scripts.forEach(script => {
+            script.parentNode.removeChild(script);
+          });
+          footerSection.innerHTML = tempDiv.innerHTML;
+          scripts.forEach(script => {
+            const newScript = document.createElement('script');
+            if (script.src) {
+              newScript.src = script.src;
+              newScript.async = false;
+            } else {
+              newScript.textContent = script.textContent;
+            }
+            document.body.appendChild(newScript);
+          });
+        })
+        .catch(error => {
+          console.error('Fehler beim Laden des Footers:', error);
+        });
+    </script>
+    <!-- end  footer section -->
+  
 
   <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/custom.js"></script>
