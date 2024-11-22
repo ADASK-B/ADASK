@@ -15,11 +15,11 @@
   <title>ADASK</title>
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-<!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+  <!-- Custom styles for this template -->
+  <link href="../css/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="../css/responsive.css" rel="stylesheet" />
 
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   
@@ -30,7 +30,7 @@
    <!---------------------------------------- header section strats -------------------------------------------------------------------->
    <div id="header-section"></div>
    <script>
-     fetch('header.html')
+     fetch('../header/header.html')
        .then(response => response.text())
        .then(data => {
          const headerSection = document.getElementById('header-section');
@@ -107,7 +107,7 @@
       <div class="about_content">
         <div class="img-box">
           <!-- 3D Viewer instead of the image with proper animation enabled -->
-          <model-viewer src="images/globe_work_table_globustisch.glb" alt="3D Model of Work Table" auto-rotate  ar autoplay animation-name="*"></model-viewer>
+          <model-viewer src="../images/globe_work_table_globustisch.glb" alt="3D Model of Work Table" auto-rotate  ar autoplay animation-name="*"></model-viewer>
         </div>
         <div class="detail-box">
           <h2>
@@ -133,7 +133,7 @@
         <div class="row">
           <div class="col-md-5">
             <div class="img-box">
-              <img src="images/Base3.png" alt="">
+              <img src="../images/Base3.png" alt="">
             </div>
           </div>
           <div class="col-md-7">
@@ -165,7 +165,7 @@
   <!-- info section -->
   <div id="footer-section"></div>
   <script>
-    fetch('footer.html')
+    fetch('../footer/footer.html')
       .then(response => response.text())
       .then(data => {
         const footerSection = document.getElementById('footer-section');
@@ -194,12 +194,10 @@
   <!-- end  footer section -->
 
 
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/custom.js"></script>
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script src="../js/custom.js"></script>
 
 
 </body>
-</body>
-
 </html>

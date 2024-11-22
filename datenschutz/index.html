@@ -15,61 +15,44 @@
   <title>ADASK</title>
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="../css/responsive.css" rel="stylesheet" />
 </head>
 
 <body class="sub_page">
   <div class="hero_area">
     <!-- header section strats -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.html">
-            <img src="images/logo.webp" alt="Logo der Firma ADASK" loading="lazy" width="35" height="35"/>
-            <span>
-              ADASK
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav  ">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="about.html"> About</a>
-              </li>
-              <!--<li class="nav-item">
-                <a class="nav-link" href="Datenschutz.html">Datenschutz</a>
-              </li>-->
-            </ul>
-          </div>
-          <div>
-            <div class="custom_menu-btn ">
-              <button>
-                <span class=" s-1">
-
-                </span>
-                <span class="s-2">
-
-                </span>
-                <span class="s-3">
-
-                </span>
-              </button>
-            </div>
-          </div>
-
-        </nav>
-      </div>
-    </header>
+    <div id="header-section"></div>
+    <script>
+      fetch('../header/header.html')
+        .then(response => response.text())
+        .then(data => {
+          const headerSection = document.getElementById('header-section');
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data;
+          const scripts = tempDiv.querySelectorAll('script');
+          scripts.forEach(script => {
+            script.parentNode.removeChild(script);
+          });
+          headerSection.innerHTML = tempDiv.innerHTML;
+          scripts.forEach(script => {
+            const newScript = document.createElement('script');
+            if (script.src) {
+              newScript.src = script.src;
+              newScript.async = false;
+            } else {
+              newScript.textContent = script.textContent;
+            }
+            document.head.appendChild(newScript);
+          });
+        })
+        .catch(error => {
+          console.error('Fehler beim Laden des Headers:', error);
+        });
+    </script>
     <!-- end header section -->
   </div>
 
@@ -194,7 +177,7 @@
   <!-- info section -->
   <div id="footer-section"></div>
   <script>
-    fetch('footer.html')
+    fetch('../footer/footer.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('footer-section').innerHTML = data;
@@ -202,8 +185,8 @@
   </script>
   <!-- end  footer section -->
 
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/custom.js"></script>
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/custom.js"></script>
   
 </body>
 </html>
