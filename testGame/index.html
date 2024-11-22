@@ -21,7 +21,7 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>
   <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
   <script src="js/jquery-3.4.1.min.js"></script>
 
@@ -31,33 +31,33 @@
   <div class="hero_area">
     <!---------------------------------------- header section strats -------------------------------------------------------------------->
     <div id="header-section"></div>
-      <script>
-        fetch('header/header.html')
-          .then(response => response.text())
-          .then(data => {
-            const headerSection = document.getElementById('header-section');
-            const tempDiv = document.createElement('div');
-            tempDiv.innerHTML = data;
-            const scripts = tempDiv.querySelectorAll('script');
-            scripts.forEach(script => {
-              script.parentNode.removeChild(script);
-            });
-            headerSection.innerHTML = tempDiv.innerHTML;
-            scripts.forEach(script => {
-              const newScript = document.createElement('script');
-              if (script.src) {
-                newScript.src = script.src;
-                newScript.async = false;
-              } else {
-                newScript.textContent = script.textContent;
-              }
-              document.head.appendChild(newScript);
-            });
-          })
-          .catch(error => {
-            console.error('Fehler beim Laden des Headers:', error);
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const headerSection = document.getElementById('header-section');
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data;
+          const scripts = tempDiv.querySelectorAll('script');
+          scripts.forEach(script => {
+            script.parentNode.removeChild(script);
           });
-      </script>
+          headerSection.innerHTML = tempDiv.innerHTML;
+          scripts.forEach(script => {
+            const newScript = document.createElement('script');
+            if (script.src) {
+              newScript.src = script.src;
+              newScript.async = false;
+            } else {
+              newScript.textContent = script.textContent;
+            }
+            document.head.appendChild(newScript);
+          });
+        })
+        .catch(error => {
+          console.error('Fehler beim Laden des Headers:', error);
+        });
+    </script>
         
     <!-- ------------------------------------------------end header section -------------------------------------------->
  <!-- slider section -->
@@ -102,10 +102,10 @@
             </div>
             <div class="offset-md-1 col-md-4 img-container">
               <div class="img-box">
-                <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="pointer-events: none;" poster="images/Albert_Poster.webp">
+                <video class="responsive-video" autoplay loop muted playsinline style="pointer-events: none;" poster="images/Albert_Poster.webp">
                   <source src="images/Albert_Alpha.webm" type="video/webm">
                   Your browser does not support the video tag.
-              </video>
+                </video>
               </div>
             </div>
           </div>
@@ -136,7 +136,7 @@
             </div>
             <div class="offset-md-1 col-md-4 img-container">
               <div class="img-box">
-                <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="pointer-events: none;" poster="images/Curie_Alpha_Poster.webp">
+                <video class="responsive-video" autoplay loop muted playsinline style="pointer-events: none;" poster="images/Curie_Alpha_Poster.webp">
                   <source src="images/Curie_Alpha.webm" type="video/webm">
                   Your browser does not support the video tag.
                 </video>
@@ -170,7 +170,7 @@
             </div>
             <div class="offset-md-1 col-md-4 img-container">
               <div class="img-box">
-                <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="pointer-events: none;" poster="images/Monroe_Alpha_Poster.webp">
+                <video class="responsive-video" autoplay loop muted playsinline style="pointer-events: none;" poster="images/Monroe_Alpha_Poster.webp">
                   <source src="images/Monroe_Alpha.webm" type="video/webm">
                   Your browser does not support the video tag.
                 </video>
@@ -241,7 +241,82 @@
       <div class="category_container">
         <div class="box">
           <div class="img-box">
-            <div id="lottie_analytics" style="width: 100px; height: 100px;"></div>
+            <div style="width: 100px; height: 100px;">
+
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Koordinatensystem -->
+                <g stroke="black" stroke-width="1">
+                  <line x1="10" y1="90" x2="90" y2="90"/>
+                  <line x1="10" y1="90" x2="10" y2="10"/>
+                  
+                  <!-- Y-Achsen Markierungen -->
+                  <line x1="8" y1="70" x2="12" y2="70"/>
+                  <line x1="8" y1="50" x2="12" y2="50"/>
+                  <line x1="8" y1="30" x2="12" y2="30"/>
+                  
+                  <!-- X-Achsen Markierungen -->
+                  <line x1="30" y1="88" x2="30" y2="92"/>
+                  <line x1="50" y1="88" x2="50" y2="92"/>
+                  <line x1="70" y1="88" x2="70" y2="92"/>
+                </g>
+                
+                <!-- Wachstumskurve -->
+                <path d="M10 90 L10 90" fill="none" stroke="black" stroke-width="2">
+                  <animate attributeName="d"
+                           values="M10 90 L10 90;
+                                   M10 90 L30 70 L50 40 L70 20 L90 10;
+                                   M10 90 L30 70 L50 40 L70 20 L90 10"
+                           dur="3s"
+                           repeatCount="indefinite"
+                           calcMode="spline"
+                           keyTimes="0; 0.8; 1"
+                           keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+                </path>
+                
+                <!-- Punkte auf der Kurve -->
+                <g fill="black">
+                  <circle cx="30" cy="90" r="3">
+                    <animate attributeName="cy"
+                             values="90;70;70"
+                             dur="3s"
+                             repeatCount="indefinite"
+                             calcMode="spline"
+                             keyTimes="0; 0.8; 1"
+                             keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+                  </circle>
+                  <circle cx="50" cy="90" r="3">
+                    <animate attributeName="cy"
+                             values="90;40;40"
+                             dur="3s"
+                             repeatCount="indefinite"
+                             calcMode="spline"
+                             keyTimes="0; 0.8; 1"
+                             keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+                  </circle>
+                  <circle cx="70" cy="90" r="3">
+                    <animate attributeName="cy"
+                             values="90;20;20"
+                             dur="3s"
+                             repeatCount="indefinite"
+                             calcMode="spline"
+                             keyTimes="0; 0.8; 1"
+                             keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+                  </circle>
+                  <circle cx="90" cy="90" r="3">
+                    <animate attributeName="cy"
+                             values="90;10;10"
+                             dur="3s"
+                             repeatCount="indefinite"
+                             calcMode="spline"
+                             keyTimes="0; 0.8; 1"
+                             keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+                  </circle>
+                </g>
+              </svg>
+
+
+
+            </div>
           </div>
           <div class="detail-box">
             <h3>
@@ -251,17 +326,69 @@
         </div>
         <div class="box">
           <div class="img-box">
-            <div id="lottie_Solution" style="width: 100px; height: 100px;"></div>
+            <div style="width: 100px; height: 100px;">
+
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" stroke="black" stroke-width="4">
+                  <circle cx="40" cy="40" r="20">
+                    <animate attributeName="r"
+                             values="15;20;15"
+                             dur="2s"
+                             repeatCount="indefinite"/>
+                  </circle>
+                  <line x1="55" y1="55" x2="80" y2="80">
+                    <animate attributeName="x2"
+                             values="70;80;70"
+                             dur="2s"
+                             repeatCount="indefinite"/>
+                    <animate attributeName="y2"
+                             values="70;80;70"
+                             dur="2s"
+                             repeatCount="indefinite"/>
+                  </line>
+                </g>
+              </svg>
+
+            </div>
           </div>
           <div class="detail-box">
             <h3>
-              Zusammenfügen
+              Finden
             </h3>
           </div>
         </div>
         <div class="box">
           <div class="img-box">
-            <div id="lottie_Community" style="width: 100px; height: 100px;"></div>
+            <div style="width: 100px; height: 100px;">
+
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <g fill="black">
+                  <circle cx="20" cy="50" r="5">
+                    <animate attributeName="cx"
+                             values="20;30;20"
+                             dur="2s"
+                             repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="80" cy="50" r="5">
+                    <animate attributeName="cx"
+                             values="80;70;80"
+                             dur="2s"
+                             repeatCount="indefinite"/>
+                  </circle>
+                  <line x1="25" y1="50" x2="75" y2="50" stroke="black" stroke-width="2">
+                    <animate attributeName="x1"
+                             values="25;35;25"
+                             dur="2s"
+                             repeatCount="indefinite"/>
+                    <animate attributeName="x2"
+                             values="75;65;75"
+                             dur="2s"
+                             repeatCount="indefinite"/>
+                  </line>
+                </g>
+              </svg>
+
+            </div>
           </div>
           <div class="detail-box">
             <h3>
@@ -271,7 +398,44 @@
         </div>
         <div class="box">
           <div class="img-box">
-            <div id="lottie_Chatbot" style="width: 100px; height: 100px;"></div>
+            <div style="width: 120px; height: 100px;">
+
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <g fill="black">
+                  <circle cx="50" cy="20" r="5">
+                    <animate attributeName="r"
+                             values="3;5;3"
+                             dur="1.5s"
+                             repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="20" cy="60" r="5">
+                    <animate attributeName="r"
+                             values="5;3;5"
+                             dur="1.5s"
+                             repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="80" cy="60" r="5">
+                    <animate attributeName="r"
+                             values="3;5;3"
+                             dur="1.5s"
+                             repeatCount="indefinite"/>
+                  </circle>
+                  <line x1="50" y1="20" x2="20" y2="60" stroke="black" stroke-width="1">
+                    <animate attributeName="stroke-width"
+                             values="1;2;1"
+                             dur="1.5s"
+                             repeatCount="indefinite"/>
+                  </line>
+                  <line x1="50" y1="20" x2="80" y2="60" stroke="black" stroke-width="1">
+                    <animate attributeName="stroke-width"
+                             values="2;1;2"
+                             dur="1.5s"
+                             repeatCount="indefinite"/>
+                  </line>
+                </g>
+              </svg>
+
+            </div>
           </div>
           <div class="detail-box">
             <h3>
@@ -311,7 +475,7 @@
       <div class="row">
         <div class="col-md-10 col-lg-9 mx-auto">
           <div class="img-box">
-            <video class="responsive_videoTest" autoplay loop muted playsinline loading="lazy" style=" width: 60%; height: auto; pointer-events: none;" poster="images/Big5_Aplha_Poster.webp">
+            <video class="responsive_videoTest" autoplay loop muted playsinline style=" width: 60%; height: auto; pointer-events: none;" poster="images/Big5_Aplha_Poster.webp">
               <source src="images/Big5_Aplha.webm" type="video/webm">
               Your browser does not support the video tag.
             </video>
@@ -574,7 +738,7 @@
   <!-- info section -->
   <div id="footer-section"></div>
   <script>
-    fetch('footer/footer.html')
+    fetch('footer.html')
       .then(response => response.text())
       .then(data => {
         const footerSection = document.getElementById('footer-section');
@@ -603,66 +767,8 @@
   <!-- end  footer section -->
 
    <!--<script src="js/jquery-3.4.1.min.js" defer></script>-->
-   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" async></script>-->
   <script src="js/bootstrap.js" defer></script>
   <script src="js/custom.js" defer></script>
-
-  <script>
-    const lottieScript = document.createElement('script');
-    lottieScript.src = "https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js";
-    lottieScript.async = true;
-    lottieScript.onload = function() {
-      // Initialisiere hier die Lottie-Animationen
-      lottie.loadAnimation({
-        container: document.getElementById('lottie_analytics'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'images/analytics.json'
-      });
-  
-      lottie.loadAnimation({
-        container: document.getElementById('lottie_Solution'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'images/solution.json'
-      });
-  
-      lottie.loadAnimation({
-        container: document.getElementById('lottie_Community'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'images/community.json'
-      });
-  
-      lottie.loadAnimation({
-        container: document.getElementById('lottie_Chatbot'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'images/chatbot.json'
-      });
-  
-      lottie.loadAnimation({
-        container: document.getElementById('lottie_unlock'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'images/unlock.json'
-      });
-  
-      lottie.loadAnimation({
-        container: document.getElementById('lottie_lightbulb'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'images/lightbulb.json'
-      });
-    };
-    document.body.appendChild(lottieScript);
-  </script>
   <!--<script src="js/video-control.js" defer></script> -->
 </body>
 </html>
