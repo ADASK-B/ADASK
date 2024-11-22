@@ -102,28 +102,28 @@
               </div>
             </div>
             <div class="offset-md-1 col-md-4 img-container">
-              <div class="img-box">
-                <video id="einstein-video" class="responsive-video" preload="none" autoplay loop muted playsinline poster="images/Albert_Poster.webp" style="pointer-events: none; display: block;">
-                  <source id="video-source" data-src="images/Albert_Alpha.webm" type="video/webm">
-                  Your browser does not support the video tag.
+              <!-- HTML Teil -->
+              <video id="einstein-video" class="responsive-video" preload="metadata" loop muted playsinline poster="images/Albert_Poster.webp" style="pointer-events: none; display: block;">
+                <source id="video-source" src="images/Albert_Alpha.webm" type="video/webm">
+                Your browser does not support the video tag.
               </video>
-              
-              <script>
-                  document.addEventListener("DOMContentLoaded", function() {
+              <!-- JavaScript Teil -->
+                <script>
+                  window.addEventListener("load", function() {
+                      // Verwende window.onload, um sicherzustellen, dass das Video erst nach dem Laden aller Ressourcen startet
                       const video = document.getElementById('einstein-video');
-                      const videoSource = document.getElementById('video-source');
-              
-                      // Verwende einen kleinen Timeout, um sicherzustellen, dass kritische Inhalte zuerst geladen sind
+
+                      // Lade und spiele das Video ab, nachdem die Seite vollständig geladen ist
                       setTimeout(function() {
-                          // Setze die Quelle des Videos (nach einer kurzen Verzögerung)
-                          videoSource.src = videoSource.dataset.src;
-              
-                          // Lade und spiele das Video ab
-                          video.load();
-                          video.play();
-                      }, 500); // 500 ms Verzögerung, um sicherzustellen, dass andere Inhalte zuerst geladen sind
+                          video.load(); 
+                          video.play().then(() => {
+                              console.log("Video erfolgreich abgespielt.");
+                          }).catch(error => {
+                              console.log("Autoplay-Problem: " + error);
+                          });
+                      }, 500); // Verzögerung von 500ms, damit die Seite genug Zeit hat, um alle anderen wichtigen Inhalte zu laden
                   });
-              </script>
+                </script>
               </div>
             </div>
           </div>
