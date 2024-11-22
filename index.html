@@ -21,7 +21,7 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>
   <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
   <script src="js/jquery-3.4.1.min.js"></script>
 
@@ -102,10 +102,10 @@
             </div>
             <div class="offset-md-1 col-md-4 img-container">
               <div class="img-box">
-                <video id="einstein-video" class="responsive-video" autoplay preload="metadata" loop muted playsinline poster="images/Albert_Poster.webp" loading="lazy" style="display: block;">
+                <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="pointer-events: none;" poster="images/Albert_Poster.webp">
                   <source src="images/Albert_Alpha.webm" type="video/webm">
                   Your browser does not support the video tag.
-                </video>
+              </video>
               </div>
             </div>
           </div>
@@ -603,66 +603,9 @@
   <!-- end  footer section -->
 
    <!--<script src="js/jquery-3.4.1.min.js" defer></script>-->
-   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" async></script>-->
+
   <script src="js/bootstrap.js" defer></script>
   <script src="js/custom.js" defer></script>
-
-  <script>
-    const lottieScript = document.createElement('script');
-    lottieScript.src = "https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js";
-    lottieScript.async = true;
-    lottieScript.onload = function() {
-      // Initialisiere hier die Lottie-Animationen
-      lottie.loadAnimation({
-        container: document.getElementById('lottie_analytics'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'images/analytics.json'
-      });
-  
-      lottie.loadAnimation({
-        container: document.getElementById('lottie_Solution'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'images/solution.json'
-      });
-  
-      lottie.loadAnimation({
-        container: document.getElementById('lottie_Community'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'images/community.json'
-      });
-  
-      lottie.loadAnimation({
-        container: document.getElementById('lottie_Chatbot'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'images/chatbot.json'
-      });
-  
-      lottie.loadAnimation({
-        container: document.getElementById('lottie_unlock'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'images/unlock.json'
-      });
-  
-      lottie.loadAnimation({
-        container: document.getElementById('lottie_lightbulb'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'images/lightbulb.json'
-      });
-    };
-    document.body.appendChild(lottieScript);
-  </script>
   <!--<script src="js/video-control.js" defer></script> -->
 </body>
 </html>
