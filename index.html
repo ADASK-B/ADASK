@@ -20,9 +20,8 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
-  <script src="js/lottie_min.js" defer></script>
-  
-  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>
   <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
   <script src="js/jquery-3.4.1.min.js"></script>
 
@@ -32,33 +31,33 @@
   <div class="hero_area">
     <!---------------------------------------- header section strats -------------------------------------------------------------------->
     <div id="header-section"></div>
-      <script>
-        fetch('header.html')
-          .then(response => response.text())
-          .then(data => {
-            const headerSection = document.getElementById('header-section');
-            const tempDiv = document.createElement('div');
-            tempDiv.innerHTML = data;
-            const scripts = tempDiv.querySelectorAll('script');
-            scripts.forEach(script => {
-              script.parentNode.removeChild(script);
-            });
-            headerSection.innerHTML = tempDiv.innerHTML;
-            scripts.forEach(script => {
-              const newScript = document.createElement('script');
-              if (script.src) {
-                newScript.src = script.src;
-                newScript.async = false;
-              } else {
-                newScript.textContent = script.textContent;
-              }
-              document.head.appendChild(newScript);
-            });
-          })
-          .catch(error => {
-            console.error('Fehler beim Laden des Headers:', error);
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const headerSection = document.getElementById('header-section');
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data;
+          const scripts = tempDiv.querySelectorAll('script');
+          scripts.forEach(script => {
+            script.parentNode.removeChild(script);
           });
-      </script>
+          headerSection.innerHTML = tempDiv.innerHTML;
+          scripts.forEach(script => {
+            const newScript = document.createElement('script');
+            if (script.src) {
+              newScript.src = script.src;
+              newScript.async = false;
+            } else {
+              newScript.textContent = script.textContent;
+            }
+            document.head.appendChild(newScript);
+          });
+        })
+        .catch(error => {
+          console.error('Fehler beim Laden des Headers:', error);
+        });
+    </script>
         
     <!-- ------------------------------------------------end header section -------------------------------------------->
  <!-- slider section -->
@@ -102,26 +101,36 @@
               </div>
             </div>
             <div class="offset-md-1 col-md-4 img-container">
-              <!-- HTML Teil -->
-              <video id="einstein-video" class="responsive-video" preload="metadata" loop muted playsinline poster="images/Albert_Poster.webp" style="pointer-events: none; display: block;">
-                <source id="video-source" src="images/Albert_Alpha.webm" type="video/webm">
-                Your browser does not support the video tag.
-              </video>
-              <!-- JavaScript Teil -->
+              <div class="img-box">
+                              <!-- HTML Teil -->
+                <div id="video-container">
+                  <!-- Posterbild wird zuerst angezeigt -->
+                  <img id="einstein-poster" src="images/Albert_Poster.webp" alt="Albert Einstein" style=" cursor: default;" />
+                </div>
+
+                <!-- JavaScript Teil -->
                 <script>
                   window.addEventListener("load", function() {
-                      // Verwende window.onload, um sicherzustellen, dass das Video erst nach dem Laden aller Ressourcen startet
-                      const video = document.getElementById('einstein-video');
-
-                      // Lade und spiele das Video ab, nachdem die Seite vollständig geladen ist
+                      // Verwende das window.onload Event, um sicherzustellen, dass das Video erst nach dem Laden aller Ressourcen hinzugefügt wird
                       setTimeout(function() {
-                          video.load(); 
+                          const videoContainer = document.getElementById('video-container');
+
+                          // Ersetze das Poster-Bild durch das Video nach einer Verzögerung von 1 Sekunde
+                          videoContainer.innerHTML = `
+                              <video id="einstein-video" class="responsive-video" preload="none" autoplay loop muted playsinline style="pointer-events: none; display: block;">
+                                  <source src="images/Albert_Alpha.webm" type="video/webm">
+                                  Your browser does not support the video tag.
+                              </video>
+                          `;
+
+                          // Starte das Video automatisch
+                          const video = document.getElementById('einstein-video');
                           video.play().then(() => {
                               console.log("Video erfolgreich abgespielt.");
                           }).catch(error => {
                               console.log("Autoplay-Problem: " + error);
                           });
-                      }, 500); // Verzögerung von 500ms, damit die Seite genug Zeit hat, um alle anderen wichtigen Inhalte zu laden
+                      }, 2000); // 1 Sekunde Verzögerung nach vollständigem Laden der Seite
                   });
                 </script>
               </div>
@@ -154,7 +163,7 @@
             </div>
             <div class="offset-md-1 col-md-4 img-container">
               <div class="img-box">
-                <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="pointer-events: none;" poster="images/Curie_Alpha_Poster.webp">
+                <video class="responsive-video" autoplay loop muted playsinline style="pointer-events: none;" poster="images/Curie_Alpha_Poster.webp">
                   <source src="images/Curie_Alpha.webm" type="video/webm">
                   Your browser does not support the video tag.
                 </video>
@@ -188,7 +197,7 @@
             </div>
             <div class="offset-md-1 col-md-4 img-container">
               <div class="img-box">
-                <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="pointer-events: none;" poster="images/Monroe_Alpha_Poster.webp">
+                <video class="responsive-video" autoplay loop muted playsinline style="pointer-events: none;" poster="images/Monroe_Alpha_Poster.webp">
                   <source src="images/Monroe_Alpha.webm" type="video/webm">
                   Your browser does not support the video tag.
                 </video>
@@ -329,7 +338,7 @@
       <div class="row">
         <div class="col-md-10 col-lg-9 mx-auto">
           <div class="img-box">
-            <video class="responsive_videoTest" autoplay loop muted playsinline loading="lazy" style=" width: 60%; height: auto; pointer-events: none;" poster="images/Big5_Aplha_Poster.webp">
+            <video class="responsive_videoTest" autoplay loop muted playsinline style=" width: 60%; height: auto; pointer-events: none;" poster="images/Big5_Aplha_Poster.webp">
               <source src="images/Big5_Aplha.webm" type="video/webm">
               Your browser does not support the video tag.
             </video>
@@ -621,7 +630,6 @@
   <!-- end  footer section -->
 
    <!--<script src="js/jquery-3.4.1.min.js" defer></script>-->
-
   <script src="js/bootstrap.js" defer></script>
   <script src="js/custom.js" defer></script>
   <!--<script src="js/video-control.js" defer></script> -->
