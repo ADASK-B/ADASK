@@ -103,10 +103,25 @@
             </div>
             <div class="offset-md-1 col-md-4 img-container">
               <div class="img-box">
-                <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="pointer-events: none;" poster="images/Albert_Poster.webp">
-                  <source src="images/Albert_Alpha.webm" type="video/webm">
+                <video id="einstein-video" class="responsive-video" preload="none" autoplay loop muted playsinline poster="images/Albert_Poster.webp" style="pointer-events: none; display: block;">
+                  <source id="video-source" data-src="images/Albert_Alpha.webm" type="video/webm">
                   Your browser does not support the video tag.
               </video>
+              
+              <script>
+                  // Lade das Video erst, wenn das gesamte Fenster geladen ist (einschließlich aller Ressourcen)
+                  window.addEventListener("load", function() {
+                      const videoSource = document.getElementById('video-source');
+                      const video = document.getElementById('einstein-video');
+              
+                      // Setze die Quelle erst nach dem vollständigen Laden der Seite
+                      videoSource.src = videoSource.dataset.src;
+              
+                      // Lade und spiele das Video ab
+                      video.load();
+                      video.play();
+                  });
+              </script>
               </div>
             </div>
           </div>
