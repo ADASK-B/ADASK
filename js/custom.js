@@ -7,7 +7,7 @@ function getCurrentYear() {
 }
 
 getCurrentYear();
-
+/*
 var lottie_analytics = lottie.loadAnimation({
     container: document.getElementById('lottie_analytics'),
     renderer: 'svg', 
@@ -62,3 +62,4 @@ var lottie_analytics = lottie.loadAnimation({
     path: 'images/lightbulb.json' 
   });
   lottie_lightbulb.setSpeed(0.5)
+  */

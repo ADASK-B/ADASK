@@ -21,7 +21,7 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>-->
   <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
   <script src="js/jquery-3.4.1.min.js"></script>
 
@@ -231,77 +231,116 @@
   <!-- end experience section -->
 
   <!-- category section -->
-  <section class="category_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Big 5 Insight
-        </h2>
+  <!-- Lottie-Web Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>
+
+<!-- Kategorie-Sektion -->
+<section class="category_section layout_padding">
+  <div class="container">
+    <div class="heading_container">
+      <h2>Big 5 Insight</h2>
+    </div>
+    <div class="category_container">
+      <div class="box">
+        <div class="img-box">
+          <div id="lottie_analytics" style="width: 100px; height: 100px;"></div>
+        </div>
+        <div class="detail-box">
+          <h3>Wachstum</h3>
+        </div>
       </div>
-      <div class="category_container">
-        <div class="box">
-          <div class="img-box">
-            <div id="lottie_analytics" style="width: 100px; height: 100px;"></div>
-          </div>
-          <div class="detail-box">
-            <h3>
-              Wachstum
-            </h3>
-          </div>
+      <div class="box">
+        <div class="img-box">
+          <div id="lottie_Solution" style="width: 100px; height: 100px;"></div>
         </div>
-        <div class="box">
-          <div class="img-box">
-            <div id="lottie_Solution" style="width: 100px; height: 100px;"></div>
-          </div>
-          <div class="detail-box">
-            <h3>
-              Zusammenfügen
-            </h3>
-          </div>
+        <div class="detail-box">
+          <h3>Zusammenfügen</h3>
         </div>
-        <div class="box">
-          <div class="img-box">
-            <div id="lottie_Community" style="width: 100px; height: 100px;"></div>
-          </div>
-          <div class="detail-box">
-            <h3>
-              Verbindung
-            </h3>
-          </div>
+      </div>
+      <div class="box">
+        <div class="img-box">
+          <div id="lottie_Community" style="width: 100px; height: 100px;"></div>
         </div>
-        <div class="box">
-          <div class="img-box">
-            <div id="lottie_Chatbot" style="width: 100px; height: 100px;"></div>
-          </div>
-          <div class="detail-box">
-            <h3>
-              Künstliche Intelligenz
-            </h3>
-          </div>
+        <div class="detail-box">
+          <h3>Verbindung</h3>
         </div>
-        <div class="box">
-          <div class="img-box">
-            <div id="lottie_unlock" style="width: 100px; height: 100px;"></div>
-          </div>
-          <div class="detail-box">
-            <h3>
-              Entfesselung
-            </h3>
-          </div>
+      </div>
+      <div class="box">
+        <div class="img-box">
+          <div id="lottie_Chatbot" style="width: 100px; height: 100px;"></div>
         </div>
-        <div class="box">
-          <div class="img-box">
-            <div id="lottie_lightbulb" style="width: 100px; height: 100px;"></div>
-          </div>
-          <div class="detail-box">
-            <h3>
-              Erkennen
-            </h3>
-          </div>
+        <div class="detail-box">
+          <h3>Künstliche Intelligenz</h3>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img-box">
+          <div id="lottie_unlock" style="width: 100px; height: 100px;"></div>
+        </div>
+        <div class="detail-box">
+          <h3>Entfesselung</h3>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img-box">
+          <div id="lottie_lightbulb" style="width: 100px; height: 100px;"></div>
+        </div>
+        <div class="detail-box">
+          <h3>Erkennen</h3>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+    <!-- Lazy Load Lottie Animations Script -->
+    <script defer>
+      document.addEventListener("DOMContentLoaded", () => {
+        const lottieAnimations = [
+      { id: "lottie_analytics", path: "images/analytics.json" }, 
+      { id: "lottie_Solution", path: "images/solution.json" },   
+      { id: "lottie_Community", path: "images/community.json" },
+      { id: "lottie_Chatbot", path: "images/chatbot.json" },
+      { id: "lottie_unlock", path: "images/unlock.json" },
+      { id: "lottie_lightbulb", path: "images/lightbulb.json" }
+    ];
+
+    function loadLottieAnimation(animation) {
+      const element = document.getElementById(animation.id);
+      if (element && !element.dataset.loaded) {
+        element.dataset.loaded = true;
+        lottie.loadAnimation({
+          container: element,
+          renderer: "svg",
+          loop: true,
+          autoplay: true,
+          path: animation.path,
+        });
+      }
+    }
+
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const animation = lottieAnimations.find(
+            (anim) => anim.id === entry.target.id
+          );
+          if (animation) {
+            loadLottieAnimation(animation);
+            observer.unobserve(entry.target);
+          }
+        }
+      });
+    }, observerOptions);
+
+    lottieAnimations.forEach((animation) => {
+      const element = document.getElementById(animation.id);
+      if (element) observer.observe(element);
+    });
+  });
+</script>
+
   <!-- end category section -->
 
   <!-- about section -->
