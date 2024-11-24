@@ -233,6 +233,13 @@
   <!-- category section -->
 
 
+
+
+
+
+  
+
+  
   <!-- Lottie-Web Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>
 
@@ -299,49 +306,67 @@
     <script defer>
       document.addEventListener("DOMContentLoaded", () => {
         const lottieAnimations = [
-      { id: "lottie_analytics", path: "images/analytics.json" }, 
-      { id: "lottie_Solution", path: "images/Solution.json" },   
-      { id: "lottie_Community", path: "images/Community.json" },
-      { id: "lottie_Chatbot", path: "images/Chatbot.json" },
-      { id: "lottie_unlock", path: "images/unlock.json" },
-      { id: "lottie_lightbulb", path: "images/lightbulb.json" }
-    ];
-
-    function loadLottieAnimation(animation) {
-      const element = document.getElementById(animation.id);
-      if (element && !element.dataset.loaded) {
-        element.dataset.loaded = true;
-        lottie.loadAnimation({
-          container: element,
-          renderer: "svg",
-          loop: true,
-          autoplay: true,
-          path: animation.path,
-        });
-      }
-    }
-
-    const observerOptions = { threshold: 0.1 };
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const animation = lottieAnimations.find(
-            (anim) => anim.id === entry.target.id
-          );
-          if (animation) {
-            loadLottieAnimation(animation);
-            observer.unobserve(entry.target);
+          { id: "lottie_analytics", path: "images/analytics.json" },
+          { id: "lottie_Solution", path: "images/Solution.json" },
+          { id: "lottie_Community", path: "images/Community.json" },
+          { id: "lottie_Chatbot", path: "images/Chatbot.json" },
+          { id: "lottie_unlock", path: "images/unlock.json" },
+          { id: "lottie_lightbulb", path: "images/lightbulb.json" },
+        ];
+    
+        // Function to load and control Lottie animations
+        function loadLottieAnimation(animation) {
+          const element = document.getElementById(animation.id);
+          if (element && !element.dataset.loaded) {
+            element.dataset.loaded = true;
+    
+            // Load the animation and set speed
+            const animInstance = lottie.loadAnimation({
+              container: element,
+              renderer: "svg",
+              loop: true,
+              autoplay: true,
+              path: animation.path,
+            });
+    
+            // Adjust the speed of the animation
+            animInstance.setSpeed(0.5);
           }
         }
+    
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const animation = lottieAnimations.find(
+                (anim) => anim.id === entry.target.id
+              );
+              if (animation) {
+                loadLottieAnimation(animation);
+                observer.unobserve(entry.target);
+              }
+            }
+          });
+        }, observerOptions);
+    
+        // Observe all Lottie elements
+        lottieAnimations.forEach((animation) => {
+          const element = document.getElementById(animation.id);
+          if (element) observer.observe(element);
+        });
       });
-    }, observerOptions);
+    </script>
 
-    lottieAnimations.forEach((animation) => {
-      const element = document.getElementById(animation.id);
-      if (element) observer.observe(element);
-    });
-  });
-</script>
+
+
+
+
+
+
+
+
+
+
 
   <!-- end category section -->
 
