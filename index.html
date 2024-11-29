@@ -108,36 +108,30 @@
                   <!-- Platzhalter für das Video -->
 
 
-                   <script>
-                      document.addEventListener('DOMContentLoaded', function() {
-                        // Laden Sie das Video asynchron nach einer kurzen Verzögerung
-                        setTimeout(function() {
-                          var videoPlaceholder = document.getElementById('video-placeholder');
+                   <script>                 
+                      window.addEventListener('load', function() {
+                        var videoPlaceholder = document.getElementById('video-placeholder');
 
-                          var video = document.createElement('video');
-                          video.className = 'responsive-video';
-                          video.autoplay = true;
-                          video.loop = true;
-                          video.muted = true;
-                          video.playsInline = true;
-                          video.style.pointerEvents = 'none';
-                          video.poster = 'images/Albert_Poster.webp';
-                          video.width = 700;
-                          video.height = 600;
+                        var video = document.createElement('video');
+                        video.className = 'responsive-video';
+                        video.autoplay = true;
+                        video.loop = true;
+                        video.muted = true;
+                        video.playsInline = true;
+                        video.style.pointerEvents = 'none';
+                        video.poster = 'images/Albert_Poster.webp';
+                        video.width = 700;
+                        video.height = 600;
 
-                          var source = document.createElement('source');
-                          source.src = 'images/Albert_Alpha.webm';
-                          source.type = 'video/webm';
+                        var source = document.createElement('source');
+                        source.src = 'images/Albert_Alpha.webm';
+                        source.type = 'video/webm';
 
-                          video.appendChild(source);
+                        video.appendChild(source);
 
-                          // Ersetzen des Platzhalter-Elements durch das Video
-                          videoPlaceholder.parentNode.replaceChild(video, videoPlaceholder);
-                        }, 100); // Verzögerung in Millisekunden
+                        videoPlaceholder.parentNode.replaceChild(video, videoPlaceholder);
                       });
                    </script>
-
-
 
 
                    <!-- Platzhalter für das Video -->
