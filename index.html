@@ -102,7 +102,15 @@
             </div>
             <div class="offset-md-1 col-md-4 img-container">
               <div class="img-box">
-                <video class="responsive-video" autoplay loop muted playsinline style="pointer-events: none;" poster="images/Albert_Poster.webp">
+                <video 
+                  class="responsive-video" 
+                  autoplay 
+                  loop 
+                  muted 
+                  playsinline 
+                  loading="lazy"
+                  poster="images/Albert_Poster.webp"
+                  style="pointer-events: none;">
                   <source src="images/Albert_Alpha.webm" type="video/webm">
                   Your browser does not support the video tag.
                 </video>
@@ -231,14 +239,6 @@
   <!-- end experience section -->
 
   <!-- category section -->
-
-
-
-
-
-
-  
-
   
   <!-- Lottie-Web Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>
@@ -394,16 +394,6 @@
           });
       });
   </script>
-
-
-
-
-
-
-
-
-
-
 
 
   <!-- end category section -->
