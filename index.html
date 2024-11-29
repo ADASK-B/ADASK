@@ -242,120 +242,158 @@
   
   <!-- Lottie-Web Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>
+    <!-- Kategorie-Sektion -->
+    <section class="category_section layout_padding">
+      <div class="container">
+          <div class="heading_container">
+              <h2>Big 5 Insight</h2>
+          </div>
+          <div class="category_container">
+              <div class="box">
+                  <div class="img-box">
+                      <div class="lottie-container" id="lottie_analytics_container">
+                          <img src="images/Wachstum.png" class="lottie-placeholder" alt="Analytics Placeholder" >
+                          <div id="lottie_analytics" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+                      </div>
+                  </div>
+                  <div class="detail-box">
+                      <h3>Wachstum</h3>
+                  </div>
+              </div>
+              <div class="box">
+                  <div class="img-box">
+                      <div class="lottie-container" id="lottie_Solution_container">
+                          <img src="images/Zusammenfügen.png" class="lottie-placeholder" alt="Solution Placeholder">
+                          <div id="lottie_Solution" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+                      </div>
+                  </div>
+                  <div class="detail-box">
+                      <h3>Zusammenfügen</h3>
+                  </div>
+              </div>
+              <div class="box">
+                  <div class="img-box">
+                      <div class="lottie-container" id="lottie_Community_container">
+                          <img src="images/Verbindung.png" class="lottie-placeholder" alt="Community Placeholder">
+                          <div id="lottie_Community" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+                      </div>
+                  </div>
+                  <div class="detail-box">
+                      <h3>Verbindung</h3>
+                  </div>
+              </div>
+              <div class="box">
+                  <div class="img-box">
+                      <div class="lottie-container" id="lottie_Chatbot_container">
+                          <img src="images/KünstlicheIntelligenz.png" class="lottie-placeholder" alt="Chatbot Placeholder">
+                          <div id="lottie_Chatbot" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+                      </div>
+                  </div>
+                  <div class="detail-box">
+                      <h3>Künstliche Intelligenz</h3>
+                  </div>
+              </div>
+              <div class="box">
+                  <div class="img-box">
+                      <div class="lottie-container" id="lottie_unlock_container">
+                          <img src="images/Entfesselung.png" class="lottie-placeholder" alt="Unlock Placeholder">
+                          <div id="lottie_unlock" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+                      </div>
+                  </div>
+                  <div class="detail-box">
+                      <h3>Entfesselung</h3>
+                  </div>
+              </div>
+              <div class="box">
+                  <div class="img-box">
+                      <div class="lottie-container" id="lottie_lightbulb_container">
+                          <img src="images/Erkennen.png" class="lottie-placeholder" alt="Lightbulb Placeholder">
+                          <div id="lottie_lightbulb" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+                      </div>
+                  </div>
+                  <div class="detail-box">
+                      <h3>Erkennen</h3>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
 
-<!-- Kategorie-Sektion -->
-<section class="category_section layout_padding">
-  <div class="container">
-    <div class="heading_container">
-      <h2>Big 5 Insight</h2>
-    </div>
-    <div class="category_container">
-      <div class="box">
-        <div class="img-box">
-          <div id="lottie_analytics" style="width: 100px; height: 100px;"></div>
-        </div>
-        <div class="detail-box">
-          <h3>Wachstum</h3>
-        </div>
-      </div>
-      <div class="box">
-        <div class="img-box">
-          <div id="lottie_Solution" style="width: 100px; height: 100px;"></div>
-        </div>
-        <div class="detail-box">
-          <h3>Zusammenfügen</h3>
-        </div>
-      </div>
-      <div class="box">
-        <div class="img-box">
-          <div id="lottie_Community" style="width: 100px; height: 100px;"></div>
-        </div>
-        <div class="detail-box">
-          <h3>Verbindung</h3>
-        </div>
-      </div>
-      <div class="box">
-        <div class="img-box">
-          <div id="lottie_Chatbot" style="width: 100px; height: 100px;"></div>
-        </div>
-        <div class="detail-box">
-          <h3>Künstliche Intelligenz</h3>
-        </div>
-      </div>
-      <div class="box">
-        <div class="img-box">
-          <div id="lottie_unlock" style="width: 100px; height: 100px;"></div>
-        </div>
-        <div class="detail-box">
-          <h3>Entfesselung</h3>
-        </div>
-      </div>
-      <div class="box">
-        <div class="img-box">
-          <div id="lottie_lightbulb" style="width: 100px; height: 100px;"></div>
-        </div>
-        <div class="detail-box">
-          <h3>Erkennen</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <style>
+      .lottie-container {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      }
+  .lottie-placeholder,
+  .lottie-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+  }
+  </style>
 
-    <!-- Lazy Load Lottie Animations Script -->
-    <script defer>
+  <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const lottieAnimations = [
-          { id: "lottie_analytics", path: "images/analytics.json" },
-          { id: "lottie_Solution", path: "images/Solution.json" },
-          { id: "lottie_Community", path: "images/Community.json" },
-          { id: "lottie_Chatbot", path: "images/Chatbot.json" },
-          { id: "lottie_unlock", path: "images/unlock.json" },
-          { id: "lottie_lightbulb", path: "images/lightbulb.json" },
-        ];
-    
-        // Function to load and control Lottie animations
-        function loadLottieAnimation(animation) {
-          const element = document.getElementById(animation.id);
-          if (element && !element.dataset.loaded) {
-            element.dataset.loaded = true;
-    
-            // Load the animation and set speed
-            const animInstance = lottie.loadAnimation({
-              container: element,
-              renderer: "svg",
-              loop: true,
-              autoplay: true,
-              path: animation.path,
-            });
-    
-            // Adjust the speed of the animation
-            animInstance.setSpeed(0.5);
-          }
-        }
-    
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const animation = lottieAnimations.find(
-                (anim) => anim.id === entry.target.id
-              );
-              if (animation) {
-                loadLottieAnimation(animation);
-                observer.unobserve(entry.target);
+          const lottieAnimations = [
+              { id: "lottie_analytics", path: "images/analytics.json" },
+              { id: "lottie_Solution", path: "images/Solution.json" },
+              { id: "lottie_Community", path: "images/Community.json" },
+              { id: "lottie_Chatbot", path: "images/Chatbot.json" },
+              { id: "lottie_unlock", path: "images/unlock.json" },
+              { id: "lottie_lightbulb", path: "images/lightbulb.json" },
+          ];
+ 
+          function loadLottieAnimation(animation) {
+              const container = document.getElementById(animation.id + "_container");
+              const lottieElement = document.getElementById(animation.id);
+              const placeholderImage = container.querySelector('.lottie-placeholder');
+ 
+              if (lottieElement && !lottieElement.dataset.loaded) {
+                  const animInstance = lottie.loadAnimation({
+                      container: lottieElement,
+                      renderer: "svg",
+                      loop: true,
+                      autoplay: false,
+                      path: animation.path,
+                  });
+ 
+                  animInstance.addEventListener('DOMLoaded', () => {
+                      lottieElement.classList.add('loaded');
+                      animInstance.play();
+                      placeholderImage.style.display = 'none';
+                  });
+ 
+                  lottieElement.dataset.loaded = true;
+                  animInstance.setSpeed(0.5);
               }
-            }
+          }
+ 
+          const observerOptions = { threshold: 0.1 };
+          const observer = new IntersectionObserver((entries, observer) => {
+              entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                      const animation = lottieAnimations.find(
+                          (anim) => entry.target.id === anim.id
+                      );
+                      if (animation) {
+                          loadLottieAnimation(animation);
+                          observer.unobserve(entry.target);
+                      }
+                  }
+              });
+          }, observerOptions);
+ 
+          lottieAnimations.forEach((animation) => {
+              const element = document.getElementById(animation.id);
+              if (element) observer.observe(element);
           });
-        }, observerOptions);
-    
-        // Observe all Lottie elements
-        lottieAnimations.forEach((animation) => {
-          const element = document.getElementById(animation.id);
-          if (element) observer.observe(element);
-        });
       });
-    </script>
+  </script>
 
 
 
