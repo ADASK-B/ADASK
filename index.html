@@ -102,18 +102,43 @@
             </div>
             <div class="offset-md-1 col-md-4 img-container">
               <div class="img-box">
-                <video 
-                  class="responsive-video" 
-                  autoplay 
-                  loop 
-                  muted 
-                  playsinline 
-                  loading="lazy"
-                  poster="images/Albert_Poster.webp"
-                  style="pointer-events: none;">
-                  <source src="images/Albert_Alpha.webm" type="video/webm">
-                  Your browser does not support the video tag.
-                </video>
+                <div class="video-placeholder" style="background-image: url('images/Albert_Poster.webp');">
+                  <!-- Video wird per JavaScript geladen -->
+                   <script>
+                      document.addEventListener('DOMContentLoaded', function() {
+                        const videoPlaceholder = document.querySelector('.video-placeholder');
+                        const options = {
+                          root: null,
+                          threshold: 0.1
+                        };
+                        const observer = new IntersectionObserver((entries, observer) => {
+                          entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                              const video = document.createElement('video');
+                              video.className = 'responsive-video';
+                              video.autoplay = true;
+                              video.loop = true;
+                              video.muted = true;
+                              video.playsInline = true;
+                              video.poster = 'images/Albert_Poster.webp';
+                              video.style.pointerEvents = 'none';
+
+                              const source = document.createElement('source');
+                              source.src = 'images/Albert_Alpha.webm';
+                              source.type = 'video/webm';
+
+                              video.appendChild(source);
+                              videoPlaceholder.parentNode.replaceChild(video, videoPlaceholder);
+                              observer.unobserve(videoPlaceholder);
+                            }
+                          });
+                        }, options);
+
+                        observer.observe(videoPlaceholder);
+                      });
+                   </script>
+                  <!-- Video wird per JavaScript geladen -->
+                </div>               
               </div>
             </div>
           </div>
