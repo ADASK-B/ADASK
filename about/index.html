@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="de">
 
@@ -27,37 +29,9 @@
 
 <body class="sub_page">
   <div class="hero_area">
-   <!---------------------------------------- header section strats -------------------------------------------------------------------->
-   <div id="header-section"></div>
-   <script>
-     fetch('../header.html')
-       .then(response => response.text())
-       .then(data => {
-         const headerSection = document.getElementById('header-section');
-         const tempDiv = document.createElement('div');
-         tempDiv.innerHTML = data;
-         const scripts = tempDiv.querySelectorAll('script');
-         scripts.forEach(script => {
-           script.parentNode.removeChild(script);
-         });
-         headerSection.innerHTML = tempDiv.innerHTML;
-         scripts.forEach(script => {
-           const newScript = document.createElement('script');
-           if (script.src) {
-             newScript.src = script.src;
-             newScript.async = false;
-           } else {
-             newScript.textContent = script.textContent;
-           }
-           document.head.appendChild(newScript);
-         });
-       })
-       .catch(error => {
-         console.error('Fehler beim Laden des Headers:', error);
-       });
-   </script>
-  </div>
-   <!-- ------------------------------------------------end header section -------------------------------------------->
+    <!---------------------------------------- header section strats -------------------------------------------------------------------->
+    {% include header.html %}
+    <!-- ------------------------------------------------end header section -------------------------------------------->
   
 <!-- about section -->
 <style>
@@ -163,34 +137,7 @@
     <!-- end experience section -->
 
   <!-- info section -->
-  <div id="footer-section"></div>
-  <script>
-    fetch('../footer.html')
-      .then(response => response.text())
-      .then(data => {
-        const footerSection = document.getElementById('footer-section');
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = data;
-        const scripts = tempDiv.querySelectorAll('script');
-        scripts.forEach(script => {
-          script.parentNode.removeChild(script);
-        });
-        footerSection.innerHTML = tempDiv.innerHTML;
-        scripts.forEach(script => {
-          const newScript = document.createElement('script');
-          if (script.src) {
-            newScript.src = script.src;
-            newScript.async = false;
-          } else {
-            newScript.textContent = script.textContent;
-          }
-          document.body.appendChild(newScript);
-        });
-      })
-      .catch(error => {
-        console.error('Fehler beim Laden des Footers:', error);
-      });
-  </script>
+  {% include footer.html %}
   <!-- end  footer section -->
 
 
