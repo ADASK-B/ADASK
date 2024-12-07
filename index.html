@@ -449,9 +449,81 @@
     padding-left: 20px;
 
   }
+  .collapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.collapse.show {
+  max-height: 500px; /* Passe diesen Wert je nach Inhalt an */
+}
+  
   
 </style>
+<script>
 
+$(document).ready(function () {
+  $('#accordion').on('show.bs.collapse', function (event) {
+    const $openPanel = $(this).find('.collapse.show'); // Aktuell geöffnetes Panel
+    const $newButton = $(`button[data-target="#${event.target.id}"]`); // Aktiver Button
+    const $oldButton = $(`button[data-target="#${$openPanel.attr('id')}"]`); // Inaktiver Button
+
+    // Wenn ein anderes Panel offen ist
+    if ($openPanel.length && $openPanel[0] !== event.target) {
+      // Schließe das aktuell geöffnete Panel
+      $openPanel.css({
+        display: 'none',
+      }).removeClass('show'); // Entferne `show`-Klasse vom alten Panel
+
+      // Aktualisiere den Button des geschlossenen Panels
+      $oldButton.addClass('collapsed').attr('aria-expanded', 'false');
+
+      // Öffne das neue Panel direkt
+      $(event.target).css({
+        display: 'block',
+      }).addClass('show'); // Füge die `show`-Klasse hinzu
+
+      // Aktualisiere den Button des geöffneten Panels
+      $newButton.removeClass('collapsed').attr('aria-expanded', 'true');
+
+      // Verhindere doppelte Ausführung des Events
+      event.stopPropagation();
+    }
+  });
+
+  // Beim Schließen des Panels
+  $('#accordion').on('hide.bs.collapse', function (event) {
+    const $panel = $(event.target);
+    const $button = $(`button[data-target="#${event.target.id}"]`);
+
+    // Setze sofort `display: none` für das Panel
+    $panel.css({
+      display: 'none',
+    }).removeClass('show'); // Entferne die `show`-Klasse
+
+    // Aktualisiere den Button-Zustand
+    $button.addClass('collapsed').attr('aria-expanded', 'false');
+  });
+
+  // Beim Öffnen des Panels
+  $('#accordion').on('show.bs.collapse', function (event) {
+    const $panel = $(event.target);
+    const $button = $(`button[data-target="#${event.target.id}"]`);
+
+    // Entferne `display: none` und lasse es sichtbar werden
+    $panel.css({
+      display: 'block',
+    }).addClass('show'); // Füge die `show`-Klasse hinzu
+
+    // Aktualisiere den Button-Zustand
+    $button.removeClass('collapsed').attr('aria-expanded', 'true');
+  });
+});
+
+
+
+</script>
 
 
 <section class="freelance_section layout_padding3">
