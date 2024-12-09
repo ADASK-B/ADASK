@@ -16,10 +16,12 @@
 
   <title>ADASK</title>
 
-  <link rel="stylesheet" href="css/bootstrap.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/responsive.css" media="print" onload="this.media='all'">
-  
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
 
   <script src="js/jquery-3.4.1.min.js"></script>
 
@@ -72,29 +74,27 @@
                 </div>
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
-                    
-                    <video 
-                    class="responsive-video" autoplay loop muted playsinline loading="lazy" style="pointer-events: none;" poster="images/Nikola_Alpha_Poster.webp">
+                    <video class="responsive-video" autoplay loop muted playsinline style="pointer-events: none;" poster="images/Nikola_Alpha_Poster.webp">
+                      <!-- Die Quelle wird per JavaScript hinzugefügt -->
                     </video>
-                  <!--
+                    
                     <script defer>
                       window.addEventListener('load', function () {
+                        // Wählt das Video-Element aus
                         const video = document.querySelector('.responsive-video');
                     
+                        // Erst nachdem die Seite vollständig geladen ist, wird die Quelle gesetzt
                         const source = document.createElement('source');
                         source.src = 'images/Nikola_Alpha.webm';
                         source.type = 'video/webm';
                         video.appendChild(source);
                     
+                        // Optional: Das Video neu laden, falls erforderlich
                         video.load();
+                        video.playbackRate = 0.9;
                       });
                     </script>
                     
-                    <video class="responsive-video" autoplay loop muted loading="lazy" style="pointer-events: none;" poster="images/Nikola_Alpha_Poster.webp">
-                      <source src="images/Nikola_Alpha.webm" type="video/webm">
-                      Your browser does not support the video tag.
-                    </video>
-                    -->
                   </div>
                 </div>
               </div>
@@ -125,8 +125,8 @@
                 </div>
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
-                    <video class="responsive-video" autoplay loop muted loading="lazy" style="pointer-events: none;" poster="images/Curie_Alpha_Poster.webp">
-                      <source src="images/Curie_Alphas.webm" type="video/webm">
+                    <video class="responsive-video" autoplay loop muted playsinline style="pointer-events: none;" poster="images/Curie_Alpha_Poster.webp">
+                      <source src="images/Curie_Alpha.webm" type="video/webm">
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -159,8 +159,8 @@
                 </div>
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
-                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="pointer-events: none;" poster="images/Cesar_Alpha_Poster.webp">
-                      <source src="images/Cesar_Alphas.webm" type="video/webm">
+                    <video class="responsive-video" autoplay loop muted playsinline style="pointer-events: none;" poster="images/Cesar_Alpha_Poster.webp">
+                      <source src="images/Cesar_Alpha.webm" type="video/webm">
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -664,8 +664,8 @@ $(document).ready(function () {
   <!-- end  footer section -->
 
    <!--<script src="js/jquery-3.4.1.min.js" defer></script>-->
-   <script src="js/bootstrap.js" defer></script>
-   <script src="js/custom.js" defer></script>
+  <script src="js/bootstrap.js" defer></script>
+  <script src="js/custom.js" defer></script>
   <!--<script src="js/video-control.js" defer></script> -->
 </body>
 </html>
