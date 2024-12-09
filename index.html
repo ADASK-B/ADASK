@@ -34,6 +34,30 @@
     <!-- ------------------------------------------------end header section -------------------------------------------->
     <!-- slider section -->
 
+     <!-- Laden wenn sichtbar
+       
+        document.addEventListener('DOMContentLoaded', function () {
+        const videos = document.querySelectorAll('.responsive-video');
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const video = entry.target;
+              if (!video.querySelector('source')) {
+                const source = document.createElement('source');
+                source.src = video.getAttribute('data-video-src');
+                source.type = 'video/webm';
+                video.appendChild(source);
+                video.load();
+              }
+            }
+          });
+        });
+
+        videos.forEach((video) => observer.observe(video));
+      });
+     -->
+
     <script defer>
       window.addEventListener('load', function () {
         // Wählt alle Video-Elemente mit der Klasse "responsive-video" aus
@@ -96,7 +120,7 @@
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
 
-                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="pointer-events: none;" poster="images/Curi_Alpha_PosterW.webp" data-video-src="images/Curi_Alpha.webm">
+                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" preload="none" style="pointer-events: none;" poster="images/Curi_Alpha_PosterW.webp" data-video-src="images/Curi_Alpha.webm">
                       Your browser does not support the video tag.
                     </video>
                     
@@ -131,7 +155,7 @@
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
 
-                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="pointer-events: none;" poster="images/Nikol_Alpha_PosterW.webp" data-video-src="images/Nikol_Alpha.webm">
+                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" preload="none" style="pointer-events: none;" poster="images/Nikol_Alpha_PosterW.webp" data-video-src="images/Nikol_Alpha.webm">
                       Your browser does not support the video tag.
                     </video>
 
@@ -166,7 +190,7 @@
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
 
-                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="pointer-events: none;" poster="images/Cesa_Alpha_PosterW.webp" data-video-src="images/Cesa_Alpha.webm">
+                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" preload="none" style="pointer-events: none;" poster="images/Cesa_Alpha_PosterW.webp" data-video-src="images/Cesa_Alpha.webm">
                       Your browser does not support the video tag.
                     </video>
 
