@@ -75,13 +75,11 @@
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
 
-                    <video 
-                      class="responsive-video" 
-                      autoplay loop muted playsinline style="pointer-events: none;" 
-                      poster="images/Nikola_Alpha_Poster.webp" 
-                      data-src="images/Nikola_Alpha.webm">
+                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="pointer-events: none;" poster="images/Curie_Alpha_Poster.webp">
+                      <source src="images/Curi_Alpha.webm" type="video/webm">
+                      Your browser does not support the video tag.
                     </video>
-                    
+
                   </div>
                 </div>
               </div>
@@ -113,11 +111,9 @@
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
 
-                    <video 
-                      class="responsive-video" 
-                      autoplay loop muted playsinline style="pointer-events: none;" 
-                      poster="images/Curie_Alpha_Poster.webp" 
-                      data-src="images/Curie_Alpha.webm">
+                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="pointer-events: none;" poster="images/Nikola_Alpha_Poster.webp">
+                      <source src="images/Nikola_Alpha.webm" type="video/webm">
+                      Your browser does not support the video tag.
                     </video>
 
                   </div>
@@ -151,12 +147,10 @@
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
 
-                     <video 
-                      class="responsive-video" 
-                      autoplay loop muted playsinline style="pointer-events: none;" 
-                      poster="images/Cesar_Alpha_Poster.webp" 
-                      data-src="images/Cesar_Alpha.webm">
-                    </video> 
+                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="pointer-events: none;" poster="images/Cesar_Alpha_Poster.webp">
+                      <source src="images/Cesa_Alpha.webm" type="video/webm">
+                      Your browser does not support the video tag.
+                    </video>
 
                   </div>
                 </div>
@@ -166,27 +160,7 @@
         </div>
       </div>
     </section>
-<!-- end slider section -->
   </div>
-
-  <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        $('#carouselExampleIndicators').on('slid.bs.carousel', function () {
-          const activeSlide = document.querySelector('.carousel-item.active'); // Aktive Slide
-          const video = activeSlide.querySelector('.responsive-video'); // Video auf der aktiven Slide
-
-          if (video && !video.hasAttribute('data-loaded')) { // Wenn Video noch nicht geladen wurde
-            const source = document.createElement('source');
-            source.src = video.getAttribute('data-src'); // Ladequelle aus `data-src`
-            source.type = 'video/webm';
-            video.appendChild(source); // Quelle dem Video hinzufügen
-            video.load(); // Video laden
-            video.setAttribute('data-loaded', 'true'); // Kennzeichne als geladen
-          }
-        });
-      });
-  </script>
-
 
   <!-- experience section -->
 
