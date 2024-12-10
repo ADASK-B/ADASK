@@ -34,7 +34,7 @@
       font-style: normal;
       font-weight: 400;
       src: url('../resource/poppins-v21-latin-regular.woff2') format('woff2');
-      font-display: swap;
+      font-display: swap; /* Verhindert Layoutverschiebung durch verzögertes Laden */
     }
 
     @font-face {
@@ -42,7 +42,7 @@
       font-style: normal;
       font-weight: 700;
       src: url('../resource/poppins-v21-latin-700.woff2') format('woff2');
-      font-display: swap;
+      font-display: swap; /* Verhindert Layoutverschiebung durch verzögertes Laden */
     }
 
     .layout_padding_custom {
@@ -71,27 +71,29 @@
     .custom-col-7 {
       flex: 0 0 60%;
       max-width: 60%;
+      min-height: 300px; /* Platz reservieren, um Layoutverschiebungen zu vermeiden */
     }
 
     /* Bild-Styling für eine flexible Anpassung an verschiedene Bildschirmgrößen */
     .custom-img-box {
-      width: 100%;           /* Die Box nimmt die volle Breite ihres Containers ein */
-      max-width: 100%;       /* Verhindert, dass die Box breiter wird als ihr Container */
-      display: flex;         /* Ermöglicht eine flexiblere Ausrichtung */
-      justify-content: center; /* Zentriert das Bild horizontal in der Box */
-      align-items: center;   /* Zentriert das Bild vertikal in der Box (wenn Höhe festgelegt) */
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .custom-img-box img {
-      width: 100%;                /* Bild passt sich der Breite des Containers an */
-      height: auto;               /* Höhe wird proportional zur Breite angepasst */
-      aspect-ratio: 4 / 5;        /* Seitenverhältnis entsprechend dem Originalbild */
-      object-fit: contain;        /* Bild wird vollständig angezeigt, ohne verzerrt zu werden */
-      display: block;             /* Verhindert zusätzliche Leerzeichen unter dem Bild */
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 5; /* Seitenverhältnis für Platzreservierung */
+      object-fit: contain;
+      display: block;
     }
 
     /* Text-Box */
     .custom-detail-box {
+      max-width: 100%; /* Verhindert übermäßige Breite */
       padding: 20px;
     }
 
