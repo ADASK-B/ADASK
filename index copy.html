@@ -15,26 +15,203 @@
   <meta name="author" content="ADASK" />
 
   <title>ADASK</title>
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <!-- Custom styles for this template -->
+  <script src="js/jquery-3.4.1.min.js"></script> 
+  <!--
+  
+  
   <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
+  
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <link href="css/responsive.css" rel="stylesheet" />
+  <script src="js/jquery-3.4.1.min.js"></script> 
+  -->
+      
+  <style>
+    body {
+      font-family: 'Poppins', Arial, Helvetica, sans-serif;
+      color: #2F3030;
+      background-color: #F3F3F3;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      text-align: left;
+      margin: 0;
+    }
 
-  <script src="js/jquery-3.4.1.min.js"></script>
+    @font-face {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      src: url('../resource/poppins-v21-latin-regular.woff2') format('woff2');
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 700;
+      src: url('../resource/poppins-v21-latin-700.woff2') format('woff2');
+      font-display: swap;
+    }
+
+  .layout_padding_custom {
+  padding-top: 90px;
+  padding-bottom: 100px;
+  }
+
+    /* Container und Layout */
+    .custom-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .custom-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .custom-col-5 {
+      flex: 0 0 40%;
+      max-width: 40%;
+    }
+
+    .custom-col-7 {
+      flex: 0 0 60%;
+      max-width: 60%;
+    }
+
+    /* Bild-Styling für eine flexible Anpassung an verschiedene Bildschirmgrößen */
+    .custom-img-box {
+      width: 100%;           /* Die Box nimmt die volle Breite ihres Containers ein */
+      max-width: 100%;       /* Verhindert, dass die Box breiter wird als ihr Container */
+      display: flex;         /* Ermöglicht eine flexiblere Ausrichtung */
+      justify-content: center; /* Zentriert das Bild horizontal in der Box */
+      align-items: center;   /* Zentriert das Bild vertikal in der Box (wenn Höhe festgelegt) */
+    }
+
+    .custom-img-box img {
+      width: 100%;           /* Bild passt sich der Breite des Containers an */
+      height: auto;          /* Höhe wird proportional zur Breite angepasst */
+      max-height: 100%;      /* Verhindert, dass das Bild die maximale Höhe des Containers überschreitet */
+      object-fit: contain;   /* Stellt sicher, dass das gesamte Bild sichtbar bleibt und nicht gestreckt wird */
+    }
+
+
+
+    /* Text-Box */
+    .custom-detail-box {
+      padding: 20px;
+    }
+
+    .custom-heading_container h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    /* Text */
+    .custom-detail-box p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Button-Styling */
+    .custom-btn-box {
+      margin-top: 20px;
+    }
+
+    .custom-btn-box a {
+      display: inline-block;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 16px;
+      color: #fff;
+      border-radius: 5px;
+      margin-right: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .custom-btn-1 {
+      background-color: #ff4b4b;
+    }
+
+    .custom-btn-2 {
+      background-color: #333;
+    }
+
+    .custom-btn-box a:hover {
+      background-color: #d43f3f;
+    }
+
+    /* Responsive Anpassung für kleinere Bildschirme */
+    @media (max-width: 768px) {
+      .custom-row {
+        flex-direction: column;
+      }
+
+      .custom-col-5, .custom-col-7 {
+        max-width: 100%;
+      }
+
+      .custom-detail-box {
+        text-align: center;
+      }
+
+      .custom-btn-box a {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+      }
+    }
+  </style>
 
 </head>
 
 <body>
+
+  <!-- experience section -->
+  <section class="experience_section layout_padding_custom">
+    <div class="custom-container">
+      <div class="custom-row">
+        <div class="custom-col-5">
+          <div class="custom-img-box">
+            <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="lazy">
+          </div>
+        </div>
+        <div class="custom-col-7">
+          <div class="custom-detail-box">
+            <div class="custom-heading_container">
+              <h2>
+                Das Abenteuer <br> zu dir selbst
+              </h2>
+            </div>
+            <p>
+              Wir möchten dir nicht nur Erkenntnisse bieten, sondern dich auch unterhalten
+              – weil wir glauben, dass Lernen Spaß machen soll. Damit wir dir diese Erfahrungen 
+              weiterhin kostenlos bieten können, sind wir auf Werbung angewiesen. Wir wissen, dass
+              Werbung manchmal stören kann, aber sie hilft uns, dieses Projekt am Leben zu halten.
+              Danke für deine Unterstützung und dafür, dass du uns dabei hilfst, weiterzumachen.
+            </p>
+            <div class="custom-btn-box">
+              <a href="#" class="custom-btn-1">Read More</a>
+              <a href="#" class="custom-btn-2">Hire</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end experience section -->
+
+
   <div class="hero_area"> 
-    <!---------------------------------------- header section strats -------------------------------------------------------------------->
-    {% include header.html %}
-    <!-- ------------------------------------------------end header section -------------------------------------------->
+   
     <!-- slider section -->
 
-     <!-- Laden wenn sichtbar
+     <!-- Laden wenn sichtbar vielleicht erstmal nach unten verschieben und beide seiten erscheinen lassen als cooler effekt
        
         document.addEventListener('DOMContentLoaded', function () {
         const videos = document.querySelectorAll('.responsive-video');
@@ -204,46 +381,38 @@
     </section>
   </div>
 
-  <!-- experience section -->
+<!-- about section -->
 
-  <section class="experience_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-5">
-          <div class="img-box">
-            <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="lazy" style="width: 100%; height: auto;">
-          </div>
-        </div>
-        <div class="col-md-7">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                Das Abenteuer <br> zu dir selbst
-              </h2>
-            </div>
-            <p>
-              Wir möchten dir nicht nur Erkenntnisse bieten, sondern dich auch unterhalten
-               – weil wir glauben, dass Lernen Spaß machen soll. Damit wir dir diese Erfahrungen 
-               weiterhin kostenlos bieten können, sind wir auf Werbung angewiesen. Wir wissen, dass
-                Werbung manchmal stören kann, aber sie hilft uns, dieses Projekt am Leben zu halten.
-                 Danke für deine Unterstützung und dafür, dass du uns dabei hilfst, weiterzumachen.
-            </p>
-            <div class="btn-box">
-              <a href="" class="btn-1">
-                Read More
-              </a>
-              <a href="" class="btn-2">
-                Hire
-              </a>
-            </div>
-          </div>
-        </div>
+<section class="about_section layout_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-9 mx-auto">
+        <div class="img-box">
 
+          <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="width: 60%; height: auto; pointer-events: none;" poster="images/Big5_Aplha_Poster.webp" data-video-src="images/Big5_Aplha.webm">
+            Your browser does not support the video tag.
+          </video>
+
+        </div>
       </div>
     </div>
-  </section>
+    <div class="detail-box">
+      <h2>
+        Über Big 5 Insight
+      </h2>
+      <p>
+        Mit Big 5 Insight kannst du deine Persönlichkeit anhand des wissenschaftlich fundierten Big-Five-Modells (OCEAN) entdecken. 
+        Die App bietet dir tiefe Einblicke in deine wichtigsten Charakterzüge und zeigt dir sogar, wie du im Vergleich zu historischen Größen wie Nikola Tesla oder Julius Caesar abschneidest. 
+        Dank der einzigartigen KI-Analyse erhältst du eine personalisierte Auswertung, die dir hilft zu verstehen, wie deine Persönlichkeit deinen Alltag und dein persönliches Wachstum beeinflusst.
+      </p>
+      <a href="">
+        Read More
+      </a>
+    </div>
+  </div>
+</section>
 
-  <!-- end experience section -->
+<!-- end about section -->
 
   <!-- category section -->
   
@@ -405,38 +574,7 @@
 
   <!-- end category section -->
 
-  <!-- about section -->
-
-  <section class="about_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 col-lg-9 mx-auto">
-          <div class="img-box">
-
-            <video class="responsive-video" autoplay loop muted playsinline loading="lazy" style="width: 60%; height: auto; pointer-events: none;" poster="images/Big5_Aplha_Poster.webp" data-video-src="images/Big5_Aplha.webm">
-              Your browser does not support the video tag.
-            </video>
-
-          </div>
-        </div>
-      </div>
-      <div class="detail-box">
-        <h2>
-          Über Big 5 Insight
-        </h2>
-        <p>
-          Mit Big 5 Insight kannst du deine Persönlichkeit anhand des wissenschaftlich fundierten Big-Five-Modells (OCEAN) entdecken. 
-          Die App bietet dir tiefe Einblicke in deine wichtigsten Charakterzüge und zeigt dir sogar, wie du im Vergleich zu historischen Größen wie Nikola Tesla oder Julius Caesar abschneidest. 
-          Dank der einzigartigen KI-Analyse erhältst du eine personalisierte Auswertung, die dir hilft zu verstehen, wie deine Persönlichkeit deinen Alltag und dein persönliches Wachstum beeinflusst.
-        </p>
-        <a href="">
-          Read More
-        </a>
-      </div>
-    </div>
-  </section>
   
-  <!-- end about section -->
 
 <!---------------------------------------------------------- freelance section -->
 <style>
@@ -695,6 +833,10 @@ $(document).ready(function () {
 
    <!--<script src="js/jquery-3.4.1.min.js" defer></script>-->
   <script src="js/bootstrap.js" defer></script>
-
+  <link href="css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="css/responsive.css" rel="stylesheet" />
+  <script src="js/jquery-3.4.1.min.js"></script> 
+  <!--<script src="js/video-control.js" defer></script> -->
 </body>
 </html>
