@@ -15,157 +15,164 @@
   <meta name="author" content="ADASK" />
 
   <title>ADASK</title>
-  <script src="js/jquery-3.4.1.min.js"></script> 
-  <!--
-  
-  
-  <link href="css/style.css" rel="stylesheet" />
-  
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <link href="css/responsive.css" rel="stylesheet" />
-  <script src="js/jquery-3.4.1.min.js"></script> 
-  -->
-      
+
+  <script src="js/jquery-3.4.1.min.js" ></script>
+
   <style>
-    body {
-      font-family: 'Poppins', Arial, Helvetica, sans-serif;
-      color: #2F3030;
-      background-color: #F3F3F3;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.5;
-      text-align: left;
-      margin: 0;
-    }
+/* Allgemeine Stile */
+body {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  color: #2F3030;
+  background-color: #F3F3F3;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  margin: 0;
+}
 
-    @font-face {
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 400;
-      src: url('../resource/poppins-v21-latin-regular.woff2') format('woff2');
-      font-display: swap;
-    }
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../resource/poppins-v21-latin-regular.woff2') format('woff2');
+  font-display: swap; /* Verhindert Layoutverschiebung durch verzögertes Laden */
+}
 
-    @font-face {
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 700;
-      src: url('../resource/poppins-v21-latin-700.woff2') format('woff2');
-      font-display: swap;
-    }
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../resource/poppins-v21-latin-700.woff2') format('woff2');
+  font-display: swap; /* Verhindert Layoutverschiebung durch verzögertes Laden */
+}
 
-  .layout_padding_custom {
+/* Layout-Padding */
+.layout_padding_custom {
   padding-top: 90px;
   padding-bottom: 100px;
+}
+
+/* Container und Layout */
+.custom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.custom-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.custom-col-5 {
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+
+.custom-col-7 {
+  flex: 0 0 60%;
+  max-width: 60%;
+  min-height: 400px; /* Platz reservieren für den Inhalt */
+}
+
+/* Bildbox-Styling */
+.custom-img-box {
+  width: 100%;
+  max-width: 400px; /* Maximale Breite für das Bild */
+  height: 500px;    /* Feste Höhe für das Bild */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F3F3F3; /* Optionaler Platzhalter-Hintergrund */
+}
+
+.custom-img-box img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Stellt sicher, dass das Bild vollständig angezeigt wird */
+  display: block;
+}
+
+/* Detailbox-Styling */
+.custom-detail-box {
+  max-width: 100%;
+  padding: 20px;
+  min-height: 300px; /* Platz reservieren für den Textblock */
+}
+
+/* Überschrift-Styling */
+.custom-heading_container h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Text-Styling */
+.custom-detail-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Button-Box Styling */
+.custom-btn-box {
+  margin-top: 20px;
+}
+
+.custom-btn-box a {
+  display: inline-block;
+  width: 120px;       /* Feste Breite für Buttons */
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 5px;
+  margin-right: 10px;
+  text-align: center; /* Zentriert den Text im Button */
+  transition: background-color 0.3s ease;
+}
+
+.custom-btn-1 {
+  background-color: #ff4b4b;
+}
+
+.custom-btn-2 {
+  background-color: #333;
+}
+
+.custom-btn-box a:hover {
+  background-color: #d43f3f;
+}
+
+/* Responsive Anpassung für kleinere Bildschirme */
+@media (max-width: 768px) {
+  .custom-row {
+    flex-direction: column;
   }
 
-    /* Container und Layout */
-    .custom-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+  .custom-col-5,
+  .custom-col-7 {
+    max-width: 100%;
+  }
 
-    .custom-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+  .custom-detail-box {
+    text-align: center;
+  }
 
-    .custom-col-5 {
-      flex: 0 0 40%;
-      max-width: 40%;
-    }
+  .custom-btn-box a {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+  }
 
-    .custom-col-7 {
-      flex: 0 0 60%;
-      max-width: 60%;
-    }
+  .custom-img-box {
+    max-width: 100%;
+    height: auto;
+  }
+}
 
-    /* Bild-Styling für eine flexible Anpassung an verschiedene Bildschirmgrößen */
-    .custom-img-box {
-      width: 100%;           /* Die Box nimmt die volle Breite ihres Containers ein */
-      max-width: 100%;       /* Verhindert, dass die Box breiter wird als ihr Container */
-      display: flex;         /* Ermöglicht eine flexiblere Ausrichtung */
-      justify-content: center; /* Zentriert das Bild horizontal in der Box */
-      align-items: center;   /* Zentriert das Bild vertikal in der Box (wenn Höhe festgelegt) */
-    }
-
-    .custom-img-box img {
-      width: 100%;           /* Bild passt sich der Breite des Containers an */
-      height: auto;          /* Höhe wird proportional zur Breite angepasst */
-      max-height: 100%;      /* Verhindert, dass das Bild die maximale Höhe des Containers überschreitet */
-      object-fit: contain;   /* Stellt sicher, dass das gesamte Bild sichtbar bleibt und nicht gestreckt wird */
-    }
-
-
-
-    /* Text-Box */
-    .custom-detail-box {
-      padding: 20px;
-    }
-
-    .custom-heading_container h2 {
-      font-size: 32px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    /* Text */
-    .custom-detail-box p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    /* Button-Styling */
-    .custom-btn-box {
-      margin-top: 20px;
-    }
-
-    .custom-btn-box a {
-      display: inline-block;
-      padding: 10px 20px;
-      text-decoration: none;
-      font-size: 16px;
-      color: #fff;
-      border-radius: 5px;
-      margin-right: 10px;
-      transition: background-color 0.3s ease;
-    }
-
-    .custom-btn-1 {
-      background-color: #ff4b4b;
-    }
-
-    .custom-btn-2 {
-      background-color: #333;
-    }
-
-    .custom-btn-box a:hover {
-      background-color: #d43f3f;
-    }
-
-    /* Responsive Anpassung für kleinere Bildschirme */
-    @media (max-width: 768px) {
-      .custom-row {
-        flex-direction: column;
-      }
-
-      .custom-col-5, .custom-col-7 {
-        max-width: 100%;
-      }
-
-      .custom-detail-box {
-        text-align: center;
-      }
-
-      .custom-btn-box a {
-        display: block;
-        margin: 10px auto;
-        width: 80%;
-      }
-    }
   </style>
 
 </head>
@@ -178,7 +185,7 @@
       <div class="custom-row">
         <div class="custom-col-5">
           <div class="custom-img-box">
-            <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="lazy">
+            <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="lazy" width="400" height="500">
           </div>
         </div>
         <div class="custom-col-7">
@@ -196,7 +203,7 @@
               Danke für deine Unterstützung und dafür, dass du uns dabei hilfst, weiterzumachen.
             </p>
             <div class="custom-btn-box">
-              <a href="#" class="custom-btn-1">Read More</a>
+              <a href="#" class="custom-btn-1">Read</a>
               <a href="#" class="custom-btn-2">Hire</a>
             </div>
           </div>
@@ -207,11 +214,12 @@
   <!-- end experience section -->
 
 
+
   <div class="hero_area"> 
-   
+    
     <!-- slider section -->
 
-     <!-- Laden wenn sichtbar vielleicht erstmal nach unten verschieben und beide seiten erscheinen lassen als cooler effekt
+     <!-- Laden wenn sichtbar
        
         document.addEventListener('DOMContentLoaded', function () {
         const videos = document.querySelectorAll('.responsive-video');
@@ -381,9 +389,9 @@
     </section>
   </div>
 
-<!-- about section -->
+ <!-- about section -->
 
-<section class="about_section layout_padding">
+ <section class="about_section layout_padding">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-lg-9 mx-auto">
@@ -574,7 +582,7 @@
 
   <!-- end category section -->
 
-  
+ 
 
 <!---------------------------------------------------------- freelance section -->
 <style>
@@ -827,16 +835,27 @@ $(document).ready(function () {
   <!-- end client section -->
 
 
-  <!-- info section -->
-  {% include footer.html %}
-  <!-- end  footer section -->
+  
 
    <!--<script src="js/jquery-3.4.1.min.js" defer></script>-->
   <script src="js/bootstrap.js" defer></script>
-  <link href="css/style.css" rel="stylesheet" />
+  <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
-  <script src="js/jquery-3.4.1.min.js"></script> 
-  <!--<script src="js/video-control.js" defer></script> -->
+
+
+  <!---------------------------------------- header section strats -------------------------------------------------------------------->
+  {% include header.html %}
+  <!-- ------------------------------------------------end header section -------------------------------------------->
+
+  <!-- footer section -->
+  {% include footer.html %}
+  <!-- end  footer section -->
+
+    
+
 </body>
 </html>
