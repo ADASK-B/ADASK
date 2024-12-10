@@ -16,13 +16,47 @@
 
   <title>ADASK</title>
   
-  <link href="css/style.css" rel="stylesheet" />
   <!--
+  
+  <link href="css/style.css" rel="stylesheet" />
+  
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <link href="css/responsive.css" rel="stylesheet" />
   <script src="js/jquery-3.4.1.min.js"></script> -->
       
   <style>
+
+    body {
+      font-family: 'Poppins', Arial, Helvetica, sans-serif;
+      color: #2F3030;
+      background-color: #F3F3F3;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      text-align: left;
+      margin: 0;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      src: url('../resource/poppins-v21-latin-regular.woff2') format('woff2');
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 700;
+      src: url('../resource/poppins-v21-latin-700.woff2') format('woff2');
+      font-display: swap;
+    }
+
+  .layout_padding_custom {
+  padding-top: 90px;
+  padding-bottom: 100px;
+  }
 
     /* Container und Layout */
     .custom-container {
@@ -131,7 +165,7 @@
     {% include header.html %} -->
     <!-- ------------------------------------------------end header section -------------------------------------------->
 <!-- experience section -->
-<section class="experience_section layout_padding">
+<section class="experience_section layout_padding_custom">
   <div class="custom-container">
     <div class="custom-row">
       <div class="custom-col-5">
