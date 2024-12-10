@@ -45,10 +45,10 @@
       font-display: swap;
     }
 
-  .layout_padding_custom {
-  padding-top: 90px;
-  padding-bottom: 100px;
-  }
+    .layout_padding_custom {
+      padding-top: 90px;
+      padding-bottom: 100px;
+    }
 
     /* Container und Layout */
     .custom-container {
@@ -83,13 +83,12 @@
     }
 
     .custom-img-box img {
-      width: 100%;           /* Bild passt sich der Breite des Containers an */
-      height: auto;          /* Höhe wird proportional zur Breite angepasst */
-      max-height: 100%;      /* Verhindert, dass das Bild die maximale Höhe des Containers überschreitet */
-      object-fit: contain;   /* Stellt sicher, dass das gesamte Bild sichtbar bleibt und nicht gestreckt wird */
+      width: 100%;                /* Bild passt sich der Breite des Containers an */
+      height: auto;               /* Höhe wird proportional zur Breite angepasst */
+      aspect-ratio: 4 / 5;        /* Seitenverhältnis entsprechend dem Originalbild */
+      object-fit: contain;        /* Bild wird vollständig angezeigt, ohne verzerrt zu werden */
+      display: block;             /* Verhindert zusätzliche Leerzeichen unter dem Bild */
     }
-
-
 
     /* Text-Box */
     .custom-detail-box {
@@ -169,7 +168,7 @@
       <div class="custom-row">
         <div class="custom-col-5">
           <div class="custom-img-box">
-            <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="lazy">
+            <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="lazy" width="400" height="500">
           </div>
         </div>
         <div class="custom-col-7">
