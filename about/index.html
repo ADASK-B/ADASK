@@ -17,7 +17,12 @@
   <title>ADASK</title>
 
 
-
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <!-- Custom styles for this template -->
+  <link href="../css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+  <link href="../css/responsive.css" rel="stylesheet" />
+  
   <script src="../js/jquery-3.4.1.min.js"></script>
 
 
@@ -29,108 +34,132 @@
     {% include header.html %}
     <!-- ------------------------------------------------end header section -------------------------------------------->
   </div>
-<!-- about section -->
-<style>
-  .about_section {
-    padding: 130px 0 60px; /* Added top padding for more space */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .about_section .about_content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .about_section .img-box {
-    margin-bottom: 20px; /* Space between model and text */
-  }
-  model-viewer {
-    width: 400px; /* Adjust width as needed */
-    height: 400px; /* Adjust height as needed */
-    margin: 0 auto;
-  }
-  .detail-box h2 {
-    font-size: 2em;
-    margin: 20px 0;
-  }
-  .detail-box p {
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-  .detail-box a {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #ff3d3d;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-</style>
   <!-- about section -->
-  <section class="about_section layout_padding-bottom layout_padding-top">
-    <div class="container">
-      <div class="about_content">
+
+
+<!-- Big 5 Insight -->
+<section class="experience_section layout_padding2-bottom">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-5 order-md-1 order-1">
         <div class="img-box">
-          <!-- 3D Viewer instead of the image with proper animation enabled -->
-          <model-viewer src="../images/globe_work_table_globustisch.glb" alt="3D Model of Work Table" auto-rotate  ar autoplay animation-name="*"></model-viewer>
+          <img src="../images/Base3.png" alt="">
         </div>
+      </div>
+      <div class="col-md-6 order-md-2 order-2">
         <div class="detail-box">
-          <h2>
-            About ADASK Company
-          </h2>
+          <div class="heading_container">
+            <h2>Unsere Mission</h2>
+          </div>
           <p>
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If youThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you
+            Bei ADASK glauben wir daran, dass Selbsterkenntnis der Schlüssel zu persönlichem Wachstum ist. Unsere Mission ist es, Menschen durch wissenschaftlich fundierte Persönlichkeitsanalysen tiefere Einblicke in ihre Charakterzüge zu ermöglichen und sie auf ihrem Weg der Selbstentfaltung zu unterstützen
           </p>
-          <a href="">
-            Read More
-          </a>
+          <div class="btn-box">
+            <a href="" class="btn-1">Read More</a>
+            <a href="" class="btn-2">Hire</a>
+          </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- end about section -->
+  </div>
+</section>
 
-
-    <!-- experience section -->
-
-    <section class="experience_section layout_padding2-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5">
-            <div class="img-box">
-              <img src="../images/Base3.png" alt="">
-            </div>
+<section class="experience_section layout_padding2-bottom bg-variant-1 text-variant-1">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-5 order-md-2 order-1">
+        <div class="img-box">
+          <img src="../images/Base3.png" alt="">
+        </div>
+      </div>
+      <div class="col-md-6 order-md-1 order-2">
+        <div class="detail-box">
+          <div class="heading_container">
+            <h2>Das Team hinter ADASK</h2>
           </div>
-          <div class="col-md-7">
-            <div class="detail-box">
-              <div class="heading_container">
-                <h2>
-                  Best Experinced Freelancer Here
-                </h2>
-              </div>
-              <p>
-                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-              </p>
-              <div class="btn-box">
-                <a href="" class="btn-1">
-                  Read More
-                </a>
-                <a href="" class="btn-2">
-                  Hire
-                </a>
-              </div>
-            </div>
+          <p>
+            Unser Team besteht aus Psychologen, Datenwissenschaftlern und Entwicklern, die gemeinsam eine Plattform geschaffen haben, die Wissenschaft und Technologie vereint.
+          </p>
+          <div class="btn-box">
+            <a href="" class="btn-1">Read More</a>
+            <a href="" class="btn-2">Hire</a>
           </div>
         </div>
       </div>
-    </section>
-  
-    <!-- end experience section -->
+    </div>
+  </div>
+</section>
+
+<style>
+
+.bg-variant-1 {
+  background-color: #65B973;
+}
+
+.text-variant-1 {
+  color: #F3F3F3; /* Dunkelgraue Schrift */
+}
+
+
+</style>
+
+
+<!-- Big 5 Insight -->
+<section class="experience_section layout_padding2-bottom">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-5 order-md-1 order-1">
+        <div class="img-box">
+          <img src="../images/Base3.png" alt="">
+        </div>
+      </div>
+      <div class="col-md-6 order-md-2 order-2">
+        <div class="detail-box">
+          <div class="heading_container">
+            <h2>Warum ADASK?</h2>
+          </div>
+          <p>
+            Wir bieten präzise, KI-gestützte Analysen basierend auf dem bewährten Big-Five-Modell
+          </p>
+          <div class="btn-box">
+            <a href="" class="btn-1">Read More</a>
+            <a href="" class="btn-2">Hire</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Zweiter Abschnitt -->
+<section class="experience_section layout_padding2-bottom bg-variant-1 text-variant-1">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-5 order-md-2 order-1 ">
+        <div class="img-box">
+          <img src="../images/Base3.png" alt="">
+        </div>
+      </div>
+      <div class="col-md-6 order-md-1 order-2">
+        <div class="detail-box">
+          <div class="heading_container">
+            <h2> Wissenschaftlicher Ansatz</h2>
+          </div>
+          <p>
+            Die Big-Five-Persönlichkeitstheorie (OCEAN) bildet die Grundlage für unsere Analysen.
+          </p>
+          <div class="btn-box">
+            <a href="" class="btn-1">Read More</a>
+            <a href="" class="btn-2">Hire</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    
 
   <!-- info section -->
   {% include footer.html %}
@@ -138,10 +167,5 @@
 
   <script src="../js/bootstrap.js" defer></script>
     <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
-    <!-- Custom styles for this template -->
-  <link href="../css/style.css" rel="stylesheet" />
-    <!-- responsive style -->
-  <link href="../css/responsive.css" rel="stylesheet" />
 </body>
 </html>
