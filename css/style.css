@@ -1,3 +1,4 @@
+/*
 body {
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
   color: #2F3030;
@@ -24,7 +25,7 @@ body {
   src: url('../resource/poppins-v21-latin-700.woff2') format('woff2');
   font-display: swap;
 }
-
+*/
 .styled-subheading {
   font-size: 1.25rem;
   font-weight: bold; /* Fettgedruckt */
