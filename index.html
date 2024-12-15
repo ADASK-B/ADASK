@@ -16,83 +16,74 @@
 
   <title>ADASK</title>
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <script src="js/jquery-3.4.1.min.js"></script>
 
-  <script src="js/jquery-3.4.1.min.js"></script>
+  <<style>
+    .no-bootstrap, 
+    .no-bootstrap * {
+      all: revert; /* Setzt alle CSS-Eigenschaften auf die Browser-Standardwerte zurück */
+    }
 
-  <style>
-
+    
     body {
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-          color: #2F3030;
-          background-color: #F3F3F3;
-          font-size: 1rem;
-          font-weight: 400;
-          line-height: 1.5;
-          text-align: left;
-          margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #2F3030;
+      background-color: #F3F3F3;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
     }
 
-
-  </style>
-
-</head>
-
-<body>
-
-  <style>
-  
     .adventure_section {
-      padding-top: 200px;
-      padding-bottom: 200px;
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-  
+
     .flex_container {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      flex-wrap: wrap;
+      gap: 40px;
     }
-  
+
     .image_column {
-      width: 100%;
+      max-width: 300px;
     }
-  
-    @media (min-width: 768px) {
-      .image_column {
-        flex: 0 0 40%;
-        max-width: 40%;
-      }
-      .text_column {
-        flex: 0 0 60%;
-        max-width: 60%;
-      }
-    }
-  
+
     .image_wrapper img {
       width: 100%;
       height: auto;
+      display: block;
     }
-  
-    .content_wrapper h2 {
+
+    .text_column {
+      text-align: center;
+    }
+
+    .content_wrapper h1 {
       font-size: 2rem;
       margin-bottom: 20px;
     }
-  
+
     .content_wrapper p {
       margin-top: 20px;
+      font-size: 1rem;
     }
-  
+
     .button_container {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
-      margin-top: 45px;
+      margin-top: 30px;
     }
-  
+
     .button_container a {
       display: inline-block;
       text-align: center;
@@ -106,34 +97,63 @@
       transition: all 0.3s;
       text-decoration: none;
     }
-  
+
     .button_container a:hover {
       background-color: transparent;
       border-color: #EF5045;
       color: #EF5045;
     }
+
+    /* Responsive Anpassungen für größere Bildschirme */
+    @media (min-width: 768px) {
+      .flex_container {
+        flex-direction: row;
+        align-items: center;
+        gap: 60px;
+      }
+
+      .image_column {
+        flex: 0 0 35%;
+        max-width: 35%;
+      }
+
+      .text_column {
+        flex: 0 0 60%;
+        max-width: 60%;
+        text-align: left;
+      }
+
+      .content_wrapper h1 {
+        font-size: 2.5rem;
+      }
+    }
   </style>
+
+</head>
+
+<body>
   
-  <section class="adventure_section">
-    <div class="container">
-      <div class="flex_container">
-        <div class="image_column">
-          <div class="image_wrapper">
-            <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="eager">
-          </div>
+  <section class="adventure_section no-bootstrap">
+    <div class="flex_container">
+      <div class="image_column">
+        <div class="image_wrapper">
+          <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="eager">
         </div>
-        <div class="text_column">
-          <div class="content_wrapper">
-            <h1>
-              <b>Das Abenteuer <br> zu dir selbst</b>
-            </h1>
-            <p>
-              Wir möchten dir nicht nur Erkenntnisse bieten, sondern dich auch unterhalten
-              – weil wir glauben, dass Lernen Spaß machen soll. Damit wir dir diese Erfahrungen 
-              weiterhin kostenlos bieten können, sind wir auf Werbung angewiesen. Wir wissen, dass
-              Werbung manchmal stören kann, aber sie hilft uns, dieses Projekt am Leben zu halten.
-              Danke für deine Unterstützung und dafür, dass du uns dabei hilfst, weiterzumachen.
-            </p>
+      </div>
+      <div class="text_column">
+        <div class="content_wrapper">
+          <h1>
+            <b>Das Abenteuer <br> zu dir selbst</b>
+          </h1>
+          <p>
+            Wir möchten dir nicht nur Erkenntnisse bieten, sondern dich auch unterhalten
+            – weil wir glauben, dass Lernen Spaß machen soll. Damit wir dir diese Erfahrungen 
+            weiterhin kostenlos bieten können, sind wir auf Werbung angewiesen. Wir wissen, dass
+            Werbung manchmal stören kann, aber sie hilft uns, dieses Projekt am Leben zu halten.
+            Danke für deine Unterstützung und dafür, dass du uns dabei hilfst, weiterzumachen.
+          </p>
+          <div class="button_container">
+            <a href="#">Mehr erfahren</a>
           </div>
         </div>
       </div>
@@ -145,6 +165,11 @@
 
 
   <div class="hero_area"> 
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <script src="js/jquery-3.4.1.min.js"></script>
     <!---------------------------------------- header section strats -------------------------------------------------------------------->
     <!--{% include header.html %}-->
     <!-- ------------------------------------------------end header section -------------------------------------------->
