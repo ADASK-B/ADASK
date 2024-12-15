@@ -16,7 +16,7 @@
 
   <title>ADASK</title>
 
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
 
 
 
@@ -168,10 +168,21 @@
     <!-- ------------------------------------------------end header section -------------------------------------------->
 
         
+    <script>
+      function loadCSS(href) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        document.head.appendChild(link);
+      }
     
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/responsive.css" rel="stylesheet" />
-    <script src="js/jquery-3.4.1.min.js"></script>
+      // Lade Bootstrap und andere CSS-Dateien nachträglich
+      window.addEventListener('load', function () {
+        loadCSS('css/bootstrap.css');
+        loadCSS('css/style.css');
+        loadCSS('css/responsive.css');
+      });
+    </script>
 
     <script defer>
       window.addEventListener('load', function () {
