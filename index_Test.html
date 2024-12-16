@@ -1,0 +1,712 @@
+---
+---
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="Big 5 Persönlichkeitstest, Persönlichkeitstest Online, OCEAN Modell, Persönlichkeitsentwicklung, historische Persönlichkeiten Vergleich, Psychologische Analyse, Marie Curie, Nikola Tesla, Persönlichkeit entdecken" />
+  <meta name="description" content="Erforschen Sie Ihre Persönlichkeit mit Big 5 Insight von ADASK. Vergleichen Sie Ihre Charakterzüge mit historischen Persönlichkeiten wie Tesla, Curie und Sokrates und fördern Sie Ihr persönliches Wachstum. Starten Sie jetzt Ihren Test!" />
+  <meta name="author" content="ADASK" />
+
+  <title>ADASK</title>
+
+  <style>
+
+    body {
+      font-family: 'Poppins', Arial, Helvetica, sans-serif;
+      color: #2F3030;
+      background-color: #F3F3F3;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      text-align: left;
+      margin: 0;
+    }
+  </style>
+  
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+  <div class="hero_area"> 
+    <!---------------------------------------- header section strats -------------------------------------------------------------------->
+    {% include header.html %}
+    <!-- ------------------------------------------------end header section -------------------------------------------->
+
+    <script defer>
+      window.addEventListener('load', function () {
+        // Wählt alle Video-Elemente mit der Klasse "responsive-video" aus
+        const videos = document.querySelectorAll('.responsive-video');
+    
+        videos.forEach((video) => {
+          // Erst nachdem die Seite vollständig geladen ist, wird die Quelle gesetzt
+          if (!video.querySelector('source')) {
+            const source = document.createElement('source');
+            source.src = video.getAttribute('data-video-src'); // Die Videoquelle aus einem Datenattribut
+            source.type = 'video/webm';
+            video.appendChild(source);
+    
+            // Optional: Das Video neu laden, falls erforderlich
+            video.load();
+          }
+        });
+      });
+    </script>
+
+    <section class="slider_section ">
+      <div class="carousel_btn-container">
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-5 offset-md-1">
+                  <div class="detail-box">
+
+                    <h1 style="line-height:1.2; font-weight:700;">
+                      <span style="display:block;">Entdecke</span>
+                      <span style="display:block;">deine</span>
+                      <span style="display:block;">Persönlichkeit</span>
+                    </h1>
+                    <h2 style="margin-top:1.5em; font-weight:500; color:#F3F3F3;">
+                      <b>Marie Curie</b>
+                    </h2>
+
+                    <p>
+                      Marie Curie war entschlossen, klug und bescheiden – eine Pionierin, die Wissen und Wissenschaft über alles stellte.              
+                    </p>
+                    <div class="btn-box">
+                      <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
+                        Zur App
+                      </a>
+                      <a href="#" class="btn-2">
+                        Zum Shop
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="offset-md-1 col-md-4 img-container">
+                  <div class="img-box">
+
+                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" preload="none" style="pointer-events: none;" poster="images/Curi_Alpha_PosterW.webp" data-video-src="images/Curi_Alpha.webm">
+                      Your browser does not support the video tag.
+                    </video>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-5 offset-md-1">
+                  <div class="detail-box">
+
+                    <h1 style="line-height:1.2; font-weight:700;">
+                      <span style="display:block;">Entdecke</span>
+                      <span style="display:block;">deine</span>
+                      <span style="display:block;">Persönlichkeit</span>
+                    </h1>
+                    <h2 style="margin-top:1.5em; font-weight:400; color:#F3F3F3;">
+                      <b>Nikola Tesla</b>
+                    </h2>
+               
+                    <p>
+                      Nikola Tesla war visionär, brillant und exzentrisch – ein Erfinder, der die Zukunft der Technologie gestaltete.
+                    </p>
+                    <div class="btn-box">
+                      <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
+                        Zur App
+                      </a>
+                      <a href="#" class="btn-2">
+                        Zum Shop
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="offset-md-1 col-md-4 img-container">
+                  <div class="img-box">
+
+                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" preload="none" style="pointer-events: none;" poster="images/Nikol_Alpha_PosterW.webp" data-video-src="images/Nikol_Alpha.webm">
+                      Your browser does not support the video tag.
+                    </video>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-5 offset-md-1">
+                  <div class="detail-box">
+
+
+                    <h1 style="line-height:1.2; font-weight:700;">
+                      <span style="display:block;">Entdecke</span>
+                      <span style="display:block;">deine</span>
+                      <span style="display:block;">Persönlichkeit</span>
+                    </h1>
+                    <h2 style="margin-top:1.5em; font-weight:400; color:#F3F3F3;">
+                      <b>Gaius Julius</b>
+                    </h2>
+
+                    
+                    <p>
+                      Gaius Julius Caesar war kühn, brillant und umstritten – ein komplexer Führer hinter der politischen Fassade.
+                    </p>
+                    <div class="btn-box">
+                      <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
+                        Zur App
+                      </a>
+                      <a href="#" class="btn-2">
+                        Zum Shop
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="offset-md-1 col-md-4 img-container">
+                  <div class="img-box">
+
+                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" preload="none" style="pointer-events: none;" poster="images/Cesa_Alpha_PosterW.webp" data-video-src="images/Cesa_Alpha.webm">
+                      Your browser does not support the video tag.
+                    </video>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- experience section -->
+
+  <section class="experience_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="img-box">
+            <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="lazy" style="width: 100%; height: auto;">
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Das Abenteuer <br> zu dir selbst
+              </h2>
+            </div>
+            <p>
+              Wir möchten dir nicht nur Erkenntnisse bieten, sondern dich auch unterhalten
+               – weil wir glauben, dass Lernen Spaß machen soll. Damit wir dir diese Erfahrungen 
+               weiterhin kostenlos bieten können, sind wir auf Werbung angewiesen. Wir wissen, dass
+                Werbung manchmal stören kann, aber sie hilft uns, dieses Projekt am Leben zu halten.
+                 Danke für deine Unterstützung und dafür, dass du uns dabei hilfst, weiterzumachen.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- end experience section -->
+
+  <!-- category section -->
+  
+  <!-- Lottie-Web Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>
+    <!-- Kategorie-Sektion -->
+    <section class="category_section layout_padding">
+      <div class="container">
+          <div class="heading_container">
+              <h2>Big 5 Insight</h2>
+          </div>
+          <div class="category_container">
+              <div class="box">
+                  <div class="img-box">
+                      <div class="lottie-container" id="lottie_analytics_container">
+                          <img src="images/Wachstum.png" class="lottie-placeholder" alt="Analytics Placeholder" >
+                          <div id="lottie_analytics" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+                      </div>
+                  </div>
+                  <div class="detail-box">
+                      <h3>Wachstum</h3>
+                  </div>
+              </div>
+              <div class="box">
+                  <div class="img-box">
+                      <div class="lottie-container" id="lottie_Solution_container">
+                          <img src="images/Zusammenfügen.png" class="lottie-placeholder" alt="Solution Placeholder">
+                          <div id="lottie_Solution" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+                      </div>
+                  </div>
+                  <div class="detail-box">
+                      <h3>Zusammenfügen</h3>
+                  </div>
+              </div>
+              <div class="box">
+                  <div class="img-box">
+                      <div class="lottie-container" id="lottie_Community_container">
+                          <img src="images/Verbindung.png" class="lottie-placeholder" alt="Community Placeholder">
+                          <div id="lottie_Community" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+                      </div>
+                  </div>
+                  <div class="detail-box">
+                      <h3>Verbindung</h3>
+                  </div>
+              </div>
+              <div class="box">
+                  <div class="img-box">
+                      <div class="lottie-container" id="lottie_Chatbot_container">
+                          <img src="images/KünstlicheIntelligenz.png" class="lottie-placeholder" alt="Chatbot Placeholder">
+                          <div id="lottie_Chatbot" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+                      </div>
+                  </div>
+                  <div class="detail-box">
+                      <h3>Künstliche Intelligenz</h3>
+                  </div>
+              </div>
+              <div class="box">
+                  <div class="img-box">
+                      <div class="lottie-container" id="lottie_unlock_container">
+                          <img src="images/Entfesselung.png" class="lottie-placeholder" alt="Unlock Placeholder">
+                          <div id="lottie_unlock" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+                      </div>
+                  </div>
+                  <div class="detail-box">
+                      <h3>Entfesselung</h3>
+                  </div>
+              </div>
+              <div class="box">
+                  <div class="img-box">
+                      <div class="lottie-container" id="lottie_lightbulb_container">
+                          <img src="images/Erkennen.png" class="lottie-placeholder" alt="Lightbulb Placeholder">
+                          <div id="lottie_lightbulb" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+                      </div>
+                  </div>
+                  <div class="detail-box">
+                      <h3>Erkennen</h3>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <style>
+      .lottie-container {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      }
+  .lottie-placeholder,
+  .lottie-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+  }
+  </style>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", () => {
+          const lottieAnimations = [
+              { id: "lottie_analytics", path: "images/analytics.json" },
+              { id: "lottie_Solution", path: "images/Solution.json" },
+              { id: "lottie_Community", path: "images/Community.json" },
+              { id: "lottie_Chatbot", path: "images/Chatbot.json" },
+              { id: "lottie_unlock", path: "images/unlock.json" },
+              { id: "lottie_lightbulb", path: "images/lightbulb.json" },
+          ];
+ 
+          function loadLottieAnimation(animation) {
+              const container = document.getElementById(animation.id + "_container");
+              const lottieElement = document.getElementById(animation.id);
+              const placeholderImage = container.querySelector('.lottie-placeholder');
+ 
+              if (lottieElement && !lottieElement.dataset.loaded) {
+                  const animInstance = lottie.loadAnimation({
+                      container: lottieElement,
+                      renderer: "svg",
+                      loop: true,
+                      autoplay: false,
+                      path: animation.path,
+                  });
+ 
+                  animInstance.addEventListener('DOMLoaded', () => {
+                      lottieElement.classList.add('loaded');
+                      animInstance.play();
+                      placeholderImage.style.display = 'none';
+                  });
+ 
+                  lottieElement.dataset.loaded = true;
+                  animInstance.setSpeed(0.5);
+              }
+          }
+ 
+          const observerOptions = { threshold: 0.1 };
+          const observer = new IntersectionObserver((entries, observer) => {
+              entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                      const animation = lottieAnimations.find(
+                          (anim) => entry.target.id === anim.id
+                      );
+                      if (animation) {
+                          loadLottieAnimation(animation);
+                          observer.unobserve(entry.target);
+                      }
+                  }
+              });
+          }, observerOptions);
+ 
+          lottieAnimations.forEach((animation) => {
+              const element = document.getElementById(animation.id);
+              if (element) observer.observe(element);
+          });
+      });
+  </script>
+
+
+  <!-- end category section -->
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-lg-9 mx-auto">
+          <div class="img-box" style="display: flex; justify-content: center; align-items: center;">
+  
+            <video class="responsive-video" autoplay loop muted playsinline loading="lazy" 
+            style="width: 700; height: 600; pointer-events: none;"
+            poster="images/Big5_Alpha_poster.webp" data-video-src="images/Big5_Alpha.webm">
+            Your browser does not support the video tag.
+            </video>
+  
+          </div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <h2>
+          Über Big 5 Insight
+        </h2>
+        <p>
+          Mit Big 5 Insight kannst du deine Persönlichkeit anhand des wissenschaftlich fundierten Big-Five-Modells (OCEAN) entdecken. 
+          Die App bietet dir tiefe Einblicke in deine wichtigsten Charakterzüge und zeigt dir sogar, wie du im Vergleich zu historischen Größen wie Nikola Tesla oder Julius Caesar abschneidest. 
+          Dank der einzigartigen KI-Analyse erhältst du eine personalisierte Auswertung, die dir hilft zu verstehen, wie deine Persönlichkeit deinen Alltag und dein persönliches Wachstum beeinflusst.
+        </p>
+        <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
+          Zur App
+        </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- end about section -->
+
+<!---------------------------------------------------------- freelance section -->
+<style>
+  .personality-icon {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.3s ease;
+  }
+  
+  .t-link-box:hover .personality-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  /* Spezifische Icon-Farben */
+  .openness-icon { fill: #ffffff; }
+  .conscientiousness-icon { fill: #ffffff; }
+  .extraversion-icon { fill: #ffffff; }
+  .agreeableness-icon { fill: #ffffff; }
+  .neuroticism-icon { fill: #ffffff; }
+
+  /* Verbesserte Abstände für bessere Responsivität */
+  .text-box {
+    padding-left: 140px;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    padding-right: 200px;
+  }
+
+    /* Verbesserte Abstände für bessere Responsivität */
+    .text-box2 {
+    padding-left: 140px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 0px;
+  }
+  
+  .text-box4 {
+  padding-left: 0; /* Standardwert für kleinere Bildschirme */
+  }
+
+  /* Ab einer bestimmten Bildschirmbreite (z.B. 768px) */
+  @media (min-width: 1200px) {
+    .text-box4 {
+      padding-left: 10px;
+    }
+  }
+    /* Verbesserte Abstände für bessere Responsivität */
+    .text-box3 {
+    padding-left: 20px;
+
+  }
+    .collapse {
+    overflow: hidden;
+  }
+</style>
+<script>
+
+$(document).ready(function () {
+  $('#accordion').on('hide.bs.collapse', function (event) {
+    const $panel = $(event.target);
+    const $button = $(`button[data-target="#${event.target.id}"]`);
+    $panel.css({
+      display: 'none',
+    }).removeClass('show'); 
+    $button.addClass('collapsed').attr('aria-expanded', 'false');
+  });
+  $('#accordion').on('show.bs.collapse', function (event) {
+    const $panel = $(event.target);
+    const $button = $(`button[data-target="#${event.target.id}"]`);
+    $panel.css({
+      display: 'block',
+    }).addClass('show'); 
+    $button.removeClass('collapsed').attr('aria-expanded', 'true');
+  });
+});
+</script>
+
+
+<section class="freelance_section layout_padding3">
+  <div id="accordion">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5 offset-md-1">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Hauptdimensionen
+              </h2>
+            </div>
+            <div class="tab_container">
+              <button class="t-link-box" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <div class="img-box">
+                  <svg class="personality-icon openness-icon" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-10v4h2v-4h2l-3-3-3 3h2z"/>
+                  </svg>
+                </div>
+                <div class="detail-box">
+                  <h3 style="font-weight: bold;">
+                    Offenheit
+                  </h3>
+                  <h4 class="styled-subheading text-box4">Kreativität und Neugier</h4>
+                </div>
+              </button>
+              <!-- Panel 1 for mobile view -->
+              <div class="collapse d-md-none" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="detail-box text-box3">
+                  <h4>Offenheit</h4>
+                  <p>Offenheit beschreibt das Interesse an neuen Erfahrungen, Kreativität und der Bereitschaft, sich auf neue Ideen einzulassen.</p>
+                </div>
+              </div>
+              <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <div class="img-box">
+                  <svg class="personality-icon conscientiousness-icon" viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                  </svg>
+                </div>
+                <div class="detail-box">
+                  <h3 style="font-weight: bold;">
+                    Gewissenhaftigkeit 
+                  </h3>
+                  <h4 class="styled-subheading text-box4">Struktur und Disziplin</h4>
+                </div>
+              </button>
+              <!-- Panel 2 for mobile view -->
+              <div class="collapse d-md-none" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="detail-box text-box3">
+                  <h4>Gewissenhaftigkeit</h4>
+                  <p>Gewissenhaftigkeit beschreibt das Maß an Selbstdisziplin, Zielstrebigkeit und die Fähigkeit, Aufgaben effizient zu organisieren und durchzuführen.</p>
+                </div>
+              </div>
+              <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <div class="img-box">
+                  <svg class="personality-icon extraversion-icon" viewBox="0 0 24 24">
+                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                  </svg>
+                </div>
+                <div class="detail-box">
+                  <h3 style="font-weight: bold;">
+                    Extraversion
+                  </h3>
+                  <h4 class="styled-subheading text-box4">Energie und Freude</h4>
+                </div>
+              </button>
+              <!-- Panel 3 for mobile view -->
+              <div class="collapse d-md-none" id="collapseThree" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="detail-box text-box3">
+                  <h4>Extraversion</h4>
+                  <p>Extraversion beschreibt die Tendenz, gesellig, energisch und aktiv zu sein. Menschen mit hoher Extraversion sind oft kontaktfreudig und unternehmungslustig.</p>
+                </div>
+              </div>
+              <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <div class="img-box">
+                  <svg class="personality-icon agreeableness-icon" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </div>
+                <div class="detail-box">
+                  <h3 style="font-weight: bold;">
+                    Verträglichkeit 
+                  </h3>
+                  <h4 class="styled-subheading text-box4">Empathie und Harmonie</h4>
+                </div>
+              </button>
+              <!-- Panel 4 for mobile view -->
+              <div class="collapse d-md-none" id="collapseFour" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="detail-box text-box3">
+                  <h4>Verträglichkeit</h4>
+                  <p>Verträglichkeit beschreibt die Tendenz, mit anderen kooperativ und harmonisch umzugehen. Menschen mit hoher Verträglichkeit sind oft empathisch und hilfsbereit.</p>
+                </div>
+              </div>
+              <!-- New button for Neurotizismus -->
+              <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <div class="img-box">
+                  <svg class="personality-icon neuroticism-icon" viewBox="0 0 24 24">
+                    <path d="M15.5 8.5c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-3 4c-2.33 0-7 1.17-7 3.5V18h14v-2c0-2.33-4.67-3.5-7-3.5zm0 1c1.97 0 4.5.91 4.5 2v1h-9v-1c0-1.09 2.53-2 4.5-2z"/>
+                  </svg>
+                </div>
+                <div class="detail-box">
+                  <h3 style="font-weight: bold;">
+                    Neurotizismus
+                  </h3>
+                  <h4 class="styled-subheading text-box4">Emotionale Empfindsamkeit</h4>
+                </div>
+              </button>
+              <!-- Panel 5 for mobile view -->
+              <div class="collapse d-md-none" id="collapseFive" aria-labelledby="headingFive" data-parent="#accordion">
+                <div class="detail-box text-box3">
+                  <h4>Neurotizismus</h4>
+                  <p>Neurotizismus beschreibt die Tendenz, negative Emotionen wie Angst, Traurigkeit oder Nervosität zu erleben. Menschen mit hohem Neurotizismus neigen zu erhöhter emotionaler Reaktivität.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 d-none d-md-block">
+          <!-- Panel 1 for larger view -->
+          <div class="collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="text-box">
+              <h4 style="font-weight: bold;"> Offenheit</h4>
+              <p>Offenheit steht für Kreativität, Neugier und die Bereitschaft, über den Tellerrand hinauszuschauen. Menschen mit 
+                einer hohen Ausprägung in dieser Dimension sind stets auf der Suche nach neuen Erfahrungen und lassen sich gerne auf neue 
+                Ideen ein. Sie sind fantasievoll, lieben künstlerische Ausdrucksformen und schätzen die Vielfalt des Lebens. Ihre Vorstellungskraft 
+                ist stark ausgeprägt, und sie genießen es, sich mit komplexen oder ungewöhnlichen Themen auseinanderzusetzen. Offenheit ist der Schlüssel 
+                zur Innovation, weil sie dazu inspiriert, Bestehendes zu hinterfragen und neue Wege zu gehen.</p>
+            </div>
+          </div>
+          <!-- Panel 2 for larger view -->
+          <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="text-box">
+              <h4 style="font-weight: bold;">Gewissenhaftigkeit</h4>
+              <p>Gewissenhaftigkeit beschreibt den Drang nach Struktur, Selbstdisziplin und Ordnung. Menschen, die in dieser Dimension hoch sind, sind verlässlich und erledigen 
+                ihre Aufgaben gründlich und pünktlich. Sie setzen sich klare Ziele und bleiben beständig, bis diese erreicht sind. Gewissenhafte Personen sind detailorientiert und 
+                scheuen sich nicht, Verantwortung zu übernehmen. Diese Eigenschaft ist besonders wichtig, wenn es darum geht, Herausforderungen planvoll und systematisch zu bewältigen, 
+                und sorgt dafür, dass Projekte effizient und erfolgreich umgesetzt werden.</p>
+            </div>
+          </div>
+          <!-- Panel 3 for larger view -->
+          <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="text-box">
+              <h4 style="font-weight: bold;">Extraversion</h4>
+              <p>Extraversion steht für ein hohes Maß an Energie, Begeisterung und Geselligkeit. Extrovertierte Menschen blühen in Gesellschaft anderer auf und lieben den Austausch mit 
+                anderen. Sie sind kommunikativ, selbstbewusst und gerne in sozialen Situationen präsent. Oft haben sie eine ansteckende positive Ausstrahlung, die andere mitreißt. Extravertierte 
+                Menschen suchen das Abenteuer, schätzen den Kontakt zu neuen Leuten und fühlen sich wohl in Situationen, die andere herausfordern könnten. Sie lieben es, im Mittelpunkt zu stehen, 
+                und ziehen ihre Energie aus dem Zusammensein mit anderen.</p>
+            </div>
+          </div>
+          <!-- Panel 4 for larger view -->
+          <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#accordion">
+            <div class="text-box">
+              <h4 style="font-weight: bold;">Verträglichkeit</h4>
+              <p>Verträglichkeit steht für Empathie, Mitgefühl und den Wunsch, harmonisch zusammenzuarbeiten. 
+                Menschen mit hoher Verträglichkeit zeigen Interesse am Wohlergehen ihrer Mitmenschen, sind hilfsbereit 
+                und bereit, Konflikte zu lösen. Sie bevorzugen Kooperation gegenüber Konkurrenz und bauen gerne Brücken zu anderen. 
+                Diese Personen sind warmherzig, freundlich und fördern ein unterstützendes Umfeld. Verträglichkeit bedeutet, das Wohl des 
+                Teams über das eigene Ego zu stellen, um so ein harmonisches und erfolgreiches Miteinander zu fördern. Diese Stärke schafft 
+                Vertrauen und Zusammenhalt.</p>
+            </div>
+          </div>
+          <!-- Panel 5 for larger view -->
+          <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#accordion">
+            <div class="text-box">
+              <h4 style="font-weight: bold;">Neurotizismus</h4>
+              <p>Neurotizismus beschreibt die Tendenz, emotionale Höhen und Tiefen intensiver zu 
+                erleben. Menschen mit einer hohen Ausprägung in dieser Dimension neigen zu Unsicherheit, 
+                Nervosität und Stress. Sie sind besonders empfänglich für negative Emotionen wie Angst oder 
+                Traurigkeit, was ihnen jedoch auch ermöglicht, die Feinheiten von Stimmungen besser zu erfassen. 
+                Diese Empfindsamkeit führt zu tieferer Selbstreflexion und besserem Verständnis für emotionale Herausforderungen.
+                 Die Kunst besteht darin, die emotionale Seite des Lebens bewusst zu erleben und an diesen Erfahrungen zu wachsen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--------------------------------------------------------------------------------------------- end freelance section -->
+  <!-- client section -->
+  <section class="layout_padding3"></section>
+  <!-- end client section -->
+
+
+  <!-- info section -->
+  {% include footer.html %}
+  <!-- end  footer section -->
+
+   <!--<script src="js/jquery-3.4.1.min.js" defer></script>-->
+  <script src="js/bootstrap.js" defer></script>
+  <!--<script src="js/video-control.js" defer></script> -->
+</body>
+</html>
