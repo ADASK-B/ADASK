@@ -17,12 +17,6 @@
   <title>ADASK</title>
 
   <style>
-    /*
-    .no-bootstrap, 
-    .no-bootstrap * {
-      all: revert; 
-    }
-    */
     
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -38,7 +32,7 @@
 
     .adventure_section {
       padding-top: 200px ;
-      padding-bottom: 150px ;
+      padding-bottom: 200px ;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -54,11 +48,17 @@
       max-width: 300px;
     }
 
+    .image_wrapper {
+    width: 100%;
+    aspect-ratio: 3/2; /* passendes Seitenverhältnis */
+    background-color: #F3F3F3;
+    }
     .image_wrapper img {
       width: 100%;
       height: auto;
       display: block;
     }
+
 
     .text_column {
       text-align: center;
@@ -134,7 +134,12 @@
     <div class="flex_container">
       <div class="image_column">
         <div class="image_wrapper">
-          <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="eager">
+          <img 
+            src="images/Gahndi.webp" 
+            alt="Bild von Gandhi" 
+            width="300" 
+            height="200" 
+            loading="eager" />
         </div>
       </div>
       <div class="text_column">
