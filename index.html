@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+
+  
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ADASK lädt...</title>
+  <meta name="description" content="ADASK ist die ideale Plattform für Wissenschaftler und Technologen, die nach einer zusammenarbeitlichen Umgebung suchen, um ihre Forschungsprojekte zu vervollständigen. Hier können sie Ideen austauschen, Expertisen einbinden und gemeinsam innovative Lösungen entwickeln.">
+  <meta name="keywords" content="ADASK, Wissenschaft, Technologie, Forschung, Entwicklung, Plattform, Zusammenarbeit, Ideen austauschen, Expertisen einbinden">
+  <link rel="shortcut icon" href="../images/logo_Small-1.webp">
+
   <style>
     body {
       margin:0; 
@@ -49,15 +54,10 @@
   </div>
   
   <script>
-    // Sobald diese minimalistische Shell geladen ist, holen wir den großen Content nach.
-    // Ersetzen Sie 'main-content.html' durch den Pfad zu Ihrer großen Hauptdatei.
     window.addEventListener('load', () => {
       fetch('main_page.html')
         .then(response => response.text())
         .then(fullHTML => {
-          // Ersetzt das komplette Dokument mit dem geladenen Inhalt
-          // ACHTUNG: Dies überschreibt das gesamte Dokument (inkl. Head). 
-          // Überprüfen Sie daher, ob Ihre Skripte und Links korrekt geladen werden.
           document.open();
           document.write(fullHTML);
           document.close();
