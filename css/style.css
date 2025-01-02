@@ -793,7 +793,7 @@ a:focus {
 .info_section .info_form form button {
   display: inline-block;
   padding: 8px 40px;
-  background-color: #EF5045;
+  background-color: #db2e2a;
   color: #F3F3F3;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
