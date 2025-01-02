@@ -304,8 +304,8 @@ a:focus {
 .slider_section .detail-box .btn-box .btn-1 {
   display: inline-block;
   padding: 10px 0;
-  background-color: #EF5045;
-  color: #F3F3F3;
+  background-color: #db2e2a; /*7e68f9*/
+  color: #FFFFFF;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid transparent;
@@ -440,8 +440,8 @@ a:focus {
 .experience_section .detail-box .btn-box .btn-1 {
   display: inline-block;
   padding: 10px 0;
-  background-color: #EF5045;
-  color: #F3F3F3;
+  background-color: #db2e2a;
+  color: #FFFFFF;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid transparent;
@@ -562,8 +562,8 @@ a:focus {
 .about_section .detail-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #EF5045;
-  color: #F3F3F3;
+  background-color: #db2e2a;
+  color: #FFFFFF;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid transparent;
