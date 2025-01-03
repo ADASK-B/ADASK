@@ -869,8 +869,20 @@
   {% include footer.html %}
   <!-- end  footer section -->
 
-   <!--<script src="js/jquery-3.4.1.min.js" defer></script>-->
   <script src="js/bootstrap.js" defer></script>
-  <!--<script src="js/video-control.js" defer></script> -->
 </body>
+
+<script>
+  // Restore scroll position on page load
+  window.addEventListener('load', function() {
+    const scrollPosition = sessionStorage.getItem('scrollPosition');
+    if (scrollPosition !== null) {
+      window.scrollTo(0, parseInt(scrollPosition));
+    }
+  });
+  window.addEventListener('beforeunload', function() {
+    sessionStorage.setItem('scrollPosition', window.scrollY);
+  });
+</script>
+
 </html>
