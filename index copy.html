@@ -4,185 +4,70 @@
 <html lang="de">
 
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="Big 5 Persönlichkeitstest, Persönlichkeitstest Online, OCEAN Modell, Persönlichkeitsentwicklung, historische Persönlichkeiten Vergleich, Psychologische Analyse, Marie Curie, Nikola Tesla, Persönlichkeit entdecken" />
-  <meta name="description" content="Erforschen Sie Ihre Persönlichkeit mit Big 5 Insight von ADASK. Vergleichen Sie Ihre Charakterzüge mit historischen Persönlichkeiten wie Tesla, Curie und Sokrates und fördern Sie Ihr persönliches Wachstum. Starten Sie jetzt Ihren Test!" />
-  <meta name="author" content="ADASK" />
-
-  <title>ADASK</title>
-
-
-
-
-
-  <style>
-    .no-bootstrap, 
-    .no-bootstrap * {
-      all: revert; /* Setzt alle CSS-Eigenschaften auf die Browser-Standardwerte zurück */
-    }
-
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      color: #2F3030;
-      background-color: #F3F3F3;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.5;
-      margin: 0;
-      padding: 0;
-    }
-
-    .adventure_section {
-      padding: 100px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .flex_container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .image_column {
-      max-width: 300px;
-    }
-
-    .image_wrapper img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .text_column {
-      text-align: center;
-    }
-
-    .content_wrapper h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .content_wrapper p {
-      margin-top: 20px;
-      font-size: 1rem;
-    }
-
-    .button_container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .button_container a {
-      display: inline-block;
-      text-align: center;
-      width: 165px;
-      font-size: 15px;
-      padding: 10px 0;
-      margin: 5px;
-      color: #F3F3F3;
-      background-color: #EF5045;
-      border: 1px solid transparent;
-      transition: all 0.3s;
-      text-decoration: none;
-    }
-
-    .button_container a:hover {
-      background-color: transparent;
-      border-color: #EF5045;
-      color: #EF5045;
-    }
-
-    /* Responsive Anpassungen für größere Bildschirme */
-    @media (min-width: 768px) {
-      .flex_container {
-        flex-direction: row;
-        align-items: center;
-        gap: 60px;
-      }
-
-      .image_column {
-        flex: 0 0 35%;
-        max-width: 35%;
-      }
-
-      .text_column {
-        flex: 0 0 60%;
-        max-width: 60%;
-        text-align: left;
-      }
-
-      .content_wrapper h1 {
-        font-size: 2.5rem;
-      }
-    }
-  </style>
-
+  <meta charset="utf-8">
+  <title>ADASK - Persönlichkeitstest mit dem Big-Five-Modell</title>
+  <meta name="description" content="Erforsche deine Persönlichkeit mit dem Big-Five-Modell (OCEAN) und vergleiche dich mit historischen Größen wie Tesla, Curie oder Sokrates. Starte jetzt deinen Test!">
+  <meta name="keywords" content="Big 5 Persönlichkeitstest, Persönlichkeitstest Online, OCEAN Modell, Persönlichkeitsentwicklung, historische Persönlichkeiten Vergleich, Psychologische Analyse, Marie Curie, Nikola Tesla, Persönlichkeit entdecken">
+  <meta name="author" content="ADASK">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="canonical" href="https://www.adask.de/">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="ADASK - Persönlichkeitstest mit dem Big-Five-Modell">
+  <meta property="og:description" content="Erforsche deine Persönlichkeit mit dem Big-Five-Modell (OCEAN) und vergleiche dich mit historischen Größen wie Tesla, Curie oder Sokrates.">
+  <meta property="og:image" content="https://www.adask.de/images/logo_Small-1.webp">
+  <meta property="og:url" content="https://www.adask.de/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ADASK">
+  <meta property="og:locale" content="de_DE">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ADASK - Persönlichkeitstest mit dem Big-Five-Modell">
+  <meta name="twitter:description" content="Erforsche deine Persönlichkeit mit dem Big-Five-Modell (OCEAN) und vergleiche dich mit historischen Größen wie Tesla, Curie oder Sokrates.">
+  <meta name="twitter:image" content="https://www.adask.de/images/logo_Small-1.webp">
+  <meta name="twitter:site" content="@ADASK_Online">
+  <meta name="twitter:creator" content="@ADASK_Online">
+  
+<!-- Favicon -->
+<link rel="shortcut icon" href="https://www.adask.de/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.adask.de/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.adask.de/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://www.adask.de/images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://www.adask.de/images/android-chrome-512x512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.adask.de/images/apple-touch-icon.png">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ADASK",
+    "url": "https://www.adask.de",
+    "logo": "https://www.adask.de/images/logo_Small-1.webp",
+    "sameAs": ["https://www.linkedin.com/company/adask"]
+  }
+  </script>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+  
+  <!-- JavaScript -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#ffffff">
+  
 </head>
 
 <body>
-  
-  <section class="adventure_section no-bootstrap">
-    <div class="flex_container">
-      <div class="image_column">
-        <div class="image_wrapper">
-          <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="eager">
-        </div>
-      </div>
-      <div class="text_column">
-        <div class="content_wrapper">
-          <h1>
-            <b>Das Abenteuer <br> zu dir selbst</b>
-          </h1>
-          <p>
-            Wir möchten dir nicht nur Erkenntnisse bieten, sondern dich auch unterhalten
-            – weil wir glauben, dass Lernen Spaß machen soll. Damit wir dir diese Erfahrungen 
-            weiterhin kostenlos bieten können, sind wir auf Werbung angewiesen. Wir wissen, dass
-            Werbung manchmal stören kann, aber sie hilft uns, dieses Projekt am Leben zu halten.
-            Danke für deine Unterstützung und dafür, dass du uns dabei hilfst, weiterzumachen.
-          </p>
-          <div class="button_container">
-            <a href="#">Mehr erfahren</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-
-
-
-
   <div class="hero_area"> 
     <!---------------------------------------- header section strats -------------------------------------------------------------------->
-    <!--{% include header.html %}-->
+    {% include header.html %}
     <!-- ------------------------------------------------end header section -------------------------------------------->
-
-        
-    <script>
-      function loadCSS(href) {
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = href;
-        document.head.appendChild(link);
-      }
-    
-      // Lade Bootstrap und andere CSS-Dateien nachträglich
-      window.addEventListener('load', function () {
-        loadCSS('css/bootstrap.css');
-        loadCSS('css/style.css');
-        loadCSS('css/responsive.css');
-      });
-    </script>
 
     <script defer>
       window.addEventListener('load', function () {
@@ -225,11 +110,16 @@
               <div class="row">
                 <div class="col-md-5 offset-md-1">
                   <div class="detail-box">
-                    <h1>
-                      Wer bist <br>
-                      du? <br>
-                      Marie Curie <br>
+
+                    <h1 style="line-height:1.2; font-weight:700;">
+                      <span style="display:block;">Entdecke</span>
+                      <span style="display:block;">deine</span>
+                      <span style="display:block;">Persönlichkeit</span>
                     </h1>
+                    <h2 style="margin-top:1.5em; font-weight:500; color:#F3F3F3;">
+                      <b>Marie Curie</b>
+                    </h2>
+
                     <p>
                       Marie Curie war entschlossen, klug und bescheiden – eine Pionierin, die Wissen und Wissenschaft über alles stellte.              
                     </p>
@@ -260,11 +150,16 @@
               <div class="row">
                 <div class="col-md-5 offset-md-1">
                   <div class="detail-box">
-                    <h1>
-                      Wer bist <br>
-                      du? <br>
-                      Nikola Tesla <br>
+
+                    <h1 style="line-height:1.2; font-weight:700;">
+                      <span style="display:block;">Entdecke</span>
+                      <span style="display:block;">deine</span>
+                      <span style="display:block;">Persönlichkeit</span>
                     </h1>
+                    <h2 style="margin-top:1.5em; font-weight:400; color:#F3F3F3;">
+                      <b>Nikola Tesla</b>
+                    </h2>
+               
                     <p>
                       Nikola Tesla war visionär, brillant und exzentrisch – ein Erfinder, der die Zukunft der Technologie gestaltete.
                     </p>
@@ -295,11 +190,18 @@
               <div class="row">
                 <div class="col-md-5 offset-md-1">
                   <div class="detail-box">
-                    <h1>
-                      Wer bist<br>
-                      du?<br>
-                      Julius Caesar <br>
+
+
+                    <h1 style="line-height:1.2; font-weight:700;">
+                      <span style="display:block;">Entdecke</span>
+                      <span style="display:block;">deine</span>
+                      <span style="display:block;">Persönlichkeit</span>
                     </h1>
+                    <h2 style="margin-top:1.5em; font-weight:400; color:#F3F3F3;">
+                      <b>Gaius Julius</b>
+                    </h2>
+
+                    
                     <p>
                       Gaius Julius Caesar war kühn, brillant und umstritten – ein komplexer Führer hinter der politischen Fassade.
                     </p>
@@ -332,7 +234,47 @@
 
   <!-- experience section -->
 
-  <section class="experience_section layout_padding">
+  <style>
+
+    
+    .animate_from_bottom {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .animate_from_bottom.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+  </style>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const target = document.querySelector('#experience');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.intersectionRatio >= 0.4) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: [0, 0.4, 1.0]
+      });
+
+      observer.observe(target);
+    });
+
+  </script>
+
+ 
+  
+  <section class="experience_section layout_padding animate_from_bottom" id="experience">
     <div class="container">
       <div class="row">
         <div class="col-md-5">
@@ -348,27 +290,63 @@
               </h2>
             </div>
             <p>
-              Wir möchten dir nicht nur Erkenntnisse bieten, sondern dich auch unterhalten
-               – weil wir glauben, dass Lernen Spaß machen soll. Damit wir dir diese Erfahrungen 
-               weiterhin kostenlos bieten können, sind wir auf Werbung angewiesen. Wir wissen, dass
-                Werbung manchmal stören kann, aber sie hilft uns, dieses Projekt am Leben zu halten.
-                 Danke für deine Unterstützung und dafür, dass du uns dabei hilfst, weiterzumachen.
+              Wir möchten dir nicht nur Erkenntnisse bieten, sondern dich auch unterhalten – weil wir glauben, dass Lernen Spaß machen soll. Damit wir dir diese Erfahrungen 
+              weiterhin kostenlos bieten können, sind wir auf Werbung angewiesen. Wir wissen, dass Werbung manchmal stören kann, aber sie hilft uns, dieses Projekt am Leben zu halten.
+              Danke für deine Unterstützung und dafür, dass du uns dabei hilfst, weiterzumachen.
             </p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
+  
+
+
+
+
 
   <!-- end experience section -->
 
   <!-- category section -->
   
   <!-- Lottie-Web Script -->
+
+  <style>
+    .animate_from_bottom {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .animate_from_bottom.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const section = document.getElementById('category_section');
+
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.intersectionRatio >= 0.2) {
+            entry.target.classList.add('visible');
+            sectionObserver.unobserve(entry.target); 
+          }
+        });
+      }, {
+        threshold: [0, 0.2, 1.0]
+      });
+
+      if (section) {
+        sectionObserver.observe(section);
+      }
+    });
+  </script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>
     <!-- Kategorie-Sektion -->
-    <section class="category_section layout_padding">
+    <section class="category_section layout_padding animate_from_bottom" id="category_section">
       <div class="container">
           <div class="heading_container">
               <h2>Big 5 Insight</h2>
@@ -460,7 +438,19 @@
       height: 100%;
       object-fit: contain;
   }
+
+    .animate_from_bottom {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .animate_from_bottom.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
+  
 
   <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -523,20 +513,51 @@
 
   <!-- end category section -->
 
-  <!-- about section -->
+ <!-- about section -->
+  <style>
+    .animate_from_bottom {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
 
-  <section class="about_section layout_padding">
+    .animate_from_bottom.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const aboutSection = document.getElementById('about_section');
+
+      const aboutObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.intersectionRatio >= 0.3) {
+            entry.target.classList.add('visible');
+            aboutObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: [0, 0.3, 1.0]
+      });
+
+      if (aboutSection) {
+        aboutObserver.observe(aboutSection);
+      }
+    });
+  </script>
+
+
+  <section class="about_section layout_padding animate_from_bottom" id="about_section">
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-lg-9 mx-auto">
           <div class="img-box" style="display: flex; justify-content: center; align-items: center;">
-  
             <video class="responsive-video" autoplay loop muted playsinline loading="lazy" 
-            style="width: 700; height: 600; pointer-events: none;"
+            style=" pointer-events: none;"
             poster="images/Big5_Alpha_poster.webp" data-video-src="images/Big5_Alpha.webm">
-            Your browser does not support the video tag.
+              Your browser does not support the video tag.
             </video>
-  
           </div>
         </div>
       </div>
@@ -552,268 +573,300 @@
         <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
           Zur App
         </a>
+      </div>
+    </div>
+  </section>
+  <!-- end about section -->
+
+
+<!---------------------------------------------------------- freelance section -->
+<style>
+    .personality-icon {
+      width: 48px;
+      height: 48px;
+      transition: transform 0.3s ease;
+    }
+    
+    .t-link-box:hover .personality-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    /* Spezifische Icon-Farben */
+    .openness-icon { fill: #ffffff; }
+    .conscientiousness-icon { fill: #ffffff; }
+    .extraversion-icon { fill: #ffffff; }
+    .agreeableness-icon { fill: #ffffff; }
+    .neuroticism-icon { fill: #ffffff; }
+
+    /* Verbesserte Abstände für bessere Responsivität */
+    .text-box {
+      padding-left: 140px;
+      padding-top: 100px;
+      padding-bottom: 20px;
+      padding-right: 200px;
+    }
+
+      /* Verbesserte Abstände für bessere Responsivität */
+      .text-box2 {
+      padding-left: 140px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-right: 0px;
+    }
+    
+    .text-box4 {
+    padding-left: 0; /* Standardwert für kleinere Bildschirme */
+    }
+
+    /* Ab einer bestimmten Bildschirmbreite (z.B. 768px) */
+    @media (min-width: 1200px) {
+      .text-box4 {
+        padding-left: 10px;
+      }
+    }
+      /* Verbesserte Abstände für bessere Responsivität */
+      .text-box3 {
+      padding-left: 20px;
+
+    }
+      .collapse {
+      overflow: hidden;
+    }
+  </style>
+  <script>
+
+  $(document).ready(function () {
+    $('#accordion').on('hide.bs.collapse', function (event) {
+      const $panel = $(event.target);
+      const $button = $(`button[data-target="#${event.target.id}"]`);
+      $panel.css({
+        display: 'none',
+      }).removeClass('show'); 
+      $button.addClass('collapsed').attr('aria-expanded', 'false');
+    });
+    $('#accordion').on('show.bs.collapse', function (event) {
+      const $panel = $(event.target);
+      const $button = $(`button[data-target="#${event.target.id}"]`);
+      $panel.css({
+        display: 'block',
+      }).addClass('show'); 
+      $button.removeClass('collapsed').attr('aria-expanded', 'true');
+    });
+  });
+  </script>
+
+  <style>
+  .animate_from_bottom {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .animate_from_bottom.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const freelanceSection = document.getElementById('freelance_section');
+  
+      const freelanceObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.intersectionRatio >= 0.3) {
+            entry.target.classList.add('visible');
+            freelanceObserver.unobserve(entry.target); // Beobachtung nach Einblenden beenden
+          }
+        });
+      }, {
+        threshold: [0, 0.3, 1.0]
+      });
+  
+      if (freelanceSection) {
+        freelanceObserver.observe(freelanceSection);
+      }
+    });
+  </script>
+  
+
+  <section class="freelance_section layout_padding3 animate_from_bottom" id="freelance_section">
+    <div id="accordion">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-5 offset-md-1">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>
+                  Hauptdimensionen
+                </h2>
+              </div>
+              <div class="tab_container">
+                <button class="t-link-box" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <div class="img-box">
+                    <svg class="personality-icon openness-icon" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-10v4h2v-4h2l-3-3-3 3h2z"/>
+                    </svg>
+                  </div>
+                  <div class="detail-box">
+                    <h3 style="font-weight: bold;">
+                      Offenheit
+                    </h3>
+                    <h4 class="styled-subheading text-box4">Kreativität und Neugier</h4>
+                  </div>
+                </button>
+                <!-- Panel 1 for mobile view -->
+                <div class="collapse d-md-none" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="detail-box text-box3">
+                    <h4>Offenheit</h4>
+                    <p>Offenheit beschreibt das Interesse an neuen Erfahrungen, Kreativität und der Bereitschaft, sich auf neue Ideen einzulassen.</p>
+                  </div>
+                </div>
+                <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <div class="img-box">
+                    <svg class="personality-icon conscientiousness-icon" viewBox="0 0 24 24">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                    </svg>
+                  </div>
+                  <div class="detail-box">
+                    <h3 style="font-weight: bold;">
+                      Gewissenhaftigkeit 
+                    </h3>
+                    <h4 class="styled-subheading text-box4">Struktur und Disziplin</h4>
+                  </div>
+                </button>
+                <!-- Panel 2 for mobile view -->
+                <div class="collapse d-md-none" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="detail-box text-box3">
+                    <h4>Gewissenhaftigkeit</h4>
+                    <p>Gewissenhaftigkeit beschreibt das Maß an Selbstdisziplin, Zielstrebigkeit und die Fähigkeit, Aufgaben effizient zu organisieren und durchzuführen.</p>
+                  </div>
+                </div>
+                <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <div class="img-box">
+                    <svg class="personality-icon extraversion-icon" viewBox="0 0 24 24">
+                      <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                    </svg>
+                  </div>
+                  <div class="detail-box">
+                    <h3 style="font-weight: bold;">
+                      Extraversion
+                    </h3>
+                    <h4 class="styled-subheading text-box4">Energie und Freude</h4>
+                  </div>
+                </button>
+                <!-- Panel 3 for mobile view -->
+                <div class="collapse d-md-none" id="collapseThree" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="detail-box text-box3">
+                    <h4>Extraversion</h4>
+                    <p>Extraversion beschreibt die Tendenz, gesellig, energisch und aktiv zu sein. Menschen mit hoher Extraversion sind oft kontaktfreudig und unternehmungslustig.</p>
+                  </div>
+                </div>
+                <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  <div class="img-box">
+                    <svg class="personality-icon agreeableness-icon" viewBox="0 0 24 24">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                  </div>
+                  <div class="detail-box">
+                    <h3 style="font-weight: bold;">
+                      Verträglichkeit 
+                    </h3>
+                    <h4 class="styled-subheading text-box4">Empathie und Harmonie</h4>
+                  </div>
+                </button>
+                <!-- Panel 4 for mobile view -->
+                <div class="collapse d-md-none" id="collapseFour" aria-labelledby="headingFour" data-parent="#accordion">
+                  <div class="detail-box text-box3">
+                    <h4>Verträglichkeit</h4>
+                    <p>Verträglichkeit beschreibt die Tendenz, mit anderen kooperativ und harmonisch umzugehen. Menschen mit hoher Verträglichkeit sind oft empathisch und hilfsbereit.</p>
+                  </div>
+                </div>
+                <!-- New button for Neurotizismus -->
+                <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  <div class="img-box">
+                    <svg class="personality-icon neuroticism-icon" viewBox="0 0 24 24">
+                      <path d="M15.5 8.5c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-3 4c-2.33 0-7 1.17-7 3.5V18h14v-2c0-2.33-4.67-3.5-7-3.5zm0 1c1.97 0 4.5.91 4.5 2v1h-9v-1c0-1.09 2.53-2 4.5-2z"/>
+                    </svg>
+                  </div>
+                  <div class="detail-box">
+                    <h3 style="font-weight: bold;">
+                      Neurotizismus
+                    </h3>
+                    <h4 class="styled-subheading text-box4">Emotionale Empfindsamkeit</h4>
+                  </div>
+                </button>
+                <!-- Panel 5 for mobile view -->
+                <div class="collapse d-md-none" id="collapseFive" aria-labelledby="headingFive" data-parent="#accordion">
+                  <div class="detail-box text-box3">
+                    <h4>Neurotizismus</h4>
+                    <p>Neurotizismus beschreibt die Tendenz, negative Emotionen wie Angst, Traurigkeit oder Nervosität zu erleben. Menschen mit hohem Neurotizismus neigen zu erhöhter emotionaler Reaktivität.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-none d-md-block">
+            <!-- Panel 1 for larger view -->
+            <div class="collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="text-box">
+                <h4 style="font-weight: bold;"> Offenheit</h4>
+                <p>Offenheit steht für Kreativität, Neugier und die Bereitschaft, über den Tellerrand hinauszuschauen. Menschen mit 
+                  einer hohen Ausprägung in dieser Dimension sind stets auf der Suche nach neuen Erfahrungen und lassen sich gerne auf neue 
+                  Ideen ein. Sie sind fantasievoll, lieben künstlerische Ausdrucksformen und schätzen die Vielfalt des Lebens. Ihre Vorstellungskraft 
+                  ist stark ausgeprägt, und sie genießen es, sich mit komplexen oder ungewöhnlichen Themen auseinanderzusetzen. Offenheit ist der Schlüssel 
+                  zur Innovation, weil sie dazu inspiriert, Bestehendes zu hinterfragen und neue Wege zu gehen.</p>
+              </div>
+            </div>
+            <!-- Panel 2 for larger view -->
+            <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="text-box">
+                <h4 style="font-weight: bold;">Gewissenhaftigkeit</h4>
+                <p>Gewissenhaftigkeit beschreibt den Drang nach Struktur, Selbstdisziplin und Ordnung. Menschen, die in dieser Dimension hoch sind, sind verlässlich und erledigen 
+                  ihre Aufgaben gründlich und pünktlich. Sie setzen sich klare Ziele und bleiben beständig, bis diese erreicht sind. Gewissenhafte Personen sind detailorientiert und 
+                  scheuen sich nicht, Verantwortung zu übernehmen. Diese Eigenschaft ist besonders wichtig, wenn es darum geht, Herausforderungen planvoll und systematisch zu bewältigen, 
+                  und sorgt dafür, dass Projekte effizient und erfolgreich umgesetzt werden.</p>
+              </div>
+            </div>
+            <!-- Panel 3 for larger view -->
+            <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="text-box">
+                <h4 style="font-weight: bold;">Extraversion</h4>
+                <p>Extraversion steht für ein hohes Maß an Energie, Begeisterung und Geselligkeit. Extrovertierte Menschen blühen in Gesellschaft anderer auf und lieben den Austausch mit 
+                  anderen. Sie sind kommunikativ, selbstbewusst und gerne in sozialen Situationen präsent. Oft haben sie eine ansteckende positive Ausstrahlung, die andere mitreißt. Extravertierte 
+                  Menschen suchen das Abenteuer, schätzen den Kontakt zu neuen Leuten und fühlen sich wohl in Situationen, die andere herausfordern könnten. Sie lieben es, im Mittelpunkt zu stehen, 
+                  und ziehen ihre Energie aus dem Zusammensein mit anderen.</p>
+              </div>
+            </div>
+            <!-- Panel 4 for larger view -->
+            <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#accordion">
+              <div class="text-box">
+                <h4 style="font-weight: bold;">Verträglichkeit</h4>
+                <p>Verträglichkeit steht für Empathie, Mitgefühl und den Wunsch, harmonisch zusammenzuarbeiten. 
+                  Menschen mit hoher Verträglichkeit zeigen Interesse am Wohlergehen ihrer Mitmenschen, sind hilfsbereit 
+                  und bereit, Konflikte zu lösen. Sie bevorzugen Kooperation gegenüber Konkurrenz und bauen gerne Brücken zu anderen. 
+                  Diese Personen sind warmherzig, freundlich und fördern ein unterstützendes Umfeld. Verträglichkeit bedeutet, das Wohl des 
+                  Teams über das eigene Ego zu stellen, um so ein harmonisches und erfolgreiches Miteinander zu fördern. Diese Stärke schafft 
+                  Vertrauen und Zusammenhalt.</p>
+              </div>
+            </div>
+            <!-- Panel 5 for larger view -->
+            <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#accordion">
+              <div class="text-box">
+                <h4 style="font-weight: bold;">Neurotizismus</h4>
+                <p>Neurotizismus beschreibt die Tendenz, emotionale Höhen und Tiefen intensiver zu 
+                  erleben. Menschen mit einer hohen Ausprägung in dieser Dimension neigen zu Unsicherheit, 
+                  Nervosität und Stress. Sie sind besonders empfänglich für negative Emotionen wie Angst oder 
+                  Traurigkeit, was ihnen jedoch auch ermöglicht, die Feinheiten von Stimmungen besser zu erfassen. 
+                  Diese Empfindsamkeit führt zu tieferer Selbstreflexion und besserem Verständnis für emotionale Herausforderungen.
+                  Die Kunst besteht darin, die emotionale Seite des Lebens bewusst zu erleben und an diesen Erfahrungen zu wachsen.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  
-  
-  <!-- end about section -->
-
-<!---------------------------------------------------------- freelance section -->
-<style>
-  .personality-icon {
-    width: 48px;
-    height: 48px;
-    transition: transform 0.3s ease;
-  }
-  
-  .t-link-box:hover .personality-icon {
-    transform: scale(1.1) rotate(5deg);
-  }
-  
-  /* Spezifische Icon-Farben */
-  .openness-icon { fill: #ffffff; }
-  .conscientiousness-icon { fill: #ffffff; }
-  .extraversion-icon { fill: #ffffff; }
-  .agreeableness-icon { fill: #ffffff; }
-  .neuroticism-icon { fill: #ffffff; }
-
-  /* Verbesserte Abstände für bessere Responsivität */
-  .text-box {
-    padding-left: 140px;
-    padding-top: 100px;
-    padding-bottom: 20px;
-    padding-right: 200px;
-  }
-
-    /* Verbesserte Abstände für bessere Responsivität */
-    .text-box2 {
-    padding-left: 140px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 0px;
-  }
-  
-  .text-box4 {
-  padding-left: 0; /* Standardwert für kleinere Bildschirme */
-  }
-
-  /* Ab einer bestimmten Bildschirmbreite (z.B. 768px) */
-  @media (min-width: 1200px) {
-    .text-box4 {
-      padding-left: 10px;
-    }
-  }
-    /* Verbesserte Abstände für bessere Responsivität */
-    .text-box3 {
-    padding-left: 20px;
-
-  }
-    .collapse {
-    overflow: hidden;
-  }
-</style>
-<script>
-
-$(document).ready(function () {
-  $('#accordion').on('hide.bs.collapse', function (event) {
-    const $panel = $(event.target);
-    const $button = $(`button[data-target="#${event.target.id}"]`);
-    $panel.css({
-      display: 'none',
-    }).removeClass('show'); 
-    $button.addClass('collapsed').attr('aria-expanded', 'false');
-  });
-  $('#accordion').on('show.bs.collapse', function (event) {
-    const $panel = $(event.target);
-    const $button = $(`button[data-target="#${event.target.id}"]`);
-    $panel.css({
-      display: 'block',
-    }).addClass('show'); 
-    $button.removeClass('collapsed').attr('aria-expanded', 'true');
-  });
-});
-</script>
-
-
-<section class="freelance_section layout_padding3">
-  <div id="accordion">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-5 offset-md-1">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                Hauptdimensionen
-              </h2>
-            </div>
-            <div class="tab_container">
-              <button class="t-link-box" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <div class="img-box">
-                  <svg class="personality-icon openness-icon" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-10v4h2v-4h2l-3-3-3 3h2z"/>
-                  </svg>
-                </div>
-                <div class="detail-box">
-                  <h3 style="font-weight: bold;">
-                    Offenheit
-                  </h3>
-                  <h4 class="styled-subheading text-box4">Kreativität und Neugier</h4>
-                </div>
-              </button>
-              <!-- Panel 1 for mobile view -->
-              <div class="collapse d-md-none" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="detail-box text-box3">
-                  <h4>Offenheit</h4>
-                  <p>Offenheit beschreibt das Interesse an neuen Erfahrungen, Kreativität und der Bereitschaft, sich auf neue Ideen einzulassen.</p>
-                </div>
-              </div>
-              <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <div class="img-box">
-                  <svg class="personality-icon conscientiousness-icon" viewBox="0 0 24 24">
-                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                  </svg>
-                </div>
-                <div class="detail-box">
-                  <h3 style="font-weight: bold;">
-                    Gewissenhaftigkeit 
-                  </h3>
-                  <h4 class="styled-subheading text-box4">Struktur und Disziplin</h4>
-                </div>
-              </button>
-              <!-- Panel 2 for mobile view -->
-              <div class="collapse d-md-none" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="detail-box text-box3">
-                  <h4>Gewissenhaftigkeit</h4>
-                  <p>Gewissenhaftigkeit beschreibt das Maß an Selbstdisziplin, Zielstrebigkeit und die Fähigkeit, Aufgaben effizient zu organisieren und durchzuführen.</p>
-                </div>
-              </div>
-              <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                <div class="img-box">
-                  <svg class="personality-icon extraversion-icon" viewBox="0 0 24 24">
-                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-                  </svg>
-                </div>
-                <div class="detail-box">
-                  <h3 style="font-weight: bold;">
-                    Extraversion
-                  </h3>
-                  <h4 class="styled-subheading text-box4">Energie und Freude</h4>
-                </div>
-              </button>
-              <!-- Panel 3 for mobile view -->
-              <div class="collapse d-md-none" id="collapseThree" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="detail-box text-box3">
-                  <h4>Extraversion</h4>
-                  <p>Extraversion beschreibt die Tendenz, gesellig, energisch und aktiv zu sein. Menschen mit hoher Extraversion sind oft kontaktfreudig und unternehmungslustig.</p>
-                </div>
-              </div>
-              <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                <div class="img-box">
-                  <svg class="personality-icon agreeableness-icon" viewBox="0 0 24 24">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                  </svg>
-                </div>
-                <div class="detail-box">
-                  <h3 style="font-weight: bold;">
-                    Verträglichkeit 
-                  </h3>
-                  <h4 class="styled-subheading text-box4">Empathie und Harmonie</h4>
-                </div>
-              </button>
-              <!-- Panel 4 for mobile view -->
-              <div class="collapse d-md-none" id="collapseFour" aria-labelledby="headingFour" data-parent="#accordion">
-                <div class="detail-box text-box3">
-                  <h4>Verträglichkeit</h4>
-                  <p>Verträglichkeit beschreibt die Tendenz, mit anderen kooperativ und harmonisch umzugehen. Menschen mit hoher Verträglichkeit sind oft empathisch und hilfsbereit.</p>
-                </div>
-              </div>
-              <!-- New button for Neurotizismus -->
-              <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                <div class="img-box">
-                  <svg class="personality-icon neuroticism-icon" viewBox="0 0 24 24">
-                    <path d="M15.5 8.5c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-3 4c-2.33 0-7 1.17-7 3.5V18h14v-2c0-2.33-4.67-3.5-7-3.5zm0 1c1.97 0 4.5.91 4.5 2v1h-9v-1c0-1.09 2.53-2 4.5-2z"/>
-                  </svg>
-                </div>
-                <div class="detail-box">
-                  <h3 style="font-weight: bold;">
-                    Neurotizismus
-                  </h3>
-                  <h4 class="styled-subheading text-box4">Emotionale Empfindsamkeit</h4>
-                </div>
-              </button>
-              <!-- Panel 5 for mobile view -->
-              <div class="collapse d-md-none" id="collapseFive" aria-labelledby="headingFive" data-parent="#accordion">
-                <div class="detail-box text-box3">
-                  <h4>Neurotizismus</h4>
-                  <p>Neurotizismus beschreibt die Tendenz, negative Emotionen wie Angst, Traurigkeit oder Nervosität zu erleben. Menschen mit hohem Neurotizismus neigen zu erhöhter emotionaler Reaktivität.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 d-none d-md-block">
-          <!-- Panel 1 for larger view -->
-          <div class="collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="text-box">
-              <h4 style="font-weight: bold;"> Offenheit</h4>
-              <p>Offenheit steht für Kreativität, Neugier und die Bereitschaft, über den Tellerrand hinauszuschauen. Menschen mit 
-                einer hohen Ausprägung in dieser Dimension sind stets auf der Suche nach neuen Erfahrungen und lassen sich gerne auf neue 
-                Ideen ein. Sie sind fantasievoll, lieben künstlerische Ausdrucksformen und schätzen die Vielfalt des Lebens. Ihre Vorstellungskraft 
-                ist stark ausgeprägt, und sie genießen es, sich mit komplexen oder ungewöhnlichen Themen auseinanderzusetzen. Offenheit ist der Schlüssel 
-                zur Innovation, weil sie dazu inspiriert, Bestehendes zu hinterfragen und neue Wege zu gehen.</p>
-            </div>
-          </div>
-          <!-- Panel 2 for larger view -->
-          <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordion">
-            <div class="text-box">
-              <h4 style="font-weight: bold;">Gewissenhaftigkeit</h4>
-              <p>Gewissenhaftigkeit beschreibt den Drang nach Struktur, Selbstdisziplin und Ordnung. Menschen, die in dieser Dimension hoch sind, sind verlässlich und erledigen 
-                ihre Aufgaben gründlich und pünktlich. Sie setzen sich klare Ziele und bleiben beständig, bis diese erreicht sind. Gewissenhafte Personen sind detailorientiert und 
-                scheuen sich nicht, Verantwortung zu übernehmen. Diese Eigenschaft ist besonders wichtig, wenn es darum geht, Herausforderungen planvoll und systematisch zu bewältigen, 
-                und sorgt dafür, dass Projekte effizient und erfolgreich umgesetzt werden.</p>
-            </div>
-          </div>
-          <!-- Panel 3 for larger view -->
-          <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#accordion">
-            <div class="text-box">
-              <h4 style="font-weight: bold;">Extraversion</h4>
-              <p>Extraversion steht für ein hohes Maß an Energie, Begeisterung und Geselligkeit. Extrovertierte Menschen blühen in Gesellschaft anderer auf und lieben den Austausch mit 
-                anderen. Sie sind kommunikativ, selbstbewusst und gerne in sozialen Situationen präsent. Oft haben sie eine ansteckende positive Ausstrahlung, die andere mitreißt. Extravertierte 
-                Menschen suchen das Abenteuer, schätzen den Kontakt zu neuen Leuten und fühlen sich wohl in Situationen, die andere herausfordern könnten. Sie lieben es, im Mittelpunkt zu stehen, 
-                und ziehen ihre Energie aus dem Zusammensein mit anderen.</p>
-            </div>
-          </div>
-          <!-- Panel 4 for larger view -->
-          <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#accordion">
-            <div class="text-box">
-              <h4 style="font-weight: bold;">Verträglichkeit</h4>
-              <p>Verträglichkeit steht für Empathie, Mitgefühl und den Wunsch, harmonisch zusammenzuarbeiten. 
-                Menschen mit hoher Verträglichkeit zeigen Interesse am Wohlergehen ihrer Mitmenschen, sind hilfsbereit 
-                und bereit, Konflikte zu lösen. Sie bevorzugen Kooperation gegenüber Konkurrenz und bauen gerne Brücken zu anderen. 
-                Diese Personen sind warmherzig, freundlich und fördern ein unterstützendes Umfeld. Verträglichkeit bedeutet, das Wohl des 
-                Teams über das eigene Ego zu stellen, um so ein harmonisches und erfolgreiches Miteinander zu fördern. Diese Stärke schafft 
-                Vertrauen und Zusammenhalt.</p>
-            </div>
-          </div>
-          <!-- Panel 5 for larger view -->
-          <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#accordion">
-            <div class="text-box">
-              <h4 style="font-weight: bold;">Neurotizismus</h4>
-              <p>Neurotizismus beschreibt die Tendenz, emotionale Höhen und Tiefen intensiver zu 
-                erleben. Menschen mit einer hohen Ausprägung in dieser Dimension neigen zu Unsicherheit, 
-                Nervosität und Stress. Sie sind besonders empfänglich für negative Emotionen wie Angst oder 
-                Traurigkeit, was ihnen jedoch auch ermöglicht, die Feinheiten von Stimmungen besser zu erfassen. 
-                Diese Empfindsamkeit führt zu tieferer Selbstreflexion und besserem Verständnis für emotionale Herausforderungen.
-                 Die Kunst besteht darin, die emotionale Seite des Lebens bewusst zu erleben und an diesen Erfahrungen zu wachsen.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!--------------------------------------------------------------------------------------------- end freelance section -->
   <!-- client section -->
@@ -825,8 +878,110 @@ $(document).ready(function () {
   {% include footer.html %}
   <!-- end  footer section -->
 
-   <!--<script src="js/jquery-3.4.1.min.js" defer></script>-->
   <script src="js/bootstrap.js" defer></script>
-  <!--<script src="js/video-control.js" defer></script> -->
 </body>
+
+<!--------------------------- Cookie Consent Banner -->
+<div id="cookie-consent-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #333; color: #fff; padding: 15px; text-align: center; z-index: 1000;">
+  <p>
+    Wir verwenden Cookies, um dein Erlebnis auf unserer Webseite zu verbessern. Durch die Nutzung unserer Webseite stimmst du der Verwendung von Cookies zu.
+    <a href="/datenschutz" style="color: #fff; text-decoration: underline;">Mehr erfahren</a>
+  </p>
+  <button id="accept-cookies" style="background: #4CAF50; color: #fff; border: none; padding: 10px 20px; margin: 0 10px; cursor: pointer;">Akzeptieren</button>
+  <button id="decline-cookies" style="background: #f44336; color: #fff; border: none; padding: 10px 20px; margin: 0 10px; cursor: pointer;">Ablehnen</button>
+</div>
+
+<style>
+  #cookie-consent-banner {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#cookie-consent-banner p {
+  margin: 0 0 10px 0;
+}
+
+#cookie-consent-banner a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+#cookie-consent-banner a:hover {
+  text-decoration: underline;
+}
+
+#accept-cookies, #decline-cookies {
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+#accept-cookies:hover {
+  background: #45a049;
+}
+
+#decline-cookies:hover {
+  background: #e53935;
+}
+
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const cookieBanner = document.getElementById('cookie-consent-banner');
+  const acceptCookiesButton = document.getElementById('accept-cookies');
+  const declineCookiesButton = document.getElementById('decline-cookies');
+
+  // Überprüfen, ob der Benutzer bereits eine Entscheidung getroffen hat
+  if (!localStorage.getItem('cookieConsent')) {
+    cookieBanner.style.display = 'block'; // Banner anzeigen, wenn keine Entscheidung getroffen wurde
+  }
+
+  // Wenn der Benutzer "Akzeptieren" klickt
+  acceptCookiesButton.addEventListener('click', function () {
+    localStorage.setItem('cookieConsent', 'accepted');
+    cookieBanner.style.display = 'none';
+    // Hier kannst du Google Analytics oder andere Tracking-Skripte laden
+    loadTrackingScripts();
+  });
+
+  // Wenn der Benutzer "Ablehnen" klickt
+  declineCookiesButton.addEventListener('click', function () {
+    localStorage.setItem('cookieConsent', 'declined');
+    cookieBanner.style.display = 'none';
+    // Hier kannst du sicherstellen, dass keine Tracking-Skripte geladen werden
+  });
+
+  // Funktion zum Laden von Tracking-Skripten (z. B. Google Analytics)
+  function loadTrackingScripts() {
+    // Beispiel: Google Analytics-Skript laden
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=UA-XXXXXX-X';
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXXX-X');
+  }
+});
+</script>
+<!--------------------------- Cookie Consent Banner END -->
+
+<script>
+  // Restore scroll position on page load
+  window.addEventListener('load', function() {
+    const scrollPosition = sessionStorage.getItem('scrollPosition');
+    if (scrollPosition !== null) {
+      window.scrollTo(0, parseInt(scrollPosition));
+    }
+  });
+  window.addEventListener('beforeunload', function() {
+    sessionStorage.setItem('scrollPosition', window.scrollY);
+  });
+</script>
+
 </html>
