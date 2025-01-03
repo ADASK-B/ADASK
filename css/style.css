@@ -533,7 +533,6 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
 }
-
 .about_section {
   text-align: center;
   margin-top: -60px;
@@ -559,22 +558,46 @@ a:focus {
   margin: 0 auto;  /* Zentriert das Video horizontal */
 }
 
-.about_section .detail-box a {
+.about_section .detail-box .btn-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Zentriert die Buttons horizontal */
+  margin: 45px 0 0 0; /* Anpassung des Abstands */
+}
+
+.about_section .detail-box .btn-box a {
+  text-align: center;
+  width: 165px;
+  font-size: 15px;
+  margin: 5px;
   display: inline-block;
-  padding: 10px 45px;
-  background-color: #db2e2a;
-  color: #FFFFFF;
-  -webkit-transition: all 0.3s;
+  padding: 10px 0;
+  text-decoration: none;
   transition: all 0.3s;
   border: 1px solid transparent;
   border-radius: 0;
-  margin-top: 25px;
 }
 
-.about_section .detail-box a:hover {
+.about_section .detail-box .btn-box .btn-1 {
+  background-color: #db2e2a; /* Rot */
+  color: #FFFFFF; /* Weiß */
+}
+
+.about_section .detail-box .btn-box .btn-1:hover {
   background-color: transparent;
   border-color: #EF5045;
   color: #EF5045;
+}
+
+.about_section .detail-box .btn-box .btn-2 {
+  background-color: #2F3030;
+  color: #F3F3F3; 
+}
+
+.about_section .detail-box .btn-box .btn-2:hover {
+  background-color: transparent;
+  border-color: #2F3030;
+  color: #2F3030;
 }
 
 .freelance_section .row {
