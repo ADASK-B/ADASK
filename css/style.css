@@ -282,11 +282,16 @@ a:focus {
   text-transform: uppercase;
   overflow-wrap: break-word;
   white-space: normal;
+  
 }
 
 .slider_section .detail-box p {
   color: #F3F3F3;
+  min-height: 120px;
   margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .slider_section .detail-box .btn-box {
