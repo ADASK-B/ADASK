@@ -85,6 +85,8 @@ body {
 .heading_container h2 {
   font-weight: bold;
   text-transform: uppercase;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 /*header section*/
@@ -278,6 +280,8 @@ a:focus {
   color: #F3F3F3;
   font-weight: bold;
   text-transform: uppercase;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .slider_section .detail-box p {
@@ -421,6 +425,7 @@ a:focus {
   margin-top: 20px;
 }
 
+
 .experience_section .detail-box .btn-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -489,6 +494,8 @@ a:focus {
 
 .category_section .heading_container h2 {
   border-bottom: 1px solid #F3F3F3;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .category_section .category_container {
@@ -545,6 +552,8 @@ a:focus {
 .about_section .detail-box h2 {
   font-weight: bold;
   text-transform: uppercase;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .about_section .detail-box p {
