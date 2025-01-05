@@ -55,37 +55,35 @@
         "priceCurrency": "EUR"
       }
     }
-    </script>
+  </script>
 
-    <!--  Weitere Social-Media-Profile hinzufügen, falls vorhanden --Structured Data --> 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "ADASK",
-      "url": "https://www.adask.de",
-      "logo": "https://www.adask.de/images/logo_Small-1.webp",
-      "sameAs": ["https://www.linkedin.com/company/adask"] 
-    }
-    </script>
+  <!--  Weitere Social-Media-Profile hinzufügen, falls vorhanden --Structured Data --> 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ADASK",
+    "url": "https://www.adask.de",
+    "logo": "https://www.adask.de/images/logo_Small-1.webp",
+    "sameAs": ["https://www.linkedin.com/company/adask"] 
+  }
+  </script>
     
-    <!-- CSS Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
     
-    <!-- JavaScript -->
-    <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- JavaScript -->
+  <script src="js/jquery-3.4.1.min.js"></script>
     
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#ffffff">
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-  <div class="hero_area"> 
-    <!---------------------------------------- header section strats -------------------------------------------------------------------->
+  <div class="hero_area">
     {% include header.html %}
-    <!-- ------------------------------------------------end header section -------------------------------------------->
 
     <script defer>
       window.addEventListener('load', function () {
@@ -99,15 +97,15 @@
             source.src = video.getAttribute('data-video-src'); // Die Videoquelle aus einem Datenattribut
             source.type = 'video/webm';
             video.appendChild(source);
-    
-            // Optional: Das Video neu laden, falls erforderlich
+            // Optional: Das Video neu laden
             video.load();
           }
         });
       });
     </script>
 
-    <section class="slider_section ">
+    <!-- Slider / Carousel -->
+    <section class="slider_section">
       <div class="carousel_btn-container">
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="sr-only">Previous</span>
@@ -123,23 +121,23 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
+
+          <!-- Slide 1 -->
           <div class="carousel-item active">
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-5 offset-md-1">
                   <div class="detail-box">
-
                     <h1 style="line-height:1.2; font-weight:700;">
                       <span style="display:block;">Entdecke</span>
-                      <span style="display:block;">deine</span>
-                      <span style="display:block;">Persönlichkeit</span>
+                      <span style="display:block;">dein</span>
+                      <span style="display:block;">Potenzial</span>
                     </h1>
                     <h2 style="margin-top:1.5em; font-weight:500; color:#F3F3F3;">
                       <b>Marie Curie</b>
                     </h2>
-
                     <p>
-                      Marie Curie war entschlossen, klug und bescheiden – eine Pionierin, die Wissen und Wissenschaft über alles stellte.              
+                      Marie Curie war entschlossen, klug und bescheiden – eine Pionierin, die Wissenschaft und Entdeckergeist über alles stellte.
                     </p>
                     <div class="btn-box">
                       <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
@@ -153,33 +151,33 @@
                 </div>
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
-
-                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" preload="none" style="pointer-events: none;" poster="images/Curi_Alpha_PosterW.webp" data-video-src="images/Curi_Alpha.webm">
+                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" preload="none"
+                           style="pointer-events: none;"
+                           poster="images/Curi_Alpha_PosterW.webp" data-video-src="images/Curi_Alpha.webm">
                       Your browser does not support the video tag.
                     </video>
-                    
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="carousel-item ">
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-5 offset-md-1">
                   <div class="detail-box">
-
                     <h1 style="line-height:1.2; font-weight:700;">
                       <span style="display:block;">Entdecke</span>
-                      <span style="display:block;">deine</span>
-                      <span style="display:block;">Persönlichkeit</span>
+                      <span style="display:block;">dein</span>
+                      <span style="display:block;">Potenzial</span>
                     </h1>
                     <h2 style="margin-top:1.5em; font-weight:400; color:#F3F3F3;">
                       <b>Nikola Tesla</b>
                     </h2>
-               
                     <p>
-                      Nikola Tesla war visionär, brillant und exzentrisch – ein Erfinder, der die Zukunft der Technologie gestaltete.
+                      Nikola Tesla war visionär, brillant und exzentrisch – ein Erfinder, der die Zukunft der Technologie maßgeblich beeinflusste.
                     </p>
                     <div class="btn-box">
                       <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
@@ -193,34 +191,33 @@
                 </div>
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
-
-                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" preload="none" style="pointer-events: none;" poster="images/Nikol_Alpha_PosterW.webp" data-video-src="images/Nikol_Alpha.webm">
+                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" preload="none"
+                           style="pointer-events: none;"
+                           poster="images/Nikol_Alpha_PosterW.webp" data-video-src="images/Nikol_Alpha.webm">
                       Your browser does not support the video tag.
                     </video>
-
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="carousel-item ">
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-5 offset-md-1">
                   <div class="detail-box">
-
-
                     <h1 style="line-height:1.2; font-weight:700;">
                       <span style="display:block;">Entdecke</span>
-                      <span style="display:block;">deine</span>
-                      <span style="display:block;">Persönlichkeit</span>
+                      <span style="display:block;">dein</span>
+                      <span style="display:block;">Potenzial</span>
                     </h1>
                     <h2 style="margin-top:1.5em; font-weight:400; color:#F3F3F3;">
                       <b>Gaius Julius</b>
                     </h2>
-
                     <p>
-                      Gaius Julius Caesar war kühn, brillant und umstritten – ein komplexer Führer hinter der politischen Fassade.
+                      Gaius Julius Caesar war kühn, brillant und umstritten – ein visionärer Anführer mit politischem Geschick und Weitblick.
                     </p>
                     <div class="btn-box">
                       <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
@@ -234,45 +231,38 @@
                 </div>
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
-
-                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" preload="none" style="pointer-events: none;" poster="images/Cesa_Alpha_PosterW.webp" data-video-src="images/Cesa_Alpha.webm">
+                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" preload="none"
+                           style="pointer-events: none;"
+                           poster="images/Cesa_Alpha_PosterW.webp" data-video-src="images/Cesa_Alpha.webm">
                       Your browser does not support the video tag.
                     </video>
-
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <!-- End of carousel-inner -->
         </div>
       </div>
     </section>
   </div>
 
   <!-- experience section -->
-
   <style>
-
-    
     .animate_from_bottom {
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
-
     .animate_from_bottom.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
-
   </style>
 
   <script>
-
     document.addEventListener("DOMContentLoaded", function() {
       const target = document.querySelector('#experience');
-
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.intersectionRatio >= 0.4) {
@@ -283,14 +273,10 @@
       }, {
         threshold: [0, 0.4, 1.0]
       });
-
       observer.observe(target);
     });
-
   </script>
 
- 
-  
   <section class="experience_section layout_padding animate_from_bottom" id="experience">
     <div class="container">
       <div class="row">
@@ -303,38 +289,28 @@
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                Das Abenteuer <br> zu dir selbst
+                Das Abenteuer<br> zu dir selbst
               </h2>
             </div>
             <p>
-              Wir möchten dir nicht nur Erkenntnisse bieten, sondern dich auch unterhalten – weil wir glauben, dass Lernen Spaß machen soll. Damit wir dir diese Erfahrungen 
-              weiterhin kostenlos bieten können, sind wir auf Werbung angewiesen. Wir wissen, dass Werbung manchmal stören kann, aber sie hilft uns, dieses Projekt am Leben zu halten.
-              Danke für deine Unterstützung und dafür, dass du uns dabei hilfst, weiterzumachen.
+              Wir möchten nicht nur Erkenntnisse bieten, sondern dich auch unterhalten – weil wir glauben, dass Lernen Spaß machen soll. 
+              Damit wir dir diese Erfahrungen weiterhin kostenlos anbieten können, setzen wir auf Werbung. Wir wissen, dass Werbung manchmal 
+              stören kann, aber sie ist notwendig, um dieses Projekt am Leben zu halten. Vielen Dank für deine Unterstützung!
             </p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
-
-
-
-
-
   <!-- end experience section -->
 
   <!-- category section -->
-  
-  <!-- Lottie-Web Script -->
-
   <style>
     .animate_from_bottom {
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
-
     .animate_from_bottom.visible {
       opacity: 1;
       transform: translateY(0);
@@ -343,12 +319,11 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const section = document.getElementById('category_section');
-
       const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.intersectionRatio >= 0.2) {
             entry.target.classList.add('visible');
-            sectionObserver.unobserve(entry.target); 
+            sectionObserver.unobserve(entry.target);
           }
         });
       }, {
@@ -361,183 +336,174 @@
     });
   </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>
-    <!-- Kategorie-Sektion -->
-    <section class="category_section layout_padding animate_from_bottom" id="category_section">
-      <div class="container">
-          <div class="heading_container">
-              <h2>Big 5 Insight</h2>
-          </div>
-          <div class="category_container">
-              <div class="box">
-                  <div class="img-box">
-                      <div class="lottie-container" id="lottie_analytics_container">
-                          <img src="images/Wachstum.png" class="lottie-placeholder" alt="Analytics Placeholder" >
-                          <div id="lottie_analytics" class="lottie-animation" style="width: 100px; height: 100px;"></div>
-                      </div>
-                  </div>
-                  <div class="detail-box">
-                      <h3>Wachstum</h3>
-                  </div>
-              </div>
-              <div class="box">
-                  <div class="img-box">
-                      <div class="lottie-container" id="lottie_Solution_container">
-                          <img src="images/Zusammenfügen.png" class="lottie-placeholder" alt="Solution Placeholder">
-                          <div id="lottie_Solution" class="lottie-animation" style="width: 100px; height: 100px;"></div>
-                      </div>
-                  </div>
-                  <div class="detail-box">
-                      <h3>Zusammenfügen</h3>
-                  </div>
-              </div>
-              <div class="box">
-                  <div class="img-box">
-                      <div class="lottie-container" id="lottie_Community_container">
-                          <img src="images/Verbindung.png" class="lottie-placeholder" alt="Community Placeholder">
-                          <div id="lottie_Community" class="lottie-animation" style="width: 100px; height: 100px;"></div>
-                      </div>
-                  </div>
-                  <div class="detail-box">
-                      <h3>Verbindung</h3>
-                  </div>
-              </div>
-              <div class="box">
-                  <div class="img-box">
-                      <div class="lottie-container" id="lottie_Chatbot_container">
-                          <img src="images/KünstlicheIntelligenz.png" class="lottie-placeholder" alt="Chatbot Placeholder">
-                          <div id="lottie_Chatbot" class="lottie-animation" style="width: 100px; height: 100px;"></div>
-                      </div>
-                  </div>
-                  <div class="detail-box">
-                      <h3>Künstliche Intelligenz</h3>
-                  </div>
-              </div>
-              <div class="box">
-                  <div class="img-box">
-                      <div class="lottie-container" id="lottie_unlock_container">
-                          <img src="images/Entfesselung.png" class="lottie-placeholder" alt="Unlock Placeholder">
-                          <div id="lottie_unlock" class="lottie-animation" style="width: 100px; height: 100px;"></div>
-                      </div>
-                  </div>
-                  <div class="detail-box">
-                      <h3>Entfesselung</h3>
-                  </div>
-              </div>
-              <div class="box">
-                  <div class="img-box">
-                      <div class="lottie-container" id="lottie_lightbulb_container">
-                          <img src="images/Erkennen.png" class="lottie-placeholder" alt="Lightbulb Placeholder">
-                          <div id="lottie_lightbulb" class="lottie-animation" style="width: 100px; height: 100px;"></div>
-                      </div>
-                  </div>
-                  <div class="detail-box">
-                      <h3>Erkennen</h3>
-                  </div>
-              </div>
-          </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>
+
+  <section class="category_section layout_padding animate_from_bottom" id="category_section">
+    <div class="container">
+      <div class="heading_container">
+        <h2>Big 5 Insight</h2>
       </div>
+      <div class="category_container">
+        <div class="box">
+          <div class="img-box">
+            <div class="lottie-container" id="lottie_analytics_container">
+              <img src="images/Wachstum.png" class="lottie-placeholder" alt="Analytics Placeholder">
+              <div id="lottie_analytics" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+            </div>
+          </div>
+          <div class="detail-box">
+            <h3>Wachstum</h3>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <div class="lottie-container" id="lottie_Solution_container">
+              <img src="images/Zusammenfügen.png" class="lottie-placeholder" alt="Solution Placeholder">
+              <div id="lottie_Solution" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+            </div>
+          </div>
+          <div class="detail-box">
+            <h3>Zusammenfügen</h3>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <div class="lottie-container" id="lottie_Community_container">
+              <img src="images/Verbindung.png" class="lottie-placeholder" alt="Community Placeholder">
+              <div id="lottie_Community" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+            </div>
+          </div>
+          <div class="detail-box">
+            <h3>Verbindung</h3>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <div class="lottie-container" id="lottie_Chatbot_container">
+              <img src="images/KünstlicheIntelligenz.png" class="lottie-placeholder" alt="Chatbot Placeholder">
+              <div id="lottie_Chatbot" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+            </div>
+          </div>
+          <div class="detail-box">
+            <h3>Künstliche Intelligenz</h3>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <div class="lottie-container" id="lottie_unlock_container">
+              <img src="images/Entfesselung.png" class="lottie-placeholder" alt="Unlock Placeholder">
+              <div id="lottie_unlock" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+            </div>
+          </div>
+          <div class="detail-box">
+            <h3>Entfesselung</h3>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <div class="lottie-container" id="lottie_lightbulb_container">
+              <img src="images/Erkennen.png" class="lottie-placeholder" alt="Lightbulb Placeholder">
+              <div id="lottie_lightbulb" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+            </div>
+          </div>
+          <div class="detail-box">
+            <h3>Erkennen</h3>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <style>
-      .lottie-container {
+    .lottie-container {
       position: relative;
       width: 100px;
       height: 100px;
       overflow: hidden;
-      }
-  .lottie-placeholder,
-  .lottie-animation {
+    }
+    .lottie-placeholder,
+    .lottie-animation {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: contain;
-  }
-
+    }
     .animate_from_bottom {
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
-
     .animate_from_bottom.visible {
       opacity: 1;
       transform: translateY(0);
     }
   </style>
-  
 
   <script>
-      document.addEventListener("DOMContentLoaded", () => {
-          const lottieAnimations = [
-              { id: "lottie_analytics", path: "images/analytics.json" },
-              { id: "lottie_Solution", path: "images/Solution.json" },
-              { id: "lottie_Community", path: "images/Community.json" },
-              { id: "lottie_Chatbot", path: "images/Chatbot.json" },
-              { id: "lottie_unlock", path: "images/unlock.json" },
-              { id: "lottie_lightbulb", path: "images/lightbulb.json" },
-          ];
- 
-          function loadLottieAnimation(animation) {
-              const container = document.getElementById(animation.id + "_container");
-              const lottieElement = document.getElementById(animation.id);
-              const placeholderImage = container.querySelector('.lottie-placeholder');
- 
-              if (lottieElement && !lottieElement.dataset.loaded) {
-                  const animInstance = lottie.loadAnimation({
-                      container: lottieElement,
-                      renderer: "svg",
-                      loop: true,
-                      autoplay: false,
-                      path: animation.path,
-                  });
- 
-                  animInstance.addEventListener('DOMLoaded', () => {
-                      lottieElement.classList.add('loaded');
-                      animInstance.play();
-                      placeholderImage.style.display = 'none';
-                  });
- 
-                  lottieElement.dataset.loaded = true;
-                  animInstance.setSpeed(0.5);
-              }
-          }
- 
-          const observerOptions = { threshold: 0.1 };
-          const observer = new IntersectionObserver((entries, observer) => {
-              entries.forEach((entry) => {
-                  if (entry.isIntersecting) {
-                      const animation = lottieAnimations.find(
-                          (anim) => entry.target.id === anim.id
-                      );
-                      if (animation) {
-                          loadLottieAnimation(animation);
-                          observer.unobserve(entry.target);
-                      }
-                  }
-              });
-          }, observerOptions);
- 
-          lottieAnimations.forEach((animation) => {
-              const element = document.getElementById(animation.id);
-              if (element) observer.observe(element);
+    document.addEventListener("DOMContentLoaded", () => {
+      const lottieAnimations = [
+        { id: "lottie_analytics", path: "images/analytics.json" },
+        { id: "lottie_Solution", path: "images/Solution.json" },
+        { id: "lottie_Community", path: "images/Community.json" },
+        { id: "lottie_Chatbot", path: "images/Chatbot.json" },
+        { id: "lottie_unlock", path: "images/unlock.json" },
+        { id: "lottie_lightbulb", path: "images/lightbulb.json" }
+      ];
+
+      function loadLottieAnimation(animation) {
+        const container = document.getElementById(animation.id + "_container");
+        const lottieElement = document.getElementById(animation.id);
+        const placeholderImage = container.querySelector('.lottie-placeholder');
+
+        if (lottieElement && !lottieElement.dataset.loaded) {
+          const animInstance = lottie.loadAnimation({
+            container: lottieElement,
+            renderer: "svg",
+            loop: true,
+            autoplay: false,
+            path: animation.path
           });
+          animInstance.addEventListener('DOMLoaded', () => {
+            lottieElement.classList.add('loaded');
+            animInstance.play();
+            placeholderImage.style.display = 'none';
+          });
+          lottieElement.dataset.loaded = true;
+          animInstance.setSpeed(0.5);
+        }
+      }
+
+      const observerOptions = { threshold: 0.1 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const animation = lottieAnimations.find(
+              (anim) => entry.target.id === anim.id
+            );
+            if (animation) {
+              loadLottieAnimation(animation);
+              observer.unobserve(entry.target);
+            }
+          }
+        });
+      }, observerOptions);
+
+      lottieAnimations.forEach((animation) => {
+        const element = document.getElementById(animation.id);
+        if (element) observer.observe(element);
       });
+    });
   </script>
 
-
-  <!-- end category section -->
-
- <!-- about section -->
+  <!-- about section -->
   <style>
     .animate_from_bottom {
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
-
     .animate_from_bottom.visible {
       opacity: 1;
       transform: translateY(0);
@@ -546,7 +512,6 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const aboutSection = document.getElementById('about_section');
-
       const aboutObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.intersectionRatio >= 0.3) {
@@ -564,55 +529,50 @@
     });
   </script>
 
-
   <section class="about_section layout_padding animate_from_bottom" id="about_section">
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-lg-9 mx-auto">
           <div class="img-box" style="display: flex; justify-content: center; align-items: center;">
-            <video class="responsive-video" autoplay loop muted playsinline loading="lazy" 
-            style=" pointer-events: none;"
-            poster="images/Big5_Alpha_poster.webp" data-video-src="images/Big5_Alpha.webm">
+            <video class="responsive-video" autoplay loop muted playsinline loading="lazy"
+                   style="pointer-events: none;"
+                   poster="images/Big5_Alpha_poster.webp" data-video-src="images/Big5_Alpha.webm">
               Your browser does not support the video tag.
             </video>
           </div>
         </div>
       </div>
       <div class="detail-box">
-        <h2>
-          Über Big 5 Insight
-        </h2>
+        <h2>Über Big 5 Insight</h2>
         <p>
-          Mit Big 5 Insight kannst du deine Persönlichkeit anhand des wissenschaftlich fundierten Big-Five-Modells (OCEAN) entdecken. 
-          Die App bietet dir tiefe Einblicke in deine wichtigsten Charakterzüge und zeigt dir sogar, wie du im Vergleich zu historischen Größen wie Nikola Tesla oder Julius Caesar abschneidest. 
-          Dank der einzigartigen KI-Analyse erhältst du eine personalisierte Auswertung, die dir hilft zu verstehen, wie deine Persönlichkeit deinen Alltag und dein persönliches Wachstum beeinflusst.
+          Mit Big 5 Insight kannst du deine Persönlichkeit anhand des wissenschaftlich fundierten Big-Five-Modells (OCEAN) erforschen. 
+          Die App bietet tiefe Einblicke in deine wichtigsten Charakterzüge und zeigt sogar, wie du dich im Vergleich zu historischen Größen 
+          wie Nikola Tesla oder Julius Caesar schlägst. Dank unserer KI-gestützten Analyse erhältst du eine personalisierte Auswertung, 
+          die verdeutlicht, wie deine Persönlichkeit deinen Alltag und dein Wachstum beeinflusst.
         </p>
-          <div class="btn-box">
-            <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
-              Zur App
-            </a>
-            <a href="#" class="btn-2">
-              Zum Shop
-            </a>
-          </div>
+        <div class="btn-box">
+          <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
+            Zur App
+          </a>
+          <a href="#" class="btn-2">
+            Zum Shop
+          </a>
+        </div>
       </div>
     </div>
   </section>
   <!-- end about section -->
 
-
-<!---------------------------------------------------------- freelance section -->
-<style>
+  <!-- freelance section (Hauptdimensionen) -->
+  <style>
     .personality-icon {
       width: 48px;
       height: 48px;
       transition: transform 0.3s ease;
     }
-    
     .t-link-box:hover .personality-icon {
       transform: scale(1.1) rotate(5deg);
     }
-    
     /* Spezifische Icon-Farben */
     .openness-icon { fill: #ffffff; }
     .conscientiousness-icon { fill: #ffffff; }
@@ -627,90 +587,76 @@
       padding-bottom: 20px;
       padding-right: 200px;
     }
-
-      /* Verbesserte Abstände für bessere Responsivität */
-      .text-box2 {
+    .text-box2 {
       padding-left: 140px;
       padding-top: 20px;
       padding-bottom: 20px;
       padding-right: 0px;
     }
-    
     .text-box4 {
-    padding-left: 0; /* Standardwert für kleinere Bildschirme */
+      padding-left: 0; /* Standardwert für kleinere Bildschirme */
     }
-
-    /* Ab einer bestimmten Bildschirmbreite (z.B. 768px) */
     @media (min-width: 1200px) {
       .text-box4 {
         padding-left: 10px;
       }
     }
-      /* Verbesserte Abstände für bessere Responsivität */
-      .text-box3 {
+    .text-box3 {
       padding-left: 20px;
-
     }
-      .collapse {
+    .collapse {
       overflow: hidden;
     }
   </style>
-  <script>
 
-  $(document).ready(function () {
-    $('#accordion').on('hide.bs.collapse', function (event) {
-      const $panel = $(event.target);
-      const $button = $(`button[data-target="#${event.target.id}"]`);
-      $panel.css({
-        display: 'none',
-      }).removeClass('show'); 
-      $button.addClass('collapsed').attr('aria-expanded', 'false');
+  <script>
+    $(document).ready(function () {
+      $('#accordion').on('hide.bs.collapse', function (event) {
+        const $panel = $(event.target);
+        const $button = $(`button[data-target="#${event.target.id}"]`);
+        $panel.css({ display: 'none' }).removeClass('show');
+        $button.addClass('collapsed').attr('aria-expanded', 'false');
+      });
+      $('#accordion').on('show.bs.collapse', function (event) {
+        const $panel = $(event.target);
+        const $button = $(`button[data-target="#${event.target.id}"]`);
+        $panel.css({ display: 'block' }).addClass('show');
+        $button.removeClass('collapsed').attr('aria-expanded', 'true');
+      });
     });
-    $('#accordion').on('show.bs.collapse', function (event) {
-      const $panel = $(event.target);
-      const $button = $(`button[data-target="#${event.target.id}"]`);
-      $panel.css({
-        display: 'block',
-      }).addClass('show'); 
-      $button.removeClass('collapsed').attr('aria-expanded', 'true');
-    });
-  });
   </script>
 
   <style>
-  .animate_from_bottom {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-
-  .animate_from_bottom.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    .animate_from_bottom {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .animate_from_bottom.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const freelanceSection = document.getElementById('freelance_section');
-  
       const freelanceObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.intersectionRatio >= 0.3) {
             entry.target.classList.add('visible');
-            freelanceObserver.unobserve(entry.target); // Beobachtung nach Einblenden beenden
+            freelanceObserver.unobserve(entry.target);
           }
         });
       }, {
         threshold: [0, 0.3, 1.0]
       });
-  
+
       if (freelanceSection) {
         freelanceObserver.observe(freelanceSection);
       }
     });
   </script>
-  
 
   <section class="freelance_section layout_padding3 animate_from_bottom" id="freelance_section">
     <div id="accordion">
@@ -719,11 +665,10 @@
           <div class="col-md-5 offset-md-1">
             <div class="detail-box">
               <div class="heading_container">
-                <h2>
-                  Hauptdimensionen
-                </h2>
+                <h2>Hauptdimensionen</h2>
               </div>
               <div class="tab_container">
+                <!-- Offenheit -->
                 <button class="t-link-box" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   <div class="img-box">
                     <svg class="personality-icon openness-icon" viewBox="0 0 24 24">
@@ -731,19 +676,19 @@
                     </svg>
                   </div>
                   <div class="detail-box">
-                    <h3 style="font-weight: bold;">
-                      Offenheit
-                    </h3>
+                    <h3 style="font-weight: bold;">Offenheit</h3>
                     <h4 class="styled-subheading text-box4">Kreativität und Neugier</h4>
                   </div>
                 </button>
-                <!-- Panel 1 for mobile view -->
+                <!-- Panel 1 (mobile) -->
                 <div class="collapse d-md-none" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
                   <div class="detail-box text-box3">
                     <h4>Offenheit</h4>
                     <p>Offenheit beschreibt das Interesse an neuen Erfahrungen, Kreativität und der Bereitschaft, sich auf neue Ideen einzulassen.</p>
                   </div>
                 </div>
+
+                <!-- Gewissenhaftigkeit -->
                 <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   <div class="img-box">
                     <svg class="personality-icon conscientiousness-icon" viewBox="0 0 24 24">
@@ -751,19 +696,19 @@
                     </svg>
                   </div>
                   <div class="detail-box">
-                    <h3 style="font-weight: bold;">
-                      Gewissenhaftigkeit 
-                    </h3>
+                    <h3 style="font-weight: bold;">Gewissenhaftigkeit</h3>
                     <h4 class="styled-subheading text-box4">Struktur und Disziplin</h4>
                   </div>
                 </button>
-                <!-- Panel 2 for mobile view -->
+                <!-- Panel 2 (mobile) -->
                 <div class="collapse d-md-none" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordion">
                   <div class="detail-box text-box3">
                     <h4>Gewissenhaftigkeit</h4>
-                    <p>Gewissenhaftigkeit beschreibt das Maß an Selbstdisziplin, Zielstrebigkeit und die Fähigkeit, Aufgaben effizient zu organisieren und durchzuführen.</p>
+                    <p>Gewissenhaftigkeit meint Selbstdisziplin, Zielstrebigkeit und die Fähigkeit, Aufgaben gut zu organisieren.</p>
                   </div>
                 </div>
+
+                <!-- Extraversion -->
                 <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   <div class="img-box">
                     <svg class="personality-icon extraversion-icon" viewBox="0 0 24 24">
@@ -771,19 +716,19 @@
                     </svg>
                   </div>
                   <div class="detail-box">
-                    <h3 style="font-weight: bold;">
-                      Extraversion
-                    </h3>
+                    <h3 style="font-weight: bold;">Extraversion</h3>
                     <h4 class="styled-subheading text-box4">Energie und Freude</h4>
                   </div>
                 </button>
-                <!-- Panel 3 for mobile view -->
+                <!-- Panel 3 (mobile) -->
                 <div class="collapse d-md-none" id="collapseThree" aria-labelledby="headingThree" data-parent="#accordion">
                   <div class="detail-box text-box3">
                     <h4>Extraversion</h4>
-                    <p>Extraversion beschreibt die Tendenz, gesellig, energisch und aktiv zu sein. Menschen mit hoher Extraversion sind oft kontaktfreudig und unternehmungslustig.</p>
+                    <p>Extraversion steht für Kontaktfreude, Energie und einen aktiven Lebensstil.</p>
                   </div>
                 </div>
+
+                <!-- Verträglichkeit -->
                 <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                   <div class="img-box">
                     <svg class="personality-icon agreeableness-icon" viewBox="0 0 24 24">
@@ -791,20 +736,19 @@
                     </svg>
                   </div>
                   <div class="detail-box">
-                    <h3 style="font-weight: bold;">
-                      Verträglichkeit 
-                    </h3>
+                    <h3 style="font-weight: bold;">Verträglichkeit</h3>
                     <h4 class="styled-subheading text-box4">Empathie und Harmonie</h4>
                   </div>
                 </button>
-                <!-- Panel 4 for mobile view -->
+                <!-- Panel 4 (mobile) -->
                 <div class="collapse d-md-none" id="collapseFour" aria-labelledby="headingFour" data-parent="#accordion">
                   <div class="detail-box text-box3">
                     <h4>Verträglichkeit</h4>
-                    <p>Verträglichkeit beschreibt die Tendenz, mit anderen kooperativ und harmonisch umzugehen. Menschen mit hoher Verträglichkeit sind oft empathisch und hilfsbereit.</p>
+                    <p>Verträglichkeit steht für Mitgefühl und kooperatives Verhalten.</p>
                   </div>
                 </div>
-                <!-- New button for Neurotizismus -->
+
+                <!-- Neurotizismus -->
                 <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                   <div class="img-box">
                     <svg class="personality-icon neuroticism-icon" viewBox="0 0 24 24">
@@ -812,93 +756,105 @@
                     </svg>
                   </div>
                   <div class="detail-box">
-                    <h3 style="font-weight: bold;">
-                      Neurotizismus
-                    </h3>
+                    <h3 style="font-weight: bold;">Neurotizismus</h3>
                     <h4 class="styled-subheading text-box4">Emotionale Empfindsamkeit</h4>
                   </div>
                 </button>
-                <!-- Panel 5 for mobile view -->
+                <!-- Panel 5 (mobile) -->
                 <div class="collapse d-md-none" id="collapseFive" aria-labelledby="headingFive" data-parent="#accordion">
                   <div class="detail-box text-box3">
                     <h4>Neurotizismus</h4>
-                    <p>Neurotizismus beschreibt die Tendenz, negative Emotionen wie Angst, Traurigkeit oder Nervosität zu erleben. Menschen mit hohem Neurotizismus neigen zu erhöhter emotionaler Reaktivität.</p>
+                    <p>Neurotizismus umfasst eine stärkere Empfänglichkeit für Stress und negative Emotionen.</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Panels für größere Bildschirme -->
           <div class="col-md-6 d-none d-md-block">
-            <!-- Panel 1 for larger view -->
+            <!-- Panel 1 (Desktop) -->
             <div class="collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
               <div class="text-box">
-                <h4 style="font-weight: bold;"> Offenheit</h4>
-                <p>Offenheit steht für Kreativität, Neugier und die Bereitschaft, über den Tellerrand hinauszuschauen. Menschen mit 
-                  einer hohen Ausprägung in dieser Dimension sind stets auf der Suche nach neuen Erfahrungen und lassen sich gerne auf neue 
-                  Ideen ein. Sie sind fantasievoll, lieben künstlerische Ausdrucksformen und schätzen die Vielfalt des Lebens. Ihre Vorstellungskraft 
-                  ist stark ausgeprägt, und sie genießen es, sich mit komplexen oder ungewöhnlichen Themen auseinanderzusetzen. Offenheit ist der Schlüssel 
-                  zur Innovation, weil sie dazu inspiriert, Bestehendes zu hinterfragen und neue Wege zu gehen.</p>
+                <h4 style="font-weight: bold;">Offenheit</h4>
+                <p>
+                  Offenheit steht für Kreativität, Neugier und die Bereitschaft, über den Tellerrand hinauszublicken. 
+                  Personen mit hoher Offenheit suchen ständig nach neuen Erfahrungen und sind gerne bereit, 
+                  sich auf unbekannte Ideen einzulassen. Sie sind fantasievoll, lieben künstlerische Ausdrucksformen 
+                  und schätzen die Vielfalt des Lebens. Ihre Vorstellungskraft ist stark ausgeprägt, und sie genießen es, 
+                  sich mit komplexen Themen auseinanderzusetzen. Offenheit inspiriert Innovation, weil sie anregt, 
+                  bestehende Strukturen zu hinterfragen und neue Wege zu finden.
+                </p>
               </div>
             </div>
-            <!-- Panel 2 for larger view -->
+            <!-- Panel 2 (Desktop) -->
             <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordion">
               <div class="text-box">
                 <h4 style="font-weight: bold;">Gewissenhaftigkeit</h4>
-                <p>Gewissenhaftigkeit beschreibt den Drang nach Struktur, Selbstdisziplin und Ordnung. Menschen, die in dieser Dimension hoch sind, sind verlässlich und erledigen 
-                  ihre Aufgaben gründlich und pünktlich. Sie setzen sich klare Ziele und bleiben beständig, bis diese erreicht sind. Gewissenhafte Personen sind detailorientiert und 
-                  scheuen sich nicht, Verantwortung zu übernehmen. Diese Eigenschaft ist besonders wichtig, wenn es darum geht, Herausforderungen planvoll und systematisch zu bewältigen, 
-                  und sorgt dafür, dass Projekte effizient und erfolgreich umgesetzt werden.</p>
+                <p>
+                  Gewissenhaftigkeit beschreibt den Drang nach Struktur, Selbstdisziplin und Ordnung. Wer hier 
+                  hoch punktet, erledigt Aufgaben zuverlässig und pünktlich und setzt sich klare Ziele, die beharrlich 
+                  verfolgt werden. Diese Menschen sind detailorientiert und übernehmen gerne Verantwortung. 
+                  Diese Eigenschaft ist hilfreich, um Herausforderungen planvoll und systematisch zu meistern, 
+                  und sorgt dafür, dass Projekte effizient umgesetzt werden.
+                </p>
               </div>
             </div>
-            <!-- Panel 3 for larger view -->
+            <!-- Panel 3 (Desktop) -->
             <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#accordion">
               <div class="text-box">
                 <h4 style="font-weight: bold;">Extraversion</h4>
-                <p>Extraversion steht für ein hohes Maß an Energie, Begeisterung und Geselligkeit. Extrovertierte Menschen blühen in Gesellschaft anderer auf und lieben den Austausch mit 
-                  anderen. Sie sind kommunikativ, selbstbewusst und gerne in sozialen Situationen präsent. Oft haben sie eine ansteckende positive Ausstrahlung, die andere mitreißt. Extravertierte 
-                  Menschen suchen das Abenteuer, schätzen den Kontakt zu neuen Leuten und fühlen sich wohl in Situationen, die andere herausfordern könnten. Sie lieben es, im Mittelpunkt zu stehen, 
-                  und ziehen ihre Energie aus dem Zusammensein mit anderen.</p>
+                <p>
+                  Extraversion steht für ein hohes Maß an Energie, Begeisterung und Geselligkeit. Extrovertierte Menschen 
+                  blühen in Gesellschaft auf und schätzen den Austausch mit anderen. Sie sind kommunikativ, selbstbewusst 
+                  und lieben es, aktiv am Geschehen teilzunehmen. Oft besitzen sie eine ansteckende positive Ausstrahlung, 
+                  die ihr Umfeld mitreißen kann. Extravertierte Personen suchen Abenteuer, schätzen den Kontakt zu neuen 
+                  Leuten und schöpfen ihre Energie aus dem Zusammensein mit anderen.
+                </p>
               </div>
             </div>
-            <!-- Panel 4 for larger view -->
+            <!-- Panel 4 (Desktop) -->
             <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#accordion">
               <div class="text-box">
                 <h4 style="font-weight: bold;">Verträglichkeit</h4>
-                <p>Verträglichkeit steht für Empathie, Mitgefühl und den Wunsch, harmonisch zusammenzuarbeiten. 
-                  Menschen mit hoher Verträglichkeit zeigen Interesse am Wohlergehen ihrer Mitmenschen, sind hilfsbereit 
-                  und bereit, Konflikte zu lösen. Sie bevorzugen Kooperation gegenüber Konkurrenz und bauen gerne Brücken zu anderen. 
-                  Diese Personen sind warmherzig, freundlich und fördern ein unterstützendes Umfeld. Verträglichkeit bedeutet, das Wohl des 
-                  Teams über das eigene Ego zu stellen, um so ein harmonisches und erfolgreiches Miteinander zu fördern. Diese Stärke schafft 
-                  Vertrauen und Zusammenhalt.</p>
+                <p>
+                  Verträglichkeit beschreibt Empathie, Hilfsbereitschaft und das Bestreben, harmonisch 
+                  zusammenzuarbeiten. Menschen mit hoher Verträglichkeit zeigen Interesse am Wohlergehen 
+                  anderer, sind kooperativ und sind bereit, Konflikte zu entschärfen. Diese Haltung schafft 
+                  ein vertrauensvolles Miteinander und fördert ein unterstützendes Umfeld. Wer in dieser Dimension 
+                  hoch liegt, stellt das gemeinsame Ziel gerne über eigene Interessen, um ein harmonisches 
+                  Zusammenwirken zu ermöglichen.
+                </p>
               </div>
             </div>
-            <!-- Panel 5 for larger view -->
+            <!-- Panel 5 (Desktop) -->
             <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#accordion">
               <div class="text-box">
                 <h4 style="font-weight: bold;">Neurotizismus</h4>
-                <p>Neurotizismus beschreibt die Tendenz, emotionale Höhen und Tiefen intensiver zu 
-                  erleben. Menschen mit einer hohen Ausprägung in dieser Dimension neigen zu Unsicherheit, 
-                  Nervosität und Stress. Sie sind besonders empfänglich für negative Emotionen wie Angst oder 
-                  Traurigkeit, was ihnen jedoch auch ermöglicht, die Feinheiten von Stimmungen besser zu erfassen. 
-                  Diese Empfindsamkeit führt zu tieferer Selbstreflexion und besserem Verständnis für emotionale Herausforderungen.
-                  Die Kunst besteht darin, die emotionale Seite des Lebens bewusst zu erleben und an diesen Erfahrungen zu wachsen.</p>
+                <p>
+                  Neurotizismus beschreibt die Tendenz, emotionale Höhen und Tiefen intensiver wahrzunehmen. 
+                  Personen mit hoher Ausprägung in dieser Dimension reagieren stärker auf Stress und negative 
+                  Gefühle. Gleichzeitig ermöglicht diese Empfindsamkeit ein tieferes Verständnis für menschliche 
+                  Emotionen und Situationen. Wer lernt, diese Emotionen konstruktiv zu verarbeiten, kann daraus 
+                  persönliches Wachstum und Resilienz schöpfen.
+                </p>
               </div>
             </div>
           </div>
+          <!-- Ende col-md-6 -->
         </div>
       </div>
     </div>
   </section>
+  <!-- end freelance section -->
 
-<!--------------------------------------------------------------------------------------------- end freelance section -->
   <!-- client section -->
   <section class="layout_padding3"></section>
   <!-- end client section -->
 
-
-  <!-- info section -->
+  <!-- Footer -->
   {% include footer.html %}
-  <!-- end  footer section -->
+  <!-- end footer section -->
 
   <script src="js/bootstrap.js" defer></script>
 </body>
