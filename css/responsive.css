@@ -72,9 +72,9 @@
   }
 
   .responsive-video {
-    width: 100%;   /* Das Video füllt die gesamte Breite des Containers */
-    height: auto;  /* Höhe wird proportional zur Breite angepasst, um Verzerrungen zu vermeiden */
-    display: block; /* Verhindert, dass das Video als Inline-Element agiert */
+    width: 100%;  
+    height: auto;
+    display: block;
   }
   
   .img-container {
