@@ -281,8 +281,8 @@ a:focus {
   font-weight: bold;
   text-transform: uppercase;
   overflow-wrap: break-word;
-  white-space: normal;
-  
+  white-space: nowrap;
+  font-size: clamp(16px, 8vw, 38px);
 }
 
 .slider_section .detail-box p {
