@@ -4,11 +4,11 @@
     <!-- footer.html -->
     <!-- info section -->
     <section class="info_section ">
-      <div class="info_container layout_padding-top">
+      <div class="info_container layout_padding_footer_top layout_padding_footer_bottom ">
         <div class="container">
           <div class="info_top">
             <div class="info_logo">
-              <img src="../images/logo.webp" alt="Logo der Firma ADASK" loading="lazy"/>
+              <img src="../images/logo-1.webp" alt="Logo der Firma ADASK" loading="lazy"/>
               <span>
                 ADASK
               </span>
@@ -103,18 +103,9 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-9 col-md-10 mx-auto">
-              <div class="info_contact layout_padding2">
-                <div class="row">
-                  <!-- Hier können Sie zusätzliche Kontaktinformationen hinzufügen -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
+
     <!-- end info section -->
 
     <!-- footer section -->
@@ -133,6 +124,16 @@
     <script>
       document.getElementById('displayDate').textContent = new Date().getFullYear();
     </script>
+
+    <style>
+      .layout_padding_footer_bottom {
+        padding-bottom: 40px;
+      }
+      .layout_padding_footer_top {
+        padding-top: 40px;
+      }
+    </style>
+
 
   </body>
 </html>
