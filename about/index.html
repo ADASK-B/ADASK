@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
+    
     <!-- Basic -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -90,10 +91,14 @@
           justify-content: flex-start;
         }
       }
+      html {
+        scroll-behavior: smooth;
+      }
     </style>
   </head>
 
   <body class="sub_page">
+    
     {% include header.html %}
     <!-- Erster Abschnitt - Mission -->
     <section
@@ -120,19 +125,22 @@
                 Bei ADASK glauben wir daran, dass Selbsterkenntnis der Schlüssel zu persönlichem Wachstum ist. Unsere Mission ist es, Menschen durch wissenschaftlich fundierte Persönlichkeitsanalysen tiefere Einblicke in ihre Charakterzüge zu ermöglichen und sie auf ihrem Weg der Selbstentfaltung zu unterstützen. Mit Hilfe modernster Künstlicher Intelligenz bieten wir präzise und individuelle Auswertungen, die dir helfen, deine Stärken zu erkennen und weiterzuentwickeln.
               </p>
               <div class="btn-box">
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight"
-                  class="btn-1"
-                >
-                  Zur App
+                <a href="" class="btn-1" id="scrollToFooterButton">
+                  Kontakt
                 </a>
-                <a href="#" class="btn-2">Zum Shop</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <script>
+      document.getElementById('scrollToFooterButton').addEventListener('click', function(event) {
+        event.preventDefault(); // Verhindert das Standardverhalten des Links
+        document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
+      });
+    </script>
 
     <!-- Zweiter Abschnitt - Team -->
     <section
