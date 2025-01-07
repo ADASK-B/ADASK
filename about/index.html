@@ -1,20 +1,31 @@
+---
+---
 <!DOCTYPE html>
 <html lang="de">
   <head>
     <!-- Basic -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  
+
     <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
     <!-- Site Metas -->
-    <meta name="keywords" content="Persönlichkeitsanalyse, Big-Five, OCEAN-Modell, Selbsterkenntnis, Persönlichkeitsentwicklung, Psychologie, Charakteranalyse, wissenschaftliche Analyse, KI-Persönlichkeitstest, ADASK" />
-    <meta name="description" content="Erleben Sie fundierte Persönlichkeitsanalysen mit ADASK. Entdecken Sie Ihre Stärken durch das Big-Five-Modell und KI-gestützte Tests. Fördern Sie Ihre Selbsterkenntnis und persönliche Entwicklung mit wissenschaftlicher Präzision." />
+    <meta
+      name="keywords"
+      content="Persönlichkeitsanalyse, Big-Five, OCEAN-Modell, Selbsterkenntnis, Persönlichkeitsentwicklung, Psychologie, Charakteranalyse, wissenschaftliche Analyse, KI-Persönlichkeitstest, ADASK"
+    />
+    <meta
+      name="description"
+      content="Erleben Sie fundierte Persönlichkeitsanalysen mit ADASK. Entdecken Sie Ihre Stärken durch das Big-Five-Modell und KI-gestützte Tests. Fördern Sie Ihre Selbsterkenntnis und persönliche Entwicklung mit wissenschaftlicher Präzision."
+    />
     <meta name="author" content="ADASK" />
-  
+
     <title>ADASK - About</title>
-  
+
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
     <link href="../css/style.css" rel="stylesheet" />
@@ -26,15 +37,17 @@
       .bg-variant-1 {
         background-color: #65B973;
       }
-  
+
       .text-variant-1 {
         color: #F3F3F3;
       }
 
       .responsive-img {
-        width: 100%;       
-        height: auto;      
-        max-width: 400px;  
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        display: block;
+        margin: 0 auto;
       }
 
       /* Animation Klassen */
@@ -48,351 +61,214 @@
         opacity: 1;
         transform: translateY(0);
       }
+
+      /* Neue CSS-Klassen für bessere Ausrichtung */
+      .detail-box {
+        text-align: center;
+      }
+
+      .heading_container h2 {
+        text-align: center;
+      }
+
+      .btn-box {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      @media (min-width: 768px) {
+        .detail-box {
+          text-align: left;
+        }
+
+        .heading_container h2 {
+          text-align: left;
+        }
+
+        .btn-box {
+          justify-content: flex-start;
+        }
+      }
     </style>
-    
   </head>
-  
 
-<body class="sub_page">
-  <div class="hero_area">
-    <!-- header section starts -->
-    <!DOCTYPE html>
-<html lang="de">
-  <body>
-    <header class="header_section" id="header" style="position: fixed; top: 0; width: 100%; transition: top 0.3s ease-in-out; z-index: 1000; background-color: #2F3030;">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="../">
-            <img src="../images/logo_Small-1.webp" alt="Logo der Firma ADASK" width="40" height="31" fetchpriority="high">
-            <span>ADASK</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
-                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="../">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../about"> Shop</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../about"> About</a>
-              </li>    
-            </ul>
-          </div>
-          <div>
-            <div class="custom_menu-btn">
-              <button aria-label="Menü umschalten">
-                <span class="s-1"></span>
-                <span class="s-2"></span>
-                <span class="s-3"></span>
-              </button>
+  <body class="sub_page">
+    {% include header.html %}
+    <!-- Erster Abschnitt - Mission -->
+    <section
+      class="experience_section layout_padding2-bottom animate_from_bottom"
+      id="mission_section"
+    >
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="img-box">
+              <img
+                src="../images/Kleopatra.webp"
+                alt="Kleopatra"
+                class="responsive-img"
+              />
             </div>
           </div>
-        </nav>
-      </div>
-    </header>
-    
-    <script>
-      let lastScrollTop = 0;
-      const header = document.getElementById("header");
-
-      window.addEventListener("scroll", function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop === 0) {
-          header.style.top = "0";
-        } else if (scrollTop > lastScrollTop) {
-          header.style.top = "-100px";
-        } else {
-          header.style.top = "0";
-        }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
-
-        // Menü bei Scroll auf Mobilgeräten schließen
-        if (window.innerWidth < 992 && $("#navbarSupportedContent").hasClass("show")) {
-          $("#navbarSupportedContent").removeClass("show");
-          document.querySelector(".custom_menu-btn").classList.remove("menu_btn-style");
-        }
-      });
-
-      var nav = $("#navbarSupportedContent");
-      var btn = $(".custom_menu-btn");
-      btn.click(function (e) {
-          e.preventDefault();
-          nav.toggleClass("lg_nav-toggle");
-          document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style");
-      });
-    </script>
-  </body>
-</html>
-    <!-- header section ends -->
-  </div>
-
-  <!-- about section -->
-  
-  <!-- Erster Abschnitt - Mission -->
-  <section class="experience_section layout_padding2-bottom animate_from_bottom" id="mission_section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-5 order-md-1 order-1">
-          <div class="img-box">
-            <img src="../images/Kleopatra.webp" alt="Kleopatra" width="700" height="629" class="responsive-img">
-          </div>
-        </div>
-        <div class="col-md-6 order-md-2 order-2">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>Unsere Mission</h2>
-            </div>
-            <p>
-              Bei ADASK glauben wir daran, dass Selbsterkenntnis der Schlüssel zu persönlichem Wachstum ist. Unsere Mission ist es, Menschen durch wissenschaftlich fundierte Persönlichkeitsanalysen tiefere Einblicke in ihre Charakterzüge zu ermöglichen und sie auf ihrem Weg der Selbstentfaltung zu unterstützen.
-            </p>
-            <div class="btn-box">
-              <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
-                Zur App
-              </a>
-              <a href="#" class="btn-2">Zum Shop</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Zweiter Abschnitt - Team -->
-  <section class="experience_section layout_padding2-bottom bg-variant-1 text-variant-1 animate_from_bottom" id="team_section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-5 order-md-2 order-1">
-          <div class="img-box">
-            <img src="../images/Theodore-Roosevelt.webp" alt="Theodore Roosevelt" width="700" height="629" class="responsive-img">
-          </div>
-        </div>
-        <div class="col-md-6 order-md-1 order-2">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>Das Team hinter ADASK</h2>
-            </div>
-            <p>
-              Unser Team besteht aus Psychologen, Datenwissenschaftlern und Entwicklern, die gemeinsam eine Plattform geschaffen haben, die Wissenschaft und Technologie vereint.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Dritter Abschnitt - Warum ADASK? -->
-  <section class="experience_section layout_padding2-bottom animate_from_bottom" id="why_section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-5 order-md-1 order-1">
-          <div class="img-box">
-            <img src="../images/Jeanne-D-Arc.webp" alt="Jeanne d'Arc" width="700" height="629" class="responsive-img">
-          </div>
-        </div>
-        <div class="col-md-6 order-md-2 order-2">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>Warum ADASK?</h2>
-            </div>
-            <p>
-              Wir bieten präzise, KI-gestützte Analysen basierend auf dem bewährten Big-Five-Modell.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Vierter Abschnitt - Wissenschaftlicher Ansatz -->
-  <section class="experience_section layout_padding2-bottom bg-variant-1 text-variant-1 animate_from_bottom" id="science_section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-5 order-md-2 order-1">
-          <div class="img-box">
-            <img src="../images/Sokrates.webp" alt="Sokrates" width="700" height="629" class="responsive-img">
-          </div>          
-        </div>
-        <div class="col-md-6 order-md-1 order-2">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>Wissenschaftlicher Ansatz</h2>
-            </div>
-            <p>
-              Die Big-Five-Persönlichkeitstheorie (OCEAN) bildet die Grundlage für unsere Analysen.
-            </p>
-            <div class="btn-box">
-              <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
-                Zur App
-              </a>
-              <a href="#" class="btn-2">Zum Shop</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- info section -->
-  <!DOCTYPE html>
-<html lang="de">
-  <body>
-    <section class="info_section ">
-      <div class="info_container layout_padding-top">
-        <div class="container">
-          <div class="info_top">
-            <div class="info_logo">
-              <img src="../images/logo_Small-1.webp" alt="Logo der Firma ADASK" loading="lazy" width="50" height="49"/>
-              <span>
-                ADASK
-              </span>
-            </div>
-            <div class="social_box">
-              <a href="https://www.facebook.com/DeineSeite" target="_blank">
-                <img src="../images/fb.png" alt="Facebook-Icon">
-              </a>
-              <a href="https://twitter.com/DeineSeite" target="_blank">
-                <img src="../images/twitter.png" alt="Twitter-Icon">
-              </a>
-              <a href="https://www.linkedin.com/in/DeinProfil" target="_blank">
-                <img src="../images/linkedin.png" alt="LinkedIn-Icon">
-              </a>
-              <a href="https://www.instagram.com/DeinProfil" target="_blank">
-                <img src="../images/instagram.png" alt="Instagram-Icon">
-              </a>
-              <a href="https://www.youtube.com/@ADASK.B" target="_blank">
-                <img src="../images/youtube.png" alt="YouTube-Icon">
-              </a>
-            </div>
-          </div>
-
-          <div class="info_main">
-            <div class="row">
-              <div class="col-md-3 col-lg-2">
-                <div class="info_link-box">
-                  <h5>
-                    Nützliche Links
-                  </h5>
-                  <ul>
-                    <li class=" active">
-                      <a class="" href="../">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="">
-                      <a class="" href="../about">About </a>
-                    </li>
-                    <li class="">
-                      <a class="" href="../datenschutz">Datenschutz </a>
-                    </li>
-                    <li class="">
-                      <a class="" href="../impressum">Impressum </a>
-                    </li>
-                  </ul>
-                </div>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>Unsere Mission</h2>
               </div>
-              <div class="col-md-3 ">
-                <h5>
-                  UNSER SERVICE
-                </h5>
-                <p>
-                  <strong>Spiele:</strong> Von Konzept bis Veröffentlichung<br>
-                  <strong>Webseiten:</strong> Kreativ und funktional<br>
-                  <strong>Apps:</strong> Für alle Plattformen
-                </p>
-              </div>
-
-              <div class="col-md-3 col-lg-2 offset-lg-1">
-                <h5>
-                  Interesse?
-                </h5>
-                <p>
-                  Deine Idee ist nur eine Nachricht vom Start entfernt. Schreib uns einfach an!
-                </p>
-              </div>
-
-              <div class="col-md-3  offset-lg-1">
-                <div class="info_form ">
-                  <h5>
-                    KONTAKT AUFNEHMEN
-                  </h5>
-                  <form action="https://docs.google.com/forms/d/e/1FAIpQLSeenY1xsqFx29DmMAWhdsFwVO7TZ9TdS5uBBQhR3u4J70iB2Q/formResponse" method="POST" target="_blank">
-                    <input type="email" name="entry.1938339462" placeholder="Email" required>
-                    <input type="text" name="entry.1489854127" placeholder="Ihre Nachricht" required>
-                    <button type="submit">
-                      Absenden
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-9 col-md-10 mx-auto">
-              <div class="info_contact layout_padding2">
-                <div class="row">
-                  <!-- Zusätzliche Kontaktinformationen können hier hinzugefügt werden -->
-                </div>
+              <p>
+                Bei ADASK glauben wir daran, dass Selbsterkenntnis der Schlüssel zu persönlichem Wachstum ist. Unsere Mission ist es, Menschen durch wissenschaftlich fundierte Persönlichkeitsanalysen tiefere Einblicke in ihre Charakterzüge zu ermöglichen und sie auf ihrem Weg der Selbstentfaltung zu unterstützen. Mit Hilfe modernster Künstlicher Intelligenz bieten wir präzise und individuelle Auswertungen, die dir helfen, deine Stärken zu erkennen und weiterzuentwickeln.
+              </p>
+              <div class="btn-box">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight"
+                  class="btn-1"
+                >
+                  Zur App
+                </a>
+                <a href="#" class="btn-2">Zum Shop</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- end info section -->
 
-    <!-- footer section -->
-    <footer class="container-fluid footer_section ">
+    <!-- Zweiter Abschnitt - Team -->
+    <section
+      class="experience_section layout_padding2-bottom bg-variant-1 text-variant-1 animate_from_bottom"
+      id="team_section"
+    >
       <div class="container">
-        <p>
-          &copy; <span id="displayDate"></span> Alle Rechte vorbehalten von
-          <a href="">ADASK</a>
-        </p>
+        <div class="row align-items-center flex-md-row-reverse">
+          <div class="col-md-6">
+            <div class="img-box">
+              <img
+                src="../images/Theodore-Roosevelt.webp"
+                alt="Theodore Roosevelt"
+                class="responsive-img"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>Das Team hinter ADASK</h2>
+              </div>
+              <p>
+                Unser Team besteht aus erfahrenen Psychologen, Datenwissenschaftlern und Entwicklern, die gemeinsam eine Plattform geschaffen haben, die Wissenschaft und Technologie vereint. Jeder Einzelne bringt sein einzigartiges Fachwissen ein, um sicherzustellen, dass unsere Analysen nicht nur präzise, sondern auch benutzerfreundlich und zugänglich sind. Wir sind leidenschaftlich daran interessiert, Menschen dabei zu helfen, sich selbst besser zu verstehen und ihr volles Potenzial auszuschöpfen.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
-    <!-- end  footer section -->
+    </section>
 
+    <!-- Dritter Abschnitt - Warum ADASK? -->
+    <section
+      class="experience_section layout_padding2-bottom animate_from_bottom"
+      id="why_section"
+    >
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="img-box">
+              <img
+                src="../images/Jeanne-D-Arc.webp"
+                alt="Jeanne d'Arc"
+                class="responsive-img"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>Warum ADASK?</h2>
+              </div>
+              <p>
+                Wir bieten präzise, KI-gestützte Analysen basierend auf dem bewährten Big-Five-Modell. Unsere Plattform ermöglicht es dir, deine Persönlichkeit umfassend zu verstehen und individuelle Empfehlungen für deine persönliche Entwicklung zu erhalten. Anders als herkömmliche Persönlichkeitstests, nutzen wir moderne Technologie, um dir eine maßgeschneiderte und tiefgehende Analyse zu bieten, die dir hilft, gezielt an deinen Stärken zu arbeiten und deine Schwächen zu überwinden.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vierter Abschnitt - Wissenschaftlicher Ansatz -->
+    <section
+      class="experience_section layout_padding2-bottom bg-variant-1 text-variant-1 animate_from_bottom"
+      id="science_section"
+    >
+      <div class="container">
+        <div class="row align-items-center flex-md-row-reverse">
+          <div class="col-md-6">
+            <div class="img-box">
+              <img
+                src="../images/Sokrates.webp"
+                alt="Sokrates"
+                class="responsive-img"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>Wissenschaftlicher Ansatz</h2>
+              </div>
+              <p>
+                Die Big-Five-Persönlichkeitstheorie (OCEAN) bildet die Grundlage für unsere Analysen. Dieses Modell ist international anerkannt und wissenschaftlich validiert, um ein umfassendes Bild deiner Persönlichkeit zu zeichnen. Durch die Integration von Künstlicher Intelligenz können wir dir detaillierte und personalisierte Einblicke bieten, die über traditionelle Tests hinausgehen. Unser Ansatz kombiniert bewährte wissenschaftliche Methoden mit modernster Technologie, um dir eine genaue und relevante Persönlichkeitsanalyse zu liefern.
+              </p>
+              <div class="btn-box">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight"
+                  class="btn-1"
+                >
+                  Zur App
+                </a>
+                <a href="#" class="btn-2">Zum Shop</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    {% include footer.html %}
+    <!-- end footer section -->
+
+    <script src="../js/bootstrap.js" defer></script>
+
+    <!-- Intersection Observer zum Einblenden der Abschnitte -->
     <script>
-      document.getElementById('displayDate').textContent = new Date().getFullYear();
-    </script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sections = [
+          document.getElementById("mission_section"),
+          document.getElementById("team_section"),
+          document.getElementById("why_section"),
+          document.getElementById("science_section"),
+        ];
 
-  </body>
-</html>
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: [0, 0.3, 1.0],
+          }
+        );
 
-  <!-- end footer section -->
-
-  <script src="../js/bootstrap.js" defer></script>
-
-  <!-- Intersection Observer zum Einblenden der Abschnitte -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const sections = [
-        document.getElementById('mission_section'),
-        document.getElementById('team_section'),
-        document.getElementById('why_section'),
-        document.getElementById('science_section')
-      ];
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+        sections.forEach((section) => {
+          if (section) {
+            observer.observe(section);
           }
         });
-      }, {
-        threshold: [0, 0.3, 1.0]
       });
-
-      sections.forEach(section => {
-        if (section) {
-          observer.observe(section);
-        }
-      });
-    });
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>
