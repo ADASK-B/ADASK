@@ -557,7 +557,7 @@ a:focus {
   text-transform: uppercase; 
   overflow-wrap: break-word; 
   white-space: nowrap; 
-  font-size: clamp(16px, 6vw, 32px); 
+  font-size: clamp(20px, 6vw, 32px); 
   line-height: 1.2; 
   text-align: center;
 }
