@@ -275,11 +275,13 @@ a:focus {
 
 .slider_section .detail-box h1 {
   color: #F3F3F3;
-  font-weight: bold;
-  text-transform: uppercase;
-  overflow-wrap: break-word;
-  white-space: nowrap;
-  font-size: clamp(16px, 8vw, 38px);
+  font-weight: bold; 
+  text-transform: uppercase; 
+  overflow-wrap: break-word; 
+  white-space: normal; 
+  hyphens: auto; 
+  line-height: 1.2; 
+  text-align: center;
 }
 
 .slider_section .detail-box p {
@@ -556,8 +558,8 @@ a:focus {
   font-weight: bold; 
   text-transform: uppercase; 
   overflow-wrap: break-word; 
-  white-space: nowrap; 
-  font-size: clamp(20px, 6vw, 32px); 
+  white-space: normal; 
+  hyphens: auto;
   line-height: 1.2; 
   text-align: center;
 }
@@ -776,16 +778,16 @@ a:focus {
 }
 
 .info_section .info_top .social_box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-wrap: wrap; /* Ermöglicht den Zeilenumbruch */
+  justify-content: center; /* Zentriert die Inhalte horizontal */
+  gap: 20px; /* Abstand zwischen den Bildern auf großen Bildschirmen */
 }
 
 .info_section .info_top .social_box a {
-  margin: 0 10px;
+  flex: 1 1 calc(16.66% - 20px); /* 16.66% Breite für 6 Items pro Zeile, -20px für den Abstand */
+  max-width: calc(16.66% - 20px); /* Begrenze die Breite */
+  text-align: center; /* Zentriert den Inhalt in der Box */
 }
 
 .info_section .info_top .social_box a img {
@@ -794,6 +796,37 @@ a:focus {
   max-width: 30px;
   max-height: 30px;
 }
+
+@media (max-width: 768px) {
+  .info_section .info_top .social_box {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 5px;
+    row-gap: 20px;
+  }
+
+  .info_section .info_top .social_box a {
+    flex: 1 1 calc(33.33% - 20px); 
+    max-width: calc(33.33% - 20px); 
+    text-align: center; 
+  }
+
+  .info_section .info_top .social_box a img {
+    width: auto;
+    height: auto;
+    max-width: 30px; 
+    max-height: 30px;
+  }
+}
+
+
+
+
+
+
+
+
 
 .info_section a {
   text-transform: none;
