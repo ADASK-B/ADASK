@@ -281,7 +281,7 @@ a:focus {
   white-space: normal; 
   hyphens: auto; 
   line-height: 1.2; 
-  text-align: center;
+  text-align: left;
 }
 
 .slider_section .detail-box p {
