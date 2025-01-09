@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <!-- Externe CSS Stylesheet für den Footer -->
-    <link rel="stylesheet" href="../css/footer.css">
-  </head>
   <body>
     <!-- footer.html -->
     <!-- info section -->
@@ -123,7 +119,30 @@
     </footer>
     <!-- end  footer section -->
 
-    <!-- Externe JavaScript Datei für den Footer -->
-    <script src="../js/footer.js" defer></script>
+    <!-- Skripte -->
+    <!-- Script zum Aktualisieren des Jahres -->
+    <script>
+      document.getElementById('displayDate').textContent = new Date().getFullYear();
+    </script>
+
+    <style>
+      .layout_padding_footer_bottom {
+        padding-bottom: 40px;
+      }
+      .layout_padding_footer_top {
+        padding-top: 40px;
+      }
+
+      .link-heading {
+                    text-transform: uppercase; 
+                    font-size: 1.3em;        
+                    font-weight: bold;        
+                    margin-bottom: 15px;      
+                    color: #ffffff;             
+                }
+   
+    </style>
+
+
   </body>
 </html>
