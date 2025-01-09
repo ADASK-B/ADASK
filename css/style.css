@@ -284,6 +284,12 @@ a:focus {
   text-align: left;
 }
 
+@media (max-width: 767px) {
+  .slider_section .detail-box h1 {
+    text-align: center;
+  }
+}
+
 .slider_section .detail-box p {
   color: #F3F3F3;
   min-height: 120px;
