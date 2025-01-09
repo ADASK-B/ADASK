@@ -1,4 +1,6 @@
-// Initiales Laden der Videos
+// main_page.js
+
+// Skript für das Hinzufügen von Videoquellen nach dem Laden der Seite
 window.addEventListener('load', function () {
     // Wählt alle Video-Elemente mit der Klasse "responsive-video" aus
     const videos = document.querySelectorAll('.responsive-video');
@@ -16,42 +18,44 @@ window.addEventListener('load', function () {
     });
   });
   
-  // Intersection Observer für den Experience-Abschnitt
+  // Skript für das Erscheinen der "experience" Sektion
   document.addEventListener("DOMContentLoaded", function() {
     const target = document.querySelector('#experience');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.intersectionRatio >= 0.4) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+    if (target) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.intersectionRatio >= 0.4) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: [0, 0.4, 1.0]
       });
-    }, {
-      threshold: [0, 0.4, 1.0]
-    });
-    observer.observe(target);
+      observer.observe(target);
+    }
   });
   
-  // Intersection Observer für den Category-Abschnitt
+  // Skript für das Erscheinen der "category_section" Sektion
   document.addEventListener('DOMContentLoaded', () => {
     const section = document.getElementById('category_section');
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.intersectionRatio >= 0.2) {
-          entry.target.classList.add('visible');
-          sectionObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: [0, 0.2, 1.0]
-    });
-  
     if (section) {
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.intersectionRatio >= 0.2) {
+            entry.target.classList.add('visible');
+            sectionObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: [0, 0.2, 1.0]
+      });
+  
       sectionObserver.observe(section);
     }
   });
   
-  // Lottie-Animationen laden
+  // Skript für die Lottie-Animationen
   document.addEventListener("DOMContentLoaded", () => {
     const lottieAnimations = [
       { id: "lottie_analytics", path: "images/analytics.json" },
@@ -108,45 +112,26 @@ window.addEventListener('load', function () {
     });
   });
   
-  // Intersection Observer für den About-Abschnitt
+  // Skript für das Erscheinen der "about_section" Sektion
   document.addEventListener('DOMContentLoaded', () => {
     const aboutSection = document.getElementById('about_section');
-    const aboutObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.intersectionRatio >= 0.3) {
-          entry.target.classList.add('visible');
-          aboutObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: [0, 0.3, 1.0]
-    });
-  
     if (aboutSection) {
+      const aboutObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.intersectionRatio >= 0.3) {
+            entry.target.classList.add('visible');
+            aboutObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: [0, 0.3, 1.0]
+      });
+  
       aboutObserver.observe(aboutSection);
     }
   });
   
-  // Intersection Observer für den Freelance-Abschnitt
-  document.addEventListener('DOMContentLoaded', () => {
-    const freelanceSection = document.getElementById('freelance_section');
-    const freelanceObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.intersectionRatio >= 0.3) {
-          entry.target.classList.add('visible');
-          freelanceObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: [0, 0.3, 1.0]
-    });
-  
-    if (freelanceSection) {
-      freelanceObserver.observe(freelanceSection);
-    }
-  });
-  
-  // Accordion-Verhalten für mobile Geräte
+  // Skript für das Accordion-Verhalten (Bootstrap Collapse) mit jQuery
   $(document).ready(function () {
     $('#accordion').on('hide.bs.collapse', function (event) {
       const $panel = $(event.target);
@@ -162,8 +147,26 @@ window.addEventListener('load', function () {
     });
   });
   
-  // Scroll-Position speichern und wiederherstellen
-  // Restore scroll position on page load
+  // Skript für das Erscheinen der "freelance_section" Sektion
+  document.addEventListener('DOMContentLoaded', () => {
+    const freelanceSection = document.getElementById('freelance_section');
+    if (freelanceSection) {
+      const freelanceObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.intersectionRatio >= 0.3) {
+            entry.target.classList.add('visible');
+            freelanceObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: [0, 0.3, 1.0]
+      });
+  
+      freelanceObserver.observe(freelanceSection);
+    }
+  });
+  
+  // Skript zur Wiederherstellung der Scroll-Position beim Laden der Seite
   window.addEventListener('load', function() {
     const scrollPosition = sessionStorage.getItem('scrollPosition');
     if (scrollPosition !== null) {
