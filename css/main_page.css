@@ -1,0 +1,85 @@
+/* Responsive Video */
+.responsive-video { 
+    position: relative; 
+    height: auto; 
+}
+
+@media (min-width: 767px) and (max-width: 1700px) {
+  .responsive-video {
+    transform: translateX(-50px);
+    margin-top: 150px;
+    width: 135%; 
+  }
+}
+
+/* Animation von unten nach oben */
+.animate_from_bottom {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.animate_from_bottom.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lottie Container */
+.lottie-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.lottie-placeholder,
+.lottie-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Persönlichkeit Icons */
+.personality-icon {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.3s ease;
+}
+.t-link-box:hover .personality-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+/* Spezifische Icon-Farben */
+.openness-icon { fill: #ffffff; }
+.conscientiousness-icon { fill: #ffffff; }
+.extraversion-icon { fill: #ffffff; }
+.agreeableness-icon { fill: #ffffff; }
+.neuroticism-icon { fill: #ffffff; }
+
+/* Verbesserte Abstände für bessere Responsivität */
+.text-box {
+  padding-left: 140px;
+  padding-top: 100px;
+  padding-bottom: 20px;
+  padding-right: 200px;
+}
+.text-box2 {
+  padding-left: 140px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 0px;
+}
+.text-box4 {
+  padding-left: 0; /* Standardwert für kleinere Bildschirme */
+}
+@media (min-width: 1200px) {
+  .text-box4 {
+    padding-left: 10px;
+  }
+}
+.text-box3 {
+  padding-left: 20px;
+}
+.collapse {
+  overflow: hidden;
+}

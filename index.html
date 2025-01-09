@@ -7,119 +7,8 @@
   <meta name="keywords" content="ADASK, Wissenschaft, Technologie, Forschung, Entwicklung, Plattform, Zusammenarbeit, Ideen austauschen, Expertisen einbinden">
   <link rel="shortcut icon" href="../images/logo_Small-1.webp">
   
-  <style>
-    body {
-      margin: 0; 
-      padding: 0; 
-      font-family: sans-serif; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      height: 100vh; 
-      background-color: #F3F3F3; 
-      color: #2F3030;
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .loader {
-      position: relative;
-      width: 120px;
-      height: 90px;
-      margin: 0 auto;
-      opacity: 0; 
-      animation: loader-fade-in 0.1s ease-in-out forwards; 
-      animation-delay: 0.1s; 
-    }
-
-    @keyframes loader-fade-in {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    .loader:before {
-      content: "";
-      position: absolute;
-      bottom: 30px;
-      left: 50px;
-      height: 30px;
-      width: 30px;
-      border-radius: 50%;
-      background: #19B1E9;
-      animation: loading-bounce 0.5s ease-in-out infinite alternate;
-      animation-delay: 0.1s; 
-    }
-
-    .loader:after {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 7px;
-      width: 45px;
-      border-radius: 4px;
-      box-shadow: 0 5px 0 #2F3030, -35px 50px 0 #2F3030, -70px 95px 0 #2F3030;
-      animation: loading-step 1s ease-in-out infinite;
-      animation-delay: 0.1s;
-    }
-
-    @keyframes loading-bounce {
-      0% {
-        transform: scale(1, 0.7);
-      }
-
-      40% {
-        transform: scale(0.8, 1.2);
-      }
-
-      60% {
-        transform: scale(1, 1);
-      }
-
-      100% {
-        bottom: 140px;
-      }
-    }
-
-    @keyframes loading-step {
-      0% {
-        box-shadow: 0 10px 0 rgba(0, 0, 0, 0),
-                    0 10px 0 #2F3030,
-                    -35px 50px 0 #2F3030,
-                    -70px 95px 0 #2F3030;
-      }
-
-      100% {
-        box-shadow: 0 10px 0 #2F3030,
-                    -35px 50px 0 #2F3030,
-                    -70px 90px 0 #2F3030,
-                    -70px 90px 0 rgba(0, 0, 0, 0);
-      }
-    }
-
-    .loading-text {
-      margin-top: 1.5em;
-      text-align: center;
-      font-size: 1.2rem;
-      opacity: 0;
-      animation: fade-in 0.1s ease-in-out forwards;
-      animation-delay: 0.1s;
-    }
-
-    @keyframes fade-in {
-      to {
-        opacity: 1;
-      }
-    }
-  </style>
+  <!-- Externe CSS Stylesheet -->
+  <link rel="stylesheet" href="css/loader.css">
 </head>
 <body>
   <div class="container">
@@ -127,20 +16,7 @@
     <div class="loading-text">Die Seite lädt, bitte warten...</div>
   </div>
   
-  <script>
-    window.addEventListener('load', () => {
-      
-      setTimeout(() => {
-        fetch('main_page.html')
-          .then(response => response.text())
-          .then(fullHTML => {
-            document.open();
-            document.write(fullHTML);
-            document.close();
-          })
-          .catch(err => console.error('Fehler beim Laden der Hauptseite:', err));
-      }, 0);
-    });
-  </script>
+  <!-- Externe JavaScript Datei -->
+  <script src="js/loader.js" defer></script>
 </body>
 </html>
