@@ -1,0 +1,61 @@
+.bg-variant-1 {
+    background-color: #65B973;
+  }
+  
+  .text-variant-1 {
+    color: #F3F3F3;
+  }
+  
+  .responsive-img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Animation Klassen */
+  .animate_from_bottom {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .animate_from_bottom.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Neue CSS-Klassen für bessere Ausrichtung */
+  .detail-box {
+    text-align: left;
+  }
+  
+  .heading_container h2 {
+    text-align: center;
+  }
+  
+  .btn-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  @media (min-width: 768px) {
+    .detail-box {
+      text-align: left;
+    }
+  
+    .heading_container h2 {
+      text-align: left;
+    }
+  
+    .btn-box {
+      justify-content: flex-start;
+    }
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  

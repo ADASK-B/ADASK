@@ -1,0 +1,16 @@
+.layout_padding_footer_bottom {
+    padding-bottom: 40px;
+  }
+  
+  .layout_padding_footer_top {
+    padding-top: 40px;
+  }
+  
+  .link-heading {
+    text-transform: uppercase; 
+    font-size: 1.3em;        
+    font-weight: bold;        
+    margin-bottom: 15px;      
+    color: #ffffff;             
+  }
+  
