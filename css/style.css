@@ -248,6 +248,16 @@ a:focus {
   text-transform: uppercase;
 }
 
+@media (max-width: 992px) {
+  #navbarSupportedContent.show {
+    background-color: #313535; 
+  }
+
+  #navbarSupportedContent.show .nav-link {
+    color: #ffffff; 
+  }
+}
+
 /*end header section*/
 /* slider section */
 .slider_section {
