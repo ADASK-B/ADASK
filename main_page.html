@@ -360,8 +360,6 @@
     });
   </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" defer></script>
-
   <section class="category_section layout_padding animate_from_bottom" id="category_section">
     <div class="container">
       <div class="heading_container">
@@ -466,61 +464,66 @@
     }
   </style>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const lottieAnimations = [
-        { id: "lottie_analytics", path: "images/analytics.json" },
-        { id: "lottie_Solution", path: "images/Solution.json" },
-        { id: "lottie_Community", path: "images/Community.json" },
-        { id: "lottie_Chatbot", path: "images/Chatbot.json" },
-        { id: "lottie_unlock", path: "images/unlock.json" },
-        { id: "lottie_lightbulb", path: "images/lightbulb.json" }
-      ];
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie_light.min.js" defer></script>
 
-      function loadLottieAnimation(animation) {
-        const container = document.getElementById(animation.id + "_container");
-        const lottieElement = document.getElementById(animation.id);
-        const placeholderImage = container.querySelector('.lottie-placeholder');
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const lottieAnimations = [
+          { id: "lottie_analytics", path: "images/analytics.json" },
+          { id: "lottie_Solution", path: "images/Solution.json" },
+          { id: "lottie_Community", path: "images/Community.json" },
+          { id: "lottie_Chatbot", path: "images/Chatbot.json" },
+          { id: "lottie_unlock", path: "images/unlock.json" },
+          { id: "lottie_lightbulb", path: "images/lightbulb.json" }
+        ];
 
-        if (lottieElement && !lottieElement.dataset.loaded) {
-          const animInstance = lottie.loadAnimation({
-            container: lottieElement,
-            renderer: "svg",
-            loop: true,
-            autoplay: false,
-            path: animation.path
-          });
-          animInstance.addEventListener('DOMLoaded', () => {
-            lottieElement.classList.add('loaded');
-            animInstance.play();
-            placeholderImage.style.display = 'none';
-          });
-          lottieElement.dataset.loaded = true;
-          animInstance.setSpeed(0.5);
-        }
-      }
+        function loadLottieAnimation(animation) {
+          const container = document.getElementById(animation.id + "_container");
+          const lottieElement = document.getElementById(animation.id);
+          const placeholderImage = container.querySelector('.lottie-placeholder');
 
-      const observerOptions = { threshold: 0.1 };
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const animation = lottieAnimations.find(
-              (anim) => entry.target.id === anim.id
-            );
-            if (animation) {
-              loadLottieAnimation(animation);
-              observer.unobserve(entry.target);
-            }
+          if (lottieElement && !lottieElement.dataset.loaded) {
+            const animInstance = lottie.loadAnimation({
+              container: lottieElement,
+              renderer: "svg",
+              loop: true,
+              autoplay: false,
+              path: animation.path
+            });
+
+            animInstance.addEventListener('DOMLoaded', () => {
+              lottieElement.classList.add('loaded');
+              animInstance.play();
+              placeholderImage.style.display = 'none';
+            });
+
+            lottieElement.dataset.loaded = true;
+            animInstance.setSpeed(0.5);
           }
-        });
-      }, observerOptions);
+        }
 
-      lottieAnimations.forEach((animation) => {
-        const element = document.getElementById(animation.id);
-        if (element) observer.observe(element);
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const animation = lottieAnimations.find(
+                (anim) => entry.target.id === anim.id
+              );
+              if (animation) {
+                loadLottieAnimation(animation);
+                observer.unobserve(entry.target);
+              }
+            }
+          });
+        }, observerOptions);
+
+        lottieAnimations.forEach((animation) => {
+          const element = document.getElementById(animation.id);
+          if (element) observer.observe(element);
+        });
       });
-    });
-  </script>
+    </script>
+
 
   <!-- about section -->
   <style>
