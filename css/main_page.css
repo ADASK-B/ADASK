@@ -83,3 +83,79 @@
 .collapse {
   overflow: hidden;
 }
+
+/* Neue Klassen für entfernte Inline-Styles */
+
+/* Slider Heading */
+.slider-heading {
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  
+  /* Display Block */
+  .display-block {
+    display: block;
+  }
+  
+  /* Slide Author */
+  .slide-author {
+    font-size: 1.5em;
+    margin-top: 1.5em;
+    font-weight: 500;
+    color: #F3F3F3;
+  }
+  
+  /* No Pointer Events */
+  .no-pointer-events {
+    pointer-events: none;
+  }
+  
+  /* Section Heading */
+  .section-heading {
+    color: #2F3030;
+    font-weight: bold;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+    white-space: normal;
+    hyphens: auto;
+    line-height: 1.2;
+    text-align: left;
+  }
+  
+  /* Bold Text */
+  .bold-text {
+    font-weight: bold;
+  }
+  
+  /* Center Flex */
+  .center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Styled Subheading */
+  .styled-subheading {
+    font-size: 1em;
+    color: inherit;
+    margin-top: 0.5em;
+  }
+  
+  @media (min-width: 768px) {
+    .styled-subheading {
+      font-size: 1.2em;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .styled-subheading {
+      font-size: 1.4em;
+    }
+  }
+  
+  /* Responsive Image (falls benötigt) */
+  .responsive-img {
+    width: 100%;
+    height: auto;
+  }
+  
