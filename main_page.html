@@ -1,5 +1,5 @@
----
----
+--- 
+--- 
 <!DOCTYPE html>
 <html lang="de">
 
@@ -83,14 +83,11 @@
               <div class="row">
                 <div class="col-md-5 offset-md-1">
                   <div class="detail-box">
-                    <!-- Statt inline style => class="hero-headline" -->
                     <h1 class="hero-headline">
-                      <!-- Statt style="display:block;" => class="block-span" -->
                       <span class="block-span">Entdecke</span>
                       <span class="block-span">deine</span>
                       <span class="block-span">Persönlichkeit</span>
                     </h1>
-                    <!-- Statt inline style => class="slide-subtitle" -->
                     <div class="slide-subtitle">
                       <b>Marie Curie</b>
                     </div>
@@ -109,7 +106,6 @@
                 </div>
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
-                    <!-- Statt style="pointer-events: none;" => class="responsive-video no-pointer" -->
                     <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
                            poster="images/Curi_Alpha_PosterW.webp" data-video-src="images/Curi_Alpha.webm">
                       Your browser does not support the video tag.
@@ -204,20 +200,17 @@
   </div>
 
   <!-- experience section -->
-  <!-- Statt <style> => CSS in main_page.css -->
   <section class="experience_section layout_padding animate_from_bottom" id="experience">
     <div class="container">
       <div class="row">
         <div class="col-md-5">
           <div class="img-box">
-            <!-- statt style="width: 100%; height: auto;" => class="img-fullwidth-autoheight" -->
             <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="lazy" class="img-fullwidth-autoheight">
           </div>
         </div>
         <div class="col-md-7">
           <div class="detail-box">
             <div class="heading_container">
-              <!-- statt inline => .experience-heading -->
               <h2 class="experience-heading">
                 Dein kostenloses <br> Abenteuer zur <br> Selbsterkenntnis
               </h2>
@@ -245,7 +238,7 @@
           <div class="img-box">
             <div class="lottie-container" id="lottie_analytics_container">
               <img src="images/Wachstum.png" class="lottie-placeholder" alt="Analytics Placeholder">
-              <div id="lottie_analytics" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+              <div id="lottie_analytics" class="lottie-animation"></div>
             </div>
           </div>
           <div class="detail-box">
@@ -256,7 +249,7 @@
           <div class="img-box">
             <div class="lottie-container" id="lottie_Solution_container">
               <img src="images/Zusammenfügen.png" class="lottie-placeholder" alt="Solution Placeholder">
-              <div id="lottie_Solution" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+              <div id="lottie_Solution" class="lottie-animation"></div>
             </div>
           </div>
           <div class="detail-box">
@@ -267,7 +260,7 @@
           <div class="img-box">
             <div class="lottie-container" id="lottie_Community_container">
               <img src="images/Verbindung.png" class="lottie-placeholder" alt="Community Placeholder">
-              <div id="lottie_Community" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+              <div id="lottie_Community" class="lottie-animation"></div>
             </div>
           </div>
           <div class="detail-box">
@@ -278,7 +271,7 @@
           <div class="img-box">
             <div class="lottie-container" id="lottie_Chatbot_container">
               <img src="images/KünstlicheIntelligenz.png" class="lottie-placeholder" alt="Chatbot Placeholder">
-              <div id="lottie_Chatbot" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+              <div id="lottie_Chatbot" class="lottie-animation"></div>
             </div>
           </div>
           <div class="detail-box">
@@ -289,7 +282,7 @@
           <div class="img-box">
             <div class="lottie-container" id="lottie_unlock_container">
               <img src="images/Entfesselung.png" class="lottie-placeholder" alt="Unlock Placeholder">
-              <div id="lottie_unlock" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+              <div id="lottie_unlock" class="lottie-animation"></div>
             </div>
           </div>
           <div class="detail-box">
@@ -300,7 +293,7 @@
           <div class="img-box">
             <div class="lottie-container" id="lottie_lightbulb_container">
               <img src="images/Erkennen.png" class="lottie-placeholder" alt="Lightbulb Placeholder">
-              <div id="lottie_lightbulb" class="lottie-animation" style="width: 100px; height: 100px;"></div>
+              <div id="lottie_lightbulb" class="lottie-animation"></div>
             </div>
           </div>
           <div class="detail-box">
@@ -316,7 +309,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-lg-9 mx-auto">
-          <div class="img-box" style="display: flex; justify-content: center; align-items: center;">
+          <!-- Flex-Center-Klasse statt style=... -->
+          <div class="img-box flex-center">
             <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy"
                    poster="images/Big5_Alpha_poster.webp" data-video-src="images/Big5_Alpha.webm">
               Your browser does not support the video tag.
@@ -325,7 +319,7 @@
         </div>
       </div>
       <div class="detail-box">
-        <!-- Falls du eigene Styles für dieses h2 brauchst, z.B. .about-heading -->
+        <!-- Falls du extra Klasse für dieses H2 brauchst, z.B. "about-heading" -->
         <h2 class="about-heading">KI-Persönlichkeitstest</h2>
         <p>
           Mit Big 5 Insight kannst du deine Persönlichkeit anhand des wissenschaftlich fundierten Big-Five-Modells (OCEAN) erforschen. 
@@ -365,7 +359,7 @@
                     </svg>
                   </div>
                   <div class="detail-box">
-                    <h3 style="font-weight: bold;">Offenheit</h3>
+                    <h3 class="bold-text">Offenheit</h3>
                     <h4 class="styled-subheading text-box4">Kreativität und Neugier</h4>
                   </div>
                 </button>
@@ -377,7 +371,7 @@
                     </svg>
                   </div>
                   <div class="detail-box">
-                    <h3 style="font-weight: bold;">Gewissenhaftigkeit</h3>
+                    <h3 class="bold-text">Gewissenhaftigkeit</h3>
                     <h4 class="styled-subheading text-box4">Struktur und Disziplin</h4>
                   </div>
                 </button>
@@ -389,7 +383,7 @@
                     </svg>
                   </div>
                   <div class="detail-box">
-                    <h3 style="font-weight: bold;">Extraversion</h3>
+                    <h3 class="bold-text">Extraversion</h3>
                     <h4 class="styled-subheading text-box4">Energie und Freude</h4>
                   </div>
                 </button>
@@ -401,7 +395,7 @@
                     </svg>
                   </div>
                   <div class="detail-box">
-                    <h3 style="font-weight: bold;">Verträglichkeit</h3>
+                    <h3 class="bold-text">Verträglichkeit</h3>
                     <h4 class="styled-subheading text-box4">Empathie und Harmonie</h4>
                   </div>
                 </button>
@@ -413,7 +407,7 @@
                     </svg>
                   </div>
                   <div class="detail-box">
-                    <h3 style="font-weight: bold;">Neurotizismus</h3>
+                    <h3 class="bold-text">Neurotizismus</h3>
                     <h4 class="styled-subheading text-box4">Emotionale Empfindsamkeit</h4>
                   </div>
                 </button>
@@ -426,7 +420,7 @@
             <!-- Panel 1 (Desktop) -->
             <div class="collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
               <div class="text-box">
-                <h4 style="font-weight: bold;">Offenheit</h4>
+                <h4 class="bold-text">Offenheit</h4>
                 <p>
                   Offenheit steht für Kreativität, Neugier und die Bereitschaft, über den Tellerrand hinauszublicken. 
                   Personen mit hoher Offenheit suchen ständig nach neuen Erfahrungen und sind gerne bereit, 
@@ -440,7 +434,7 @@
             <!-- Panel 2 (Desktop) -->
             <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordion">
               <div class="text-box">
-                <h4 style="font-weight: bold;">Gewissenhaftigkeit</h4>
+                <h4 class="bold-text">Gewissenhaftigkeit</h4>
                 <p>
                   Gewissenhaftigkeit beschreibt den Drang nach Struktur, Selbstdisziplin und Ordnung. Wer hier 
                   hoch punktet, erledigt Aufgaben zuverlässig und pünktlich und setzt sich klare Ziele, die beharrlich 
@@ -453,7 +447,7 @@
             <!-- Panel 3 (Desktop) -->
             <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#accordion">
               <div class="text-box">
-                <h4 style="font-weight: bold;">Extraversion</h4>
+                <h4 class="bold-text">Extraversion</h4>
                 <p>
                   Extraversion steht für ein hohes Maß an Energie, Begeisterung und Geselligkeit. Extrovertierte Menschen 
                   blühen in Gesellschaft auf und schätzen den Austausch mit anderen. Sie sind kommunikativ, selbstbewusst 
@@ -466,7 +460,7 @@
             <!-- Panel 4 (Desktop) -->
             <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#accordion">
               <div class="text-box">
-                <h4 style="font-weight: bold;">Verträglichkeit</h4>
+                <h4 class="bold-text">Verträglichkeit</h4>
                 <p>
                   Verträglichkeit beschreibt Empathie, Hilfsbereitschaft und das Bestreben, harmonisch 
                   zusammenzuarbeiten. Menschen mit hoher Verträglichkeit zeigen Interesse am Wohlergehen 
@@ -480,7 +474,7 @@
             <!-- Panel 5 (Desktop) -->
             <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#accordion">
               <div class="text-box">
-                <h4 style="font-weight: bold;">Neurotizismus</h4>
+                <h4 class="bold-text">Neurotizismus</h4>
                 <p>
                   Neurotizismus beschreibt die Tendenz, emotionale Höhen und Tiefen intensiver wahrzunehmen. 
                   Personen mit hoher Ausprägung in dieser Dimension reagieren stärker auf Stress und negative 
@@ -506,7 +500,7 @@
   {% include footer.html %}
   <!-- end footer section -->
 
-  <!-- Jetzt NUR NOCH unser external Script -->
+  <!-- Externes Script (ausgelagerter Code) -->
   <script src="js/main_page.js" defer></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
  *    Alle ausgelagerten (ehemals inline) Styles  *
  **************************************************/
 
-/* 1) Text-Animation / IntersectionObserver-Klassen */
+/* Grund-Animation/Klasse für IntersectionObserver */
 .animate_from_bottom {
   opacity: 0;
   transform: translateY(50px);
@@ -13,7 +13,7 @@
   transform: translateY(0);
 }
 
-/* 2) Lottie-Styling */
+/* Lottie-Styling */
 .lottie-container {
   position: relative;
   width: 100px;
@@ -30,7 +30,7 @@
   object-fit: contain;
 }
 
-/* 3) Personality Icons + Accordion-Styling */
+/* Personality Icons + Accordion-Styling */
 .personality-icon {
   width: 48px;
   height: 48px;
@@ -39,14 +39,12 @@
 .t-link-box:hover .personality-icon {
   transform: scale(1.1) rotate(5deg);
 }
-/* Farbe nur als Platzhalter - ggf. nach Wunsch anpassen */
 .openness-icon { fill: #ffffff; }
 .conscientiousness-icon { fill: #ffffff; }
 .extraversion-icon { fill: #ffffff; }
 .agreeableness-icon { fill: #ffffff; }
 .neuroticism-icon { fill: #ffffff; }
 
-/* 4) Accordion Textboxen + Responsivität */
 .text-box {
   padding-left: 140px;
   padding-top: 100px;
@@ -74,30 +72,31 @@
   overflow: hidden;
 }
 
-/* 5) Inline-Stile für Bilder/Videos etc. */
-/* a) Full-width/Gummi-Bild */
+/* Inline-Styles -> Klassen */
+
+/* 1) Vollbreite-Bilder */
 .img-fullwidth-autoheight {
   width: 100%;
   height: auto;
 }
 
-/* b) Video, das keine Pointer-Events zulässt */
+/* 2) Keine Pointer-Events (z.B. Videos) */
 .no-pointer {
   pointer-events: none;
 }
 
-/* c) Special Headline (z.B. <h1 style="line-height:1.2; font-weight:700;">) */
+/* 3) Headline (line-height:1.2; font-weight:700;) */
 .hero-headline {
   line-height: 1.2;
   font-weight: 700;
 }
 
-/* d) Display-block für die <span> (z.B. style="display:block;") */
+/* 4) Block-Span (statt display:block;) */
 .block-span {
   display: block;
 }
 
-/* e) Subtitle-Bereich (z.B. <div style="font-size:1.5em; margin-top:1.5em; font-weight:500; color:#F3F3F3;">) */
+/* 5) Subtitle (font-size:1.5em; margin-top:1.5em; font-weight:500; color:#F3F3F3;) */
 .slide-subtitle {
   font-size: 1.5em;
   margin-top: 1.5em;
@@ -105,7 +104,7 @@
   color: #F3F3F3;
 }
 
-/* f) H2 im Experience-Bereich (z.B. color: #2F3030; text-transform: uppercase; line-height:1.2; */
+/* 6) Heading für Experience-Bereich (z.B. uppercase, #2F3030, line-height:1.2) */
 .experience-heading {
   color: #2F3030;
   font-weight: bold;
@@ -117,12 +116,16 @@
   text-align: left;
 }
 
-/* g) KI-Persönlichkeitstest-H2 (z.B. <h2> KI-Persönlichkeitstest</h2> )
-   - Falls du inline-Stile ändern willst, kannst du hier noch Variation definieren */
-.about-heading {
-  /* leer oder anpassbar */
+/* 7) Zusätzliche Klasse für zentriertes Flex-Layout */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* h) Hero-Section Carousel <span style="display:block;"> => class="block-span" (bereits definiert oben) */
+/* 8) Klasse für fett gedruckte Texte/Überschriften anstelle von style="font-weight: bold;" */
+.bold-text {
+  font-weight: bold;
+}
 
-/* i) Ggf. weitere Feinheiten anpassbar */
+/* Falls du noch mehr brauchst, kannst du hier ergänzen */
