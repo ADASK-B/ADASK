@@ -758,6 +758,8 @@ a:focus {
   position: relative;
   background-color: #2F3030;
   color: #F3F3F3;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .info_section .heading_container {
