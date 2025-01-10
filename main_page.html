@@ -12,7 +12,7 @@
   <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="canonical" href="https://adask.de/">
-  
+
   <!-- Open Graph Tags -->
   <meta property="og:title" content="ADASK - Persönlichkeitstest mit Künstlicher Intelligenz">
   <meta property="og:description" content="Kostenloser Persönlichkeitstest mit individueller Analyse durch Künstliche Intelligenz - basierend auf dem wissenschaftlichen OCEAN-Modell.">
@@ -21,14 +21,14 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ADASK">
   <meta property="og:locale" content="de_DE">
-  
+
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ADASK - Persönlichkeitstest mit Künstlicher Intelligenz">
   <meta name="twitter:description" content="Kostenloser Persönlichkeitstest mit individueller Analyse durch Künstliche Intelligenz - basierend auf dem wissenschaftlichen OCEAN-Modell.">
   <meta name="twitter:image" content="https://adask.de/images/logo_Small-1.webp">
   <meta name="twitter:site" content="@ADASK_B">
-  
+
   <!-- Favicon -->
   <link rel="shortcut icon" href="https://adask.de/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="https://adask.de/images/favicon-16x16.png">
@@ -37,46 +37,20 @@
   <link rel="icon" type="image/png" sizes="512x512" href="https://adask.de/images/android-chrome-512x512.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://adask.de/images/apple-touch-icon.png">
 
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Big5Insight",
-      "operatingSystem": "ANDROID",
-      "applicationCategory": "EducationApplication",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "9"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "EUR"
-      }
-    }
-  </script>
-
-  <!--  Weitere Social-Media-Profile hinzufügen, falls vorhanden --Structured Data --> 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "ADASK",
-    "url": "https://adask.de",
-    "logo": "https://adask.de/images/logo_Small-1.webp",
-    "sameAs": ["https://www.linkedin.com/company/adask"] 
-  }
-  </script>
-    
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link href="css/style.css" rel="stylesheet">
   <link href="css/responsive.css" rel="stylesheet">
-    
-  <!-- JavaScript -->
+  <!-- Unsere neu erstellte CSS-Datei mit allen ausgelagerten Styles -->
+  <link href="css/main_page.css" rel="stylesheet">
+
+  <!-- jQuery & Bootstrap JS -->
   <script src="js/jquery-3.4.1.min.js"></script>
-    
+  <script src="js/bootstrap.js" defer></script>
+
+  <!-- Lottie Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie_light.min.js" defer></script>
+
   <!-- Theme Color -->
   <meta name="theme-color" content="#ffffff">
 </head>
@@ -84,40 +58,6 @@
 <body>
   <div class="hero_area">
     {% include header.html %}
-
-    <script defer>
-      window.addEventListener('load', function () {
-        // Wählt alle Video-Elemente mit der Klasse "responsive-video" aus
-        const videos = document.querySelectorAll('.responsive-video');
-    
-        videos.forEach((video) => {
-          // Erst nachdem die Seite vollständig geladen ist, wird die Quelle gesetzt
-          if (!video.querySelector('source')) {
-            const source = document.createElement('source');
-            source.src = video.getAttribute('data-video-src'); // Die Videoquelle aus einem Datenattribut
-            source.type = 'video/webm';
-            video.appendChild(source);
-            // Optional: Das Video neu laden
-            video.load();
-          }
-        });
-      });
-    </script>
-
-    <style>
-      .responsive-video { 
-          position: relative; 
-          height: auto; 
-        }
-
-        @media (min-width: 767px) and (max-width: 1700px) {
-          .responsive-video {
-            transform: translateX(-50px);
-            margin-top: 150px;
-            width: 135%; 
-          }
-        }
-    </style>
 
     <!-- Slider / Carousel -->
     <section class="slider_section">
@@ -143,12 +83,15 @@
               <div class="row">
                 <div class="col-md-5 offset-md-1">
                   <div class="detail-box">
-                    <h1 style="line-height:1.2; font-weight:700;">
-                      <span style="display:block;">Entdecke</span>
-                      <span style="display:block;">deine</span>
-                      <span style="display:block;">Persönlichkeit</span>
+                    <!-- Statt inline style => class="hero-headline" -->
+                    <h1 class="hero-headline">
+                      <!-- Statt style="display:block;" => class="block-span" -->
+                      <span class="block-span">Entdecke</span>
+                      <span class="block-span">deine</span>
+                      <span class="block-span">Persönlichkeit</span>
                     </h1>
-                    <div style="font-size:1.5em; margin-top:1.5em; font-weight:500; color:#F3F3F3;">
+                    <!-- Statt inline style => class="slide-subtitle" -->
+                    <div class="slide-subtitle">
                       <b>Marie Curie</b>
                     </div>
                     <p>
@@ -166,8 +109,8 @@
                 </div>
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
-                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" preload="none"
-                           style="pointer-events: none;"
+                    <!-- Statt style="pointer-events: none;" => class="responsive-video no-pointer" -->
+                    <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
                            poster="images/Curi_Alpha_PosterW.webp" data-video-src="images/Curi_Alpha.webm">
                       Your browser does not support the video tag.
                     </video>
@@ -183,12 +126,12 @@
               <div class="row">
                 <div class="col-md-5 offset-md-1">
                   <div class="detail-box">
-                    <h1 style="line-height:1.2; font-weight:700;">
-                      <span style="display:block;">Entdecke</span>
-                      <span style="display:block;">deine</span>
-                      <span style="display:block;">Persönlichkeit</span>
+                    <h1 class="hero-headline">
+                      <span class="block-span">Entdecke</span>
+                      <span class="block-span">deine</span>
+                      <span class="block-span">Persönlichkeit</span>
                     </h1>
-                    <div style="font-size:1.5em; margin-top:1.5em; font-weight:500; color:#F3F3F3;">
+                    <div class="slide-subtitle">
                       <b>Nikola Tesla</b>
                     </div>
                     <p>
@@ -206,8 +149,7 @@
                 </div>
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
-                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" preload="none"
-                           style="pointer-events: none;"
+                    <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
                            poster="images/Nikol_Alpha_PosterW.webp" data-video-src="images/Nikol_Alpha.webm">
                       Your browser does not support the video tag.
                     </video>
@@ -223,12 +165,12 @@
               <div class="row">
                 <div class="col-md-5 offset-md-1">
                   <div class="detail-box">
-                    <h1 style="line-height:1.2; font-weight:700;">
-                      <span style="display:block;">Entdecke</span>
-                      <span style="display:block;">deine</span>
-                      <span style="display:block;">Persönlichkeit</span>
+                    <h1 class="hero-headline">
+                      <span class="block-span">Entdecke</span>
+                      <span class="block-span">deine</span>
+                      <span class="block-span">Persönlichkeit</span>
                     </h1>
-                    <div style="font-size:1.5em; margin-top:1.5em; font-weight:500; color:#F3F3F3;">
+                    <div class="slide-subtitle">
                       <b>Gaius Julius</b>
                     </div>
                     <p>
@@ -246,8 +188,7 @@
                 </div>
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
-                    <video class="responsive-video" autoplay loop muted playsinline loading="lazy" preload="none"
-                           style="pointer-events: none;"
+                    <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
                            poster="images/Cesa_Alpha_PosterW.webp" data-video-src="images/Cesa_Alpha.webm">
                       Your browser does not support the video tag.
                     </video>
@@ -263,56 +204,21 @@
   </div>
 
   <!-- experience section -->
-  <style>
-    .animate_from_bottom {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .animate_from_bottom.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const target = document.querySelector('#experience');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.intersectionRatio >= 0.4) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: [0, 0.4, 1.0]
-      });
-      observer.observe(target);
-    });
-  </script>
-
+  <!-- Statt <style> => CSS in main_page.css -->
   <section class="experience_section layout_padding animate_from_bottom" id="experience">
     <div class="container">
       <div class="row">
         <div class="col-md-5">
           <div class="img-box">
-            <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="lazy" style="width: 100%; height: auto;">
+            <!-- statt style="width: 100%; height: auto;" => class="img-fullwidth-autoheight" -->
+            <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="lazy" class="img-fullwidth-autoheight">
           </div>
         </div>
         <div class="col-md-7">
           <div class="detail-box">
             <div class="heading_container">
-              <h2 style="
-              color: #2F3030; 
-              font-weight: bold; 
-              text-transform: uppercase; 
-              overflow-wrap: break-word; 
-              white-space: normal; 
-              hyphens: auto;
-              line-height: 1.2; 
-              text-align: left;
-              ">
+              <!-- statt inline => .experience-heading -->
+              <h2 class="experience-heading">
                 Dein kostenloses <br> Abenteuer zur <br> Selbsterkenntnis
               </h2>
             </div>
@@ -329,42 +235,10 @@
   <!-- end experience section -->
 
   <!-- category section -->
-  <style>
-    .animate_from_bottom {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .animate_from_bottom.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const section = document.getElementById('category_section');
-      const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.intersectionRatio >= 0.2) {
-            entry.target.classList.add('visible');
-            sectionObserver.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: [0, 0.2, 1.0]
-      });
-
-      if (section) {
-        sectionObserver.observe(section);
-      }
-    });
-  </script>
-
   <section class="category_section layout_padding animate_from_bottom" id="category_section">
     <div class="container">
       <div class="heading_container">
-        <h2
-        >Big 5 Insight</h2>
+        <h2>Big 5 Insight</h2>
       </div>
       <div class="category_container">
         <div class="box">
@@ -437,133 +311,13 @@
     </div>
   </section>
 
-  <style>
-    .lottie-container {
-      position: relative;
-      width: 100px;
-      height: 100px;
-      overflow: hidden;
-    }
-    .lottie-placeholder,
-    .lottie-animation {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    .animate_from_bottom {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .animate_from_bottom.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie_light.min.js" defer></script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const lottieAnimations = [
-          { id: "lottie_analytics", path: "images/analytics.json" },
-          { id: "lottie_Solution", path: "images/Solution.json" },
-          { id: "lottie_Community", path: "images/Community.json" },
-          { id: "lottie_Chatbot", path: "images/Chatbot.json" },
-          { id: "lottie_unlock", path: "images/unlock.json" },
-          { id: "lottie_lightbulb", path: "images/lightbulb.json" }
-        ];
-
-        function loadLottieAnimation(animation) {
-          const container = document.getElementById(animation.id + "_container");
-          const lottieElement = document.getElementById(animation.id);
-          const placeholderImage = container.querySelector('.lottie-placeholder');
-
-          if (lottieElement && !lottieElement.dataset.loaded) {
-            const animInstance = lottie.loadAnimation({
-              container: lottieElement,
-              renderer: "svg",
-              loop: true,
-              autoplay: false,
-              path: animation.path
-            });
-
-            animInstance.addEventListener('DOMLoaded', () => {
-              lottieElement.classList.add('loaded');
-              animInstance.play();
-              placeholderImage.style.display = 'none';
-            });
-
-            lottieElement.dataset.loaded = true;
-            animInstance.setSpeed(0.5);
-          }
-        }
-
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const animation = lottieAnimations.find(
-                (anim) => entry.target.id === anim.id
-              );
-              if (animation) {
-                loadLottieAnimation(animation);
-                observer.unobserve(entry.target);
-              }
-            }
-          });
-        }, observerOptions);
-
-        lottieAnimations.forEach((animation) => {
-          const element = document.getElementById(animation.id);
-          if (element) observer.observe(element);
-        });
-      });
-    </script>
-
-
   <!-- about section -->
-  <style>
-    .animate_from_bottom {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .animate_from_bottom.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const aboutSection = document.getElementById('about_section');
-      const aboutObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.intersectionRatio >= 0.3) {
-            entry.target.classList.add('visible');
-            aboutObserver.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: [0, 0.3, 1.0]
-      });
-
-      if (aboutSection) {
-        aboutObserver.observe(aboutSection);
-      }
-    });
-  </script>
-
   <section class="about_section layout_padding animate_from_bottom" id="about_section">
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-lg-9 mx-auto">
           <div class="img-box" style="display: flex; justify-content: center; align-items: center;">
-            <video class="responsive-video" autoplay loop muted playsinline loading="lazy"
-                   style="pointer-events: none;"
+            <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy"
                    poster="images/Big5_Alpha_poster.webp" data-video-src="images/Big5_Alpha.webm">
               Your browser does not support the video tag.
             </video>
@@ -571,7 +325,8 @@
         </div>
       </div>
       <div class="detail-box">
-        <h2> KI-Persönlichkeitstest</h2>
+        <!-- Falls du eigene Styles für dieses h2 brauchst, z.B. .about-heading -->
+        <h2 class="about-heading">KI-Persönlichkeitstest</h2>
         <p>
           Mit Big 5 Insight kannst du deine Persönlichkeit anhand des wissenschaftlich fundierten Big-Five-Modells (OCEAN) erforschen. 
           Die App bietet tiefe Einblicke in deine wichtigsten Charakterzüge und zeigt sogar, wie du dich im Vergleich zu historischen Größen 
@@ -592,100 +347,6 @@
   <!-- end about section -->
 
   <!-- freelance section (Hauptdimensionen) -->
-  <style>
-    .personality-icon {
-      width: 48px;
-      height: 48px;
-      transition: transform 0.3s ease;
-    }
-    .t-link-box:hover .personality-icon {
-      transform: scale(1.1) rotate(5deg);
-    }
-    /* Spezifische Icon-Farben */
-    .openness-icon { fill: #ffffff; }
-    .conscientiousness-icon { fill: #ffffff; }
-    .extraversion-icon { fill: #ffffff; }
-    .agreeableness-icon { fill: #ffffff; }
-    .neuroticism-icon { fill: #ffffff; }
-
-    /* Verbesserte Abstände für bessere Responsivität */
-    .text-box {
-      padding-left: 140px;
-      padding-top: 100px;
-      padding-bottom: 20px;
-      padding-right: 200px;
-    }
-    .text-box2 {
-      padding-left: 140px;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      padding-right: 0px;
-    }
-    .text-box4 {
-      padding-left: 0; /* Standardwert für kleinere Bildschirme */
-    }
-    @media (min-width: 1200px) {
-      .text-box4 {
-        padding-left: 10px;
-      }
-    }
-    .text-box3 {
-      padding-left: 20px;
-    }
-    .collapse {
-      overflow: hidden;
-    }
-  </style>
-
-  <script>
-    $(document).ready(function () {
-      $('#accordion').on('hide.bs.collapse', function (event) {
-        const $panel = $(event.target);
-        const $button = $(`button[data-target="#${event.target.id}"]`);
-        $panel.css({ display: 'none' }).removeClass('show');
-        $button.addClass('collapsed').attr('aria-expanded', 'false');
-      });
-      $('#accordion').on('show.bs.collapse', function (event) {
-        const $panel = $(event.target);
-        const $button = $(`button[data-target="#${event.target.id}"]`);
-        $panel.css({ display: 'block' }).addClass('show');
-        $button.removeClass('collapsed').attr('aria-expanded', 'true');
-      });
-    });
-  </script>
-
-  <style>
-    .animate_from_bottom {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .animate_from_bottom.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const freelanceSection = document.getElementById('freelance_section');
-      const freelanceObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.intersectionRatio >= 0.3) {
-            entry.target.classList.add('visible');
-            freelanceObserver.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: [0, 0.3, 1.0]
-      });
-
-      if (freelanceSection) {
-        freelanceObserver.observe(freelanceSection);
-      }
-    });
-  </script>
-
   <section class="freelance_section layout_padding3 animate_from_bottom" id="freelance_section">
     <div id="accordion">
       <div class="container-fluid">
@@ -693,9 +354,7 @@
           <div class="col-md-5 offset-md-1">
             <div class="detail-box">
               <div class="heading_container">
-                <h2
-                
-                >Big-Five-Modell</h2>
+                <h2>Big-Five-Modell</h2>
               </div>
               <div class="tab_container">
                 <!-- Offenheit -->
@@ -710,14 +369,6 @@
                     <h4 class="styled-subheading text-box4">Kreativität und Neugier</h4>
                   </div>
                 </button>
-                <!-- Panel 1 (mobile) -->
-                <div class="collapse d-md-none" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
-                  <div class="detail-box text-box3">
-                    <h4>Offenheit</h4>
-                    <p>Offenheit beschreibt das Interesse an neuen Erfahrungen, Kreativität und der Bereitschaft, sich auf neue Ideen einzulassen.</p>
-                  </div>
-                </div>
-
                 <!-- Gewissenhaftigkeit -->
                 <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   <div class="img-box">
@@ -730,14 +381,6 @@
                     <h4 class="styled-subheading text-box4">Struktur und Disziplin</h4>
                   </div>
                 </button>
-                <!-- Panel 2 (mobile) -->
-                <div class="collapse d-md-none" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordion">
-                  <div class="detail-box text-box3">
-                    <h4>Gewissenhaftigkeit</h4>
-                    <p>Gewissenhaftigkeit meint Selbstdisziplin, Zielstrebigkeit und die Fähigkeit, Aufgaben gut zu organisieren.</p>
-                  </div>
-                </div>
-
                 <!-- Extraversion -->
                 <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   <div class="img-box">
@@ -750,14 +393,6 @@
                     <h4 class="styled-subheading text-box4">Energie und Freude</h4>
                   </div>
                 </button>
-                <!-- Panel 3 (mobile) -->
-                <div class="collapse d-md-none" id="collapseThree" aria-labelledby="headingThree" data-parent="#accordion">
-                  <div class="detail-box text-box3">
-                    <h4>Extraversion</h4>
-                    <p>Extraversion steht für Kontaktfreude, Energie und einen aktiven Lebensstil.</p>
-                  </div>
-                </div>
-
                 <!-- Verträglichkeit -->
                 <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                   <div class="img-box">
@@ -770,14 +405,6 @@
                     <h4 class="styled-subheading text-box4">Empathie und Harmonie</h4>
                   </div>
                 </button>
-                <!-- Panel 4 (mobile) -->
-                <div class="collapse d-md-none" id="collapseFour" aria-labelledby="headingFour" data-parent="#accordion">
-                  <div class="detail-box text-box3">
-                    <h4>Verträglichkeit</h4>
-                    <p>Verträglichkeit steht für Mitgefühl und kooperatives Verhalten.</p>
-                  </div>
-                </div>
-
                 <!-- Neurotizismus -->
                 <button class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                   <div class="img-box">
@@ -790,13 +417,6 @@
                     <h4 class="styled-subheading text-box4">Emotionale Empfindsamkeit</h4>
                   </div>
                 </button>
-                <!-- Panel 5 (mobile) -->
-                <div class="collapse d-md-none" id="collapseFive" aria-labelledby="headingFive" data-parent="#accordion">
-                  <div class="detail-box text-box3">
-                    <h4>Neurotizismus</h4>
-                    <p>Neurotizismus umfasst eine stärkere Empfänglichkeit für Stress und negative Emotionen.</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -886,20 +506,7 @@
   {% include footer.html %}
   <!-- end footer section -->
 
-  <script src="js/bootstrap.js" defer></script>
+  <!-- Jetzt NUR NOCH unser external Script -->
+  <script src="js/main_page.js" defer></script>
 </body>
-
-<script>
-  // Restore scroll position on page load
-  window.addEventListener('load', function() {
-    const scrollPosition = sessionStorage.getItem('scrollPosition');
-    if (scrollPosition !== null) {
-      window.scrollTo(0, parseInt(scrollPosition));
-    }
-  });
-  window.addEventListener('beforeunload', function() {
-    sessionStorage.setItem('scrollPosition', window.scrollY);
-  });
-</script>
-
 </html>

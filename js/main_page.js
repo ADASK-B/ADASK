@@ -1,7 +1,57 @@
-// main_page.js
-
-// Skript für das Hinzufügen von Videoquellen nach dem Laden der Seite
-window.addEventListener('load', function () {
+/* =========================================================
+   JSON-LD: SoftwareApplication
+   (Ursprünglich: <script type="application/ld+json"> ...)
+   ========================================================= */
+   (function(){
+    var scriptSoftwareApp = document.createElement("script");
+    scriptSoftwareApp.type = "application/ld+json";
+    scriptSoftwareApp.text = `
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Big5Insight",
+      "operatingSystem": "ANDROID",
+      "applicationCategory": "EducationApplication",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "9"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    }
+    `;
+    document.head.appendChild(scriptSoftwareApp);
+  })();
+  
+  /* =========================================================
+     JSON-LD: Organization
+     (Ursprünglich: <script type="application/ld+json"> ...)
+     ========================================================= */
+  (function(){
+    var scriptOrganization = document.createElement("script");
+    scriptOrganization.type = "application/ld+json";
+    scriptOrganization.text = `
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ADASK",
+      "url": "https://adask.de",
+      "logo": "https://adask.de/images/logo_Small-1.webp",
+      "sameAs": ["https://www.linkedin.com/company/adask"]
+    }
+    `;
+    document.head.appendChild(scriptOrganization);
+  })();
+  
+  /* =========================================================
+     Responsive-Video-Script
+     (Ursprünglich: <script defer> window.addEventListener(...) )
+     ========================================================= */
+  window.addEventListener('load', function () {
     // Wählt alle Video-Elemente mit der Klasse "responsive-video" aus
     const videos = document.querySelectorAll('.responsive-video');
   
@@ -18,7 +68,10 @@ window.addEventListener('load', function () {
     });
   });
   
-  // Skript für das Erscheinen der "experience" Sektion
+  /* =========================================================
+     IntersectionObserver #experience
+     (Ursprünglich: <script> document.addEventListener("DOMContentLoaded", ...)
+     ========================================================= */
   document.addEventListener("DOMContentLoaded", function() {
     const target = document.querySelector('#experience');
     if (target) {
@@ -36,7 +89,10 @@ window.addEventListener('load', function () {
     }
   });
   
-  // Skript für das Erscheinen der "category_section" Sektion
+  /* =========================================================
+     IntersectionObserver #category_section
+     (Ursprünglich: <script> document.addEventListener('DOMContentLoaded', ...)
+     ========================================================= */
   document.addEventListener('DOMContentLoaded', () => {
     const section = document.getElementById('category_section');
     if (section) {
@@ -50,12 +106,15 @@ window.addEventListener('load', function () {
       }, {
         threshold: [0, 0.2, 1.0]
       });
-  
       sectionObserver.observe(section);
     }
   });
   
-  // Skript für die Lottie-Animationen
+  /* =========================================================
+     Lottie-Animationen
+     (Ursprünglich: <script> document.addEventListener("DOMContentLoaded", ...)
+     ACHTUNG: Läuft nur, wenn lottie_light.min.js vorher geladen ist!
+     ========================================================= */
   document.addEventListener("DOMContentLoaded", () => {
     const lottieAnimations = [
       { id: "lottie_analytics", path: "images/analytics.json" },
@@ -69,6 +128,8 @@ window.addEventListener('load', function () {
     function loadLottieAnimation(animation) {
       const container = document.getElementById(animation.id + "_container");
       const lottieElement = document.getElementById(animation.id);
+      if (!container || !lottieElement) return;
+  
       const placeholderImage = container.querySelector('.lottie-placeholder');
   
       if (lottieElement && !lottieElement.dataset.loaded) {
@@ -83,7 +144,9 @@ window.addEventListener('load', function () {
         animInstance.addEventListener('DOMLoaded', () => {
           lottieElement.classList.add('loaded');
           animInstance.play();
-          placeholderImage.style.display = 'none';
+          if (placeholderImage) {
+            placeholderImage.style.display = 'none';
+          }
         });
   
         lottieElement.dataset.loaded = true;
@@ -112,26 +175,10 @@ window.addEventListener('load', function () {
     });
   });
   
-  // Skript für das Erscheinen der "about_section" Sektion
-  document.addEventListener('DOMContentLoaded', () => {
-    const aboutSection = document.getElementById('about_section');
-    if (aboutSection) {
-      const aboutObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.intersectionRatio >= 0.3) {
-            entry.target.classList.add('visible');
-            aboutObserver.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: [0, 0.3, 1.0]
-      });
-  
-      aboutObserver.observe(aboutSection);
-    }
-  });
-  
-  // Skript für das Accordion-Verhalten (Bootstrap Collapse) mit jQuery
+  /* =========================================================
+     Accordion (#accordion) + Freelance_Section (#freelance_section)
+     (Ursprünglich: <script> $(document).ready(...) und IntersectionObserver)
+     ========================================================= */
   $(document).ready(function () {
     $('#accordion').on('hide.bs.collapse', function (event) {
       const $panel = $(event.target);
@@ -147,7 +194,6 @@ window.addEventListener('load', function () {
     });
   });
   
-  // Skript für das Erscheinen der "freelance_section" Sektion
   document.addEventListener('DOMContentLoaded', () => {
     const freelanceSection = document.getElementById('freelance_section');
     if (freelanceSection) {
@@ -161,12 +207,14 @@ window.addEventListener('load', function () {
       }, {
         threshold: [0, 0.3, 1.0]
       });
-  
       freelanceObserver.observe(freelanceSection);
     }
   });
   
-  // Skript zur Wiederherstellung der Scroll-Position beim Laden der Seite
+  /* =========================================================
+     Scroll-Position merken
+     (Ursprünglich: <script> window.addEventListener('load'...)
+     ========================================================= */
   window.addEventListener('load', function() {
     const scrollPosition = sessionStorage.getItem('scrollPosition');
     if (scrollPosition !== null) {
@@ -175,5 +223,22 @@ window.addEventListener('load', function () {
   });
   window.addEventListener('beforeunload', function() {
     sessionStorage.setItem('scrollPosition', window.scrollY);
+  });
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    const aboutSection = document.querySelector('#about_section');
+    if (aboutSection) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.intersectionRatio >= 0.3) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: [0, 0.3, 1.0]
+      });
+      observer.observe(aboutSection);
+    }
   });
   

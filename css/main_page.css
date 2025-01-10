@@ -1,18 +1,8 @@
-/* Responsive Video */
-.responsive-video { 
-    position: relative; 
-    height: auto; 
-}
+/**************************************************
+ *    Alle ausgelagerten (ehemals inline) Styles  *
+ **************************************************/
 
-@media (min-width: 767px) and (max-width: 1700px) {
-  .responsive-video {
-    transform: translateX(-50px);
-    margin-top: 150px;
-    width: 135%; 
-  }
-}
-
-/* Animation von unten nach oben */
+/* 1) Text-Animation / IntersectionObserver-Klassen */
 .animate_from_bottom {
   opacity: 0;
   transform: translateY(50px);
@@ -23,7 +13,7 @@
   transform: translateY(0);
 }
 
-/* Lottie Container */
+/* 2) Lottie-Styling */
 .lottie-container {
   position: relative;
   width: 100px;
@@ -40,7 +30,7 @@
   object-fit: contain;
 }
 
-/* Persönlichkeit Icons */
+/* 3) Personality Icons + Accordion-Styling */
 .personality-icon {
   width: 48px;
   height: 48px;
@@ -49,14 +39,14 @@
 .t-link-box:hover .personality-icon {
   transform: scale(1.1) rotate(5deg);
 }
-/* Spezifische Icon-Farben */
+/* Farbe nur als Platzhalter - ggf. nach Wunsch anpassen */
 .openness-icon { fill: #ffffff; }
 .conscientiousness-icon { fill: #ffffff; }
 .extraversion-icon { fill: #ffffff; }
 .agreeableness-icon { fill: #ffffff; }
 .neuroticism-icon { fill: #ffffff; }
 
-/* Verbesserte Abstände für bessere Responsivität */
+/* 4) Accordion Textboxen + Responsivität */
 .text-box {
   padding-left: 140px;
   padding-top: 100px;
@@ -69,6 +59,9 @@
   padding-bottom: 20px;
   padding-right: 0px;
 }
+.text-box3 {
+  padding-left: 20px;
+}
 .text-box4 {
   padding-left: 0; /* Standardwert für kleinere Bildschirme */
 }
@@ -77,85 +70,59 @@
     padding-left: 10px;
   }
 }
-.text-box3 {
-  padding-left: 20px;
-}
 .collapse {
   overflow: hidden;
 }
 
-/* Neue Klassen für entfernte Inline-Styles */
+/* 5) Inline-Stile für Bilder/Videos etc. */
+/* a) Full-width/Gummi-Bild */
+.img-fullwidth-autoheight {
+  width: 100%;
+  height: auto;
+}
 
-/* Slider Heading */
-.slider-heading {
-    line-height: 1.2;
-    font-weight: 700;
-  }
-  
-  /* Display Block */
-  .display-block {
-    display: block;
-  }
-  
-  /* Slide Author */
-  .slide-author {
-    font-size: 1.5em;
-    margin-top: 1.5em;
-    font-weight: 500;
-    color: #F3F3F3;
-  }
-  
-  /* No Pointer Events */
-  .no-pointer-events {
-    pointer-events: none;
-  }
-  
-  /* Section Heading */
-  .section-heading {
-    color: #2F3030;
-    font-weight: bold;
-    text-transform: uppercase;
-    overflow-wrap: break-word;
-    white-space: normal;
-    hyphens: auto;
-    line-height: 1.2;
-    text-align: left;
-  }
-  
-  /* Bold Text */
-  .bold-text {
-    font-weight: bold;
-  }
-  
-  /* Center Flex */
-  .center-flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Styled Subheading */
-  .styled-subheading {
-    font-size: 1em;
-    color: inherit;
-    margin-top: 0.5em;
-  }
-  
-  @media (min-width: 768px) {
-    .styled-subheading {
-      font-size: 1.2em;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .styled-subheading {
-      font-size: 1.4em;
-    }
-  }
-  
-  /* Responsive Image (falls benötigt) */
-  .responsive-img {
-    width: 100%;
-    height: auto;
-  }
-  
+/* b) Video, das keine Pointer-Events zulässt */
+.no-pointer {
+  pointer-events: none;
+}
+
+/* c) Special Headline (z.B. <h1 style="line-height:1.2; font-weight:700;">) */
+.hero-headline {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* d) Display-block für die <span> (z.B. style="display:block;") */
+.block-span {
+  display: block;
+}
+
+/* e) Subtitle-Bereich (z.B. <div style="font-size:1.5em; margin-top:1.5em; font-weight:500; color:#F3F3F3;">) */
+.slide-subtitle {
+  font-size: 1.5em;
+  margin-top: 1.5em;
+  font-weight: 500;
+  color: #F3F3F3;
+}
+
+/* f) H2 im Experience-Bereich (z.B. color: #2F3030; text-transform: uppercase; line-height:1.2; */
+.experience-heading {
+  color: #2F3030;
+  font-weight: bold;
+  text-transform: uppercase;
+  overflow-wrap: break-word; 
+  white-space: normal; 
+  hyphens: auto;
+  line-height: 1.2; 
+  text-align: left;
+}
+
+/* g) KI-Persönlichkeitstest-H2 (z.B. <h2> KI-Persönlichkeitstest</h2> )
+   - Falls du inline-Stile ändern willst, kannst du hier noch Variation definieren */
+.about-heading {
+  /* leer oder anpassbar */
+}
+
+/* h) Hero-Section Carousel <span style="display:block;"> => class="block-span" (bereits definiert oben) */
+
+/* i) Ggf. weitere Feinheiten anpassbar */
