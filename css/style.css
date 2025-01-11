@@ -88,6 +88,7 @@ body {
 
 /*header section*/
 .hero_area {
+  min-height: 600px;
   height: calc(100vh - 30px);
   background: -webkit-gradient(linear, left top, right top, color-stop(55%, #2F3030), color-stop(55%, #826AFF));
   background: linear-gradient(to right, #2F3030 55%, #19B1E9 55%);
