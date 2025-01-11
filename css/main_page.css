@@ -1,8 +1,8 @@
-/**************************************************
- *    Alle ausgelagerten (ehemals inline) Styles  *
- **************************************************/
 
-/* Grund-Animation/Klasse für IntersectionObserver */
+.carousel-item {
+transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out !important;
+}
+
 .animate_from_bottom {
   opacity: 0;
   transform: translateY(50px);
