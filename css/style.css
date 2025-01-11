@@ -85,7 +85,24 @@ body {
   overflow-wrap: break-word;
   white-space: normal;
 }
-
+  
+  /* Zweite Variante: zentrierter Inhalt */
+  .heading_container_flip {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  .heading_container_flip h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+    white-space: normal;
+    text-align: center;
+  }
 /*header section*/
 .hero_area {
   min-height: 600px;
