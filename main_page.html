@@ -90,148 +90,207 @@
 </head>
 
 <body>
+  {% include header.html %}
+
+  
   <div class="hero_area">
-    {% include header.html %}
-
-    <!-- Slider / Carousel -->
-    <section class="slider_section">
-      <div class="carousel_btn-container">
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-
-          <!-- Slide 1 -->
-          <div class="carousel-item active">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-md-5 offset-md-1">
-                  <div class="detail-box">
-                    <h1 class="hero-headline">
-                      <span class="block-span">Entdecke</span>
-                      <span class="block-span">deine</span>
-                      <span class="block-span">Persönlichkeit</span>
-                    </h1>
-                    <div class="slide-subtitle">
-                      <b>Marie Curie</b>
-                    </div>
-                    <p>
-                      Marie Curie war entschlossen, klug und bescheiden - eine Pionierin, die Wissenschaft und Entdeckergeist über alles stellte.
-                    </p>
-                    <div class="btn-box">
-                      <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
-                        Zur App
-                      </a>
-                      <a href="#" class="btn-2">
-                        Zum Shop
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="offset-md-1 col-md-4 img-container">
-                  <div class="img-box">
-                    <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
-                           poster="images/Curi_Alpha_PosterW.webp" data-video-src="images/Curi_Alpha.webm">
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="carousel-item">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-md-5 offset-md-1">
-                  <div class="detail-box">
-                    <h1 class="hero-headline">
-                      <span class="block-span">Entdecke</span>
-                      <span class="block-span">deine</span>
-                      <span class="block-span">Persönlichkeit</span>
-                    </h1>
-                    <div class="slide-subtitle">
-                      <b>Nikola Tesla</b>
-                    </div>
-                    <p>
-                      Nikola Tesla war visionär, brillant und exzentrisch - ein Erfinder, der die Zukunft der Technologie maßgeblich beeinflusste.
-                    </p>
-                    <div class="btn-box">
-                      <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
-                        Zur App
-                      </a>
-                      <a href="#" class="btn-2">
-                        Zum Shop
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="offset-md-1 col-md-4 img-container">
-                  <div class="img-box">
-                    <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
-                           poster="images/Nikol_Alpha_PosterW.webp" data-video-src="images/Nikol_Alpha.webm">
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="carousel-item">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-md-5 offset-md-1">
-                  <div class="detail-box">
-                    <h1 class="hero-headline">
-                      <span class="block-span">Entdecke</span>
-                      <span class="block-span">deine</span>
-                      <span class="block-span">Persönlichkeit</span>
-                    </h1>
-                    <div class="slide-subtitle">
-                      <b>Gaius Julius</b>
-                    </div>
-                    <p>
-                      Gaius Julius Caesar war kühn, brillant und umstritten - ein visionärer Anführer mit politischem Geschick und richtigen Weitblick.
-                    </p>
-                    <div class="btn-box">
-                      <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
-                        Zur App
-                      </a>
-                      <a href="#" class="btn-2">
-                        Zum Shop
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="offset-md-1 col-md-4 img-container">
-                  <div class="img-box">
-                    <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
-                           poster="images/Cesa_Alpha_PosterW.webp" data-video-src="images/Cesa_Alpha.webm">
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End of carousel-inner -->
+   <!-- Slider / Carousel -->
+    <div class="hero_area">
+      <!-- Slider / Carousel -->
+      <section class="slider_section">
+        <div class="carousel_btn-container">
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-      </div>
-    </section>
-  </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="false">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+    
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-5 offset-md-1">
+                    <div class="detail-box">
+                      <h1 class="hero-headline">
+                        <span class="block-span">Entdecke</span>
+                        <span class="block-span">deine</span>
+                        <span class="block-span">Persönlichkeit</span>
+                      </h1>
+                      <div class="slide-subtitle">
+                        <b>Marie Curie</b>
+                      </div>
+                      <p>
+                        Marie Curie war entschlossen, klug und bescheiden - eine Pionierin, die Wissenschaft und Entdeckergeist über alles stellte.
+                      </p>
+                      <div class="btn-box">
+                        <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
+                          Zur App
+                        </a>
+                        <a href="#" class="btn-2">
+                          Zum Shop
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="offset-md-1 col-md-4 img-container">
+                    <div class="img-box">
+                      <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
+                             poster="images/Curi_Alpha_PosterW.webp" data-video-src="images/Curi_Alpha.webm">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-5 offset-md-1">
+                    <div class="detail-box">
+                      <h1 class="hero-headline">
+                        <span class="block-span">Entdecke</span>
+                        <span class="block-span">deine</span>
+                        <span class="block-span">Persönlichkeit</span>
+                      </h1>
+                      <div class="slide-subtitle">
+                        <b>Nikola Tesla</b>
+                      </div>
+                      <p>
+                        Nikola Tesla war visionär, brillant und exzentrisch - ein Erfinder, der die Zukunft der Technologie maßgeblich beeinflusste.
+                      </p>
+                      <div class="btn-box">
+                        <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
+                          Zur App
+                        </a>
+                        <a href="#" class="btn-2">
+                          Zum Shop
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="offset-md-1 col-md-4 img-container">
+                    <div class="img-box">
+                      <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
+                             poster="images/Nikol_Alpha_PosterW.webp" data-video-src="images/Nikol_Alpha.webm">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-5 offset-md-1">
+                    <div class="detail-box">
+                      <h1 class="hero-headline">
+                        <span class="block-span">Entdecke</span>
+                        <span class="block-span">deine</span>
+                        <span class="block-span">Persönlichkeit</span>
+                      </h1>
+                      <div class="slide-subtitle">
+                        <b>Gaius Julius</b>
+                      </div>
+                      <p>
+                        Gaius Julius Caesar war kühn, brillant und umstritten - ein visionärer Anführer mit politischem Geschick und richtigen Weitblick.
+                      </p>
+                      <div class="btn-box">
+                        <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
+                          Zur App
+                        </a>
+                        <a href="#" class="btn-2">
+                          Zum Shop
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="offset-md-1 col-md-4 img-container">
+                    <div class="img-box">
+                      <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
+                             poster="images/Cesa_Alpha_PosterW.webp" data-video-src="images/Cesa_Alpha.webm">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End of carousel-inner -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      /* ... Dein bestehender JavaScript-Code ... */
+
+/* =========================================================
+   Custom Carousel Animations
+========================================================= */
+document.addEventListener('DOMContentLoaded', function () {
+  const carousel = document.querySelector('#carouselExampleIndicators');
+  let isAnimating = false;
+
+  carousel.addEventListener('slide.bs.carousel', function (event) {
+    if (isAnimating) {
+      event.preventDefault();
+      return;
+    }
+    isAnimating = true;
+
+    // Aktuelles Slide-Element
+    const currentSlide = carousel.querySelector('.carousel-item.active');
+    if (currentSlide) {
+      const detailBox = currentSlide.querySelector('.detail-box');
+      const imgContainer = currentSlide.querySelector('.img-container');
+      
+      // Füge die fade-out Klasse hinzu
+      detailBox.classList.add('fade-out');
+      imgContainer.classList.add('fade-out');
+    }
+  });
+
+  carousel.addEventListener('slid.bs.carousel', function (event) {
+    // Neues Slide-Element
+    const newSlide = event.relatedTarget;
+    if (newSlide) {
+      const detailBox = newSlide.querySelector('.detail-box');
+      const imgContainer = newSlide.querySelector('.img-container');
+      
+      // Entferne die fade-out Klasse und füge fade-in hinzu
+      detailBox.classList.remove('fade-out');
+      imgContainer.classList.remove('fade-out');
+      
+      detailBox.classList.add('fade-in');
+      imgContainer.classList.add('fade-in');
+      
+      // Entferne die fade-in Klasse nach der Animation, um den Standardzustand wiederherzustellen
+      setTimeout(() => {
+        detailBox.classList.remove('fade-in');
+        imgContainer.classList.remove('fade-in');
+        isAnimating = false;
+      }, 500); // Dauer der Animation in ms
+    }
+  });
+});
+
+    </script>
+    
 
   <!-- experience section -->
   <section class="experience_section layout_padding animate_from_bottom" id="experience">
