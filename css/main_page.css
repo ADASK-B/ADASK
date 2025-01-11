@@ -224,45 +224,84 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
   }
 
   /* Offenheit */
+  .flip-card-offenheit .title {
+    color: #826AFF; 
+  }
+
+  /* Gewissenhaftigkeit */
+  .flip-card-gewissenhaftigkeit .title {
+    color: #3386fd; 
+  }
+
+  /* Extraversion */
+  .flip-card-extraversion .title {
+    color: #fc884f; 
+  }
+
+  /* Verträglichkeit */
+  .flip-card-vertraeglichkeit .title {
+    color: #65B973; 
+  }
+
+  /* Neurotizismus */
+  .flip-card-neurotizismus .title {
+    color: #EF5045; 
+  }
+
+  /* Offenheit */
   .flip-card-offenheit .flip-card-front {
-    background-color: #826AFF;
+    background-color: #2F3030;
+    color: #F3F3F3;
   }
   .flip-card-offenheit .flip-card-back {
-    background-color: #F6F7FF; 
+    background-color: #826AFF;
+    color: #F3F3F3;
   }
 
   /* Gewissenhaftigkeit */
   .flip-card-gewissenhaftigkeit .flip-card-front {
-    background-color: #19B1E9; 
+    background-color: #2F3030;
+    color: #F3F3F3;
   }
   .flip-card-gewissenhaftigkeit .flip-card-back {
-    background-color: #FFFDF8;
+    background-color: #3386fd;
+    color: #F3F3F3;
   }
 
   /* Extraversion */
   .flip-card-extraversion .flip-card-front {
-    background-color: #fbbc5c;
+    background-color: #2F3030;
+    color: #F3F3F3;
   }
   .flip-card-extraversion .flip-card-back {
-    background-color: #F5FFFD;
+    background-color: #fc884f;
+    color: #F3F3F3;
   }
 
   /* Verträglichkeit */
   .flip-card-vertraeglichkeit .flip-card-front {
-    background-color: #65B973; 
+    background-color: #2F3030; 
+    color: #F3F3F3;
   }
   .flip-card-vertraeglichkeit .flip-card-back {
-    background-color: #FCFAFF;
+    background-color: #65B973;
+    color: #F3F3F3;
   }
 
   /* Neurotizismus */
   .flip-card-neurotizismus .flip-card-front {
-    background-color: #EF5045; 
+    background-color: #2F3030; 
+    color: #F3F3F3;
   }
   .flip-card-neurotizismus .flip-card-back {
-    background-color: #FFF8F8;
+    background-color: #EF5045;
+    color: #F3F3F3;
   }
 
+  .bg-variant-flip {
+    background-color: #F3F3F3;
+  }
+  
 
   @media (min-width: 768px) and (max-width: 992px) {
     .flip-card {

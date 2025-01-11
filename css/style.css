@@ -86,7 +86,6 @@ body {
   white-space: normal;
 }
   
-  /* Zweite Variante: zentrierter Inhalt */
   .heading_container_flip {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -102,6 +101,7 @@ body {
     overflow-wrap: break-word;
     white-space: normal;
     text-align: center;
+    color: #000000;
   }
 /*header section*/
 .hero_area {
