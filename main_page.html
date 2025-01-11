@@ -102,14 +102,17 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      
+      <!-- WICHTIG: statt "carousel slide" => "carousel slide carousel-fade" -->
+      <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
+  
         <div class="carousel-inner">
-
+  
           <!-- Slide 1 -->
           <div class="carousel-item active">
             <div class="container-fluid">
@@ -125,7 +128,7 @@
                       <b>Marie Curie</b>
                     </div>
                     <p>
-                      Marie Curie war entschlossen, klug und bescheiden - eine Pionierin, die Wissenschaft und Entdeckergeist über alles stellte.
+                      Marie Curie war entschlossen, klug und bescheiden ...
                     </p>
                     <div class="btn-box">
                       <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
@@ -148,7 +151,7 @@
               </div>
             </div>
           </div>
-
+  
           <!-- Slide 2 -->
           <div class="carousel-item">
             <div class="container-fluid">
@@ -164,7 +167,7 @@
                       <b>Nikola Tesla</b>
                     </div>
                     <p>
-                      Nikola Tesla war visionär, brillant und exzentrisch - ein Erfinder, der die Zukunft der Technologie maßgeblich beeinflusste.
+                      Nikola Tesla war visionär, brillant und exzentrisch ...
                     </p>
                     <div class="btn-box">
                       <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
@@ -187,7 +190,7 @@
               </div>
             </div>
           </div>
-
+  
           <!-- Slide 3 -->
           <div class="carousel-item">
             <div class="container-fluid">
@@ -203,7 +206,7 @@
                       <b>Gaius Julius</b>
                     </div>
                     <p>
-                      Gaius Julius Caesar war kühn, brillant und umstritten - ein visionärer Anführer mit politischem Geschick und richtigen Weitblick.
+                      Gaius Julius Caesar war kühn, brillant und umstritten ...
                     </p>
                     <div class="btn-box">
                       <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
@@ -226,11 +229,19 @@
               </div>
             </div>
           </div>
-          <!-- End of carousel-inner -->
+          <!-- Ende carousel-inner -->
         </div>
       </div>
     </section>
   </div>
+  
+
+  <style>
+    .carousel-item {
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out !important;
+}
+
+  </style>
 
   <!-- experience section -->
   <section class="experience_section layout_padding animate_from_bottom" id="experience">
