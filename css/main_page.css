@@ -80,10 +80,23 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
   height: auto;
 }
 
-/* 2) Keine Pointer-Events (z.B. Videos) */
+/* Grundlegende .no-pointer Klasse */
 .no-pointer {
   pointer-events: none;
+  height: auto;
 }
+
+
+/* Tablets (768px bis 1023px) */
+@media (min-width: 768px)  {
+  .no-pointer {
+    width: 130%;
+  }
+}
+
+
+
+
 
 /* 3) Headline (line-height:1.2; font-weight:700;) */
 .hero-headline {

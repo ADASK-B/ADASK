@@ -1,19 +1,15 @@
   /* =========================================================
      Responsive-Video-Script
-     (Ursprünglich: <script defer> window.addEventListener(...) )
      ========================================================= */
   window.addEventListener('load', function () {
-    // Wählt alle Video-Elemente mit der Klasse "responsive-video" aus
     const videos = document.querySelectorAll('.responsive-video');
   
     videos.forEach((video) => {
-      // Erst nachdem die Seite vollständig geladen ist, wird die Quelle gesetzt
       if (!video.querySelector('source')) {
         const source = document.createElement('source');
-        source.src = video.getAttribute('data-video-src'); // Die Videoquelle aus einem Datenattribut
+        source.src = video.getAttribute('data-video-src'); 
         source.type = 'video/webm';
         video.appendChild(source);
-        // Optional: Das Video neu laden
         video.load();
       }
     });
@@ -21,7 +17,6 @@
   
   /* =========================================================
      IntersectionObserver #experience
-     (Ursprünglich: <script> document.addEventListener("DOMContentLoaded", ...)
      ========================================================= */
   document.addEventListener("DOMContentLoaded", function() {
     const target = document.querySelector('#experience');
@@ -42,7 +37,6 @@
   
   /* =========================================================
      IntersectionObserver #category_section
-     (Ursprünglich: <script> document.addEventListener('DOMContentLoaded', ...)
      ========================================================= */
   document.addEventListener('DOMContentLoaded', () => {
     const section = document.getElementById('category_section');
@@ -63,8 +57,6 @@
   
   /* =========================================================
      Lottie-Animationen
-     (Ursprünglich: <script> document.addEventListener("DOMContentLoaded", ...)
-     ACHTUNG: Läuft nur, wenn lottie_light.min.js vorher geladen ist!
      ========================================================= */
   document.addEventListener("DOMContentLoaded", () => {
     const lottieAnimations = [
@@ -128,7 +120,6 @@
   
   /* =========================================================
      Accordion (#accordion) + Freelance_Section (#freelance_section)
-     (Ursprünglich: <script> $(document).ready(...) und IntersectionObserver)
      ========================================================= */
   $(document).ready(function () {
     $('#accordion').on('hide.bs.collapse', function (event) {
@@ -164,7 +155,6 @@
   
   /* =========================================================
      Scroll-Position merken
-     (Ursprünglich: <script> window.addEventListener('load'...)
      ========================================================= */
   window.addEventListener('load', function() {
     const scrollPosition = sessionStorage.getItem('scrollPosition');
@@ -193,10 +183,13 @@
     }
   });
 
-  /* flip
-  
+  /* =========================================================
+    flip
+    ========================================================= */
+     /* 
   document.querySelectorAll('.flip-card').forEach((card) => {
     card.addEventListener('click', () => {
       card.querySelector('.flip-card-inner').classList.toggle('is-flipped');
     });
   });*/
+
