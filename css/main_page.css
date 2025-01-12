@@ -95,7 +95,17 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
 }
 
 
+.responsive-video-KI {
+  width: 90%;
+  }
 
+  /* Ab einer Bildschirmbreite von 768px */
+  @media (min-width: 1000px) {
+    .responsive-video-KI {
+      width: 70%;
+      margin: 0 auto; /* Zentriert das Video */
+    }
+  }
 
 
 /* 3) Headline (line-height:1.2; font-weight:700;) */

@@ -72,6 +72,9 @@ body {
 .layout_padding-bottom {
   padding-bottom: 90px;
 }
+.layout_padding-top {
+  padding-top: 60px;
+}
 
 .heading_container {
   display: -webkit-box;
