@@ -90,7 +90,7 @@ body {
 }
   
   .heading_container_flip {
-    padding-bottom: 60px;
+    padding-bottom: 35px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -108,16 +108,7 @@ body {
     color: #000000;
   }
 
-  /* Media Query für kleine Bildschirme */
-@media (max-width: 468px) {
-  .heading_container_flip {
-    justify-content: flex-start; 
-  }
-  
-  .heading_container_flip h2 {
-    text-align: left;
-  }
-}
+
 
 /*header section*/
 .hero_area {
