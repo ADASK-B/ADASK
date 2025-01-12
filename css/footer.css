@@ -1,0 +1,7 @@
+.link-heading {
+    font-weight: bold;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+    white-space: normal;
+    margin-bottom: 15px;
+  }
