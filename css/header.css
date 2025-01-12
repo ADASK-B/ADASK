@@ -40,3 +40,46 @@
   margin: 4px;
   background: #fff;
 }
+
+/* Stile für den Toggle-Button */
+.navbar-toggler {
+  border: none; /* Entfernt den Standard-Button-Rahmen */
+  background: transparent; /* Macht den Hintergrund transparent */
+  padding: 0;
+  width: 40px;
+  height: 40px;
+}
+
+/* Stile für die Balken */
+.toggle {
+  position: relative;
+  width: 30px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(253, 255, 243);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Animationszustand, wenn das Menü geöffnet ist */
+.navbar-toggler[aria-expanded="true"] #bar1 {
+  transform: rotate(45deg) translate(9px, 9px);
+}
+
+.navbar-toggler[aria-expanded="true"] #bar2 {
+  opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] #bar3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+

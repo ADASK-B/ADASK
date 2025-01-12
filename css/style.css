@@ -237,12 +237,7 @@ a:focus {
   outline: none;
 }
 
-.custom_nav-container .navbar-toggler .navbar-toggler-icon {
-  background-image: url(../images/menu.png);
-  background-size: 30px;
-  width: 32px;
-  height: 32px;
-}
+
 
 .lg_toggl-btn {
   background-color: transparent;
