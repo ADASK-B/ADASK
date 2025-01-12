@@ -159,7 +159,8 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
     max-width: 380px;
     height: 200px;
     perspective: 1000px;
-    margin: 20px auto;
+    margin: -10px auto;
+    
   }
 
   .flip-card-inner {
@@ -181,6 +182,7 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
   /* Vorder- und Rückseite */
   .flip-card-front,
   .flip-card-back {
+    border: 4px solid #ccc;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -189,7 +191,7 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 6px;
+    border-radius: 16px;
     padding: 15px;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.05);
   }
