@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const header = document.getElementById("header");
   const nav = $("#navbarSupportedContent"); // jQuery-Selektor
   const btn = $(".custom_menu-btn");
+  const navbarToggler = document.querySelector(".navbar-toggler");
 
   window.addEventListener("scroll", function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -22,7 +23,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Menü schließen, wenn es offen ist und gescrollt wird (nur bei kleinen Bildschirmen)
     if (window.innerWidth < 992 && nav.hasClass("show")) {
+      // Entferne alle Klassen/Attribute, die zum "X" führen
       nav.removeClass("show");
+      nav.removeClass("lg_nav-toggle"); // nur, wenn du es verwendest
+
+      // Setze aria-expanded zurück
+      navbarToggler.setAttribute("aria-expanded", "false");
+
+      // Entferne die Animation am custom_menu-btn
       document.querySelector(".custom_menu-btn").classList.remove("menu_btn-style");
     }
   });
@@ -30,8 +38,16 @@ document.addEventListener("DOMContentLoaded", function() {
   // Click-Event für den Menü-Button
   btn.click(function(e) {
     e.preventDefault();
+
+    // Toggle-Klassen, damit das Menü ein- bzw. ausgeklappt wird
     nav.toggleClass("lg_nav-toggle");
-    nav.toggleClass("show"); // Wichtig, damit Bootstrap die Navbar anzeigt/versteckt
+    nav.toggleClass("show"); // Wichtig für Bootstrap
+
+    // Passe aria-expanded dynamisch an
+    const isExpanded = navbarToggler.getAttribute("aria-expanded") === "true";
+    navbarToggler.setAttribute("aria-expanded", isExpanded ? "false" : "true");
+
+    // Menü-Button-Stil (Hamburger zu X) togglen
     document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style");
   });
 });
