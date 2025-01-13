@@ -394,7 +394,7 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
 
 .flip-card-vertraeglichkeit .flip-card-front {
   animation: wiggle 1s infinite;
-  animation-delay: 82s;
+  animation-delay: 92s;
 }
 
 .flip-card-neurotizismus .flip-card-front {
