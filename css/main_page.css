@@ -159,203 +159,250 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
   font-weight: bold;
 }
 
-/* FLip---------------------*/
-  /* --- Flip-Card-Grundstruktur --- */
-  .flip-card {
-    /* Standardwerte für kleine bis mittlere Screens */
-    width: 100%;
-    max-width: 380px;
-    height: 200px;
-    perspective: 1000px;
-    margin: -10px auto;
-    
-  }
+/* =========================================================
+  flip
+  ========================================================= */
 
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-  }
+/* --- Flip-Card-Grundstruktur --- */
+.flip-card {
+  /* Standardwerte für kleine bis mittlere Screens */
+  width: 100%;
+  max-width: 380px;
+  height: 200px;
+  perspective: 1000px;
+  margin: -10px auto;
+}
 
-  /* Standard: Flip bei Hover (nur auf großen Screens) */
-  @media (min-width: 769px) {
-    .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg);
-    }
-  }
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
 
-  /* Vorder- und Rückseite */
-  .flip-card-front,
-  .flip-card-back {
-    border: 4px solid #ccc;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 16px;
-    padding: 15px;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.05);
-  }
-
-  .flip-card-front {
-    background-color: #f8f8f8; /* Standard-Farbe */
-    color: #333;
-  }
-
-  .flip-card-back {
-    background-color: #ffffff; /* Standard-Farbe */
-    color: #333;
+/* Standard: Flip bei Hover (nur auf großen Screens) */
+@media (min-width: 769px) {
+  .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
+}
 
-  /* Titel- und Textformatierungen */
-  .flip-card .title {
-    font-size: 1.2em;
-    font-weight: 700;
-    margin-bottom: 0.5em;
-  }
-  .flip-card p {
-    font-size: 0.9em;
-    line-height: 1.3em;
-    margin-bottom: 0;
-  }
+/* Vorder- und Rückseite */
+.flip-card-front,
+.flip-card-back {
+  border: 4px solid #ccc;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.05);
+}
 
-  /* Flip bei Klick (kleine Screens) */
-  .flip-card-inner.is-flipped {
-    transform: rotateY(180deg);
-  }
+.flip-card-front {
+  background-color: #f8f8f8; /* Standard-Farbe */
+  color: #333;
+}
 
-  /* Mobile- & Desktop-Text separat steuern */
+.flip-card-back {
+  background-color: #ffffff; /* Standard-Farbe */
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+/* Titel- und Textformatierungen */
+.flip-card .title {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+.flip-card p {
+  font-size: 0.9em;
+  line-height: 1.3em;
+  margin-bottom: 0;
+}
+
+/* Flip bei Klick (kleine Screens) */
+.flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* Mobile- & Desktop-Text separat steuern */
+.flip-card-back-mobile {
+  display: none;
+}
+
+/* Desktop: langer Text anzeigen, kurzer Text ausblenden */
+@media (min-width: 769px) {
   .flip-card-back-mobile {
     display: none;
   }
+  .flip-card-back-desktop {
+    display: block;
+  }
+}
+/* Mobile: kurzer Text anzeigen, langer Text ausblenden */
+@media (max-width: 768px) {
+  .flip-card-back-desktop {
+    display: none;
+  }
+  .flip-card-back-mobile {
+    display: block;
+  }
+}
 
-  /* Desktop: langer Text anzeigen, kurzer Text ausblenden */
-  @media (min-width: 769px) {
-    .flip-card-back-mobile {
-      display: none;
-    }
-    .flip-card-back-desktop {
-      display: block;
-    }
-  }
-  /* Mobile: kurzer Text anzeigen, langer Text ausblenden */
-  @media (max-width: 768px) {
-    .flip-card-back-desktop {
-      display: none;
-    }
-    .flip-card-back-mobile {
-      display: block;
-    }
-  }
+/* Offenheit */
+.flip-card-offenheit .title {
+  color: #826AFF; 
+}
 
-  /* Offenheit */
-  .flip-card-offenheit .title {
-    color: #826AFF; 
-  }
+/* Gewissenhaftigkeit */
+.flip-card-gewissenhaftigkeit .title {
+  color: #3386fd; 
+}
 
-  /* Gewissenhaftigkeit */
-  .flip-card-gewissenhaftigkeit .title {
-    color: #3386fd; 
-  }
+/* Extraversion */
+.flip-card-extraversion .title {
+  color: #fc884f; 
+}
 
-  /* Extraversion */
-  .flip-card-extraversion .title {
-    color: #fc884f; 
-  }
+/* Verträglichkeit */
+.flip-card-vertraeglichkeit .title {
+  color: #65B973; 
+}
 
-  /* Verträglichkeit */
-  .flip-card-vertraeglichkeit .title {
-    color: #65B973; 
-  }
+/* Neurotizismus */
+.flip-card-neurotizismus .title {
+  color: #EF5045; 
+}
 
-  /* Neurotizismus */
-  .flip-card-neurotizismus .title {
-    color: #EF5045; 
-  }
+/* Offenheit */
+.flip-card-offenheit .flip-card-front {
+  background-color: #2F3030;
+  color: #F3F3F3;
+}
+.flip-card-offenheit .flip-card-back {
+  background-color: #826AFF;
+  color: #F3F3F3;
+}
 
-  /* Offenheit */
-  .flip-card-offenheit .flip-card-front {
-    background-color: #2F3030;
-    color: #F3F3F3;
-  }
-  .flip-card-offenheit .flip-card-back {
-    background-color: #826AFF;
-    color: #F3F3F3;
-  }
+/* Gewissenhaftigkeit */
+.flip-card-gewissenhaftigkeit .flip-card-front {
+  background-color: #2F3030;
+  color: #F3F3F3;
+}
+.flip-card-gewissenhaftigkeit .flip-card-back {
+  background-color: #3386fd;
+  color: #F3F3F3;
+}
 
-  /* Gewissenhaftigkeit */
-  .flip-card-gewissenhaftigkeit .flip-card-front {
-    background-color: #2F3030;
-    color: #F3F3F3;
-  }
-  .flip-card-gewissenhaftigkeit .flip-card-back {
-    background-color: #3386fd;
-    color: #F3F3F3;
-  }
+/* Extraversion */
+.flip-card-extraversion .flip-card-front {
+  background-color: #2F3030;
+  color: #F3F3F3;
+}
+.flip-card-extraversion .flip-card-back {
+  background-color: #fc884f;
+  color: #F3F3F3;
+}
 
-  /* Extraversion */
-  .flip-card-extraversion .flip-card-front {
-    background-color: #2F3030;
-    color: #F3F3F3;
-  }
-  .flip-card-extraversion .flip-card-back {
-    background-color: #fc884f;
-    color: #F3F3F3;
-  }
+/* Verträglichkeit */
+.flip-card-vertraeglichkeit .flip-card-front {
+  background-color: #2F3030; 
+  color: #F3F3F3;
+}
+.flip-card-vertraeglichkeit .flip-card-back {
+  background-color: #65B973;
+  color: #F3F3F3;
+}
 
-  /* Verträglichkeit */
-  .flip-card-vertraeglichkeit .flip-card-front {
-    background-color: #2F3030; 
-    color: #F3F3F3;
-  }
-  .flip-card-vertraeglichkeit .flip-card-back {
-    background-color: #65B973;
-    color: #F3F3F3;
-  }
+/* Neurotizismus */
+.flip-card-neurotizismus .flip-card-front {
+  background-color: #2F3030; 
+  color: #F3F3F3;
+}
+.flip-card-neurotizismus .flip-card-back {
+  background-color: #EF5045;
+  color: #F3F3F3;
+}
 
-  /* Neurotizismus */
-  .flip-card-neurotizismus .flip-card-front {
-    background-color: #2F3030; 
-    color: #F3F3F3;
+.bg-variant-flip {
+  background-color: #F3F3F3;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .flip-card {
+    max-width: 500px; 
+    height: 350px;
   }
-  .flip-card-neurotizismus .flip-card-back {
-    background-color: #EF5045;
-    color: #F3F3F3;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .flip-card {
+    max-width: 500px;  
+    height: 300px;
   }
+}
 
-  .bg-variant-flip {
-    background-color: #F3F3F3;
+@media (min-width: 1200px) {
+  .flip-card {
+    max-width: 1200px;
+    height: 300px;
   }
-  
+}
 
-  @media (min-width: 768px) and (max-width: 992px) {
-    .flip-card {
-      max-width: 500px; 
-      height: 350px;
-    }
-  }
+/* =========================================================
+  Wiggle-Animation
+  ========================================================= */
 
-  @media (min-width: 992px) and (max-width: 1200px) {
-    .flip-card {
-      max-width: 500px;  
-      height: 300px;
-    }
-  }
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(1deg); }
+  50% { transform: rotate(-1deg); }
+  75% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
 
-  @media (min-width: 1200px) {
-    .flip-card {
-      max-width: 1200px;
-      height: 300px;
-    }
-  }
+/* Grundanimation für alle Karten im geschlossenen Zustand */
+.flip-card-inner:not(.is-flipped) .flip-card-front {
+  transform-origin: center;
+}
 
+/* Individuelle Verzögerungen für jede Karte */
+.flip-card-offenheit .flip-card-front {
+  animation: wiggle 1s infinite;
+  animation-delay: 45s;
 
+}
 
+.flip-card-gewissenhaftigkeit .flip-card-front {
+  animation: wiggle 1s infinite;
+  animation-delay: 1s;
+}
+
+.flip-card-extraversion .flip-card-front {
+  animation: wiggle 1s infinite;
+  animation-delay: 76s;
+}
+
+.flip-card-vertraeglichkeit .flip-card-front {
+  animation: wiggle 1s infinite;
+  animation-delay: 82s;
+}
+
+.flip-card-neurotizismus .flip-card-front {
+  animation: wiggle 1s infinite;
+  animation-delay: 5s;
+}
+
+/* Stoppen der Animation, wenn die Karte umgedreht ist */
+.flip-card-inner.is-flipped .flip-card-front {
+  animation: none;
+}
