@@ -9,57 +9,42 @@ document.addEventListener('DOMContentLoaded', function() {
   form.addEventListener('submit', async function(e) {
       e.preventDefault();
       
-      // Formulardaten sammeln
-      const formData = new FormData(form);
-      const email = formData.get('entry.1938339462');
-      const message = formData.get('entry.1489854127');
+      const submitButton = this.querySelector('.bt');
+      const successIcon = document.querySelector('.status-icon.success');
+      const errorIcon = document.querySelector('.status-icon.error');
       
-      // URL für Google Forms
-      const url = 'https://docs.google.com/forms/d/e/1FAIpQLSeenY1xsqFx29DmMAWhdsFwVO7TZ9TdS5uBBQhR3u4J70iB2Q/formResponse';
+      // Reset status icons
+      successIcon.classList.remove('show');
+      errorIcon.classList.remove('show');
+      
+      // Start animation
+      submitButton.classList.add('sending');
+      
+      // Formulardaten sammeln
+      const formData = new FormData(this);
       
       try {
-          // Senden der Daten via POST
-          const response = await fetch(url, {
+          const response = await fetch('https://docs.google.com/forms/d/e/1FAIpQLSeenY1xsqFx29DmMAWhdsFwVO7TZ9TdS5uBBQhR3u4J70iB2Q/formResponse', {
               method: 'POST',
-              mode: 'no-cors', // Wichtig für Cross-Origin Requests
-              headers: {
-                  'Content-Type': 'application/x-www-form-urlencoded',
-              },
+              mode: 'no-cors',
               body: new URLSearchParams(formData)
           });
           
-          // Erfolgsmeldung anzeigen
-          showMessage('Ihre Nachricht wurde erfolgreich gesendet!', 'success');
-          
-          // Formular zurücksetzen
-          form.reset();
+          // Show success icon after animation
+          setTimeout(() => {
+              submitButton.classList.remove('sending');
+              successIcon.classList.add('show');
+              form.reset();
+          }, 2000);
           
       } catch (error) {
-          // Fehlermeldung anzeigen
-          showMessage('Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.', 'error');
+          // Show error icon after animation
+          setTimeout(() => {
+              submitButton.classList.remove('sending');
+              errorIcon.classList.add('show');
+          }, 2000);
+          
           console.error('Fehler:', error);
       }
   });
-  
-  // Funktion zum Anzeigen von Nachrichten
-  function showMessage(message, type) {
-      // Existierende Nachricht entfernen falls vorhanden
-      const existingMessage = document.querySelector('.form-message');
-      if (existingMessage) {
-          existingMessage.remove();
-      }
-      
-      // Neue Nachricht erstellen
-      const messageDiv = document.createElement('div');
-      messageDiv.className = `form-message ${type}`;
-      messageDiv.textContent = message;
-      
-      // Nachricht nach dem Formular einfügen
-      form.insertAdjacentElement('afterend', messageDiv);
-      
-      // Nachricht nach 5 Sekunden ausblenden
-      setTimeout(() => {
-          messageDiv.remove();
-      }, 5000);
-  }
 });
