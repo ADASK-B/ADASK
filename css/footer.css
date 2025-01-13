@@ -5,3 +5,14 @@
   white-space: normal;
   margin-bottom: 15px;
 }
+
+#formMessage {
+  margin-top: 10px;
+  font-size: 1em;
+  color: green; /* Für Erfolg */
+}
+
+/* Optional: Für Fehlermeldungen */
+#formMessage.error {
+  color: red;
+}
