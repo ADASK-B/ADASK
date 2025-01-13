@@ -23,7 +23,7 @@
     if (target) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.intersectionRatio >= 0.4) {
+          if (entry.intersectionRatio >= 0) {
             entry.target.classList.add('visible');
             observer.unobserve(entry.target);
           }
@@ -43,7 +43,7 @@
     if (section) {
       const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.intersectionRatio >= 0.2) {
+          if (entry.intersectionRatio >= 0) {
             entry.target.classList.add('visible');
             sectionObserver.unobserve(entry.target);
           }
@@ -141,7 +141,7 @@
     if (freelanceSection) {
       const freelanceObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.intersectionRatio >= 0.3) {
+          if (entry.intersectionRatio >= 0) {
             entry.target.classList.add('visible');
             freelanceObserver.unobserve(entry.target);
           }
@@ -171,7 +171,7 @@
     if (aboutSection) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.intersectionRatio >= 0.3) {
+          if (entry.intersectionRatio >= 0) {
             entry.target.classList.add('visible');
             observer.unobserve(entry.target);
           }
