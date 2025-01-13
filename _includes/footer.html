@@ -70,15 +70,15 @@
                   <button type="submit">Senden</button>
                 </form>
                 <!-- Verstecktes Iframe für die Formularübermittlung -->
-                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                <iframe name="hidden_iframe" id="hidden_iframe" class="hidden-message"></iframe>
                 <!-- Bereiche für die Nachrichten -->
-                <div id="loadingMessage" style="display:none; margin-top:10px; color: blue;">
+                <div id="loadingMessage" class="progress-message">
                   Ihre Nachricht wird gesendet...
                 </div>
-                <div id="successMessage" style="display:none; margin-top:10px; color: green;">
+                <div id="successMessage" class="success-message">
                   Ihre Nachricht wurde erfolgreich gesendet!
                 </div>
-                <div id="errorMessage" style="display:none; margin-top:10px; color: red;">
+                <div id="errorMessage" class="error-message">
                   Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es erneut.
                 </div>
               </div>
