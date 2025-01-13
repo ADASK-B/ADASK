@@ -76,6 +76,9 @@ body {
   padding-top: 60px;
 }
 
+.layout_padding-top-datenschutz {
+  padding-top: 120px;
+}
 .heading_container {
   display: -webkit-box;
   display: -ms-flexbox;
