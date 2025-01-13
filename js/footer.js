@@ -2,46 +2,45 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("displayDate").textContent = new Date().getFullYear();
   });
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const form = this;
-    const formData = new FormData(form);
-    const formStatus = document.getElementById('formStatus');
-    const submitButton = form.querySelector('button[type="submit"]');
-    
-    submitButton.disabled = true;
-    
-    // Google Forms URL
-    const url = 'https://docs.google.com/forms/d/e/1FAIpQLSeenY1xsqFx29DmMAWhdsFwVO7TZ9TdS5uBBQhR3u4J70iB2Q/formResponse';
-    
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', url, true);
-    
-    xhr.onload = function() {
-        showSuccess();
-    };
-    
-    xhr.onerror = function() {
-        // Bei CORS-Fehlern zeigen wir trotzdem eine Erfolgs-Nachricht
-        // da Google Forms die Daten meist trotzdem empfängt
-        showSuccess();
-    };
-    
-    xhr.send(formData);
-    
-    function showSuccess() {
-        formStatus.className = 'success-message';
-        formStatus.style.display = 'block';
-        formStatus.innerHTML = 'Ihre Nachricht wurde erfolgreich gesendet!';
-        form.reset();
-        cleanup();
-    }
-    
-    function cleanup() {
-        submitButton.disabled = false;
-        setTimeout(() => {
-            formStatus.style.display = 'none';
-        }, 5000);
-    }
-});
+ 
+  (function() {
+    const contactForm = document.getElementById('contactForm');
+    const hiddenIframe = document.getElementById('hidden_iframe');
+    const loadingMessage = document.getElementById('loadingMessage');
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+    let submissionAttempted = false;
+    let submissionTimeout;
+
+    contactForm.addEventListener('submit', function(event) {
+      // Verhindere das erneute Anzeigen der Nachrichten
+      successMessage.style.display = "none";
+      errorMessage.style.display = "none";
+      
+      // Zeige die Ladeanzeige
+      loadingMessage.style.display = "block";
+      
+      // Setze den Flag, dass eine Übermittlung versucht wurde
+      submissionAttempted = true;
+      
+      // Starte einen Timer für die Fehlermeldung (z.B. 10 Sekunden)
+      submissionTimeout = setTimeout(function() {
+        if (submissionAttempted) {
+          loadingMessage.style.display = "none";
+          errorMessage.style.display = "block";
+          submissionAttempted = false;
+        }
+      }, 10000); // 10.000 Millisekunden = 10 Sekunden
+    });
+
+    hiddenIframe.addEventListener('load', function() {
+      if (submissionAttempted) {
+        // Die Formularübermittlung wurde abgeschlossen
+        clearTimeout(submissionTimeout);
+        loadingMessage.style.display = "none";
+        successMessage.style.display = "block";
+        contactForm.reset();
+        submissionAttempted = false;
+      }
+    });
+  })();

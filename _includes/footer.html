@@ -63,13 +63,24 @@
             </div>
             <div class="col-md-3 offset-lg-1">
               <div class="info_form">
-                <form id="contactForm" class="info_form">
-                  <div class="link-heading">Kontakt aufnehmen</div>
+                <div class="link-heading">Kontakt aufnehmen</div>
+                <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSeenY1xsqFx29DmMAWhdsFwVO7TZ9TdS5uBBQhR3u4J70iB2Q/formResponse" method="POST" target="hidden_iframe">
                   <input type="email" name="entry.1938339462" placeholder="Email" required>
                   <input type="text" name="entry.1489854127" placeholder="Ihre Nachricht" required>
                   <button type="submit">Senden</button>
-                  <div id="formStatus" class="formStatus-style"></div>
                 </form>
+                <!-- Verstecktes Iframe für die Formularübermittlung -->
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                <!-- Bereiche für die Nachrichten -->
+                <div id="loadingMessage" style="display:none; margin-top:10px; color: blue;">
+                  Ihre Nachricht wird gesendet...
+                </div>
+                <div id="successMessage" style="display:none; margin-top:10px; color: green;">
+                  Ihre Nachricht wurde erfolgreich gesendet!
+                </div>
+                <div id="errorMessage" style="display:none; margin-top:10px; color: red;">
+                  Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es erneut.
+                </div>
               </div>
             </div>
           </div>
