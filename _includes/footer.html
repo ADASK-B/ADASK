@@ -64,13 +64,11 @@
             <div class="col-md-3 offset-lg-1">
               <div class="info_form">
                 <div class="link-heading">Kontakt aufnehmen</div>
-                <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSeenY1xsqFx29DmMAWhdsFwVO7TZ9TdS5uBBQhR3u4J70iB2Q/formResponse" method="POST" target="hidden_iframe">
-                  <input type="email" name="entry.1938339462" placeholder="Email" required>
-                  <input type="text" name="entry.1489854127" placeholder="Ihre Nachricht" required>
+                <form id="contactForm">
+                  <input type="email" name="email" id="email" placeholder="Email" required>
+                  <input type="text" name="nachricht" id="nachricht" placeholder="Ihre Nachricht" required>
                   <button type="submit">Senden</button>
                 </form>
-                <!-- Verstecktes Iframe für die Formularübermittlung -->
-                <iframe name="hidden_iframe" id="hidden_iframe" class="hidden-message"></iframe>
                 <!-- Bereiche für die Nachrichten -->
                 <div id="loadingMessage" class="progress-message">
                   Ihre Nachricht wird gesendet...
@@ -83,6 +81,7 @@
                 </div>
               </div>
             </div>
+            
           </div>
         </div>
       </div>
