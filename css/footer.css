@@ -63,10 +63,18 @@
   top: 25%;
   pointer-events: none; /* Verhindert Interferenz mit Button-Klicks */
 }
-
-
 .space_send{
-  width: 50px;
+  display: none;
+  
+}
+@media (max-width: 768px) {
+  .space_send{
+    display:block;
+    width: 50px;
+
+    
+  }
+  
 }
 
 .bt:active {
