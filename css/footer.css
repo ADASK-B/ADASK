@@ -64,6 +64,11 @@
   pointer-events: none; /* Verhindert Interferenz mit Button-Klicks */
 }
 
+
+.space_send{
+  width: 50px;
+}
+
 .bt:active {
   transition: all 0.001s ease;
   background-color: #5d9fcd;
@@ -76,15 +81,14 @@
 }
 
 .status-icon {
-  top: 10px;
-  position: relative;
-  display: none;
   font-size: 24px;
   font-weight: bold;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  width: 24px;
+  height: 24px;
 }
-
 .status-icon.success {
   color: #28a745;
 }
@@ -94,8 +98,8 @@
 }
 
 .status-icon.show {
-  display: inline-block;
   opacity: 1;
+  visibility: visible;
 }
 
 @keyframes msgRun {
