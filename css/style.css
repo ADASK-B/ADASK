@@ -271,16 +271,6 @@ a:focus {
   text-transform: uppercase;
 }
 
-@media (max-width: 992px) {
-  #navbarSupportedContent.show {
-    background-color: #313535; 
-  }
-
-  #navbarSupportedContent.show .nav-link {
-    color: #ffffff; 
-  }
-}
-
 /* Fixed Header Styles */
 .fixed-header {
   position: fixed;
