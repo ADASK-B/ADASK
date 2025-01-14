@@ -219,12 +219,12 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
 
 /* Titel- und Textformatierungen */
 .flip-card .title {
-  font-size: 1.2em;
+  font-size: 1.7em;
   font-weight: 700;
   margin-bottom: 0.5em;
 }
 .flip-card p {
-  font-size: 0.9em;
+  font-size: 1.1em;
   line-height: 1.3em;
   margin-bottom: 0;
 }
@@ -246,6 +246,8 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
   }
   .flip-card-back-desktop {
     display: block;
+    transform: translateY(-10%);
+    
   }
 }
 /* Mobile: kurzer Text anzeigen, langer Text ausblenden */
@@ -286,51 +288,52 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
 /* Offenheit */
 .flip-card-offenheit .flip-card-front {
   background-color: #2F3030;
-  color: #F3F3F3;
+  color: #ffffff;
+  
 }
 .flip-card-offenheit .flip-card-back {
   background-color: #826AFF;
-  color: #F3F3F3;
+  color: #ffffff;
 }
 
 /* Gewissenhaftigkeit */
 .flip-card-gewissenhaftigkeit .flip-card-front {
   background-color: #2F3030;
-  color: #F3F3F3;
+  color: #ffffff;
 }
 .flip-card-gewissenhaftigkeit .flip-card-back {
   background-color: #3386fd;
-  color: #F3F3F3;
+  color: #ffffff;
 }
 
 /* Extraversion */
 .flip-card-extraversion .flip-card-front {
   background-color: #2F3030;
-  color: #F3F3F3;
+  color: #ffffff;
 }
 .flip-card-extraversion .flip-card-back {
   background-color: #fc884f;
-  color: #F3F3F3;
+  color: #ffffff;
 }
 
 /* Verträglichkeit */
 .flip-card-vertraeglichkeit .flip-card-front {
   background-color: #2F3030; 
-  color: #F3F3F3;
+  color: #ffffff;
 }
 .flip-card-vertraeglichkeit .flip-card-back {
   background-color: #65B973;
-  color: #F3F3F3;
+  color: #ffffff;
 }
 
 /* Neurotizismus */
 .flip-card-neurotizismus .flip-card-front {
   background-color: #2F3030; 
-  color: #F3F3F3;
+  color: #ffffff;
 }
 .flip-card-neurotizismus .flip-card-back {
   background-color: #EF5045;
-  color: #F3F3F3;
+  color: #ffffff;
 }
 
 .bg-variant-flip {
