@@ -46,12 +46,19 @@
   /* Button-Größe */
   --button-width: 155px;    /* Breite des Buttons */
   --button-height: 40px;    /* Höhe des Buttons */
-  /* Text-Größe */
-  --text-size: 18px;        /* Schriftgröße */
   
   width: var(--button-width);
   height: var(--button-height);
   font-size: var(--text-size);
+  display: inline-block;
+  padding: 10px 0;
+  background-color: #F3F3F3;
+  color: #2F3030;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 0;
+  font-weight: bold;
 }
 
 .msg {

@@ -324,7 +324,7 @@ a:focus {
 }
 
 .slider_section .detail-box p {
-  color: #F3F3F3;
+  color: #ffffff;
   min-height: 120px;
   margin-top: 15px;
   display: flex;
@@ -643,10 +643,15 @@ a:focus {
 }
 
 .about_section .detail-box .btn-box .btn-1 {
-  background-color: #db2e2a; /* Rot */
-  color: #FFFFFF; /* Weiß */
+  display: inline-block;
+  padding: 10px 0;
+  background-color: #db2e2a; /*7e68f9*/
+  color: #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 0;
   font-weight: bold;
-  text-align: center;
 }
 
 .about_section .detail-box .btn-box .btn-1:hover {
@@ -656,8 +661,14 @@ a:focus {
 }
 
 .about_section .detail-box .btn-box .btn-2 {
-  background-color: #2F3030;
-  color: #F3F3F3;
+  display: inline-block;
+  padding: 10px 0;
+  background-color: #F3F3F3;
+  color: #2F3030;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 0;
   font-weight: bold;
 }
 
