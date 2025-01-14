@@ -224,7 +224,7 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
   margin-bottom: 0.5em;
 }
 .flip-card p {
-  font-size: 1.1em;
+  font-size: 1.0em;
   line-height: 1.3em;
   margin-bottom: 0;
 }
