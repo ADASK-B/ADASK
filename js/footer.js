@@ -48,3 +48,21 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const textarea = document.querySelector('.message-textarea');
+
+    if (textarea) {
+      // Funktion zum automatischen Anpassen der Höhe
+      const autoResize = () => {
+        textarea.style.height = 'auto';
+        textarea.style.height = textarea.scrollHeight + 'px';
+      };
+
+      // Initiale Anpassung
+      autoResize();
+
+      // Ereignislistener für Eingaben
+      textarea.addEventListener('input', autoResize);
+    }
+  });

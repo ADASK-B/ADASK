@@ -150,3 +150,15 @@
     border-right: transparent 18px solid;
   }
 }
+ .message-textarea {
+  width: 100%;
+  resize: none; 
+  overflow: hidden; 
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.message-textarea:focus {
+  border-color: none;
+  outline: none;
+}
