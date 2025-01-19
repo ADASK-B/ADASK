@@ -999,25 +999,6 @@ a:focus {
 }
 
 /* end footer section*/
-#navbarSupportedContent {
-  -webkit-transform: translateX(100vw);
-          transform: translateX(100vw);
-  opacity: 0;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.1s ease-in;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#navbarSupportedContent.lg_nav-toggle {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  opacity: 1;
-}
 
 .custom_menu-btn button {
   margin-top: 12px;
