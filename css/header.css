@@ -6,6 +6,9 @@
   transition: top 0.3s ease-in-out;
   z-index: 1000;
   background-color: #2F3030;
+  box-sizing: border-box; /* Stellt sicher, dass der Rand in der Breite enthalten ist */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Schatten hinzufügen */
+  overflow: hidden;
 }
 #navbarSupportedContent.show .nav-link {
   border-bottom: 2px solid #19B1E9;
