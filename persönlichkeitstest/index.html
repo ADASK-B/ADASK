@@ -1,0 +1,571 @@
+--- 
+--- 
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <title>ADASK - Persönlichkeitstest mit Künstlicher Intelligenz</title>
+  <meta name="description" content="Kostenloser Persönlichkeitstest mit individueller Analyse durch Künstliche Intelligenz - basierend auf dem wissenschaftlichen Big-Five-Modell (OCEAN-Modell).">
+  <meta name="keywords" content="Big-Five-Modell, OCEAN-Modell, Künstliche Intelligenz, Charakteranalyse, psychologische Tests, kostenlose Analyse, Persönlichkeitsprofil, Persönlichkeitsentwicklung, historische Persönlichkeiten, wissenschaftlicher Test, Online-Test, Selbstentdeckung, Stärken und Schwächen, Verhaltensmuster, Persönlichkeitswachstum, KI-Analyse">
+  <meta name="author" content="ADASK">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="canonical" href="https://adask.de/">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="ADASK - Persönlichkeitstest mit Künstlicher Intelligenz">
+  <meta property="og:description" content="Kostenloser Persönlichkeitstest mit individueller Analyse durch Künstliche Intelligenz - basierend auf dem wissenschaftlichen Big-Five-Modell (OCEAN-Modell).">
+  <meta property="og:image" content="https://adask.de/images/logo_Small-1.webp">
+  <meta property="og:url" content="https://adask.de/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ADASK">
+  <meta property="og:locale" content="de_DE">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ADASK - Persönlichkeitstest mit Künstlicher Intelligenz">
+  <meta name="twitter:description" content="Kostenloser Persönlichkeitstest mit individueller Analyse durch Künstliche Intelligenz - basierend auf dem wissenschaftlichen Big-Five-Modell (OCEAN-Modell).">
+  <meta name="twitter:image" content="https://adask.de/images/logo_Small-1.webp">
+  <meta name="twitter:site" content="@ADASK_B">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://adask.de/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://adask.de/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://adask.de/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://adask.de/images/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="https://adask.de/images/android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://adask.de/images/apple-touch-icon.png">
+
+  <script type="application/ld+json " nonce="ABC123XYZ">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Big5Insight",
+      "operatingSystem": "ANDROID",
+      "applicationCategory": "EducationApplication",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "9"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    }
+  </script>
+
+  <script type="application/ld+json" nonce="ABC123XYZ">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ADASK",
+      "url": "https://adask.de",
+      "logo": "https://adask.de/images/logo_Small-1.webp",
+      "sameAs": [
+        "https://www.instagram.com/adask_b/",
+        "https://www.youtube.com/@ADASK.B",
+        "https://www.tiktok.com/@adask_b",
+        "https://x.com/adask_b/",
+        "https://de.pinterest.com/ADASK_B/",
+        "https://www.twitch.tv/adask_b/"
+      ]
+    }
+  </script>
+  
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/responsive.css" rel="stylesheet">
+  <link href="../css/main_page.css" rel="stylesheet">
+
+  <!-- jQuery & Bootstrap JS -->
+  <script src="../js/jquery-3.4.1.min.js"></script>
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  {% include header.html %}
+  <div class="hero_area">
+    <!-- Slider / Carousel -->
+    <section class="slider_section">
+      <div class="carousel_btn-container">
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      
+      <!-- WICHTIG: statt "carousel slide" => "carousel slide carousel-fade" -->
+      <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+  
+        <div class="carousel-inner">
+  
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-5 offset-md-1">
+                  <div class="detail-box">
+                    <h1 class="hero-headline">
+                      <span class="block-span"><b>Entdecke</b></span>
+                      <span class="block-span"><b>deine</b></span>
+                      <span class="block-span"><b>Persönlichkeit</b></span>
+                    </h1>
+                    <div class="slide-subtitle">
+                      <b>Marie Curie</b>
+                    </div>
+                    <p>
+                      Marie Curie war entschlossen, klug und bescheiden - eine Pionierin, die Wissenschaft und Entdeckergeist über alles stellte.
+                    </p>
+                    <div class="btn-box">
+                      <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
+                        App
+                      </a>
+                      <a href="#" class="btn-2">
+                        Shop
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="offset-md-1 col-md-4 img-container video-limit ">
+                  <div class="img-box video-container">
+                    <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
+                           poster="../images/Mari1.webp" data-video-src="../images/movie_134.mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-5 offset-md-1">
+                  <div class="detail-box">
+                    <h1 class="hero-headline">
+                      <span class="block-span"><b>Entdecke</b></span>
+                      <span class="block-span"><b>deine</b></span>
+                      <span class="block-span"><b>Persönlichkeit</b></span>
+                    </h1>
+                    <div class="slide-subtitle">
+                      <b>Nikola Tesla</b>
+                    </div>
+                    <p>
+                      Nikola Tesla war visionär, brillant und exzentrisch - ein Erfinder, der die Zukunft der Technologie maßgeblich beeinflusste.
+                    </p>
+                    <div class="btn-box">
+                      <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
+                        App
+                      </a>
+                      <a href="#" class="btn-2">
+                        Shop
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="offset-md-1 col-md-4 img-container video-limit ">
+                  <div class="img-box video-container">
+                    <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
+                           poster="../images/Tesla1.webp" data-video-src="../images/movie_089.mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-5 offset-md-1">
+                  <div class="detail-box">
+                    <h1 class="hero-headline">
+                      <span class="block-span"><b>Entdecke</b></span>
+                      <span class="block-span"><b>deine</b></span>
+                      <span class="block-span"><b>Persönlichkeit</b></span>
+                    </h1>
+                    <div class="slide-subtitle">
+                      <b>Gaius Julius</b>
+                    </div>
+                    <p>
+                      Gaius Julius Caesar war kühn, brillant und umstritten - ein visionärer Anführer mit politischem Geschick und richtigen Weitblick.
+                    </p>
+                    <div class="btn-box">
+                      <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
+                        App
+                      </a>
+                      <a href="#" class="btn-2">
+                        Shop
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="offset-md-1 col-md-4 img-container video-limit ">
+                  <div class="img-box video-container">
+                    <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
+                           poster="../images/Cesa1.webp" data-video-src="../images/movie_027.mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Ende carousel-inner -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+ <!-- about section -->
+ <section class="about_section layout_padding animate_from_bottom" id="about_section">
+    
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-9 mx-auto">
+        <!-- Flex-Center-Klasse statt style=... -->
+        <div class="img-box flex-center">
+          <video class="responsive-video no-pointer responsive-video-KI" autoplay loop muted playsinline loading="lazy"
+                 poster="../images/Big1.webp" data-video-src="../images/movie_093.mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+    <div class="detail-box">
+      <!-- Falls du extra Klasse für dieses H2 brauchst, z.B. "about-heading" -->
+      <h2 class="about-heading"><b>KI</b>-Persönlichkeitstest</h2>
+      <p>
+        Mit Big 5 Insight kannst du deine Persönlichkeit anhand des wissenschaftlich fundierten Big-Five-Modells (OCEAN) erforschen. 
+        Die App bietet tiefe Einblicke in deine wichtigsten Charakterzüge und zeigt sogar, wie du dich im Vergleich zu historischen Größen 
+        wie Nikola Tesla oder Julius Caesar schlägst. Dank unserer künstlichen Intelligenz-gestützten Analyse erhältst du eine personalisierte Auswertung, 
+        die verdeutlicht, wie deine Persönlichkeit deinen Alltag und dein Wachstum beeinflusst.
+      </p>
+
+    </div>
+  </div>
+</section>
+<!-- end about section -->
+
+
+  <!-- category section -->
+  <section class="category_section layout_padding animate_from_bottom" id="category_section">
+    <div class="container">
+      <div class="heading_container">
+        <h2>Big 5 Insight</h2>
+      </div>
+      <div class="category_container">
+        <div class="box">
+          <div class="img-box">
+            <div class="lottie-container" id="lottie_analytics_container">
+              <img src="../images/Wachstum.png" class="lottie-placeholder" alt="Analytics Placeholder">
+              <div id="lottie_analytics" class="lottie-animation"></div>
+            </div>
+          </div>
+          <div class="detail-box">
+            <h3>Wachsen</h3>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <div class="lottie-container" id="lottie_Solution_container">
+              <img src="../images/Zusammenfügen.png" class="lottie-placeholder" alt="Solution Placeholder">
+              <div id="lottie_Solution" class="lottie-animation"></div>
+            </div>
+          </div>
+          <div class="detail-box">
+            <h3>Zusammenfügen</h3>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <div class="lottie-container" id="lottie_Community_container">
+              <img src="../images/Verbindung.png" class="lottie-placeholder" alt="Community Placeholder">
+              <div id="lottie_Community" class="lottie-animation"></div>
+            </div>
+          </div>
+          <div class="detail-box">
+            <h3>Verbinden</h3>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <div class="lottie-container" id="lottie_Chatbot_container">
+              <img src="../images/KünstlicheIntelligenz.png" class="lottie-placeholder" alt="Chatbot Placeholder">
+              <div id="lottie_Chatbot" class="lottie-animation"></div>
+            </div>
+          </div>
+          <div class="detail-box">
+            <h3>Künstliche Intelligenz</h3>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <div class="lottie-container" id="lottie_unlock_container">
+              <img src="../images/Entfesselung.png" class="lottie-placeholder" alt="Unlock Placeholder">
+              <div id="lottie_unlock" class="lottie-animation"></div>
+            </div>
+          </div>
+          <div class="detail-box">
+            <h3>Entfesseln</h3>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <div class="lottie-container" id="lottie_lightbulb_container">
+              <img src="../images/Erkennen.png" class="lottie-placeholder" alt="Lightbulb Placeholder">
+              <div id="lottie_lightbulb" class="lottie-animation"></div>
+            </div>
+          </div>
+          <div class="detail-box">
+            <h3>Erkennen</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <!-- experience section -->
+  <section class="experience_section layout_padding animate_from_bottom" id="experience">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="img-box">
+            <img src="../images/Gahndi.webp" alt="Bild von Gandhi" loading="lazy" class="img-fullwidth-autoheight">
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2 class="experience-heading">
+                Dein <b>kostenloses</b> <br> Abenteuer zur <br> Selbsterkenntnis
+              </h2>
+            </div>
+            <p>
+              Wir möchten nicht nur Erkenntnisse bieten, sondern dich auch unterhalten – weil wir glauben, dass Lernen Spaß machen soll. 
+              Damit wir dir diese Erfahrungen weiterhin kostenlos anbieten können, setzen wir auf Werbung. Wir wissen, dass Werbung manchmal 
+              stören kann, aber sie ist notwendig, um dieses Projekt am Leben zu halten. Vielen Dank für deine Unterstützung!
+            </p>
+              <div class="btn-box">
+                <a href="https://play.google.com/store/apps/details?id=com.Adask.Big5Insight" class="btn-1">
+                  App
+                </a>
+                <a href="#" class="btn-2">
+                  Shop
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end experience section -->
+
+<!-- Flip-Card-Sektion -->
+<section class="flipcard_section layout_padding3 animate_from_bottom bg-variant-flip"  id="freelance_section">
+  <div class="container">
+    <!-- Überschrift in der Mitte -->
+    <div class="heading_container_flip">
+      <h2>Das <b>Big-Five-Modell </b><br>und seine <br> Hauptdimensionen</h2>
+    </div>
+
+    <div class="row justify-content-center">
+
+      <!-- Offenheit -->
+      <div class="col-md-6">
+        <div class="flip-card flip-card-offenheit"> <!-- Zusätzliche Klasse -->
+          <div class="flip-card-inner">
+            <!-- Vorderseite -->
+            <div class="flip-card-front">
+              <h3 class="title">Offenheit</h3>
+              <p>Kreativität und Neugier</p>
+            </div>
+            <!-- Rückseite -->
+            <div class="flip-card-back">
+              <!-- Langer Desktop-Text -->
+              <div class="flip-card-back-desktop">
+                <h4 class="title">Offenheit</h4>
+                <p>
+                  Offenheit steht für Kreativität, Neugier und die Bereitschaft, 
+                  über den Tellerrand hinauszublicken. Personen mit hoher Offenheit 
+                  suchen ständig nach neuen Erfahrungen und sind gerne bereit, 
+                  sich auf unbekannte Ideen einzulassen. Sie sind fantasievoll, 
+                  lieben künstlerische Ausdrucksformen und schätzen die Vielfalt des Lebens. 
+                  Ihre Vorstellungskraft ist stark ausgeprägt, und sie genießen es, 
+                  sich mit komplexen Themen auseinanderzusetzen. 
+                  Offenheit inspiriert Innovation, weil sie anregt, 
+                  bestehende Strukturen zu hinterfragen und neue Wege zu finden.
+                </p>
+              </div>
+              <!-- Kurzer Mobile-Text -->
+              <div class="flip-card-back-mobile">
+                <p>
+                  Offenheit: Fantasie, Neugier, Innovation.
+                  Offen für neue Ideen & Erfahrungen.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gewissenhaftigkeit -->
+      <div class="col-md-6">
+        <div class="flip-card flip-card-gewissenhaftigkeit"> <!-- Zusätzliche Klasse -->
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="title">Gewissenhaftigkeit</h3>
+              <p>Struktur und Disziplin</p>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-card-back-desktop">
+                <h4 class="title">Gewissenhaftigkeit</h4>
+                <p>
+                  Gewissenhaftigkeit beschreibt den Drang nach Struktur, Selbstdisziplin und Ordnung. 
+                  Wer hier hoch punktet, erledigt Aufgaben zuverlässig und pünktlich und setzt sich 
+                  klare Ziele, die beharrlich verfolgt werden. Diese Menschen sind detailorientiert 
+                  und übernehmen gerne Verantwortung. Diese Eigenschaft ist hilfreich, 
+                  um Herausforderungen planvoll und systematisch zu meistern, 
+                  und sorgt dafür, dass Projekte effizient umgesetzt werden.
+                </p>
+              </div>
+              <div class="flip-card-back-mobile">
+                <p>
+                  Gewissenhaftigkeit: Disziplin, Ordnung, Verlässlichkeit.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extraversion -->
+      <div class="col-md-6">
+        <div class="flip-card flip-card-extraversion">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="title">Extraversion</h3>
+              <p>Energie und Freude</p>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-card-back-desktop">
+                <h4 class="title">Extraversion</h4>
+                <p>
+                  Extraversion steht für ein hohes Maß an Energie, Begeisterung und Geselligkeit. 
+                  Extrovertierte Menschen blühen in Gesellschaft auf und schätzen den Austausch mit anderen. 
+                  Sie sind kommunikativ, selbstbewusst und lieben es, aktiv am Geschehen teilzunehmen. 
+                  Oft besitzen sie eine ansteckende positive Ausstrahlung, 
+                  die ihr Umfeld mitreißen kann. Extravertierte Personen suchen Abenteuer, 
+                  schätzen den Kontakt zu neuen Leuten und schöpfen 
+                  ihre Energie aus dem Zusammensein mit anderen.
+                </p>
+              </div>
+              <div class="flip-card-back-mobile">
+                <p>
+                  Extraversion: Geselligkeit, Begeisterung, Austausch.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Verträglichkeit -->
+      <div class="col-md-6">
+        <div class="flip-card flip-card-vertraeglichkeit">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="title">Verträglichkeit</h3>
+              <p>Empathie und Harmonie</p>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-card-back-desktop">
+                <h4 class="title">Verträglichkeit</h4>
+                <p>
+                  Verträglichkeit beschreibt Empathie, Hilfsbereitschaft und das Bestreben, 
+                  harmonisch zusammenzuarbeiten. Menschen mit hoher Verträglichkeit 
+                  zeigen Interesse am Wohlergehen anderer, sind kooperativ und sind bereit, 
+                  Konflikte zu entschärfen. Diese Haltung schafft ein vertrauensvolles 
+                  Miteinander und fördert ein unterstützendes Umfeld. 
+                  Wer in dieser Dimension hoch liegt, stellt das gemeinsame Ziel 
+                  gerne über eigene Interessen, um ein harmonisches Zusammenwirken zu ermöglichen.
+                </p>
+              </div>
+              <div class="flip-card-back-mobile">
+                <p>
+                  Verträglichkeit: Empathie, Hilfsbereitschaft, Kooperation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Neurotizismus -->
+      <div class="col-md-6">
+        <div class="flip-card flip-card-neurotizismus">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="title">Neurotizismus</h3>
+              <p>Emotionale Empfindsamkeit</p>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-card-back-desktop">
+                <h4 class="title">Neurotizismus</h4>
+                <p>
+                  Neurotizismus beschreibt die Tendenz, emotionale Höhen und Tiefen 
+                  intensiver wahrzunehmen. Personen mit hoher Ausprägung in dieser Dimension 
+                  reagieren stärker auf Stress und negative Gefühle. Gleichzeitig ermöglicht 
+                  diese Empfindsamkeit ein tieferes Verständnis für menschliche Emotionen 
+                  und Situationen. Wer lernt, diese Emotionen konstruktiv zu verarbeiten, 
+                  kann daraus persönliches Wachstum und Resilienz schöpfen.
+                </p>
+              </div>
+              <div class="flip-card-back-mobile">
+                <p>
+                  Neurotizismus: Intensive Gefühle, Stressanfälligkeit, Wachstumspotenzial.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- Ende row -->
+  </div> <!-- Ende container -->
+</section>
+
+
+
+  <!-- client section -->
+  <section class="layout_padding3"></section>
+  <!-- end client section -->
+
+  <!-- Footer -->
+  {% include footer.html %}
+  <!-- end footer section -->
+   
+  <script src="../js/main_page.js" defer></script>
+  <script src="../js/bootstrap.js" defer></script>
+  <script src="../js/lotti.js" defer></script>
+</body>
+</html>

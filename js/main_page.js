@@ -60,12 +60,12 @@
      ========================================================= */
   document.addEventListener("DOMContentLoaded", () => {
     const lottieAnimations = [
-      { id: "lottie_analytics", path: "images/analytics.json" },
-      { id: "lottie_Solution", path: "images/Solution.json" },
-      { id: "lottie_Community", path: "images/Community.json" },
-      { id: "lottie_Chatbot", path: "images/Chatbot.json" },
-      { id: "lottie_unlock", path: "images/unlock.json" },
-      { id: "lottie_lightbulb", path: "images/lightbulb.json" }
+      { id: "lottie_analytics", path: "../images/analytics.json" },
+      { id: "lottie_Solution", path: "../images/Solution.json" },
+      { id: "lottie_Community", path: "../images/Community.json" },
+      { id: "lottie_Chatbot", path: "../images/Chatbot.json" },
+      { id: "lottie_unlock", path: "../images/unlock.json" },
+      { id: "lottie_lightbulb", path: "../images/lightbulb.json" }
     ];
   
     function loadLottieAnimation(animation) {
