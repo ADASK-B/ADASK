@@ -139,9 +139,7 @@ body {
   height: auto;
 }
 
-.header_section {
-  overflow-x: hidden;
-}
+
 
 .header_section .container-fluid {
   padding-right: 25px;
@@ -1055,7 +1053,7 @@ a:focus {
   position: relative;
   z-index: 2000; 
   -webkit-transform: translateX(100px);
-          transform: translateX(100px);
+          transform: translateX(-100px);
 }
 
 .menu_btn-style button .s-3 {
