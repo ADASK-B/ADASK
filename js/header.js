@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const nav = $("#navbarSupportedContent"); // jQuery-Selektor
   const btn = $(".custom_menu-btn");
   const navbarToggler = document.querySelector(".navbar-toggler");
+  const dropdownToggle = $('.dropdown-toggle');
+  const dropdownMenu = $('.dropdown-menu');
 
   window.addEventListener("scroll", function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -33,6 +35,12 @@ document.addEventListener("DOMContentLoaded", function() {
       // Entferne die Animation am custom_menu-btn
       document.querySelector(".custom_menu-btn").classList.remove("menu_btn-style");
     }
+
+    // Dropdown schließen, wenn es geöffnet ist
+    if (dropdownMenu.hasClass("show")) {
+      dropdownMenu.removeClass("show");
+      dropdownToggle.attr("aria-expanded", "false");
+    }
   });
 
   // Click-Event für den Menü-Button
@@ -49,5 +57,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Menü-Button-Stil (Hamburger zu X) togglen
     document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style");
+
+    // Dropdown schließen, wenn das Menü umgeschaltet wird
+    if (dropdownMenu.hasClass("show")) {
+      dropdownMenu.removeClass("show");
+      dropdownToggle.attr("aria-expanded", "false");
+    }
+  });
+
+  // Optional: Schließen des Dropdowns beim Klicken außerhalb
+  $(document).click(function(event) {
+    if (!$(event.target).closest('.dropdown').length) {
+      if (dropdownMenu.hasClass("show")) {
+        dropdownMenu.removeClass("show");
+        dropdownToggle.attr("aria-expanded", "false");
+      }
+    }
   });
 });
