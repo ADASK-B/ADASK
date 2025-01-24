@@ -177,8 +177,6 @@ body {
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link {
   padding: 10px 15px;
-  color: #F3F3F3;
-  text-align: center;
 }
 
 a,
@@ -1035,6 +1033,10 @@ a:focus {
   border-radius: 10px;
 }
 
+.custom_nav-container2 .custom_menu-btn.menu_btn-style .s-2 {
+  opacity: 0;
+
+}
 .custom_menu-btn .s-2 {
   -webkit-transition: all 0.1s;
   transition: all 0.1s;
@@ -1051,9 +1053,9 @@ a:focus {
 
 .menu_btn-style button .s-2 {
   position: relative;
-  z-index: 2000; 
-  -webkit-transform: translateX(100px);
-          transform: translateX(-100px);
+  z-index: 0; 
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
 }
 
 .menu_btn-style button .s-3 {

@@ -90,4 +90,69 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* Stile für die Navigationslinks ----------------*/
 
+/* Allgemeine Stile für die Navigation */
+.custom_nav-container2 {
+  background-color: rgba(255, 255, 255, 0); /* Transparenter Hintergrund */
+}
+
+/* Navigationslinks */
+.custom_nav-container2 .nav-link {
+  color: #ffffff; /* Standard-Schriftfarbe */
+  transition: color 0.3s ease;
+  cursor: pointer; /* Cursor als Pointer anzeigen */
+}
+
+.custom_nav-container2 .nav-link:hover {
+  color: #65B973; /* Hover-Schriftfarbe */
+}
+
+/* Dropdown-Container relativ positionieren */
+.custom_nav-container2 .dropdown {
+  position: relative; /* Ermöglicht die absolute Positionierung des Dropdown-Menüs */
+}
+
+/* Dropdown-Menü absolut positionieren und standardmäßig verstecken */
+.custom_nav-container2 .dropdown-menu {
+  position: absolute;
+  top: 100%; /* Direkt unter dem Eltern-Element */
+  left: 0;
+  right: 0; /* Optional: Breite anpassen */
+  background-color: #333333; /* Hintergrundfarbe des Dropdowns */
+  z-index: 1000; /* Sicherstellen, dass es über anderen Elementen liegt */
+  
+  /* Verstecken des Dropdowns */
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Dropdown-Menü anzeigen, wenn die Klasse 'show' vorhanden ist */
+.custom_nav-container2 .dropdown-menu.show {
+  display: block;
+  opacity: 1;
+}
+
+/* Dropdown-Items */
+.custom_nav-container2 .dropdown-item {
+  color: #ffffff; /* Schriftfarbe der Dropdown-Items */
+  padding: 10px 20px; /* Innenabstand für bessere Klickbarkeit */
+  text-decoration: none; /* Keine Unterstreichung */
+  display: block; /* Block-Element für vollständige Klickfläche */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom_nav-container2 .dropdown-item:hover {
+  background-color: #65B973; /* Hintergrundfarbe beim Hover */
+  color: #000000; /* Schriftfarbe beim Hover */
+}
+
+/* Menü-Button-Stile */
+.custom_nav-container2 .custom_menu-btn button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ffffff; /* Optional: Farbe des Buttons */
+  font-size: 16px; /* Optional: Schriftgröße */
+}
