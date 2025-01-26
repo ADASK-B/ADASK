@@ -90,6 +90,10 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+.navbar-toggler:focus {
+  outline: none ;
+  box-shadow: none;
+}
 /* Stile für die Navigationslinks ----------------*/
 
 /* Allgemeine Stile für die Navigation */
