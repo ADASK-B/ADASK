@@ -3,15 +3,15 @@
 transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
 }
 
-.animate_from_bottom {
-  opacity: 0;
+/*.animate_from_bottom {
+  opacity: 1;
   transform: translateY(50px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .animate_from_bottom.visible {
   opacity: 1;
   transform: translateY(0);
-}
+}*/
 
 /* Lottie-Styling */
 .lottie-container {

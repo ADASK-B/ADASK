@@ -39,7 +39,7 @@ body {
 .styled-subheading {
   font-size: 1.25rem;
   font-weight: bold; /* Fettgedruckt */
-  color: #EF5045; /* Die gewünschte Farbe für deine Überschrift */
+  color: #db2e2a; /* Die gewünschte Farbe für deine Überschrift */
   margin-top: 9px; /* Abstand nach oben */
   line-height: 0; /* Zeilenhöhe, damit es wie eine Überschrift aussieht */
   line-height: 1.2; /* Vermeidung von Zeilenüberlappungen */
@@ -358,8 +358,8 @@ a:focus {
 
 .slider_section .detail-box .btn-box .btn-1:hover {
   background-color: transparent;
-  border-color: #EF5045;
-  color: #EF5045;
+  border-color: #db2e2a;
+  color: #db2e2a;
 }
 
 .slider_section .detail-box .btn-box .btn-2 {
@@ -422,7 +422,7 @@ a:focus {
 
 .slider_section .carousel_btn-container .carousel-control-prev:hover,
 .slider_section .carousel_btn-container .carousel-control-next:hover {
-  background-color: #EF5045;
+  background-color: #db2e2a;
 }
 
 .slider_section .carousel_btn-container .carousel-control-prev {
@@ -499,8 +499,8 @@ a:focus {
 
 .experience_section .detail-box .btn-box .btn-1:hover {
   background-color: transparent;
-  border-color: #EF5045;
-  color: #EF5045;
+  border-color: #db2e2a;
+  color: #db2e2a;
 }
 
 .experience_section .detail-box .btn-box .btn-2 {
@@ -652,8 +652,8 @@ a:focus {
 
 .about_section .detail-box .btn-box .btn-1:hover {
   background-color: transparent;
-  border-color: #EF5045;
-  color: #EF5045;
+  border-color: #db2e2a;
+  color: #db2e2a;
 }
 
 .about_section .detail-box .btn-box .btn-2 {
@@ -719,7 +719,7 @@ a:focus {
 
 .freelance_section .tab_container .t-link-box .detail-box h5 {
   font-weight: bold;
-  color: #EF5045;
+  color: #db2e2a;
 }
 
 .freelance_section .tab_container .t-link-box .detail-box h3 {
@@ -929,8 +929,8 @@ a:focus {
 
 .info_section .info_form form button:hover {
   background-color: transparent;
-  border-color: #EF5045;
-  color: #EF5045;
+  border-color: #db2e2a;
+  color: #db2e2a;
 }
 
 .info_section .info_contact .link-box {

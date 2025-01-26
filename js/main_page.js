@@ -15,45 +15,6 @@
     });
   });
   
-  /* =========================================================
-     IntersectionObserver #experience
-     ========================================================= */
-  document.addEventListener("DOMContentLoaded", function() {
-    const target = document.querySelector('#experience');
-    if (target) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.intersectionRatio >= 0) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: [0, 0.4, 1.0]
-      });
-      observer.observe(target);
-    }
-  });
-  
-  /* =========================================================
-     IntersectionObserver #category_section
-     ========================================================= */
-  document.addEventListener('DOMContentLoaded', () => {
-    const section = document.getElementById('category_section');
-    if (section) {
-      const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.intersectionRatio >= 0) {
-            entry.target.classList.add('visible');
-            sectionObserver.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: [0, 0.2, 1.0]
-      });
-      sectionObserver.observe(section);
-    }
-  });
   
   /* =========================================================
      Lottie-Animationen
@@ -134,53 +95,6 @@
       $panel.css({ display: 'block' }).addClass('show');
       $button.removeClass('collapsed').attr('aria-expanded', 'true');
     });
-  });
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    const freelanceSection = document.getElementById('freelance_section');
-    if (freelanceSection) {
-      const freelanceObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.intersectionRatio >= 0) {
-            entry.target.classList.add('visible');
-            freelanceObserver.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: [0, 0.3, 1.0]
-      });
-      freelanceObserver.observe(freelanceSection);
-    }
-  });
-  
-  /* =========================================================
-     Scroll-Position merken
-     ========================================================= */
-  window.addEventListener('load', function() {
-    const scrollPosition = sessionStorage.getItem('scrollPosition');
-    if (scrollPosition !== null) {
-      window.scrollTo(0, parseInt(scrollPosition));
-    }
-  });
-  window.addEventListener('beforeunload', function() {
-    sessionStorage.setItem('scrollPosition', window.scrollY);
-  });
-  
-  document.addEventListener("DOMContentLoaded", function() {
-    const aboutSection = document.querySelector('#about_section');
-    if (aboutSection) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.intersectionRatio >= 0) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: [0, 0.3, 1.0]
-      });
-      observer.observe(aboutSection);
-    }
   });
 
   /* =========================================================
