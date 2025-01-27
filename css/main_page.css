@@ -84,12 +84,7 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
 }
 
 
-/* Tablets (768px bis 1023px) */
-@media (min-width: 768px)  {
-  .no-pointer {
-    width: 130%;
-  }
-}
+
 
 
 .responsive-video-KI {
@@ -103,15 +98,6 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
       margin: 0 auto; /* Zentriert das Video */
     }
   }
-
-  .video-limit {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    object-fit: cover;
-}
 
 /* 3) Headline (line-height:1.2; font-weight:700;) */
 .hero-headline {
@@ -425,6 +411,13 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
             width: 100%;
             height: auto;
           }
+
+          @media (max-width: 1767px) {
+            .video-container video {
+              width: 100%;
+            }
+          }
+
 
           .video-container::before {
             content: "";
