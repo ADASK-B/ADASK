@@ -160,3 +160,20 @@
   color: #ffffff; /* Optional: Farbe des Buttons */
   font-size: 16px; /* Optional: Schriftgröße */
 }
+
+/* ---------------------------- Offcanvas-Menü anpassen ---------------------*/
+
+ /* Offcanvas-Menü anpassen */
+ .offcanvas-top {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 992px) {
+  /* Für größere Bildschirme, Offcanvas nicht vollbild */
+  .offcanvas-top {
+    width: 300px; /* Beispielbreite für größere Bildschirme */
+    height: 100%;
+  }
+}
