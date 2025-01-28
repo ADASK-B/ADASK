@@ -535,6 +535,12 @@ a:focus {
   
 }
 
+/* styles.css */
+.text-shadow {
+  text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+
 .category_section .heading_container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
