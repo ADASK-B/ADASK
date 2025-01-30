@@ -403,11 +403,20 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
   ========================================================= */
           .video-container {
             position: relative;
-            display: block; /* statt inline-block */
+            display: block; 
             width: 100%;
-            max-width: 100%; /* optional */
-            margin: 0;
+            margin: 0 auto;   
             padding: 0;
+        
+          }
+
+
+
+          /* Desktop-Layout (bspw. >= 768px) */
+          @media (min-width: 768px) {
+            .video-container {
+              max-width: 600px;
+            }
           }
 
           .video-container video {
@@ -434,24 +443,4 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
             z-index: 2;
           }
 
-          /* Handy-Layout (bspw. <= 767px) */
-          @media (max-width: 767px) {
-            .video-container::before {
-              background:
-                linear-gradient(to bottom, #19b2e9, transparent) 0 0 / 100% 30% no-repeat,
-                linear-gradient(to top, #19B1E9, transparent) 0 100% / 100% 30% no-repeat,
-                linear-gradient(to right, #19B1E9, transparent) 0 0 / 15% 100% no-repeat,
-                linear-gradient(to left, #19B1E9, transparent) 100% 0 / 15% 100% no-repeat;
-            }
-          }
-
-          /* Desktop-Layout (bspw. >= 768px) */
-          @media (min-width: 768px) {
-            .video-container::before {
-              background:
-                linear-gradient(to bottom, #19B1E9, transparent) 0 0 / 100% 15% no-repeat,
-                linear-gradient(to top, #19B1E9, transparent) 0 100% / 100% 15% no-repeat,
-                linear-gradient(to right, #19B1E9, transparent) 0 0 / 15% 100% no-repeat,
-                linear-gradient(to left, #19B1E9, transparent) 100% 0 / 15% 100% no-repeat;
-            }
-          }
+          
