@@ -161,19 +161,355 @@
   font-size: 16px; /* Optional: Schriftgröße */
 }
 
-/* ---------------------------- Offcanvas-Menü anpassen ---------------------*/
+/* ---------------------------- Offcanvas-Menü anpassen #brandOffcanvas  ---------------------*/
 
- /* Offcanvas-Menü anpassen */
- .offcanvas-top {
-  height: 100%;
+/* Allgemeine Styles für das Offcanvas-Menü */
+#brandOffcanvas {
+  background-color: #fff;
   width: 100%;
-  max-width: 100%;
+  height: 100vh;
 }
 
-@media (min-width: 992px) {
-  /* Für größere Bildschirme, Offcanvas nicht vollbild */
-  .offcanvas-top {
-    width: 300px; /* Beispielbreite für größere Bildschirme */
-    height: 100%;
+/* Allgemeine Styles für das Offcanvas-Body */
+.offcanvas-body {
+  padding: 20px;
+}
+
+/* Menüliste */
+.navbar-nav.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  /* Auf Desktop werden wir hier den Order setzen (siehe Media Query) */
+}
+
+/* Menü-Items */
+.navbar-nav.menu-list .menu-item {
+  position: relative;
+  padding: 10px 0;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.navbar-nav.menu-list .menu-item .nav-link {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: block;
+}
+
+/* Dropdown-Inhalt */
+.dropdown-content {
+  display: none;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.dropdown-content a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  margin-top: 5px;
+  transition: color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  color: green;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+  .navbar-nav.menu-list .menu-item:hover .nav-link {
+    color: green;
   }
+
+  /* Offcanvas-Body Layout für Desktop */
+  .offcanvas-body {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-right: 0;
+  }
+
+  /* Offcanvas selbst in Desktop-Größe */
+  #brandOffcanvas {
+    width: 25%;  /* Passe hier die Desktop-Breite an */
+    height: 80vh;
+  }
+
+  /* Menüliste – wir setzen den Order auf 1, damit sie links erscheint */
+  .navbar-nav.menu-list {
+    width: 200px;
+    order: 1;
+    align-items: flex-start;
+    margin: 0;
+  }
+
+  /* Bildanzeige – Order 2 bewirkt, dass es rechts angezeigt wird */
+  .menu-image-container {
+    width: 280px;
+    order: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-right: 10px;
+    margin-top: -20px;
+  }
+
+  .menu-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 767.98px) {
+  #brandOffcanvas {
+    width: 100%;
+    height: 100vh !important;
+    max-width: none !important;
+  }
+
+  .offcanvas-body {
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0;
+  }
+
+  /* Auf Mobile soll das Bild oben stehen: Order -1 */
+  .menu-image-container {
+    order: -1 !important;
+    display: block;
+    flex: 0 0 150px;
+    width: 100%;
+    padding-left: 0;
+    max-width: none ;
+    height: 150px;
+    overflow: hidden;
+    position: static;
+  }
+
+  .menu-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .navbar-nav.menu-list {
+    width: 100%;
+    align-items: center;
+  }
+
+  .navbar-nav.menu-list .menu-item {
+    text-align: center;
+  }
+
+  .navbar-nav.menu-list .menu-item .nav-link {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .navbar-nav.menu-list .menu-item .nav-link:hover {
+    color: green;
+  }
+
+  /* Dropdown-Menüs für Mobile */
+  .navbar-nav.menu-list .menu-item .dropdown-content {
+    display: none;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .navbar-nav.menu-list .menu-item.active .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    max-width: 100% ;
+  }
+
+  .navbar-nav.menu-list .menu-item .nav-link::after {
+    content: '\25BC';
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-nav.menu-list .menu-item.active .nav-link::after {
+    transform: rotate(180deg);
+  }
+}
+
+/* Benutzerdefinierte Abmessungen für das Offcanvas-Menü */
+#brandOffcanvas {
+  height: 35vh;
+  max-height: 100vh;
+  min-height: 250px;
+  min-width: 300px;
+  max-width: 450px;
+}
+
+/* Offcanvas-Körperhöhe für Desktop */
+#brandOffcanvas .offcanvas-body {
+  height: calc(80vh - 56px);
+  overflow-y: auto;
+}
+
+/* Offcanvas-Header */
+#brandOffcanvas .offcanvas-header {
+  height: 56px;
+}
+
+/* Allgemeine Header-Styles */
+.header_section {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s ease-in-out;
+  z-index: 1000;
+  background-color: #2F3030;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#navbarSupportedContent.show .nav-link {
+  border-bottom: 2px solid #19B1E9;
+  margin: 0 5px;
+}
+
+@media (max-width: 992px) {
+  #navbarSupportedContent.show {
+    padding-bottom: 15px;
+  }
+  #navbarSupportedContent.show .nav-link {
+    color: #ffffff;
+    border-bottom: 2px solid #19B1E9;
+  }
+}
+
+/* Menü-Button Styles */
+.custom_menu-btn button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu_btn-style {
+  transform: rotate(90deg);
+}
+
+.s-1, .s-2, .s-3 {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 4px;
+  background: #fff;
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.toggle {
+  position: relative;
+  width: 30px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(253, 255, 243);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.navbar-toggler[aria-expanded="true"] #bar1 {
+  transform: rotate(45deg) translate(9px, 9px);
+}
+
+.navbar-toggler[aria-expanded="true"] #bar2 {
+  opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] #bar3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.custom_nav-container2 {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.custom_nav-container2 .nav-link {
+  color: #ffffff;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.custom_nav-container2 .nav-link:hover {
+  color: #65B1E9;
+}
+
+.custom_nav-container2 .dropdown {
+  position: relative;
+}
+
+.custom_nav-container2 .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #333333;
+  z-index: 1000;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom_nav-container2 .dropdown-menu.show {
+  display: block;
+  opacity: 1;
+}
+
+.custom_nav-container2 .dropdown-item {
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom_nav-container2 .dropdown-item:hover {
+  background-color: #65B1E9;
+  color: #000;
+}
+
+.custom_nav-container2 .custom_menu-btn button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 16px;
 }
