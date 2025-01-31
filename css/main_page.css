@@ -92,13 +92,13 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
 
 
 .responsive-video-KI {
-  width: 90%;
+  width: 70%;
   }
 
   /* Ab einer Bildschirmbreite von 768px */
   @media (min-width: 1000px) {
     .responsive-video-KI {
-      width: 70%;
+      width: 50%;
       margin: 0 auto; /* Zentriert das Video */
     }
   }
