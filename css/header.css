@@ -167,11 +167,12 @@
   background-color: #F3F3F3;
   width: 100%;
   height: 100vh;
+ 
 }
 
 /* Offcanvas-Header (oberer Bereich) – hier trennen wir den Header mit einer horizontalen Linie */
 #brandOffcanvas .offcanvas-header {
-  height: 225px;
+  padding: 20px !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -186,6 +187,7 @@
     height: 71px; /* Angepasste Höhe für mobile Geräte */
   }
 }
+
 
 /* Allgemeine Styles für das Offcanvas-Body */
 .offcanvas-body {
@@ -367,9 +369,9 @@
 
 /* Benutzerdefinierte Abmessungen für das Offcanvas-Menü */
 #brandOffcanvas {
-  height: 37vh;
+  height: 35vh;
   max-height: 100vh;
-  min-height: 250px;
+  min-height: 300px;
   min-width: 450px;;
   max-width: 450px;
 }
