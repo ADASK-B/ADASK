@@ -383,9 +383,15 @@
 #brandOffcanvas {
   height: 35vh;
   max-height: 100vh;
-  min-height: 300px;
-  min-width: 450px;
   max-width: 450px;
+}
+
+/* Offcanvas-Header (Mobile) – eigene Höhe für mobile Geräte */
+@media (min-width: 767.98px) {
+  #brandOffcanvas{
+    min-height: 300px;
+  min-width: 450px;
+  }
 }
 
 /* Offcanvas-Körperhöhe für Desktop (ursprünglich) */
