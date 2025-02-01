@@ -178,11 +178,17 @@
 
 /* Nur den Link innerhalb der Checkbox anpassen */
 .checkbox-container a {
-  color: #65B973;           /* Hier die gewünschte Farbe eintragen */
+  color: #65B973;           /* Gewünschte Farbe */
   text-decoration: underline;
 }
 
 /* Optional: Hover-Effekt für den Link */
 .checkbox-container a:hover {
-  color: #65B973;           /* Hier die gewünschte Hover-Farbe eintragen */
+  color: #db2e2a;           /* Gewünschte Hover-Farbe */
+}
+
+@media (max-width: 768px) {
+  .checkbox-container {
+    transform: translateX(-30px); /* Verschiebt den Container 20px nach rechts */
+  }
 }
