@@ -162,3 +162,27 @@
   border-color: none;
   outline: none;
 }
+
+
+.checkbox-container {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;      /* Vertikale Ausrichtung */
+  white-space: nowrap;      /* Verhindert Zeilenumbrüche */
+  font-size: 0.8em;         /* Kleinere Schriftgröße */
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 8px;        /* Abstand zwischen Checkbox und Text */
+}
+
+/* Nur den Link innerhalb der Checkbox anpassen */
+.checkbox-container a {
+  color: #65B973;           /* Hier die gewünschte Farbe eintragen */
+  text-decoration: underline;
+}
+
+/* Optional: Hover-Effekt für den Link */
+.checkbox-container a:hover {
+  color: #65B973;           /* Hier die gewünschte Hover-Farbe eintragen */
+}

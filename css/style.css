@@ -212,6 +212,10 @@ a:focus {
   padding-top: 7px;
 }
 
+.experience_section_Background {
+  background-color: #F3F3F3;
+}
+
 .navbar-brand {
   margin-right: 5%;
   display: -webkit-box;
