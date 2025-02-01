@@ -553,9 +553,9 @@
 
   /* Optional: Falls du zusätzlich einen optischen Trenner im Bildbereich wünschst */
   .menu-image-container {
-    margin-top: 20px;
+    margin-top: 40px;
     border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
+    padding-bottom: 40px;
   }
 }
 
