@@ -164,12 +164,16 @@
 }
 
 
+
+/* --------checkbox-container---------  */
+
 .checkbox-container {
   margin-top: 10px;
   display: flex;
   align-items: center;      /* Vertikale Ausrichtung */
   white-space: nowrap;      /* Verhindert Zeilenumbrüche */
   font-size: 0.8em;         /* Kleinere Schriftgröße */
+  flex-shrink: 0;           /* Verhindert, dass die Checkbox schrumpft */
 }
 
 .checkbox-container input[type="checkbox"] {
@@ -192,3 +196,5 @@
     transform: translateX(-30px); /* Verschiebt den Container 20px nach rechts */
   }
 }
+
+

@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', function () {
   const menuItems = document.querySelectorAll('.menu-item');
   const imageContainer = document.querySelector('.menu-image-container .menu-image');
-  const defaultImageSrc = '../images/logo_Big5.webp';
+  const defaultImageSrc = '../images/logo-1.webp';
 
   function updateImage(src) {
     console.log(`Bild aktualisiert zu: ${src}`);

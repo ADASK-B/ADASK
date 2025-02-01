@@ -160,14 +160,31 @@
   color: #ffffff; /* Optional: Farbe des Buttons */
   font-size: 16px; /* Optional: Schriftgröße */
 }
-
 /* ---------------------------- Offcanvas-Menü anpassen #brandOffcanvas  ---------------------*/
 
 /* Allgemeine Styles für das Offcanvas-Menü */
 #brandOffcanvas {
-  background-color: #fff;
+  background-color: #F3F3F3;
   width: 100%;
   height: 100vh;
+}
+
+/* Offcanvas-Header (oberer Bereich) – hier trennen wir den Header mit einer horizontalen Linie */
+#brandOffcanvas .offcanvas-header {
+  height: 225px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  border-bottom: 3px solid #9d9d9d;  /* Hier wird der dickere Strich definiert */
+}
+
+
+/* Offcanvas-Header (Mobile) – eigene Höhe für mobile Geräte */
+@media (max-width: 767.98px) {
+  #brandOffcanvas .offcanvas-header {
+    height: 71px; /* Angepasste Höhe für mobile Geräte */
+  }
 }
 
 /* Allgemeine Styles für das Offcanvas-Body */
@@ -241,7 +258,7 @@
     height: 80vh;
   }
 
-  /* Menüliste – wir setzen den Order auf 1, damit sie links erscheint */
+  /* Menüliste – Order 1, damit sie links erscheint */
   .navbar-nav.menu-list {
     width: 200px;
     order: 1;
@@ -289,7 +306,7 @@
     flex: 0 0 150px;
     width: 100%;
     padding-left: 0;
-    max-width: none ;
+    max-width: none;
     height: 150px;
     overflow: hidden;
     position: static;
@@ -333,7 +350,7 @@
   }
 
   .dropdown-content a {
-    max-width: 100% ;
+    max-width: 100%;
   }
 
   .navbar-nav.menu-list .menu-item .nav-link::after {
@@ -350,10 +367,10 @@
 
 /* Benutzerdefinierte Abmessungen für das Offcanvas-Menü */
 #brandOffcanvas {
-  height: 35vh;
+  height: 37vh;
   max-height: 100vh;
   min-height: 250px;
-  min-width: 300px;
+  min-width: 450px;;
   max-width: 450px;
 }
 
@@ -361,11 +378,6 @@
 #brandOffcanvas .offcanvas-body {
   height: calc(80vh - 56px);
   overflow-y: auto;
-}
-
-/* Offcanvas-Header */
-#brandOffcanvas .offcanvas-header {
-  height: 56px;
 }
 
 /* Allgemeine Header-Styles */
@@ -406,7 +418,9 @@
   transform: rotate(90deg);
 }
 
-.s-1, .s-2, .s-3 {
+.s-1,
+.s-2,
+.s-3 {
   display: block;
   width: 25px;
   height: 3px;
@@ -513,3 +527,34 @@
   color: #ffffff;
   font-size: 16px;
 }
+
+/* Zusätzliche Divider-Stile */
+
+/* Mobile: Dünner Strich oben und Trennung zwischen Bild und Menü */
+@media (max-width: 767.98px) {
+  /* Obere Trennlinie im Offcanvas (zusätzlich zur Header-Trennung) */
+  #brandOffcanvas {
+    border-top: 1px solid #ccc;
+  }
+
+  /* Trennlinie zwischen Bild und den Dropdown-Menüs */
+  .menu-image-container {
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+}
+
+/* Desktop: Trennlinie zwischen linker Menüliste und rechtem Bildbereich */
+@media (min-width: 768px) {
+  .navbar-nav.menu-list {
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+  }
+
+  .menu-image-container {
+    
+    padding: 40px;
+  }
+}
+
