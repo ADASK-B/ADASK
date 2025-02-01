@@ -167,7 +167,6 @@
   background-color: #F3F3F3;
   width: 100%;
   height: 100vh;
- 
 }
 
 /* Offcanvas-Header (oberer Bereich) – hier trennen wir den Header mit einer horizontalen Linie */
@@ -180,14 +179,12 @@
   border-bottom: 3px solid #9d9d9d;  /* Hier wird der dickere Strich definiert */
 }
 
-
 /* Offcanvas-Header (Mobile) – eigene Höhe für mobile Geräte */
 @media (max-width: 767.98px) {
   #brandOffcanvas .offcanvas-header {
     height: 71px; /* Angepasste Höhe für mobile Geräte */
   }
 }
-
 
 /* Allgemeine Styles für das Offcanvas-Body */
 .offcanvas-body {
@@ -301,7 +298,10 @@
     padding-right: 0;
   }
 
-  /* Auf Mobile soll das Bild oben stehen: Order -1 */
+  /* Bildbereich: Unterhalb des Headers fixieren.
+     Annahme: Header-Höhe = 71px; Bild-Höhe = 150px.
+     Der Container erhält einen undurchsichtigen Hintergrund, damit
+     beim Scrollen Dropdowntexte, die dahinter laufen, nicht sichtbar sind. */
   .menu-image-container {
     order: -1 !important;
     display: block;
@@ -311,7 +311,12 @@
     max-width: none;
     height: 150px;
     overflow: hidden;
-    position: static;
+    position: fixed;
+    top: 71px;  /* Direkt unterhalb des Headers */
+    left: 0;
+    right: 0;
+    z-index: 100;  /* Damit der Container über den Dropdowns liegt */
+    background-color: #F3F3F3;  /* Opaque Hintergrundfarbe */
   }
 
   .menu-image {
@@ -321,9 +326,16 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
+  /* Damit die Menüliste nicht unter dem fixierten Bild beginnt,
+     wird sie nach unten verschoben: 71px (Header) + 150px (Bild) = 221px */
   .navbar-nav.menu-list {
     width: 100%;
     align-items: center;
+    margin-top: 221px;
+    max-height: calc(100vh - 221px);
+    overflow-y: auto;
+    position: relative;  /* Neue stacking context, damit .menu-image-container darüber liegt */
+    z-index: 1;
   }
 
   .navbar-nav.menu-list .menu-item {
@@ -372,11 +384,11 @@
   height: 35vh;
   max-height: 100vh;
   min-height: 300px;
-  min-width: 450px;;
+  min-width: 450px;
   max-width: 450px;
 }
 
-/* Offcanvas-Körperhöhe für Desktop */
+/* Offcanvas-Körperhöhe für Desktop (ursprünglich) */
 #brandOffcanvas .offcanvas-body {
   height: calc(80vh - 56px);
   overflow-y: auto;
@@ -539,7 +551,7 @@
     border-top: 1px solid #ccc;
   }
 
-  /* Trennlinie zwischen Bild und den Dropdown-Menüs */
+  /* Optional: Falls du zusätzlich einen optischen Trenner im Bildbereich wünschst */
   .menu-image-container {
     margin-top: 20px;
     border-bottom: 1px solid #ccc;
@@ -555,8 +567,20 @@
   }
 
   .menu-image-container {
-    
     padding: 40px;
   }
 }
 
+@media (min-width: 768px) {
+  /* Offcanvas-Body fixieren – kein Scrollen im gesamten Bereich */
+  #brandOffcanvas .offcanvas-body {
+    height: calc(80vh - 56px);
+    overflow-y: hidden;
+  }
+  
+  /* Scrollbarkeit nur für die Menüliste */
+  .navbar-nav.menu-list {
+    max-height: calc(80vh - 56px);
+    overflow-y: auto;
+  }
+}
