@@ -7,6 +7,12 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
   background-color: #65B973;
 
 }
+.hero-headline--h1 {
+  font-size: 2.34rem; /* oder der Wert, der zu einem h1 passt */
+  font-weight: bold;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
 /*.animate_from_bottom {
   opacity: 1;
   transform: translateY(50px);
