@@ -233,7 +233,7 @@ a:focus {
 
 .navbar-brand span {
   font-weight: bold;
-  color: #F3F3F3;
+  color: #ffffff;
   font-size: 24px;
 }
 
@@ -381,7 +381,7 @@ a:focus {
 .slider_section .detail-box .btn-box .btn-2:hover {
   background-color: transparent;
   border-color: #F3F3F3;
-  color: #F3F3F3;
+  color: #ffffff;
 }
 
 .slider_section .img-container .img-box img {
@@ -450,7 +450,7 @@ a:focus {
   text-indent: 0px;
   text-align: center;
   line-height: 55px;
-  color: #F3F3F3;
+  color: #ffffff;
   background-color: transparent;
   opacity: 1;
   display: none;
@@ -513,7 +513,7 @@ a:focus {
   display: inline-block;
   padding: 10px 0;
   background-color: #2F3030;
-  color: #f3f3f3;
+  color: #ffffff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid transparent;
@@ -800,7 +800,7 @@ a:focus {
 .info_section {
   position: relative;
   background-color: #2F3030;
-  color: #F3F3F3;
+  color: #ffffff;
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -843,7 +843,7 @@ a:focus {
 }
 
 .info_section .info_top .info_logo span {
-  color: #F3F3F3;
+  color: #ffffff;
   font-weight: bold;
   font-size: 32px;
 }
@@ -905,7 +905,7 @@ a:focus {
 }
 
 .info_section ul li a {
-  color: #F3F3F3;
+  color: #ffffff;
 }
 
 .info_section .info_link-box {
@@ -953,7 +953,7 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   margin: 30px 0;
-  color: #F3F3F3;
+  color: #ffffff;
 }
 
 .info_section .info_contact .link-box .img-box {

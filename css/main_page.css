@@ -111,15 +111,17 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
 
 /* 4) Block-Span (statt display:block;) */
 .block-span {
+  color: #FFFFFF;
   display: block;
 }
+
 
 /* 5) Subtitle (font-size:1.5em; margin-top:1.5em; font-weight:500; color:#F3F3F3;) */
 .slide-subtitle {
   font-size: 1.5em;
   margin-top: 1.5em;
   font-weight: 500;
-  color: #F3F3F3;
+  color: #ffffff;
 }
 
 /* 6) Heading für Experience-Bereich (z.B. uppercase, #2F3030, line-height:1.2) */
