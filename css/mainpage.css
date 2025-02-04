@@ -8,10 +8,21 @@ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
 
 }
 .hero-headline--h1 {
-  font-size: 2.34rem; /* oder der Wert, der zu einem h1 passt */
-  font-weight: bold;
-  line-height: 1.2;
-  text-transform: uppercase;
+  font-size: 2.34rem;    
+  font-weight: bold;    
+  line-height: 1.2;        
+  text-transform: uppercase; 
+  hyphens: auto;           
+  overflow-wrap: break-word; 
+}
+
+.custom-h1 {
+  font-size: 2.34rem;    
+  font-weight: bold;    
+  line-height: 1.2;        
+  text-transform: uppercase; 
+  hyphens: auto;           
+  overflow-wrap: break-word; 
 }
 /*.animate_from_bottom {
   opacity: 1;
