@@ -75,7 +75,6 @@
       });
     }
 
-    // Optional: Schließen des Dropdowns beim Klicken außerhalb
     document.addEventListener("click", function(event) {
       // Prüfen, ob der Klick NICHT innerhalb eines Elements mit Klasse '.dropdown' stattfindet
       const clickedInsideDropdown = event.target.closest(".dropdown");
