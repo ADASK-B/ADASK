@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://big5insight.com/sitemap.xml
