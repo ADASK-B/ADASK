@@ -1,0 +1,151 @@
+/* === Cookie-Banner fixiert unten, volle Breite === */
+#cookieBanner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #1f1f1ffd;
+  color: #ffffff;
+  display: none; /* per JS ein-/ausblenden */
+  box-sizing: border-box;
+  padding: 20px;
+  font-family: sans-serif;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.4);
+}
+
+.cookie-category-title {
+  margin: 0 0 5px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#cookieBanner p {
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+#cookieBanner a {
+  color: #6c58ec;
+  text-decoration: underline;
+}
+
+.cookie-banner-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap; /* Standard: umbrechen, falls nötig */
+  margin-top: 20px;
+}
+
+#cookieBanner button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.accept-all-btn {
+  background: #d62228;
+  color: #fff;
+}
+.settings-btn {
+  background: #666;
+  color: #fff;
+}
+.reject-btn {
+  background: #666;
+  color: #fff;
+}
+
+/* -- Panel mit max-height-Transition für Smooth-Animation, reduzierte Abstände -- */
+#cookieSettingsPanel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+  margin-top: 10px;     /* reduziert von 20px */
+  border-top: 1px solid #666;
+  padding-top: 0px;    /* reduziert von 20px */
+}
+.cookie-category {
+  margin-bottom: 15px;
+}
+.cookie-category label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+/* Slider Switch Styles */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.toggle-text {
+  font-size: 0.95rem;
+}
+
+/* The switch - the slider container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+@media (max-width: 480px) {
+  .cookie-banner-buttons {
+    flex-wrap: nowrap; /* Verhindert das Umbrechen */
+    gap: 5px;
+  }
+  #cookieBanner button {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+}

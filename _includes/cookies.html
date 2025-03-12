@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <link rel="stylesheet" href="../css/cookies.css">
+  </head>
+  <body style="min-height:120vh; margin:0;">
+
+    <!-- COOKIE-BANNER -->
+    <div id="cookieBanner">
+      <p>
+        Diese Website nutzt Technologien wie Cookies, um wesentliche Funktionen der Website zu ermöglichen sowie für Analyse und Personalisierung. 
+        Sie können Ihre Einstellungen jederzeit ändern oder die Standardeinstellungen übernehmen. 
+        Sie können dieses Banner schließen, um nur mit essenziellen Cookies fortzufahren. 
+        <a href="../datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a>
+      </p>
+
+      <!-- Button-Gruppe, rechts ausgerichtet -->
+      <div class="cookie-banner-buttons">
+        <!-- Reihenfolge: Einstellungen, Alle ablehnen, Alle akzeptieren -->
+        <button id="settingsBtn" class="settings-btn">Einstellungen</button>
+        <button id="rejectBtn" class="reject-btn">Alle ablehnen</button>
+        <button id="acceptAllBtn" class="accept-all-btn">Alle akzeptieren</button>
+      </div>
+
+      <!-- AUSKLAPPBARES PANEL FÜR COOKIE-EINSTELLUNGEN -->
+      <div id="cookieSettingsPanel">
+        <div class="cookie-category">
+          <p class="cookie-category-title">Analyse & Performance</p>
+          <div class="toggle-container">
+            <span class="toggle-text">Aktivieren</span>
+            <label class="switch">
+              <input type="checkbox" id="analyticsCookies">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p>
+            Helfen Sie dem Website-Betreiber zu verstehen, wie die Website funktioniert, 
+            wie Besucher interagieren und ob technische Probleme vorliegen.
+          </p>
+        </div>
+        <div class="cookie-banner-buttons">
+          <button id="saveSettingsBtn" class="save-settings-btn">
+            Einstellungen speichern
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/cookies.js" defer></script>
+  </body>
+</html>

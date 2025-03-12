@@ -66,3 +66,22 @@ document.addEventListener('DOMContentLoaded', function() {
       textarea.addEventListener('input', autoResize);
     }
   });
+
+  //-----------------------footerEnd -----------------------------
+
+  // Wenn der Footer-Link geklickt wird, wird der Cookie-Banner geöffnet und der UI-Zustand aktualisiert.
+  document.getElementById('openCookieSettingsLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    // Falls die Funktion updateCookieBannerUI() in Ihrem Cookie-Banner-Script definiert ist, aufrufen:
+    if (typeof updateCookieBannerUI === 'function') {
+      updateCookieBannerUI();
+    }
+    var cookieBanner = document.getElementById('cookieBanner');
+    if (cookieBanner) {
+      cookieBanner.style.display = 'block';
+      // Optional: Scrolle den Banner ins Blickfeld
+      cookieBanner.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      alert('Cookie-Banner nicht gefunden.');
+    }
+  });
