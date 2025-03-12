@@ -27,8 +27,11 @@
         <div class="cookie-category">
           <p class="cookie-category-title">Analyse & Performance</p>
           <div class="toggle-container">
-            <span class="toggle-text">Aktivieren</span>
-            <label class="switch">
+            <!-- WICHTIGE ÄNDERUNG:
+                 Wir nutzen EIN Label mit for="analyticsCookies",
+                 damit Screenreader erkennen, wofür die Checkbox da ist. -->
+            <label for="analyticsCookies" class="switch">
+              <span class="toggle-text">Aktivieren</span>
               <input type="checkbox" id="analyticsCookies">
               <span class="slider"></span>
             </label>
