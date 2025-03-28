@@ -73,10 +73,17 @@
 .cookie-category {
   margin-bottom: 15px;
 }
+
 .cookie-category label {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
+}
+
+.toggle-text {
+  font-size: 0.95rem;
+  white-space: nowrap; 
+  margin: 60px; 
 }
 
 /* Slider Switch Styles */
@@ -97,6 +104,7 @@
   display: inline-block;
   width: 50px;
   height: 24px;
+  flex-shrink: 0; /* Verhindert, dass der Slider schrumpft */
 }
 
 /* Hide default HTML checkbox */
