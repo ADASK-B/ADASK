@@ -1,6 +1,7 @@
 function loadGoogleAnalytics() {
   var script = document.createElement('script');
-  script.src = "/js/gtag.js";
+  script.src = "./gtag.js";
+  script.nonce = "ABC123XYZ";
   script.async = true;
   document.head.appendChild(script);
 
