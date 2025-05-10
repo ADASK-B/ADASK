@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //-----------------------footerEnd -----------------------------
 
-  // Wenn der Footer-Link geklickt wird, wird der Cookie-Banner geöffnet und der UI-Zustand aktualisiert.
+  /* Wenn der Footer-Link geklickt wird, wird der Cookie-Banner geöffnet und der UI-Zustand aktualisiert.
   document.getElementById('openCookieSettingsLink').addEventListener('click', function(e) {
     e.preventDefault();
     // Falls die Funktion updateCookieBannerUI() in Ihrem Cookie-Banner-Script definiert ist, aufrufen:
@@ -84,4 +84,4 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       alert('Cookie-Banner nicht gefunden.');
     }
-  });
+  });*/
