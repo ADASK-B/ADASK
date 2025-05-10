@@ -1,0 +1,482 @@
+/* Persönlichkeitstest Styles */
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.personality-test-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px 40px;
+    min-height: calc(100vh - 140px);
+}
+
+.test-sections {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Gemeinsame Sektion-Styles */
+.test-intro,
+#questionnaire,
+.results-container {
+    display: none;
+    width: 100%;
+}
+
+/* Aktive Sektion */
+.test-intro.active,
+#questionnaire.active,
+.results-container.active {
+    display: block;
+}
+
+/* Initial sichtbare Sektion */
+.test-intro {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 20px;
+    color: #000000;
+}
+
+.test-intro h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+    color: #000000;
+    line-height: 1.2;
+}
+
+.test-intro p {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    margin-bottom: 2rem;
+    color: #000000;
+    line-height: 1.5;
+}
+
+/* Fragen-Container */
+#questionnaire {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.progress-container {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #19B1E9;
+}
+
+/* Fragen und Antworten */
+.question-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.question-text {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin-bottom: 2rem;
+    color: #000000;
+    line-height: 1.5;
+}
+
+/* Antwort-Optionen */
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.option-button {
+    background-color: #2F3030;
+    color: #ffffff;
+    border: 1px solid transparent;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-weight: 500;
+}
+
+.option-button:hover {
+    background-color: #3a3b3b;
+}
+
+.option-button.selected {
+    background-color: #3a3b3b;
+    border-color: #ffffff;
+}
+
+.option-button:focus {
+    outline: none;
+    border-color: #19B1E9;
+    box-shadow: 0 0 0 2px rgba(25, 177, 233, 0.2);
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.nav-button {
+    background-color: #65B973;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+.nav-button:hover:not(:disabled) {
+    background-color: #528f5c;
+}
+
+/* Ergebnisse */
+.results-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+.results-container h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 1.5rem;
+    color: #000000;
+}
+
+.result-highlight {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.detailed-overview {
+    margin: 2rem 0;
+}
+
+.detailed-overview h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    margin-bottom: 1rem;
+    color: #2F3030;
+}
+
+.spider-chart-container {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    aspect-ratio: 1;
+}
+
+#restartTest {
+    display: block;
+    margin: 2rem auto;
+    min-width: 200px;
+    color: #000000;
+}
+
+#restartTest:hover {
+    background-color: #528f5c;
+}
+
+/* Ergebnissektion Styles */
+.results-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.results-container h2 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 2rem;
+}
+
+.results-container h3 {
+    color: #000000;
+    margin: 1.5rem 0;
+}
+
+/* KI-Analyse Bereich */
+.result-highlight {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ai-analysis-header {
+    margin-bottom: 1.5rem;
+}
+
+.ai-analysis-content {
+    line-height: 1.6;
+    color: #000000;
+}
+
+/* Dimension Cards */
+.dimension-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border-left: 8px solid;
+    position: relative;
+}
+
+.dimension-card:hover {
+    transform: translateX(10px);
+}
+
+.dimension-card h4 {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.dimension-content {
+    color: #000000;
+}
+
+.dimension-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #000000;
+}
+
+/* Farben für die verschiedenen Dimensionen */
+#extraversion-card {
+    border-left-color: #FC884F;
+}
+#extraversion-card h4 {
+    color: #FC884F;
+}
+
+#agreeableness-card {
+    border-left-color: #65B973;
+}
+#agreeableness-card h4 {
+    color: #65B973;
+}
+
+#conscientiousness-card {
+    border-left-color: #3386FD;
+}
+#conscientiousness-card h4 {
+    color: #3386FD;
+}
+
+#neuroticism-card {
+    border-left-color: #EF5045;
+}
+#neuroticism-card h4 {
+    color: #EF5045;
+}
+
+#openness-card {
+    border-left-color: #826AFF;
+}
+#openness-card h4 {
+    color: #826AFF;
+}
+
+/* Charts Container */
+.visualizations-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.charts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.chart-box {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.chart-box canvas {
+    width: 100%;
+    max-height: 400px;
+}
+
+/* Entwicklungspotenziale */
+.development-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.development-content {
+    line-height: 1.6;
+    color: #000000;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.share-button {
+    background-color: #65B973;
+}
+
+.share-button:hover {
+    background-color: #4fa15c;
+}
+
+/* Coming Soon Bereich */
+.coming-soon-container {
+    text-align: left;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.coming-soon-text {
+    font-size: 1.5rem;
+    color: #19B1E9;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.feature-preview {
+    color: #6c757d;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .results-container {
+        padding: 1rem;
+    }
+
+    .dimension-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .charts-container {
+        grid-template-columns: 1fr;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-buttons button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .personality-test-container {
+        padding: 80px 15px 20px;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    .option-button {
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-height: 600px) {
+    .personality-test-container {
+        padding-top: 70px;
+    }
+    
+    .test-intro {
+        margin: 1rem auto;
+    }
+    
+    .question-container {
+        padding: 1.5rem;
+    }
+}
+
+#startTest {
+    background-color: #65B973;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#startTest:hover {
+    background-color: #528f5c;
+}
