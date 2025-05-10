@@ -1,6 +1,6 @@
 function loadGoogleAnalytics() {
   var script = document.createElement('script');
-  script.src = "https://www.googletagmanager.com/gtag/js?id=G-NWTQLF6FH0";
+  script.src = "/js/gtag.js";
   script.async = true;
   document.head.appendChild(script);
 
