@@ -435,10 +435,8 @@ html, body {
 @media (max-width: 768px) {
     .personality-test-container {
         padding: 80px 15px 20px;
-    }
-
-    .nav-buttons {
-        flex-direction: column;
+    }    .nav-buttons {
+        flex-direction: column-reverse;
     }
 
     .nav-button {
