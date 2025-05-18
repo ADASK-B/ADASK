@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: /shop/
 
 Sitemap: https://big5insight.com/sitemap.xml
