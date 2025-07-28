@@ -1006,5 +1006,15 @@ a:focus {
   color: #000000;
 }
 
+/* Entfernt Bootstrap data:-SVG-Icons, um CSP-Fehler zu vermeiden */
+.form-select,
+.form-check-input,
+.form-switch .form-check-input,
+.accordion-button,
+.navbar-toggler,
+.btn-close {
+  background-image: none !important;
+}
+
 
 
