@@ -11,12 +11,9 @@
   <meta name="description" content="Kostenloser Persönlichkeitstest mit individueller Analyse durch Künstliche Intelligenz - basierend auf dem wissenschaftlichen Big-Five-Modell (OCEAN-Modell).">
   <meta name="keywords" content="Big-Five-Modell, OCEAN-Modell, Künstliche Intelligenz, Charakteranalyse, psychologische Tests, kostenlose Analyse, Persönlichkeitsprofil, Persönlichkeitsentwicklung, historische Persönlichkeiten, wissenschaftlicher Test, Online-Test, Selbstentdeckung, Stärken und Schwächen, Verhaltensmuster, Persönlichkeitswachstum, KI-Analyse">
   <meta name="author" content="ADASK">
-  <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="page-topic" content="Persönlichkeitstest, Big-Five-Modell, Künstliche Intelligenz">
-  <!--<base href="https://big5insight.com/">-->
   <link rel="canonical" href="https://big5insight.com/">
-  
 
   <!-- Open Graph Tags -->
   <meta property="og:title" content="Big 5 Insight - Persönlichkeitstest mit Künstlicher Intelligenz">
@@ -27,7 +24,6 @@
   <meta property="og:site_name" content="Big 5 Insight">
   <meta property="og:locale" content="de_DE">
 
-
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Big 5 Insight - Persönlichkeitstest mit Künstlicher Intelligenz">
@@ -35,7 +31,7 @@
   <meta name="twitter:image" content="https://big5insight.com/images/logoBig5OG.webp">
   <meta name="twitter:site" content="@ADASK_B">
 
-  <!-- Favicon -->
+  <!-- Favicons -->
   <link rel="shortcut icon" href="https://big5insight.com/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="https://big5insight.com/images/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://big5insight.com/images/favicon-32x32.png">
@@ -43,44 +39,92 @@
   <link rel="icon" type="image/png" sizes="512x512" href="https://big5insight.com/images/android-chrome-512x512.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://big5insight.com/images/apple-touch-icon.png">
 
-  <script type="application/ld+json " nonce="ABC123XYZ">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Big5Insight",
-      "operatingSystem": "ANDROID",
-      "applicationCategory": "EducationApplication",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "9"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "EUR"
-      }
-    }
-  </script>
-
+  <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json" nonce="ABC123XYZ">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Big 5 Insight",
-      "url": "https://big5insight.com",
-      "logo": "https://big5insight.com/images/logoBig5.webp",
-      "sameAs": [
-        "https://www.instagram.com/adask_b/",
-        "https://www.youtube.com/@ADASK.B",
-        "https://www.tiktok.com/@adask_b",
-        "https://x.com/adask_b/",
-        "https://de.pinterest.com/ADASK_B/",
-        "https://www.twitch.tv/adask_b/"
-      ]
-    }
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://big5insight.com/#org",
+        "name": "Big 5 Insight",
+        "url": "https://big5insight.com",
+        "logo": "https://big5insight.com/images/logoBig5.webp",
+        "sameAs": [
+          "https://www.instagram.com/adask_b/",
+          "https://www.youtube.com/@ADASK.B",
+          "https://www.tiktok.com/@adask_b",
+          "https://x.com/adask_b/",
+          "https://de.pinterest.com/ADASK_B/",
+          "https://www.twitch.tv/adask_b/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://big5insight.com/#website",
+        "url": "https://big5insight.com",
+        "name": "Big5Insight",
+        "publisher": { "@id": "https://big5insight.com/#org" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://big5insight.com/#home",
+        "url": "https://big5insight.com/",
+        "name": "Big 5 Insight – Persönlichkeitstest mit Künstlicher Intelligenz",
+        "isPartOf": { "@id": "https://big5insight.com/#website" }
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://big5insight.com/#app",
+        "name": "Big5Insight",
+        "applicationCategory": "EducationApplication",
+        "operatingSystem": ["Web","Android","iOS"],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was ist der Big Five Persönlichkeitstest?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Der Big Five Persönlichkeitstest misst fünf grundlegende Persönlichkeitsmerkmale: Offenheit, Gewissenhaftigkeit, Extraversion, Verträglichkeit und Neurotizismus – das sogenannte OCEAN-Modell."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie funktioniert der Test auf Big5Insight?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Du beantwortest eine Reihe psychologisch fundierter Aussagen. Unsere KI analysiert dein Antwortverhalten und erstellt ein individuelles Persönlichkeitsprofil entlang der Big-Five-Dimensionen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ist der Test wirklich kostenlos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, der Test ist 100% kostenlos und anonym. Es gibt keine versteckten Kosten oder Verpflichtungen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was passiert mit meinen Daten?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wir speichern keine personenbezogenen Daten. Deine Antworten werden anonym verarbeitet und dienen ausschließlich der Testauswertung."
+            }
+          }
+        ]
+      }
+    ]
+  }
   </script>
-  
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -88,9 +132,9 @@
   <link href="css/responsive.css" rel="stylesheet">
   <link href="css/mainpage.css" rel="stylesheet">
 
-  <!-- Theme Color -->
   <meta name="theme-color" content="#ffffff">
 </head>
+
 
 <body>
   
