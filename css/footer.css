@@ -170,14 +170,18 @@
 .checkbox-container {
   margin-top: 10px;
   display: flex;
-  align-items: center;      /* Vertikale Ausrichtung */
-  white-space: nowrap;      /* Verhindert Zeilenumbrüche */
+  align-items: flex-start;  /* Checkbox oben, wenn der Text umbricht */
   font-size: 0.8em;         /* Kleinere Schriftgröße */
-  flex-shrink: 0;           /* Verhindert, dass die Checkbox schrumpft */
 }
 
 .checkbox-container input[type="checkbox"] {
   margin-right: 8px;        /* Abstand zwischen Checkbox und Text */
+  margin-top: 3px;          /* Auf erste Textzeile ausrichten */
+  flex-shrink: 0;           /* Checkbox darf nicht schrumpfen */
+}
+
+.checkbox-container label {
+  margin-bottom: 0;
 }
 
 /* Nur den Link innerhalb der Checkbox anpassen */
@@ -193,7 +197,8 @@
 
 @media (max-width: 768px) {
   .checkbox-container {
-    transform: translateX(-30px); /* Verschiebt den Container 20px nach rechts */
+    width: 100%;
+    justify-content: center;
   }
 }
 
