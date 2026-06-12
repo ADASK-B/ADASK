@@ -174,7 +174,11 @@
   font-size: 0.8em;         /* Kleinere Schriftgröße */
 }
 
-.checkbox-container input[type="checkbox"] {
+/* Spezifischer als ".info_section .info_form form input" (style.css),
+   das width: 100% und Padding auf alle Inputs legt */
+.info_section .info_form form .checkbox-container input[type="checkbox"] {
+  width: auto;              /* width: 100% aus style.css aufheben */
+  padding: 0;
   margin-right: 8px;        /* Abstand zwischen Checkbox und Text */
   margin-top: 3px;          /* Auf erste Textzeile ausrichten */
   flex-shrink: 0;           /* Checkbox darf nicht schrumpfen */
