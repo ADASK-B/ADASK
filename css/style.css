@@ -228,6 +228,7 @@ a:focus {
 
 .navbar-brand img {
   width: 35px;
+  height: auto;
   margin-right: 5px;
 }
 
@@ -838,6 +839,7 @@ a:focus {
 
 .info_section .info_top .info_logo img {
   width: 55px;
+  height: auto;
   text-align: center;
   margin-right: 5px;
 }

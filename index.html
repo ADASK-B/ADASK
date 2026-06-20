@@ -38,6 +38,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="https://big5insight.com/images/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="https://big5insight.com/images/android-chrome-512x512.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://big5insight.com/images/apple-touch-icon.png">
+  <link rel="preload" as="image" href="images/Mari1.webp" fetchpriority="high">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json" nonce="ABC123XYZ">
@@ -139,6 +140,7 @@
 <body>
   
   {% include header.html %}
+  <main id="main-content">
   <div class="hero_area">
     <!-- Slider / Carousel -->
     <section class="slider_section">
@@ -194,7 +196,7 @@
                 </div>
                 <div class="offset-md-1 col-md-4 img-container video-limit ">
                   <div class="img-box video-container">
-                    <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
+                    <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none" width="875" height="750"
                            poster="images/Mari1.webp" data-video-src="images/movie134transparent.webm">
                       Your browser does not support the video tag.
                     </video>
@@ -235,7 +237,7 @@
                 </div>
                 <div class="offset-md-1 col-md-4 img-container video-limit ">
                   <div class="img-box video-container">
-                    <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
+                    <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none" width="875" height="750"
                            poster="images/Tesla1.webp" data-video-src="images/movie08Perfekt300kbpstransparent.webm">
                       Your browser does not support the video tag.
                     </video>
@@ -276,7 +278,7 @@
                 </div>
                 <div class="offset-md-1 col-md-4 img-container video-limit ">
                   <div class="img-box video-container">
-                    <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none"
+                    <video class="responsive-video no-pointer" autoplay loop muted playsinline loading="lazy" preload="none" width="875" height="750"
                            poster="images/Cesa1.webp" data-video-src="images/movie027Perfekt300kbpstransparent.webm">
                       Your browser does not support the video tag.
                     </video>
@@ -299,7 +301,7 @@
       <div class="col-md-10 col-lg-9 mx-auto">
         <!-- Flex-Center-Klasse statt style=... -->
         <div class="img-box flex-center">
-          <video class="responsive-video no-pointer responsive-video-KI" autoplay loop muted playsinline loading="lazy"
+          <video class="responsive-video no-pointer responsive-video-KI" autoplay loop muted playsinline loading="lazy" width="875" height="750"
                  poster="images/Big1.webp" data-video-src="images/movie093.mp4">
             Your browser does not support the video tag.
           </video>
@@ -332,7 +334,7 @@
         <div class="box">
           <div class="img-box">
             <div class="lottie-container" id="lottie_analytics_container">
-              <img src="images/Wachstum.png" class="lottie-placeholder" alt="Analytics Placeholder">
+              <img src="images/Wachstum.png" class="lottie-placeholder" alt="Analytics Placeholder" width="125" height="125">
               <div id="lottie_analytics" class="lottie-animation"></div>
             </div>
           </div>
@@ -343,7 +345,7 @@
         <div class="box">
           <div class="img-box">
             <div class="lottie-container" id="lottie_Solution_container">
-              <img src="images/Zusammenfügen.png" class="lottie-placeholder" alt="Solution Placeholder">
+              <img src="images/Zusammenfügen.png" class="lottie-placeholder" alt="Solution Placeholder" width="125" height="125">
               <div id="lottie_Solution" class="lottie-animation"></div>
             </div>
           </div>
@@ -354,7 +356,7 @@
         <div class="box">
           <div class="img-box">
             <div class="lottie-container" id="lottie_Community_container">
-              <img src="images/Verbindung.png" class="lottie-placeholder" alt="Community Placeholder">
+              <img src="images/Verbindung.png" class="lottie-placeholder" alt="Community Placeholder" width="125" height="125">
               <div id="lottie_Community" class="lottie-animation"></div>
             </div>
           </div>
@@ -365,7 +367,7 @@
         <div class="box">
           <div class="img-box">
             <div class="lottie-container" id="lottie_Chatbot_container">
-              <img src="images/KünstlicheIntelligenz.png" class="lottie-placeholder" alt="Chatbot Placeholder">
+              <img src="images/KünstlicheIntelligenz.png" class="lottie-placeholder" alt="Chatbot Placeholder" width="125" height="125">
               <div id="lottie_Chatbot" class="lottie-animation"></div>
             </div>
           </div>
@@ -376,7 +378,7 @@
         <div class="box">
           <div class="img-box">
             <div class="lottie-container" id="lottie_unlock_container">
-              <img src="images/Entfesselung.png" class="lottie-placeholder" alt="Unlock Placeholder">
+              <img src="images/Entfesselung.png" class="lottie-placeholder" alt="Unlock Placeholder" width="125" height="125">
               <div id="lottie_unlock" class="lottie-animation"></div>
             </div>
           </div>
@@ -387,7 +389,7 @@
         <div class="box">
           <div class="img-box">
             <div class="lottie-container" id="lottie_lightbulb_container">
-              <img src="images/Erkennen.png" class="lottie-placeholder" alt="Lightbulb Placeholder">
+              <img src="images/Erkennen.png" class="lottie-placeholder" alt="Lightbulb Placeholder" width="125" height="125">
               <div id="lottie_lightbulb" class="lottie-animation"></div>
             </div>
           </div>
@@ -585,7 +587,7 @@
       <div class="row">
         <div class="col-md-5">
           <div class="img-box">
-            <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="lazy" class="img-fullwidth-autoheight">
+            <img src="images/Gahndi.webp" alt="Bild von Gandhi" loading="lazy" class="img-fullwidth-autoheight" width="579" height="519">
           </div>
         </div>
         <div class="col-md-7">
@@ -674,6 +676,8 @@
     </div>
   </section>
   <!-- end FAQ Section -->
+
+  </main>
 
   <!-- Footer -->
   {% include footer.html %}
